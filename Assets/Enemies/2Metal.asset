@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: 2Metal
+  m_EditorClassIdentifier: 
+  id: 7
+  nome: Felino preso
+  material: 4
+  imgPadrao: {fileID: -6286882563345578043, guid: 5650604b58e1fe047872739a487fd4bf, type: 3}
+  maxHealth: 25
+  maxCharge: 5
+  pDamage: 4
+  pDefense: 3
+  sDamage: 2
+  sDefense: 1
+  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 110000001200000014000000000000000000000000000000
+  listaAtaquesNvl3: 110000001200000014000000040000001300000000000000

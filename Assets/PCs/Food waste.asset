@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
+  m_Name: Food waste
+  m_EditorClassIdentifier: 
+  id: 4
+  nome: Jayden "A Produtora"
+  nickName: Jayden
+  material: 5
+  imgMenu: {fileID: -4688110017258223430, guid: 5727fdc4c0cc0de4eb4b3096c1e30aad, type: 3}
+  imgCombate: {fileID: -4688110017258223430, guid: 5727fdc4c0cc0de4eb4b3096c1e30aad, type: 3}
+  maxHealth: 50
+  maxCharge: 5
+  pDamage: 3
+  pDefense: 2
+  sDamage: 3
+  sDefense: 2
+  listaAtaquesIniciais: 010000001b0000001500000000000000
+  listaAtaquesAprendiveis: 010000000300000015000000040000001600000017000000180000001b00000003000000

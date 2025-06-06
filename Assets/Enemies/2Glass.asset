@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: 2Glass
+  m_EditorClassIdentifier: 
+  id: 6
+  nome: Espelho assombrado
+  material: 3
+  imgPadrao: {fileID: 6929270282667665257, guid: 968ba35695249a54583f344ae8e31bd7, type: 3}
+  maxHealth: 25
+  maxCharge: 5
+  pDamage: 2
+  pDefense: 1
+  sDamage: 4
+  sDefense: 3
+  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 0d0000000e000000100000001a0000000000000000000000
+  listaAtaquesNvl3: 0d0000000e00000010000000040000000f0000001a000000

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: 2Paper
+  m_EditorClassIdentifier: 
+  id: 9
+  nome: Livro Vivo
+  material: 1
+  imgPadrao: {fileID: -1086824279499431053, guid: 5939cdf57e5cc6f4eb7bdbf1cc134492, type: 3}
+  maxHealth: 25
+  maxCharge: 5
+  pDamage: 1
+  pDefense: 2
+  sDamage: 3
+  sDefense: 4
+  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 050000000600000008000000000000000000000000000000
+  listaAtaquesNvl3: 050000000600000008000000040000000700000000000000

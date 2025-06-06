@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
+  m_Name: Plastic Chair
+  m_EditorClassIdentifier: 
+  id: 1
+  nome: "Vlad \"O Ca\xE7ador\""
+  nickName: Vlad
+  material: 2
+  imgMenu: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
+  imgCombate: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
+  maxHealth: 50
+  maxCharge: 5
+  pDamage: 3
+  pDefense: 4
+  sDamage: 1
+  sDefense: 2
+  listaAtaquesIniciais: 01000000030000000900000000000000
+  listaAtaquesAprendiveis: 010000000300000009000000040000000a0000000b0000000c0000001b000000

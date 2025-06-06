@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: 3Glass
+  m_EditorClassIdentifier: 
+  id: 11
+  nome: Kraken de garrafa
+  material: 3
+  imgPadrao: {fileID: -2477447995894762238, guid: e322e274c00c61e4a94e8d4b0e306358, type: 3}
+  maxHealth: 25
+  maxCharge: 7
+  pDamage: 4
+  pDefense: 2
+  sDamage: 5
+  sDefense: 3
+  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 0d0000000e00000010000000040000000f0000001a000000
