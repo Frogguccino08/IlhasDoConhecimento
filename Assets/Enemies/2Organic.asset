@@ -17,11 +17,11 @@ MonoBehaviour:
   material: 5
   imgPadrao: {fileID: 1077599535965890597, guid: ec6f72d79c468a445ba440dfd677f49c, type: 3}
   maxHealth: 25
-  maxCharge: 5
-  pDamage: 3
-  pDefense: 2
-  sDamage: 3
-  sDefense: 2
+  maxCharge: 3
+  pDamage: 2
+  pDefense: 3
+  sDamage: 2
+  sDefense: 3
   mainStatus: 0
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 1500000016000000180000001b0000000000000000000000

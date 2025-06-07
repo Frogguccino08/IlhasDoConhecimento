@@ -17,9 +17,9 @@ MonoBehaviour:
   material: 1
   imgPadrao: {fileID: -5147858445845741297, guid: e5f953350124ce44e81ea0f97d2a105b, type: 3}
   maxHealth: 25
-  maxCharge: 7
-  pDamage: 2
-  pDefense: 3
+  maxCharge: 3
+  pDamage: 1
+  pDefense: 2
   sDamage: 4
   sDefense: 5
   mainStatus: 4

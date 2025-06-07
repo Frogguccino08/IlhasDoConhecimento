@@ -20,7 +20,7 @@ MonoBehaviour:
   maxCharge: 3
   pDamage: 2
   pDefense: 3
-  sDamage: 1
+  sDamage: 2
   sDefense: 1
   mainStatus: 2
   listaAtaquesNvl1: 010000000000000000000000000000000000000000000000
