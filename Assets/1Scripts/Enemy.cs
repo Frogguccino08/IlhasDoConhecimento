@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
 
     int cont;
     int forcaAtual = 0;
-    int isBoss = 1;
+    bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
 
@@ -135,17 +135,16 @@ public class Enemy : MonoBehaviour
         if (control.inimigoAtual % 5 == 0)
         {
             simBoss.SetActive(true);
-            forcaAtual += 1;
-            isBoss = 2;
+            isBoss = true;
         }
         else
         {
             simBoss.SetActive(false);
-            isBoss = 1;
+            isBoss = false;
         }
 
 
-        for (i = 0; i < 4; i++)
+        for (i = 0; i < 6; i++)
         {
             attackID[i] = 0;
         }
@@ -233,21 +232,72 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        nomeinimigo = inimigoEscolhido.nome;
-        nomeTela.text = nomeinimigo;
-        maxHealth = inimigoEscolhido.maxHealth + (inimigoEscolhido.maxHealth * forcaAtual * isBoss);
-        maxCharge = inimigoEscolhido.maxCharge + forcaAtual + isBoss;
-        materialInimigo = inimigoEscolhido.material;
-
-        modPhiDamage = 1;
+        //Funcionalidade para todo o inimigo
+        modPhiDamage = 0;
         modPhiDefense = 0;
-        modSpeDamage = 1;
+        modSpeDamage = 0;
         modSpeDefense = 0;
 
-        phiDamage = inimigoEscolhido.pDamage + forcaAtual + (isBoss - 1);
-        phiDefense = inimigoEscolhido.pDefense + forcaAtual + (isBoss - 1);
-        speDamage = inimigoEscolhido.sDamage + forcaAtual + (isBoss - 1);
-        speDefense = inimigoEscolhido.sDefense + forcaAtual + (isBoss - 1);
+        nomeinimigo = inimigoEscolhido.nome;
+        nomeTela.text = nomeinimigo;
+        maxHealth = inimigoEscolhido.maxHealth + (inimigoEscolhido.maxHealth * forcaAtual);
+        maxCharge = inimigoEscolhido.maxCharge + (forcaAtual * 2);
+        materialInimigo = inimigoEscolhido.material;
+
+        phiDamage = inimigoEscolhido.pDamage + forcaAtual;
+        phiDefense = inimigoEscolhido.pDefense + forcaAtual;
+        speDamage = inimigoEscolhido.sDamage + forcaAtual;
+        speDefense = inimigoEscolhido.sDefense + forcaAtual;
+
+        switch (inimigoEscolhido.mainStatus)
+        {
+            case 0:
+                maxHealth += inimigoEscolhido.maxHealth * forcaAtual;
+                if (isBoss)
+                {
+                    maxHealth += inimigoEscolhido.maxHealth;
+                }
+                break;
+            case 1:
+                phiDamage += forcaAtual;
+                if (isBoss)
+                {
+                    phiDamage += 1;
+                }
+                break;
+            case 2:
+                phiDefense += forcaAtual;
+                if (isBoss)
+                {
+                    phiDefense += 1;
+                }
+                break;
+            case 3:
+                speDamage += forcaAtual;
+                if (isBoss)
+                {
+                    speDamage += 1;
+                }
+                break;
+            case 4:
+                speDefense += forcaAtual;
+                if (isBoss)
+                {
+                    speDefense += 1;
+                }
+                break;
+        }
+
+        //Coisa de boss
+        if (isBoss)
+        {
+            maxHealth *= 2;
+            maxCharge += 2;
+            phiDamage += 1;
+            phiDefense += 1;
+            speDamage += 1;
+            speDefense += 1;
+        }
 
         cont = 0;
         for (cont = 0; cont < 6; cont++)
@@ -338,6 +388,11 @@ public class Enemy : MonoBehaviour
     {
         control.ColocarPontosInimigoDerrotado();
 
+        if (control.inimigoAtual % 5 == 0)
+        {
+            forcaAtual += 1;
+        }
+
         control.turno = 0;
         control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual + "       Turno: " + control.turno;
         control.DesativarBotao();
@@ -367,6 +422,7 @@ public class Enemy : MonoBehaviour
             upgrade.GetComponent<TelaUpgrade>().telaAtributos.SetActive(false);
             yield return control.TelaUpgrade();
         }
+
 
         InicializarInimigo();
         enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);

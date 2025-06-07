@@ -19,9 +19,10 @@ MonoBehaviour:
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
-  pDefense: 1
+  pDefense: 2
   sDamage: 3
   sDefense: 2
+  mainStatus: 3
   listaAtaquesNvl1: 020000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 0d0000000e00000010000000000000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000

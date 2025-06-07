@@ -249,6 +249,7 @@ public class Player : MonoBehaviour
     public IEnumerator UsarAtaque(int id)
     {
         descri.SetActive(false);
+        descri.GetComponent<Descricao>().rEmConta = 0;
 
         if (using3R == false)
         {
