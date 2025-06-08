@@ -296,7 +296,7 @@ public class AttackList : MonoBehaviour
                 isPassiva = false;
             break;
             case 23:
-                nome = "Desperdício";
+                nome = "Batida de sujeira";
                 desc = "Um ataque poderoso Orgânico sem efeito extra";
                 material = 5;
                 dano = 4;
