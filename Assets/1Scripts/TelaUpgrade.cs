@@ -111,7 +111,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         do
         {
             idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
-        }while(osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque);
+        }while(osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
         list.CriarAtaque(idAtaque);
 
         texto.text = list.nome;

@@ -75,7 +75,7 @@ public class AttackList : MonoBehaviour
                 phispe = true;
                 alvo = true;
                 quantidade = 1;
-                carga = 3;
+                carga = 2;
                 temEfeito = true;
                 isPassiva = false;
             break;
@@ -355,14 +355,193 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            
+            case 28:
+                nome = "Estilhaços";
+                desc = "Ataque fraco de metal que causa cacos no inimigo";
+                material = 4;
+                dano = 1;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 3;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            case 29:
+                nome = "Suco ácido";
+                desc = "diminue a defesa física e a distância do alvo por 3 turnos";
+                material = 5;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 3;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Folhas Soltas, papel, 5x1 a distância, Ataque sem efeito.
+            case 30:
+                nome = "Folhas soltas";
+                desc = "Ataque extremamente fraco de papel porém que ataca várias vezes";
+                material = 1;
+                dano = 1;
+                phispe = false;
+                alvo = true;
+                quantidade = 5;
+                carga = 3;
+                temEfeito = false;
+                isPassiva = false;
+            break;
+            //Desinformação, Papel, 0 dano a distância, inimigo fica com menos dano a distância por 3 turnos.
+            case 31:
+                nome = "Desisformação";
+                desc = "Diminue o dano a distância do inimigo por 3 turnos";
+                material = 1;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 2;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Estagnado, Plástico, 0 dano a distância, inimigo fica com menos dano físico por 3 turnos.
+            case 32:
+                nome = "Estagnado";
+                desc = "Diminue o dano físico do inimigo por 3 turnos";
+                material = 2;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 2;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Tenderizar, Vidro, 0 dano a distância, inimigo fica com menos defesa a distância por 3 turnos.
+            case 33:
+                nome = "Tenderizar";
+                desc = "Diminue a defesa a distância do inimigo por 3 turnos";
+                material = 3;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 2;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Derreter, Metal, 0 dano a distância, inimigo fica com menos defesa física por 3 turnos.
+            case 34:
+                nome = "Derreter";
+                desc = "Diminue a defesa física do inimigo por 3 turnos";
+                material = 4;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 2;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Desperdício, Orgânico, 0 dano a distância, inimigo fica com menos conhecimento por 3 turnos.
+            case 35:
+                nome = "Desperdício";
+                desc = "Diminue o ganho de conhecimento do inimigo por 3 turnos";
+                material = 5;
+                dano = 0;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 2;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Arremesso de garrafa, Vidro, 3x3 dano a distância, ataque também causa cacos.
+            case 36:
+                nome = "Arremesso de garrafa";
+                desc = "Ataque mediano de Vidro que causa cacos";
+                material = 3;
+                dano = 3;
+                phispe = false;
+                alvo = true;
+                quantidade = 3;
+                carga = 5;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Martelo de brinquedo, Plástico, 1x5 dano físico, deixa o inimigo com 2 exposto.
+            case 37:
+                nome = "Martelo de brinquedo";
+                desc = "Ataque com bastante dano que deixa o inimigo com 2 exposto";
+                material = 2;
+                dano = 5;
+                phispe = true;
+                alvo = true;
+                quantidade = 1;
+                carga = 4;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Tiro de canudo, Plástico, 2x3 dano a distância, cada tiro remove 2 bloqueios.
+            case 38:
+                nome = "Tiro de canudo";
+                desc = "Ataque com dano razoável porém que remove 2 bloqueio ao invés de 1 (3 com carga R)";
+                material = 2;
+                dano = 3;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 4;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Aprender, Papel, 1x3 dano a distância, deixa o inimigo com 2 exposto.
+            case 39:
+                nome = "Aprendendo";
+                desc = "Ataque fraco de papel que deixa o inimigo com 2 exposto";
+                material = 1;
+                dano = 3;
+                phispe = false;
+                alvo = true;
+                quantidade = 1;
+                carga = 3;
+                temEfeito = true;
+                isPassiva = false;
+            break;
+            //Tapa leve, sem material, 1x1 dano físico, não custa nenhum conhecimento.
+            case 40:
+                nome = "Tapa leve";
+                desc = "Ataque muito fraco sem elemento sem custo e sem efeito";
+                material = 0;
+                dano = 1;
+                phispe = true;
+                alvo = true;
+                quantidade = 1;
+                carga = 0;
+                temEfeito = false;
+                isPassiva = false;
+            break;
+            //Barreira perfeita, sem material, 0 dano, coloca 5 bloqueio.
+            case 41:
+                nome = "Barreira Perfeita";
+                desc = "Uma barreira poderosa, coloca 5 bloqueio em si mesmo";
+                material = 0;
+                dano = 0;
+                phispe = false;
+                alvo = false;
+                quantidade = 1;
+                carga = 5;
+                temEfeito = true;
+                isPassiva = false;
+            break;
         }
     }
 
 
     //Especiais:               //Papel:                     //Plastico:                 //Vidro:                        //Metal:                    //Organico
-    //1.Bloquear(Added)        //2.Informado(+defDis)       //3.Duradouro(+defFis)      //4.perfurante(+AtqDis)         //5.Afiado(+atqFis)         //6. Adubando(+Conhec)
-    //7.Exposto                //8.Desisformado(-AtqDis)    //9.Estagnado(-atqFis)      //10.tenderizado(-defDis)       //11.Derretido(-defFis)     //12. Desperdiçando(-Conhec)
+    //1.Bloquear(Added)        //2.Informado(+defDis)       //3.Duradouro(+defFis)      //4.perfurante(+AtqDis)         //5.Afiado(+atqFis)         //6.Adubando(+Conhec)
+    //7.Exposto                //8.Desisformado(-AtqDis)    //9.Estagnado(-atqFis)      //10.tenderizado(-defDis)       //11.Derretido(-defFis)     //12.Desperdiçando(-Conhec)
     //13.                      //14.                        //15.                       //16.Cacos(-Vida)               //17.                       //18.nutrindo(+Vida)
     public void AtaquesComEfeitos(bool quem, int o, int quando, Player player, Enemy enemy)
     {
@@ -811,6 +990,234 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         enemy.efeitosAtivos[18] += 2;
+                    }
+                }
+            break;
+            case 28: //Estilhaços
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[16] += 2;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[16] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[16] += 2;
+                    }
+                }
+            break;
+            case 29: //Suco ácido
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[10] += 3;
+                        enemy.efeitosAtivos[11] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[10] += 1;
+                            enemy.efeitosAtivos[11] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[10] += 3;
+                        player.efeitosAtivos[11] += 3;
+                    }
+                }
+            break;
+            case 31: //Desinformação
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[8] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[8] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[8] += 3;
+                    }
+                }
+            break;
+            case 32: //Estagnado
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[9] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[9] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[9] += 3;
+                    }
+                }
+            break;
+            case 33: //Tenderizar
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[10] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[10] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[10] += 3;
+                    }
+                }
+            break;
+            case 34: //Derreter
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[11] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[11] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[11] += 3;
+                    }
+                }
+            break;
+            case 35: //Desperdício
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[12] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[12] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[12] += 3;
+                    }
+                }
+            break;
+            case 36: //Arremesso de garrafa
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[16] += 3;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[16] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[16] += 3;
+                    }
+                }
+            break;
+            case 37: //Martelo de brinquedo
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[7] += 2;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[7] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[7] += 2;
+                    }
+                }
+            break;
+            case 38: //Tiro de canudo
+                if (quando == 2)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.efeitosAtivos[1] > 0)
+                        {
+                            enemy.efeitosAtivos[1] -= 1;
+                        }
+
+                        if (player.rAgora == true)
+                        {
+                            if (enemy.efeitosAtivos[1] > 0)
+                            {
+                                enemy.efeitosAtivos[1] -= 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (player.efeitosAtivos[1] > 0)
+                        {
+                            player.efeitosAtivos[1] -= 1;
+                        }
+                    }
+                }
+            break;
+            case 39: //Aprendendo
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[7] += 2;
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[7] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[7] += 2;
+                    }
+                }
+            break;
+            case 41: //Barreira perfeita
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        player.efeitosAtivos[1] += 5;
+
+                        if (player.rAgora == true)
+                        {
+                            player.efeitosAtivos[1] += 2;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[1] += 5;
                     }
                 }
             break;

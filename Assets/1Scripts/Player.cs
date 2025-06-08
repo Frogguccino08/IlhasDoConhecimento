@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
         currentR = 0;
         currentHealth = maxHealth;
         healthbar.MaximoVida(maxHealth);
-        text.text = currentHealth + "/" + maxHealth;
+        text.text = nickName + " " + currentHealth + "/" + maxHealth;
         healthbar.MudarBarra(currentHealth);
         
 
@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
             currentHealth = 0;
         }
         healthbar.MudarBarra(currentHealth);
-        text.text = currentHealth + "/" + maxHealth;
+        text.text = nickName + " " + currentHealth + "/" + maxHealth;
     }
 
 
