@@ -263,7 +263,26 @@ public class Player : MonoBehaviour
 
         rAgora = false;
 
+        Debug.Log("Ataque usado: " + nome[id]);
 
+
+        if (alvo[id] == true && dano[id] > 0 && usingR == false && using3R == false)
+        {
+            if (currentR < 3)
+            {
+                currentR++;
+                controlConheci.SpawnRs();
+            }
+        }
+
+        if (usingR == true)
+        {
+            rAgora = true;
+            usingR = false;
+            currentR -= 1;
+            controlConheci.SpawnRs();
+        }
+        
         if (efeitosAtivos[7] > 0)
         {
             quantBlock = efeitosAtivos[1];
@@ -291,27 +310,6 @@ public class Player : MonoBehaviour
         {
             efeitosAtivos[1] = quantBlock;
             Debug.Log("Você esta exposto, não pode receber mais bloquear");
-        }
-
-
-        Debug.Log("Ataque usado: " + nome[id]);
-
-
-        if (alvo[id] == true && dano[id] > 0 && usingR == false && using3R == false)
-        {
-            if (currentR < 3)
-            {
-                currentR++;
-                controlConheci.SpawnRs();
-            }
-        }
-
-        if (usingR == true)
-        {
-            rAgora = true;
-            usingR = false;
-            currentR -= 1;
-            controlConheci.SpawnRs();
         }
 
 
@@ -355,7 +353,7 @@ public class Player : MonoBehaviour
                         {
                             attackDamage = Mathf.Round((float)speDamage * ((modSpeDamage * -1) + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) - (enemy.speDefense - enemy.modSpeDefense));
                         }
-                        
+
                         if (material[id] == enemy.materialInimigo)
                         {
                             attackDamage = Mathf.Round(attackDamage * 0.8f);
@@ -418,9 +416,9 @@ public class Player : MonoBehaviour
                         }
 
                         if (attackDamage <= 0 && dano[id] > 0)
-                            {
-                                attackDamage = 1;
-                            }
+                        {
+                            attackDamage = 1;
+                        }
                         Debug.Log("Dano causado foi físico");
                     }
                     else if (phispe[id] == false)
@@ -435,9 +433,9 @@ public class Player : MonoBehaviour
                         }
 
                         if (attackDamage <= 0 && dano[id] > 0)
-                            {
-                                attackDamage = 1;
-                            }
+                        {
+                            attackDamage = 1;
+                        }
                         Debug.Log("Dano causado foi especial");
                     }
                     Debug.Log("Dano causado ou curado: " + attackDamage);
