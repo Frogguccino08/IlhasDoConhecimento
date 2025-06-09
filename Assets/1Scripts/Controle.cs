@@ -68,6 +68,8 @@ public class Controle : MonoBehaviour
 
     IEnumerator ExecutarTurnoInimigo()
     {
+        DesativarBotao();
+        
         if (enemy.currentHealth <= 0)
         {
             DesativarBotao();
