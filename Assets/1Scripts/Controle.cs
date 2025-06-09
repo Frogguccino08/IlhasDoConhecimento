@@ -283,7 +283,7 @@ public class Controle : MonoBehaviour
         skipButton.SetActive(true);
     }
 
-    IEnumerator EsperarTeclaEspaco()
+    public IEnumerator EsperarTeclaEspaco()
     {
         paraEsperar = true;
 

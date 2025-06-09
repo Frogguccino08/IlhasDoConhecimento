@@ -488,25 +488,29 @@ public class Player : MonoBehaviour
         textoAtaque.text = nickName + " usou: " + nome[id];
 
         if (using3R == false)
-        {
-            StartCoroutine(control.Turno(false));
-        }
-        else if (using3R == true)
-        {
-            using3R = false;
-            if (dano[id] != 0)
             {
-                currentR = -1;
+                if (dano[id] == 0)
+                {
+                    yield return StartCoroutine(control.EsperarTeclaEspaco());
+                }
+                StartCoroutine(control.Turno(false));
             }
-            else
+            else if (using3R == true)
             {
-                currentR = 0;
+                using3R = false;
+                if (dano[id] != 0)
+                {
+                    currentR = -1;
+                }
+                else
+                {
+                    currentR = 0;
+                }
+                controlConheci.SpawnRs();
+                yield return StartCoroutine(UsarAtaque(id));
+                textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
             }
-            controlConheci.SpawnRs();
-            yield return StartCoroutine(UsarAtaque(id));
-            textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
-        }
-
+        
         control.AtaqueFeito();
     }
 
