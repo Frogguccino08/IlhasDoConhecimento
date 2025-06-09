@@ -10,6 +10,7 @@ public class Controle : MonoBehaviour
     public int inimigoAtual = 1;
     public bool paraEsperar = false;
     public bool processguir;
+    public bool pulouTurno = false;
 
     public int pontosRodada;
 
@@ -67,10 +68,10 @@ public class Controle : MonoBehaviour
 
     IEnumerator ExecutarTurnoInimigo()
     {
-        DesativarBotao();
-
         if (enemy.currentHealth <= 0)
         {
+            DesativarBotao();
+
             texto.enabled = true;
             yield return EsperarTeclaEspaco();
 
@@ -79,7 +80,7 @@ public class Controle : MonoBehaviour
             {
                 yield return StartCoroutine(player.Morto());
                 inimigoAtual = 1;
-                inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+                inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
                 yield return EsperarTeclaEspaco();
                 PersonagemSelecionado.instance.Resetar();
                 SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
@@ -97,7 +98,7 @@ public class Controle : MonoBehaviour
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();
             inimigoAtual++;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield break;
         }
 
@@ -329,7 +330,7 @@ public class Controle : MonoBehaviour
 
     public void ColocarPontosInimigoDerrotado()
     {
-        if(player.currentHealth == player.maxHealth)
+        if (player.currentHealth == player.maxHealth)
         {
             pontosRodada += 200;
         }
@@ -337,5 +338,11 @@ public class Controle : MonoBehaviour
         pontosRodada += 500 / ((turno / 2) + 1);
 
         textoArea.text = "Pontuação:\n " + pontosRodada;
+
+        if (pontosRodada > escolha.pontos)
+        {
+            escolha.pontos = pontosRodada;
+            pontMax.text = "Pontuação Máxima: " + escolha.pontos;
+        }
     }
 }

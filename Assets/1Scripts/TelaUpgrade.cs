@@ -34,6 +34,12 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         control.processguir = true;
         oProprio.SetActive(false);
+
+        if (control.pontosRodada > control.escolha.pontos)
+        {
+            control.escolha.pontos = control.pontosRodada;
+            control.pontMax.text = "Pontuação Máxima: " + control.escolha.pontos;
+        }
     }
 
     public void Voltar()
