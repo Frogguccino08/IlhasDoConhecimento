@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public int currentCharge;
     public int currentR;
 
+    //Texto de dano
+    public GameObject danoTxt;
+
 
     public bool usingR = false;
     public bool using3R = false;
@@ -320,7 +323,7 @@ public class Player : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    yield return StartCoroutine(enemy.CorDano(id));
+                    //yield return StartCoroutine(enemy.CorDano(id));
 
                     if (phispe[id] == true)
                     {
@@ -364,6 +367,9 @@ public class Player : MonoBehaviour
                         }
                         Debug.Log("Dano causado foi especial");
                     }
+
+                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
+
                     if (enemy.efeitosAtivos[1] > 0)
                     {
                         EfeitoCausado(0, attackDamage, dano[id]);
@@ -402,7 +408,7 @@ public class Player : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    StartCoroutine(CorDanoSelf(id));
+                    //StartCoroutine(CorDanoSelf(id, attackDamage));
 
                     if (phispe[id] == true)
                     {
@@ -438,6 +444,9 @@ public class Player : MonoBehaviour
                         }
                         Debug.Log("Dano causado foi especial");
                     }
+
+                    StartCoroutine(CorDanoSelf(id, attackDamage));
+
                     Debug.Log("Dano causado ou curado: " + attackDamage);
                     CausarDano(attackDamage);
                 }
@@ -572,9 +581,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator CorDano(int id)
+    public IEnumerator CorDano(int id, float danoAqui)
     {
-        if(enemy.dano[id] > 0)
+        GameObject obj;
+
+        obj = Instantiate(danoTxt, transform.position, Quaternion.identity);
+        obj.GetComponent<DanoTxt>().dano = danoAqui;
+        if (efeitosAtivos[1] > 0)
+        {
+            danoAqui = 0;
+            obj.GetComponent<DanoTxt>().dano = danoAqui;
+        }
+        obj.transform.SetParent(GameObject.Find("Canvas").transform);
+
+        if (enemy.dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
@@ -592,9 +612,15 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
     }
     
-    public IEnumerator CorDanoSelf(int id)
+    public IEnumerator CorDanoSelf(int id, float danoAqui)
     {
-        if(dano[id] > 0)
+        GameObject obj;
+
+        obj = Instantiate(danoTxt, transform.position, Quaternion.identity);
+        obj.GetComponent<DanoTxt>().dano = danoAqui;
+        obj.transform.SetParent(GameObject.Find("Canvas").transform);
+
+        if (dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }

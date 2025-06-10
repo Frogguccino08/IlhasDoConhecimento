@@ -11979,6 +11979,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 353352697}
+  perso: {fileID: 0}
+  player: {fileID: 0}
+  cena:
+    m_Handle: 0
   nomeAtq: {fileID: 1663028367}
   material: {fileID: 1414025845}
   imgMaterial: {fileID: 577958295}
@@ -11986,6 +11990,7 @@ MonoBehaviour:
   carga: {fileID: 1890298430}
   dano: {fileID: 1274298856}
   desc: {fileID: 1131099196}
+  rEmConta: 0
 --- !u!1 &1484289115
 GameObject:
   m_ObjectHideFlags: 0

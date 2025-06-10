@@ -2151,6 +2151,7 @@ MonoBehaviour:
   maxCharge: 0
   currentCharge: 0
   currentR: 0
+  danoTxt: {fileID: 7025367212556292054, guid: d4efbfbdbaddc1d479c9982bbe905cd7, type: 3}
   usingR: 0
   using3R: 0
   phiDamage: 5
@@ -3010,6 +3011,7 @@ MonoBehaviour:
   maxCharge: 0
   currentCharge: 0
   materialInimigo: 0
+  danoTxt: {fileID: 1137570511629793733, guid: 77cff961f1536d4448f208abbaaae206, type: 3}
   phiDamage: 5
   phiDefense: 5
   speDamage: 5
