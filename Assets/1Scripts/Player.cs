@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     public bool rAgora;
 
     public int[] attackID = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public string[] nome = new string[6];
     [HideInInspector]
     public string[] desc = new string[6];
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
     public bool[] alvo = new bool[6];
     [HideInInspector]
     public int[] quantidade = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public int[] carga = new int[6];
     [HideInInspector]
     public bool[] temEfeito = new bool[6];

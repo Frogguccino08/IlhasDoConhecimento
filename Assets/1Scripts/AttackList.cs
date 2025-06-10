@@ -379,7 +379,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Folhas Soltas, papel, 5x1 a distância, Ataque sem efeito.
             case 30:
                 nome = "Folhas soltas";
                 desc = "Ataque extremamente fraco de papel porém que ataca várias vezes";
@@ -392,7 +391,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = false;
                 isPassiva = false;
             break;
-            //Desinformação, Papel, 0 dano a distância, inimigo fica com menos dano a distância por 3 turnos.
             case 31:
                 nome = "Desisformação";
                 desc = "Diminue o dano a distância do inimigo por 3 turnos";
@@ -405,7 +403,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Estagnado, Plástico, 0 dano a distância, inimigo fica com menos dano físico por 3 turnos.
             case 32:
                 nome = "Estagnado";
                 desc = "Diminue o dano físico do inimigo por 3 turnos";
@@ -418,7 +415,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Tenderizar, Vidro, 0 dano a distância, inimigo fica com menos defesa a distância por 3 turnos.
             case 33:
                 nome = "Tenderizar";
                 desc = "Diminue a defesa a distância do inimigo por 3 turnos";
@@ -431,7 +427,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Derreter, Metal, 0 dano a distância, inimigo fica com menos defesa física por 3 turnos.
             case 34:
                 nome = "Derreter";
                 desc = "Diminue a defesa física do inimigo por 3 turnos";
@@ -444,7 +439,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Desperdício, Orgânico, 0 dano a distância, inimigo fica com menos conhecimento por 3 turnos.
             case 35:
                 nome = "Desperdício";
                 desc = "Diminue o ganho de conhecimento do inimigo por 3 turnos";
@@ -457,7 +451,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Arremesso de garrafa, Vidro, 3x3 dano a distância, ataque também causa cacos.
             case 36:
                 nome = "Arremesso de garrafa";
                 desc = "Ataque mediano de Vidro que causa cacos";
@@ -470,7 +463,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Martelo de brinquedo, Plástico, 1x5 dano físico, deixa o inimigo com 2 exposto.
             case 37:
                 nome = "Martelo de brinquedo";
                 desc = "Ataque com bastante dano que deixa o inimigo com 2 exposto";
@@ -483,7 +475,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Tiro de canudo, Plástico, 2x3 dano a distância, cada tiro remove 2 bloqueios.
             case 38:
                 nome = "Tiro de canudo";
                 desc = "Ataque com dano razoável porém que remove 2 bloqueio ao invés de 1 (3 com carga R)";
@@ -496,7 +487,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Aprender, Papel, 1x3 dano a distância, deixa o inimigo com 2 exposto.
             case 39:
                 nome = "Aprendendo";
                 desc = "Ataque fraco de papel que deixa o inimigo com 2 exposto";
@@ -509,7 +499,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
             break;
-            //Tapa leve, sem material, 1x1 dano físico, não custa nenhum conhecimento.
             case 40:
                 nome = "Tapa leve";
                 desc = "Ataque muito fraco sem elemento sem custo e sem efeito";
@@ -522,7 +511,6 @@ public class AttackList : MonoBehaviour
                 temEfeito = false;
                 isPassiva = false;
             break;
-            //Barreira perfeita, sem material, 0 dano, coloca 5 bloqueio.
             case 41:
                 nome = "Barreira Perfeita";
                 desc = "Uma barreira poderosa, coloca 5 bloqueio em si mesmo";
