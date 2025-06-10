@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
         phiDamage = pc.pDamage;
         phiDefense = pc.pDefense;
         speDamage = pc.sDamage;
-        speDefense = pc.sDamage;
+        speDefense = pc.sDefense;
 
         for(i=1; i<19; i++)
         {
