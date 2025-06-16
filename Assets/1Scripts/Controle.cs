@@ -108,8 +108,16 @@ public class Controle : MonoBehaviour
         texto.enabled = true;
         yield return EsperarTeclaEspaco();
 
+        //Escrever o efeito na tela
+        if (player.temEfeito[player.idAtaqueUsado] == true)
+        {
+            Debug.Log("Chegou aqui");
+            texto.text = "Ataque com efeito";
+            yield return EsperarTeclaEspaco();
+        }
+
         if (player.efeitosAtivos[7] > 0)
-            player.quantBlock = player.efeitosAtivos[1];
+                player.quantBlock = player.efeitosAtivos[1];
 
         player.list.AtaquesComEfeitos(true, player.ataqueUsado, 4, player, enemy);
         for (int i = 0; i < 6; i++)
@@ -167,6 +175,14 @@ public class Controle : MonoBehaviour
 
         texto.enabled = true;
         yield return EsperarTeclaEspaco();
+
+        //Escrever o efeito na tela
+        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0)
+        {
+            Debug.Log("Chegou aqui");
+            texto.text = "Ataque com efeito";
+            yield return EsperarTeclaEspaco();
+        }
 
         if (enemy.efeitosAtivos[7] > 0)
             enemy.quantBlock = enemy.efeitosAtivos[1];

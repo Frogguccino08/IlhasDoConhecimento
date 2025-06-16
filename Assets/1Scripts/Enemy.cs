@@ -84,6 +84,8 @@ public class Enemy : MonoBehaviour
     public bool[] temEfeito = new bool[6];
     [HideInInspector]
     public bool[] isPassive = new bool[6];
+    [HideInInspector]
+    public int maximo = 0;
 
 
     void Update()
@@ -669,7 +671,7 @@ public class Enemy : MonoBehaviour
     public void EscolherAtaque()
     {
         int ataqueEscolhido;
-        int maximo = 0;
+        maximo = 0;
         int maiorDano = 0;
         int maiorDanoTemporario = 4;
         int maiorCura = 0;
