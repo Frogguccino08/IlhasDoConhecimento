@@ -552,7 +552,7 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         player.efeitosAtivos[1] += 2;
-                        control.texto.text = player.nome + " Ganhou Escudo";
+                        control.efeitoAtq = player.nickName + " Ganhou Escudo";
 
                         if (player.rAgora == true)
                         {
@@ -562,7 +562,7 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         enemy.efeitosAtivos[1] += 2;
-                        control.texto.text = enemy.nome + " Ganhou Escudo";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ganhou Escudo";
                     }
                 }
             break;
@@ -572,7 +572,7 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         enemy.efeitosAtivos[7] += 3;
-                        control.texto.text = enemy.nome + " Ficou exposto";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ficou exposto";
 
                         if (player.rAgora == true)
                         {
@@ -582,7 +582,7 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         player.efeitosAtivos[7] += 3;
-                        control.texto.text = player.nome + " Ficou exposto";
+                        control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
                 }
             break;
@@ -621,7 +621,7 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         enemy.efeitosAtivos[8] += 3;
-                        control.texto.text = enemy.nome + " Ficou com menos ataque a distância";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ficou com menos ataque a distância";
 
                         if (player.rAgora == true)
                         {
@@ -631,7 +631,7 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         player.efeitosAtivos[8] += 3;
-                        control.texto.text = player.nome + " Ficou com menos ataque a distância";
+                        control.efeitoAtq = player.nickName + " Ficou com menos ataque a distância";
                     }
                 }
             break;
@@ -642,7 +642,7 @@ public class AttackList : MonoBehaviour
                     {
                         player.efeitosAtivos[1] += 2;
                         player.efeitosAtivos[2] += 3;
-                        control.texto.text = player.nome + " Ganhou escudo e defesa a distância";
+                        control.efeitoAtq = player.nickName + " Ganhou escudo e defesa a distância";
 
                         if (player.rAgora == true)
                         {
@@ -654,7 +654,7 @@ public class AttackList : MonoBehaviour
                     {
                         enemy.efeitosAtivos[1] += 2;
                         enemy.efeitosAtivos[2] += 3;
-                        control.texto.text = enemy.nome + " Ganhou escudo e defesa a distância";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa a distância";
                     }
                 }
             break;
@@ -693,7 +693,7 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         enemy.efeitosAtivos[9] += 3;
-                        control.texto.text = enemy.nome + " Ficou com menos ataque físico";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ficou com menos ataque físico";
 
                         if (player.rAgora == true)
                         {
@@ -703,7 +703,7 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         player.efeitosAtivos[9] += 3;
-                        control.texto.text = player.nome + " Ficou com menos ataque físico";
+                        control.efeitoAtq = player.nickName + " Ficou com menos ataque físico";
                     }
                 }
             break;
@@ -714,7 +714,7 @@ public class AttackList : MonoBehaviour
                     {
                         player.efeitosAtivos[1] += 2;
                         player.efeitosAtivos[3] += 3;
-                        control.texto.text = player.nome + " Ganhou escudo e defesa física";
+                        control.efeitoAtq = player.nickName + " Ganhou escudo e defesa física";
 
                         if (player.rAgora == true)
                         {
@@ -726,7 +726,7 @@ public class AttackList : MonoBehaviour
                     {
                         enemy.efeitosAtivos[1] += 2;
                         enemy.efeitosAtivos[3] += 3;
-                        control.texto.text = enemy.nome + " Ganhou escudo e defesa física";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
                     }
                 }
             break;
@@ -767,7 +767,7 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         enemy.efeitosAtivos[10] += 3;
-                        control.texto.text = player.nome + " Ficou com menos defesa a distância";
+                        control.efeitoAtq = player.nickName + " Ficou com menos defesa a distância";
 
                         if (player.rAgora == true)
                         {
@@ -777,7 +777,7 @@ public class AttackList : MonoBehaviour
                     else
                     {
                         player.efeitosAtivos[10] += 3;
-                        control.texto.text = enemy.nome + " Ficou com menos defesa a distância";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ficou com menos defesa a distância";
                     }
                 }
             break;
@@ -788,7 +788,7 @@ public class AttackList : MonoBehaviour
                     {
                         player.efeitosAtivos[1] += 2;
                         player.efeitosAtivos[4] += 3;
-                        control.texto.text = player.nome + " Ganhou escudo e ataque a distância";
+                        control.efeitoAtq = player.nickName + " Ganhou escudo e ataque a distância";
 
                         if (player.rAgora == true)
                         {
@@ -800,7 +800,7 @@ public class AttackList : MonoBehaviour
                     {
                         enemy.efeitosAtivos[1] += 2;
                         enemy.efeitosAtivos[4] += 3;
-                        control.texto.text = enemy.nome + " Ganhou escudo e defesa física";
+                        control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
                     }
                 }
             break;
