@@ -3065,6 +3065,7 @@ MonoBehaviour:
   carga: 000000000000000000000000000000000000000000000000
   temEfeito: 000000000000
   isPassive: 000000000000
+  maximo: 0
 --- !u!222 &265112127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5441,6 +5442,7 @@ MonoBehaviour:
   inimigoTurno: {fileID: 1933100070}
   descricao: {fileID: 1984335213}
   descricaoGrande: {fileID: 560313086}
+  efeitoAtq: 
   escolha: {fileID: 0}
   textoArea: {fileID: 445400574}
 --- !u!4 &618230585
@@ -8789,7 +8791,6 @@ MonoBehaviour:
   costaDeCacosNL3:
   - {fileID: 11400000, guid: 861b9bde21b03b044a9f196c98e7dda7, type: 2}
   - {fileID: 11400000, guid: 52d2ce8132e97cf419cf8bf697da668f, type: 2}
-  costaDeCacosNL4: []
   coracaoDaIlhaNL1:
   - {fileID: 11400000, guid: 4b49cf0b0aba3f746b415d6f80aee7c9, type: 2}
   coracaoDaIlhaNL2:
@@ -8798,7 +8799,6 @@ MonoBehaviour:
   coracaoDaIlhaNL3:
   - {fileID: 11400000, guid: 71456acee37bef9408cd668ccefd1573, type: 2}
   - {fileID: 11400000, guid: 8dd95e4128f79434782f08cddca21a91, type: 2}
-  coracaoDaIlhaNL4: []
   comunidadeAbandonadaNL1:
   - {fileID: 11400000, guid: 4a0849d6c0308d44a80769fea5fa9cc4, type: 2}
   comunidadeAbandonadaNL2:
@@ -8807,7 +8807,6 @@ MonoBehaviour:
   comunidadeAbandonadaNL3:
   - {fileID: 11400000, guid: 93b8bc7d65eab4b4994fd4e9c7b1e389, type: 2}
   - {fileID: 11400000, guid: 6b2fdb2286862b94bbb23262b50deb1d, type: 2}
-  comunidadeAbandonadaNL4: []
   osArquivosNL1:
   - {fileID: 11400000, guid: 76d9a17d07d199d4083d6fe7e97a71ef, type: 2}
   osArquivosNL2:
@@ -8816,7 +8815,6 @@ MonoBehaviour:
   osArquivosNL3:
   - {fileID: 11400000, guid: 93b8bc7d65eab4b4994fd4e9c7b1e389, type: 2}
   - {fileID: 11400000, guid: 6df40f8d1aabf014280af86dbbfa70c4, type: 2}
-  osArquivosNL4: []
   florestaCompostaNL1:
   - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}
   florestaCompostaNL2:
@@ -8825,7 +8823,6 @@ MonoBehaviour:
   florestaCompostaNL3:
   - {fileID: 11400000, guid: 83974b6e041d7aa4d809fc92d85364e8, type: 2}
   - {fileID: 11400000, guid: 390a3e75f2c39ed408fc2457a4273491, type: 2}
-  florestaCompostaNL4: []
 --- !u!4 &1052532595
 Transform:
   m_ObjectHideFlags: 0
@@ -10998,6 +10995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eff71991914bec47959c10698aad323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  control: {fileID: 618230584}
   nome: 
   desc: 
   material: 0

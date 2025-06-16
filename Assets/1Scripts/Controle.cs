@@ -26,6 +26,7 @@ public class Controle : MonoBehaviour
 
     public GameObject descricao;
     public GameObject descricaoGrande;
+    public string efeitoAtq;
 
     public PersonagemSelecionado escolha;
     public TMP_Text textoArea;
@@ -111,8 +112,7 @@ public class Controle : MonoBehaviour
         //Escrever o efeito na tela
         if (player.temEfeito[player.idAtaqueUsado] == true)
         {
-            Debug.Log("Chegou aqui");
-            texto.text = "Ataque com efeito";
+            texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
         }
 
@@ -179,8 +179,7 @@ public class Controle : MonoBehaviour
         //Escrever o efeito na tela
         if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0)
         {
-            Debug.Log("Chegou aqui");
-            texto.text = "Ataque com efeito";
+            texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
         }
 
