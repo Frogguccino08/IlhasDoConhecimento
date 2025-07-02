@@ -3,11 +3,16 @@ using UnityEngine;
 
 public class Bloqueio : MonoBehaviour
 {
-    public int TuOuOutro;
+    //Chamados de outro objeto
     public TMP_Text texto;
     public Player player;
     public Enemy enemy;
 
+    //Variáveis que precisa
+    public int TuOuOutro;
+
+
+    //Função que escreve a quantidade de escudo que o personagem tem na tela
     void Update()
     {
         if (TuOuOutro == 0)

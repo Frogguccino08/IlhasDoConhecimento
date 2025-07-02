@@ -3,29 +3,34 @@ using UnityEngine;
 
 public class ConhecimentoControl : MonoBehaviour
 {
+    //Chamado de outros Objetos
     public GameObject Vazio;
     public GameObject Cheio;
     public GameObject R;
     public Canvas canva;
     public Player player;
 
+    //Variaveis que precisa
     int i;
     int o;
 
     public List<GameObject> conhecimentosInstanciados = new List<GameObject>();
     public List<GameObject> RAtivos = new List<GameObject>();
 
+
+    //Função Update que troca a cor dos "R" dependendo de qual ta usando
     public void Update()
     {
-        if(player.usingR == true)
+        if (player.usingR == true)
         {
             int sla = RAtivos.Count - 1;
 
             if (RAtivos[sla] != null)
-                {
-                    RAtivos[sla].GetComponent<UnityEngine.UI.Image>().color = new Color32(135, 69, 25, 255);
-                }
-        }else if(player.usingR == false && player.currentR != 0)
+            {
+                RAtivos[sla].GetComponent<UnityEngine.UI.Image>().color = new Color32(135, 69, 25, 255);
+            }
+        }
+        else if (player.usingR == false && player.currentR != 0)
         {
             int sla = RAtivos.Count - 1;
 
@@ -35,20 +40,21 @@ public class ConhecimentoControl : MonoBehaviour
             }
         }
 
-        if(player.using3R == true && player.usingR == false)
+        if (player.using3R == true && player.usingR == false)
         {
-            foreach(GameObject objR in RAtivos)
+            foreach (GameObject objR in RAtivos)
             {
-                if(objR != null)
+                if (objR != null)
                 {
                     objR.GetComponent<UnityEngine.UI.Image>().color = new Color32(135, 69, 25, 255);
                 }
             }
-        }else if(player.using3R == false && player.usingR == false && player.currentR != 0)
+        }
+        else if (player.using3R == false && player.usingR == false && player.currentR != 0)
         {
-            foreach(GameObject objR in RAtivos)
+            foreach (GameObject objR in RAtivos)
             {
-                if(objR != null)
+                if (objR != null)
                 {
                     objR.GetComponent<UnityEngine.UI.Image>().color = new Color32(24, 24, 24, 255);
                 }
@@ -56,6 +62,7 @@ public class ConhecimentoControl : MonoBehaviour
         }
     }
 
+    //Função que faz aparecer a quantidade de conhecimento que tem, tanto vazio quanto cheio
     public void SpawnConhecimento(int maximo, int atual)
     {
         foreach (GameObject obj in conhecimentosInstanciados)
@@ -65,7 +72,7 @@ public class ConhecimentoControl : MonoBehaviour
                 Destroy(obj);
             }
         }
-        conhecimentosInstanciados.Clear(); 
+        conhecimentosInstanciados.Clear();
 
 
         for (i = 0; i < maximo; i++)
@@ -86,6 +93,7 @@ public class ConhecimentoControl : MonoBehaviour
         }
     }
 
+    //Função que faz aparecer a quantidade de carga R que tem
     public void SpawnRs()
     {
         foreach (GameObject objR in RAtivos)
@@ -95,7 +103,7 @@ public class ConhecimentoControl : MonoBehaviour
                 Destroy(objR);
             }
         }
-        RAtivos.Clear(); 
+        RAtivos.Clear();
 
         for (o = 1; o <= 3; o++)
         {

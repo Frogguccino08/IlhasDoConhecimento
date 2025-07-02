@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AttackList : MonoBehaviour
 {
+    //Chamado de outro objeto
     public Controle control;
 
     //Variaveis que um ataque precisa:
@@ -17,6 +18,7 @@ public class AttackList : MonoBehaviour
     public bool isPassiva = false;
 
 
+    //Função que cria o ataque dentro do inimigo ou aliado
     public void CriarAtaque(int i)
     {
         switch (i)
@@ -32,7 +34,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 1:
                 nome = "Ataque purificador";
                 desc = "Ataque físico comum com o mesmo material de quem o utiliza";
@@ -44,7 +46,7 @@ public class AttackList : MonoBehaviour
                 carga = 1;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 2:
                 nome = "Disparo purificador";
                 desc = "Ataque a distância comum com o mesmo material de quem o utiliza";
@@ -56,7 +58,7 @@ public class AttackList : MonoBehaviour
                 carga = 1;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 3:
                 nome = "Bloquear";
                 desc = "Recebe 2 bloqueio o ataque é do material de quem utiliza";
@@ -68,7 +70,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 4:
                 nome = "Expor inimigo";
                 desc = "Faz o inimigo não poder aumentar seu bloqueio por 2 turnos";
@@ -80,7 +82,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 5:
                 nome = "Leitura";
                 desc = "após ser atacado tem chance de aumentar sua defesa a distância";
@@ -92,7 +94,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = true;
                 isPassiva = true;
-            break;
+                break;
             case 6:
                 nome = "Corte de papel";
                 desc = "Ataque mais forte de papel que diminue o dano a distancia do inimigo";
@@ -104,7 +106,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 7:
                 nome = "Tornado de origami";
                 desc = "Um ataque poderoso de papel sem efeitos extra";
@@ -116,7 +118,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 8:
                 nome = "Capa grossa";
                 desc = "Recebe 2 cargas de bloqueio e aumenta sua defesa a distância";
@@ -128,7 +130,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 9:
                 nome = "Material resistênte";
                 desc = "após ser atacado tem chance de aumentar defesa física";
@@ -140,7 +142,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = true;
                 isPassiva = true;
-            break;
+                break;
             case 10:
                 nome = "Arremesso de material";
                 desc = "Ataque mais forte de plástico que diminue dano físico do alvo";
@@ -152,7 +154,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 11:
                 nome = "Lançamento de brinquedos";
                 desc = "Ataque poderoso de plástico sem efeito extra";
@@ -164,7 +166,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 12:
                 nome = "Barreira de montar";
                 desc = "Recebe duas cargas de bloqueio e aumenta sua defesa física";
@@ -176,7 +178,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 13:
                 nome = "Quebrar espelho";
                 desc = "Ao fazer um ataque de vidro tem chance de aumentar seu dano a distância";
@@ -188,7 +190,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = true;
                 isPassiva = true;
-            break;
+                break;
             case 14:
                 nome = "Atirar agulhas";
                 desc = "Ataque mais forte de vidro que diminue a defesa a distância do alvo";
@@ -200,7 +202,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 15:
                 nome = "Raio refletido";
                 desc = "Ataque poderoso de vidro sem efeito extra";
@@ -212,7 +214,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 16:
                 nome = "Barreira refletora";
                 desc = "Recebe duas cargas de bloqueio e aumenta seu ataque a distância";
@@ -224,7 +226,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 17:
                 nome = "Pontas afiadas";
                 desc = "Ao fazer um ataque de metal tem chance de aumentar seu dano físico";
@@ -236,7 +238,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = true;
                 isPassiva = true;
-            break;
+                break;
             case 18:
                 nome = "Lâmina afiada";
                 desc = "Ataque mais forte de metal que diminue a defesa física do alvo";
@@ -248,7 +250,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 19:
                 nome = "batida pesada";
                 desc = "Ataque poderoso de metal sem efeito extra";
@@ -260,7 +262,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 20:
                 nome = "Casca de metal";
                 desc = "Recebe duas cargas de bloqueio e aumenta seu ataque físico";
@@ -272,7 +274,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 21:
                 nome = "Absorção";
                 desc = "Após usar um ataque no inimigo tem uma chance de aumentar seu ganho de conhecimento";
@@ -284,7 +286,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = true;
                 isPassiva = true;
-            break;
+                break;
             case 22:
                 nome = "Golpe de restos";
                 desc = "Ataque mais forte Orgânico que diminue o ganho de conhecimento do inimigo";
@@ -296,7 +298,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 23:
                 nome = "Batida de sujeira";
                 desc = "Um ataque poderoso Orgânico sem efeito extra";
@@ -308,7 +310,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 24:
                 nome = "Bloqueio vivo";
                 desc = "Recebe duas cargas de bloqueio e por 2 turnos recupera parte da vida";
@@ -320,7 +322,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 25:
                 nome = "Aumentar Marcha";
                 desc = "Aumenta seu dano físico por 2 turnos mas diminue a defesa física pelo mesmo tempo";
@@ -332,7 +334,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 26:
                 nome = "Espalhar cacos";
                 desc = "Ataque extremamente fraco de vidro que coloca cacos no inimigo (causa dano no final do turno)";
@@ -344,7 +346,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 27:
                 nome = "Reciclar vida";
                 desc = "Cura parte da própria vida e continua curando por mais 2 turnos";
@@ -356,7 +358,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 28:
                 nome = "Estilhaços";
                 desc = "Ataque fraco de metal que causa cacos no inimigo";
@@ -368,7 +370,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 29:
                 nome = "Suco ácido";
                 desc = "diminue a defesa física e a distância do alvo por 3 turnos";
@@ -380,7 +382,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 30:
                 nome = "Folhas soltas";
                 desc = "Ataque extremamente fraco de papel porém que ataca várias vezes";
@@ -392,7 +394,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 31:
                 nome = "Desisformação";
                 desc = "Diminue o dano a distância do inimigo por 3 turnos";
@@ -404,7 +406,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 32:
                 nome = "Estagnado";
                 desc = "Diminue o dano físico do inimigo por 3 turnos";
@@ -416,7 +418,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 33:
                 nome = "Tenderizar";
                 desc = "Diminue a defesa a distância do inimigo por 3 turnos";
@@ -428,7 +430,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 34:
                 nome = "Derreter";
                 desc = "Diminue a defesa física do inimigo por 3 turnos";
@@ -440,7 +442,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 35:
                 nome = "Desperdício";
                 desc = "Diminue o ganho de conhecimento do inimigo por 3 turnos";
@@ -452,7 +454,7 @@ public class AttackList : MonoBehaviour
                 carga = 2;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 36:
                 nome = "Arremesso de garrafa";
                 desc = "Ataque mediano de Vidro que causa cacos";
@@ -464,7 +466,7 @@ public class AttackList : MonoBehaviour
                 carga = 5;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 37:
                 nome = "Martelo de brinquedo";
                 desc = "Ataque com bastante dano que deixa o inimigo com 2 exposto";
@@ -476,7 +478,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 38:
                 nome = "Tiro de canudo";
                 desc = "Ataque com dano razoável porém que remove 2 bloqueio ao invés de 1 (3 com carga R)";
@@ -488,7 +490,7 @@ public class AttackList : MonoBehaviour
                 carga = 4;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 39:
                 nome = "Aprendendo";
                 desc = "Ataque fraco de papel que deixa o inimigo com 2 exposto";
@@ -500,7 +502,7 @@ public class AttackList : MonoBehaviour
                 carga = 3;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
             case 40:
                 nome = "Tapa leve";
                 desc = "Ataque muito fraco sem elemento sem custo e sem efeito";
@@ -512,7 +514,7 @@ public class AttackList : MonoBehaviour
                 carga = 0;
                 temEfeito = false;
                 isPassiva = false;
-            break;
+                break;
             case 41:
                 nome = "Barreira Perfeita";
                 desc = "Uma barreira poderosa, coloca 5 bloqueio em si mesmo";
@@ -524,7 +526,7 @@ public class AttackList : MonoBehaviour
                 carga = 5;
                 temEfeito = true;
                 isPassiva = false;
-            break;
+                break;
         }
     }
 
@@ -533,6 +535,8 @@ public class AttackList : MonoBehaviour
     //1.Bloquear(Added)        //2.Informado(+defDis)       //3.Duradouro(+defFis)      //4.perfurante(+AtqDis)         //5.Afiado(+atqFis)         //6.Adubando(+Conhec)
     //7.Exposto                //8.Desisformado(-AtqDis)    //9.Estagnado(-atqFis)      //10.tenderizado(-defDis)       //11.Derretido(-defFis)     //12.Desperdiçando(-Conhec)
     //13.                      //14.                        //15.                       //16.Cacos(-Vida)               //17.                       //18.nutrindo(+Vida)
+    
+    //Função que usa efeitos caso o ataque tenha
     public void AtaquesComEfeitos(bool quem, int o, int quando, Player player, Enemy enemy)
     {
         //'quem' true == player, false == enemy.
@@ -565,7 +569,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou Escudo";
                     }
                 }
-            break;
+                break;
             case 4: //Expor inimigo
                 if (quando == 0)
                 {
@@ -585,7 +589,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
                 }
-            break;
+                break;
             case 5: //Leitura
                 if (quando == 3)
                 {
@@ -614,7 +618,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 6: //Corte de Papel
                 if (quando == 0)
                 {
@@ -634,7 +638,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos ataque a distância";
                     }
                 }
-            break;
+                break;
             case 8: //Capa grossa
                 if (quando == 0)
                 {
@@ -657,7 +661,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa a distância";
                     }
                 }
-            break;
+                break;
             case 9: //Material resistênte
                 if (quando == 3)
                 {
@@ -686,7 +690,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 10: //Arremesso de material
                 if (quando == 0)
                 {
@@ -706,7 +710,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos ataque físico";
                     }
                 }
-            break;
+                break;
             case 12: //Barreira de montar
                 if (quando == 0)
                 {
@@ -729,7 +733,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
                     }
                 }
-            break;
+                break;
             case 13: //Quebrar espelho
                 if (quando == 2)
                 {
@@ -760,7 +764,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 14: //Atirar agulhas
                 if (quando == 0)
                 {
@@ -780,7 +784,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ficou com menos defesa a distância";
                     }
                 }
-            break;
+                break;
             case 16: //Barreira refletora
                 if (quando == 0)
                 {
@@ -803,7 +807,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
                     }
                 }
-            break;
+                break;
             case 17: //Pontas afiadas
                 if (quando == 2)
                 {
@@ -834,7 +838,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 18: //Lâmina afiada
                 if (quando == 0)
                 {
@@ -854,7 +858,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos defesa física";
                     }
                 }
-            break;
+                break;
             case 20: //Casca de metal
                 if (quando == 0)
                 {
@@ -877,7 +881,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ganhou escudo e ataque físico";
                     }
                 }
-            break;
+                break;
             case 21: //Absorção
                 if (quando == 2)
                 {
@@ -907,7 +911,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 22: //Golpe de restos
                 if (quando == 0)
                 {
@@ -927,7 +931,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos conhecimento";
                     }
                 }
-            break;
+                break;
             case 24: //Bloqueio vivo
                 if (quando == 0)
                 {
@@ -950,7 +954,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e mais conhecimento";
                     }
                 }
-            break;
+                break;
             case 25: //Aumentar Marcha
                 if (quando == 0)
                 {
@@ -972,7 +976,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Aumentou o dano físico porém diminuiu defesa física";
                     }
                 }
-            break;
+                break;
             case 26: //Espalhar cacos
                 if (quando == 0)
                 {
@@ -992,7 +996,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com cacos";
                     }
                 }
-            break;
+                break;
             case 27: //Reciclar vida
                 if (quando == 0)
                 {
@@ -1012,7 +1016,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Esta se nutrindo";
                     }
                 }
-            break;
+                break;
             case 28: //Estilhaços
                 if (quando == 0)
                 {
@@ -1032,7 +1036,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com cacos";
                     }
                 }
-            break;
+                break;
             case 29: //Suco ácido
                 if (quando == 0)
                 {
@@ -1055,7 +1059,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos defesa física e a distância";
                     }
                 }
-            break;
+                break;
             case 31: //Desinformação
                 if (quando == 0)
                 {
@@ -1075,7 +1079,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos ataque a distância";
                     }
                 }
-            break;
+                break;
             case 32: //Estagnado
                 if (quando == 0)
                 {
@@ -1095,7 +1099,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos ataque físico";
                     }
                 }
-            break;
+                break;
             case 33: //Tenderizar
                 if (quando == 0)
                 {
@@ -1115,7 +1119,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos defesa a distância";
                     }
                 }
-            break;
+                break;
             case 34: //Derreter
                 if (quando == 0)
                 {
@@ -1135,7 +1139,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos defesa física";
                     }
                 }
-            break;
+                break;
             case 35: //Desperdício
                 if (quando == 0)
                 {
@@ -1155,7 +1159,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com menos conhecimento";
                     }
                 }
-            break;
+                break;
             case 36: //Arremesso de garrafa
                 if (quando == 0)
                 {
@@ -1175,7 +1179,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou com cacos";
                     }
                 }
-            break;
+                break;
             case 37: //Martelo de brinquedo
                 if (quando == 0)
                 {
@@ -1195,7 +1199,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
                 }
-            break;
+                break;
             case 38: //Tiro de canudo
                 if (quando == 2)
                 {
@@ -1224,7 +1228,7 @@ public class AttackList : MonoBehaviour
                         }
                     }
                 }
-            break;
+                break;
             case 39: //Aprendendo
                 if (quando == 0)
                 {
@@ -1244,7 +1248,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
                 }
-            break;
+                break;
             case 41: //Barreira perfeita
                 if (quando == 0)
                 {
@@ -1264,7 +1268,7 @@ public class AttackList : MonoBehaviour
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo";
                     }
                 }
-            break;
+                break;
         }
     }
 }
