@@ -6,6 +6,7 @@ using System.Collections;
 
 public class Controle : MonoBehaviour
 {
+    //Variaveis
     public int turno = 0;
     public int inimigoAtual = 1;
     public bool paraEsperar = false;
@@ -14,6 +15,7 @@ public class Controle : MonoBehaviour
 
     public int pontosRodada;
 
+    //Chamados de outros Objetos
     public Player player;
     public Butao[] butao = new Butao[6];
     public GameObject skipButton;
@@ -31,6 +33,8 @@ public class Controle : MonoBehaviour
     public PersonagemSelecionado escolha;
     public TMP_Text textoArea;
 
+
+    //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
     {
         escolha = PersonagemSelecionado.instance;
@@ -48,6 +52,7 @@ public class Controle : MonoBehaviour
         inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
     }
 
+    //Função responsável por trocar de turno
     public IEnumerator Turno(bool isTurnoAliado)
     {
         if (turno != 0)
@@ -64,9 +69,10 @@ public class Controle : MonoBehaviour
         }
 
         turno++;
-        inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+        inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
     }
 
+    //O nome é turno inimigo porém essa função lida também com o final do turno aliado além do turno inimigo
     IEnumerator ExecutarTurnoInimigo()
     {
         DesativarBotao();
@@ -246,17 +252,19 @@ public class Controle : MonoBehaviour
     }
 
 
+    //Função que espera o jogador selecionar algo na tela de upgrade antes de processeguir
     public IEnumerator TelaUpgrade()
     {
         processguir = false;
 
-        while(processguir == false)
+        while (processguir == false)
         {
             yield return null;
         }
     }
 
 
+    //Função que confere se o botão dos ataques pode ser clicado ou não
     void AtualizarEstadoBotoes()
     {
         for (int i = 0; i < 6; i++)
@@ -274,6 +282,7 @@ public class Controle : MonoBehaviour
         }
     }
 
+    //Função que desativa os botões de ataque
     public void DesativarBotao()
     {
         for (int i = 0; i < 6; i++)
@@ -285,9 +294,10 @@ public class Controle : MonoBehaviour
         skipButton.SetActive(false);
         descricao.SetActive(false);
         descricaoGrande.SetActive(false);
-        
+
     }
 
+    //Função que ativa os botões de ataque
     public void AtivarBotao()
     {
         for (int i = 0; i < 6; i++)
@@ -301,6 +311,7 @@ public class Controle : MonoBehaviour
         skipButton.SetActive(true);
     }
 
+    //Função responsável por fazer o jogo esperar o botão ser clicado para continuar quando tem um texto na tela
     public IEnumerator EsperarTeclaEspaco()
     {
         paraEsperar = true;
@@ -312,6 +323,7 @@ public class Controle : MonoBehaviour
         paraEsperar = false;
     }
 
+    //Função que muda o texto da região que você está e depois troca para os pontos
     IEnumerator TextoRegiao()
     {
         switch (escolha.regiao)
@@ -337,14 +349,16 @@ public class Controle : MonoBehaviour
         textoArea.text = "Pontuação:\n " + pontosRodada;
     }
 
+    //Função que remove o aviso para o programa que o ataque foi utilizado
     public void AtaqueFeito()
     {
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             butao[i].ataqueUtilizado = false;
         }
     }
 
+    //Função que coloca a quantidade de pontos quando você derrota um inimigo
     public void ColocarPontosInimigoDerrotado()
     {
         if (player.currentHealth == player.maxHealth)

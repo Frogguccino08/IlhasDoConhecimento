@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class Descricao : MonoBehaviour
 {
+    //Chamado de outros objetos
     public AttackList list;
     public PersonagemSelecionado perso;
     public Player player;
     public Scene cena;
 
+    //Chamado de objetos dentro da própria descrição
     public TMP_Text nomeAtq;
     public TMP_Text material;
     public Image imgMaterial;
@@ -18,8 +20,11 @@ public class Descricao : MonoBehaviour
     public TMP_Text dano;
     public TMP_Text desc;
 
+    //Variável
     public int rEmConta = 0;
 
+
+    //Função responsável por toda a parte de escrever toda a descrição
     public void BotandoDescricao(int id)
     {
         cena = SceneManager.GetActiveScene();
@@ -141,7 +146,8 @@ public class Descricao : MonoBehaviour
                     if (list.dano > list.dano + player.modSpeDamage + rEmConta && list.dano > 0)
                     {
                         dano.color = Color.red;
-                    } else if (list.dano > list.dano + player.modSpeDamage + rEmConta && list.dano < 0)
+                    }
+                    else if (list.dano > list.dano + player.modSpeDamage + rEmConta && list.dano < 0)
                     {
                         dano.color = Color.green;
                     }
