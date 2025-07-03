@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Objeto feito para salvar a lista de inimigos que podem aparecer para cada região
 public class EnemyList : MonoBehaviour
 {
     public List<Object> costaDeCacosNL1;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    //Chamados de outros objetos
     public Controle control;
     public GameObject oProprio;
     public Player player;
@@ -21,12 +22,16 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public TMP_Text texto;
     public GameObject fundo;
 
+    public GameObject desc;
+
+    //Variáveis
     public int idAtaque;
     public int idAtaqueAntigo;
 
     public int ataque;
-    public GameObject desc;
+    
 
+    //Função colocada no botão de pular, adiciona pontos e vai pro proximo turno
     public void Pular()
     {
         control.pontosRodada += 100;
@@ -42,6 +47,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
     }
 
+    //Botão de voltar de todas as telas de volta para a tela inicial do upgrade
     public void Voltar()
     {
         telaInicial.SetActive(true);
@@ -50,6 +56,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         telaAtaquesAntigos.SetActive(false);
     }
 
+    //Função que abre a tela de atributos
     public void Atributos()
     {
         telaInicial.SetActive(false);
@@ -57,6 +64,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         telaAtaques.SetActive(false);
     }
 
+    //Função que abre a tela de novos ataques
     public void Ataques()
     {
         telaInicial.SetActive(false);
@@ -64,9 +72,10 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         telaAtaques.SetActive(true);
     }
 
+    //Função que aumenta um atributo baseado em qual botão você clicar
     public void AtributoIncrease(int i)
     {
-        switch(i)
+        switch (i)
         {
             case 0:
                 player.maxHealth += 25;
@@ -77,73 +86,78 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
             case 1:
                 player.maxCharge += 1;
                 player.controlConheci.SpawnConhecimento(player.maxCharge, player.currentCharge);
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
             case 2:
                 player.phiDamage += 1;
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
             case 3:
                 player.speDamage += 1;
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
             case 4:
                 player.phiDefense += 1;
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
             case 5:
                 player.speDefense += 1;
 
                 control.processguir = true;
                 oProprio.SetActive(false);
-            break;
+                break;
         }
     }
 
+    //Botão que escolhe quais ataques vão aparecer na parte de ataques
     public void FazerAtaques()
     {
         do
         {
             idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
-        }while(osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
+        } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
         list.CriarAtaque(idAtaque);
 
         texto.text = list.nome;
 
-        if(list.material == 0)
+        if (list.material == 0)
         {
             list.material = player.materialPlayer;
         }
 
-        if(list.material == 1)
+        if (list.material == 1)
         {
             //Papel
             fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
-        }else if(list.material == 2)
+        }
+        else if (list.material == 2)
         {
             //Plastico
             fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
-        }else if(list.material == 3)
+        }
+        else if (list.material == 3)
         {
             //Vidro
             fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
-        }else if(list.material == 4)
+        }
+        else if (list.material == 4)
         {
             //Metal
             fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
-        }else if(list.material == 5)
+        }
+        else if (list.material == 5)
         {
             //Organico
             fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
@@ -152,6 +166,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         ataque = idAtaque;
     }
 
+    //Função que faz mostrar os ataques antigos quando você clica em um ataque e já está sem espaço para novos ataques
     public void FazerAtaquesAntigo(int idzinho)
     {
         idAtaqueAntigo = player.attackID[idzinho];
@@ -159,32 +174,37 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         texto.text = list.nome;
 
-        if(list.material == 0)
+        if (list.material == 0)
         {
             list.material = player.materialPlayer;
         }
 
-        if(list.nome == "- -")
+        if (list.nome == "- -")
         {
             //Nenhum ataque
             fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
-        }else if(list.material == 1)
+        }
+        else if (list.material == 1)
         {
             //Papel
             fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
-        }else if(list.material == 2)
+        }
+        else if (list.material == 2)
         {
             //Plastico
             fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
-        }else if(list.material == 3)
+        }
+        else if (list.material == 3)
         {
             //Vidro
             fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
-        }else if(list.material == 4)
+        }
+        else if (list.material == 4)
         {
             //Metal
             fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
-        }else if(list.material == 5)
+        }
+        else if (list.material == 5)
         {
             //Organico
             fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
@@ -193,24 +213,26 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         ataque = idAtaqueAntigo;
     }
 
+    //Função ao clicar em um ataque novo coloca no proximo espaço livre ou abre a tela de ataques antigos
     public void ClicouAtaqueNovo()
     {
-        if(player.attackID[5] != 0)
+        if (player.attackID[5] != 0)
         {
             oProprio.GetComponent<TelaUpgrade>().idAtaque = idAtaque;
             telaAtaquesAntigos.SetActive(true);
-        }else
+        }
+        else
         {
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
-                if(player.attackID[i] == 0)
+                if (player.attackID[i] == 0)
                 {
                     player.attackID[i] = idAtaque;
 
                     player.AtaquesSelecionados();
 
 
-                    for(int o = 0; o < 6; o++)
+                    for (int o = 0; o < 6; o++)
                     {
                         butoes[o].ColocandoAtaque(o);
                     }
@@ -224,34 +246,37 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
     }
 
+    //Função de mudar o ataque antigo para o novo quando clicar nele
     public void ClicouAtaqueSubstituir()
     {
         player.attackID[idAtaque] = oProprio.GetComponent<TelaUpgrade>().idAtaque;
         player.AtaquesSelecionados();
 
-        for(int o = 0; o < 6; o++)
+        for (int o = 0; o < 6; o++)
         {
             butoes[o].ColocandoAtaque(o);
         }
-        
+
         control.processguir = true;
         oProprio.SetActive(false);
         telaAtaques.SetActive(false);
         telaAtaquesAntigos.SetActive(false);
     }
 
+    //Função aparecer descrição dos ataques quando passar o mouse por cima
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(desc != null)
+        if (desc != null)
         {
             desc.GetComponent<Descricao>().BotandoDescricao(ataque);
             desc.SetActive(true);
         }
     }
 
+    //Função para sumir a descrição para tirar o mouse
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(desc != null)
+        if (desc != null)
         {
             desc.SetActive(false);
         }

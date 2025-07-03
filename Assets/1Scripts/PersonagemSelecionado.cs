@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PersonagemSelecionado : MonoBehaviour
 {
+    //Variaveis necessarias para o objeto não destrutivo
     public static PersonagemSelecionado instance;
     public PCsSO perso;
     public int regiao;
     public int pontos;
 
+    //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()
     {
         if (instance != null && instance != this)
@@ -20,12 +22,13 @@ public class PersonagemSelecionado : MonoBehaviour
     }
     }
 
+    //Função que limpa toda a informação do objeto que não será mais usada após acabar o combate
     public void Resetar()
     {
         if (perso != null)
-    {
-        perso = null;
-        regiao = 0;
-    }
+        {
+            perso = null;
+            regiao = 0;
+        }
     }
 }

@@ -6,6 +6,7 @@ using Unity.Mathematics;
 
 public class MenuPlayer : MonoBehaviour
 {
+    //Variáveis do player
     int id;
     string nome;
     int material; //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
@@ -16,6 +17,7 @@ public class MenuPlayer : MonoBehaviour
 
     public int[] listaAtaquesIniciais = new int[4];
 
+    //Chamado de objetos
     public PCsSO pc;
 
     public TMP_Text textNome;
@@ -29,18 +31,21 @@ public class MenuPlayer : MonoBehaviour
     public GameObject Cheio;
     public GameObject Ataque;
 
+
+    //Função Start que procura pelo objeto não destrutivo que salva o player que foi selecionado e também coloca as informações do personagem no espaço
     void Start()
     {
         selecionado = PersonagemSelecionado.instance;
         EscolhendoPlayer();
     }
 
+    //Função que coloca as informações do personagem no espaço dele no menu de seleção
     public void EscolhendoPlayer()
     {
         id = pc.id;
         nome = pc.nome;
         material = pc.material;
-        if(pc.imgMenu != null)
+        if (pc.imgMenu != null)
         {
             imgMain.GetComponent<Image>().sprite = pc.imgMenu;
         }
@@ -55,98 +60,108 @@ public class MenuPlayer : MonoBehaviour
 
 
         textNome.text = nome;
-        switch(material)
+        switch (material)
         {
             case 1:
                 textMaterial.text = "Papel";
-            break;
+                break;
             case 2:
                 textMaterial.text = "Plástico";
-            break;
+                break;
             case 3:
                 textMaterial.text = "Vidro";
-            break;
+                break;
             case 4:
                 textMaterial.text = "Metal";
-            break;
+                break;
             case 5:
                 textMaterial.text = "Orgânico";
-            break;
+                break;
         }
         textVida.text = "Vida: " + maxHealth;
 
 
         //Quadrados
         //Conhecimento
-        for(int i = 1; i<= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             GameObject obj;
 
-            if(i <= maxCharge)
+            if (i <= maxCharge)
             {
-                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i*0.4f), 0.7f, 0f), quaternion.identity);
-            }else{
-                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i*0.4f), 0.7f, 0f), quaternion.identity);
+                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), 0.7f, 0f), quaternion.identity);
+            }
+            else
+            {
+                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), 0.7f, 0f), quaternion.identity);
             }
 
             obj.transform.SetParent(this.transform);
         }
 
         //Dano Físico
-        for(int i = 1; i<= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             GameObject obj;
 
-            if(i <= pDamage)
+            if (i <= pDamage)
             {
-                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i*0.4f), 0.2f, 0f), quaternion.identity);
-            }else{
-                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i*0.4f), 0.2f, 0f), quaternion.identity);
+                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), 0.2f, 0f), quaternion.identity);
+            }
+            else
+            {
+                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), 0.2f, 0f), quaternion.identity);
             }
 
             obj.transform.SetParent(this.transform);
         }
 
         //Defesa Físico
-        for(int i = 1; i<= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             GameObject obj;
 
-            if(i <= pDefense)
+            if (i <= pDefense)
             {
-                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -0.3f, 0f), quaternion.identity);
-            }else{
-                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -0.3f, 0f), quaternion.identity);
+                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -0.3f, 0f), quaternion.identity);
+            }
+            else
+            {
+                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -0.3f, 0f), quaternion.identity);
             }
 
             obj.transform.SetParent(this.transform);
         }
 
         //Dano Especial
-        for(int i = 1; i<= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             GameObject obj;
 
-            if(i <= sDamage)
+            if (i <= sDamage)
             {
-                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -0.8f, 0f), quaternion.identity);
-            }else{
-                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -0.8f, 0f), quaternion.identity);
+                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -0.8f, 0f), quaternion.identity);
+            }
+            else
+            {
+                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -0.8f, 0f), quaternion.identity);
             }
 
             obj.transform.SetParent(this.transform);
         }
 
         //Dano Especial
-        for(int i = 1; i<= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             GameObject obj;
 
-            if(i <= sDefense)
+            if (i <= sDefense)
             {
-                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -1.3f, 0f), quaternion.identity);
-            }else{
-                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i*0.4f), -1.3f, 0f), quaternion.identity);
+                obj = Instantiate(Cheio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -1.3f, 0f), quaternion.identity);
+            }
+            else
+            {
+                obj = Instantiate(Vazio, new Vector3(-8.5f + (id * 4) + (i * 0.4f), -1.3f, 0f), quaternion.identity);
             }
 
             obj.transform.SetParent(this.transform);
@@ -154,6 +169,7 @@ public class MenuPlayer : MonoBehaviour
 
     }
 
+    //Função que faz quando clicar no personagem salvar no objeto não destrutivo e passa para a cena do combate
     public void Onclick()
     {
         PersonagemSelecionado.instance.regiao = UnityEngine.Random.Range(0, 5);

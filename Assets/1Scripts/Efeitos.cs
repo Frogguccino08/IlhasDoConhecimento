@@ -4,18 +4,21 @@ using UnityEngine.EventSystems;
 
 public class Efeitos : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    //Variáveis
     public int TuOuOutro;
     public int quantos = 0;
     public int quantosProPos;
     public int quantosProTam;
     public string txt;
 
+    //Chamado de outros objetos
     public GameObject efeitos;
     public TMP_Text texto;
 
     public Player player;
     public Enemy enemy;
 
+    //Função responsável por quando passar o mouse no botão de efeitos colocar todos que estão ativos e abrir a caixa
     public void OnPointerEnter(PointerEventData eventData)
     {
         quantos = 0;
@@ -184,6 +187,7 @@ public class Efeitos : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    //Função que limpa todos os efeitos da caixa e faz ela sumir
     public void OnPointerExit(PointerEventData eventData)
     {
         efeitos.SetActive(false);
