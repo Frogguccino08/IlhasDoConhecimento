@@ -36,65 +36,82 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     }
 
     //Muda a cor do botão baseado no material
-    void MudarCor(int id)
+    public void MudarCor(int id)
     {
-        if(player.material[id] == 0 && player.nome[id] == "- -")
+        int cor;
+        cor = player.material[id];
+        if (player.material[id] == 0)
         {
-            //Nenhum ataque
-            this.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
-        }else if(player.material[id] == 1)
-        {
-            //Papel
-            if(player.isPassive[id] == true || player.currentCharge < player.carga[id])
-            {
-                this.GetComponent<Image>().color = new Color32(51, 58, 99, 255);
-            }else
-            {
-                this.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
-            }
-            
-        }else if(player.material[id] == 2)
-        {
-            //Plastico
-            if(player.isPassive[id] == true  || player.currentCharge < player.carga[id])
-            {
-                this.GetComponent<Image>().color = new Color32(86, 7, 13, 255);
-            }else
-            {
-                this.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
-            }
-        }else if(player.material[id] == 3)
-        {
-            //Vidro
-            if(player.isPassive[id] == true  || player.currentCharge < player.carga[id])
-            {
-                this.GetComponent<Image>().color = new Color32(0, 54, 0, 255);
-            }else
-            {
-                this.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
-            }
-            
-        }else if(player.material[id] == 4)
-        {
-            //Metal
-            if(player.isPassive[id] == true|| player.currentCharge < player.carga[id])
-            {
-                this.GetComponent<Image>().color = new Color32(136, 98, 22, 255);
-            }else
-            {
-                this.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
-            }
-        }else if(player.material[id] == 5)
-        {
-            //Organico
-            if(player.isPassive[id] == true  || player.currentCharge < player.carga[id])
-            {
-                this.GetComponent<Image>().color = new Color32(90, 78, 53, 255);
-            }else
-            {
-                this.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
-            }
+            cor = player.materialPlayer;
         }
+
+        if (player.material[id] == 0 && player.nome[id] == "- -")
+            {
+                //Nenhum ataque
+                this.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
+            }
+            else if (cor == 1)
+            {
+                //Papel
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                {
+                    this.GetComponent<Image>().color = new Color32(51, 58, 99, 255);
+                }
+                else
+                {
+                    this.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
+                }
+
+            }
+            else if (cor == 2)
+            {
+                //Plastico
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                {
+                    this.GetComponent<Image>().color = new Color32(86, 7, 13, 255);
+                }
+                else
+                {
+                    this.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
+                }
+            }
+            else if (cor == 3)
+            {
+                //Vidro
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                {
+                    this.GetComponent<Image>().color = new Color32(0, 54, 0, 255);
+                }
+                else
+                {
+                    this.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
+                }
+
+            }
+            else if (cor == 4)
+            {
+                //Metal
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                {
+                    this.GetComponent<Image>().color = new Color32(136, 98, 22, 255);
+                }
+                else
+                {
+                    this.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
+                }
+            }
+            else if (cor == 5)
+            {
+                //Organico
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                {
+                    this.GetComponent<Image>().color = new Color32(90, 78, 53, 255);
+                }
+                else
+                {
+                    this.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
+                }
+            }
     }
 
 

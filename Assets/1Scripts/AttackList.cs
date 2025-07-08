@@ -527,6 +527,18 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
                 break;
+            case 42:
+                nome = "Troca de material (Metal <-> Plástico)";
+                desc = "Uma habilidade que faz o personagem mudar de material";
+                material = 0;
+                dano = 0;
+                phispe = false;
+                alvo = false;
+                quantidade = 0;
+                carga = 1;
+                temEfeito = true;
+                isPassiva = false;
+                break;
         }
     }
 
@@ -1266,6 +1278,69 @@ public class AttackList : MonoBehaviour
                     {
                         enemy.efeitosAtivos[1] += 5;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo";
+                    }
+                }
+                break;
+            case 42: //Troca de material
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (player.materialPlayer == 2)
+                        {
+                            control.efeitoAtq = "Material trocado para Metal";
+                        }
+                        else if (player.materialPlayer == 4)
+                        {
+                            control.efeitoAtq = "Material trocado para Plástico";
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.materialInimigo == 2)
+                        {
+                            control.efeitoAtq = "Material trocado para Metal";
+                        }
+                        else if (player.materialPlayer == 4)
+                        {
+                            control.efeitoAtq = "Material trocado para Plástico";
+                        }
+                    }
+                }
+
+                if (quando == 4)
+                {
+                    if (quem == true)
+                    {
+                        if (player.materialPlayer == 2)
+                        {
+                            player.materialPlayer = 4;
+                            control.efeitoAtq = "Material trocado para Metal";
+                        }
+                        else if (player.materialPlayer == 4)
+                        {
+                            player.materialPlayer = 2;
+                            control.efeitoAtq = "Material trocado para Plástico";
+                        }
+
+                        for (int i = 0; i < 6; i++)
+                        {
+                            control.butao[i].MudarCor(control.player.material[i]);
+
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.materialInimigo == 2)
+                        {
+                            enemy.materialInimigo = 4;
+                            control.efeitoAtq = "Material trocado para Metal";
+                        }
+                        else if (player.materialPlayer == 4)
+                        {
+                            player.materialPlayer = 2;
+                            control.efeitoAtq = "Material trocado para Plástico";
+                        }
                     }
                 }
                 break;

@@ -233,10 +233,6 @@ public class Player : MonoBehaviour
             nome[i] = list.nome;
             desc[i] = list.desc;
             material[i] = list.material;
-            if(material[i] == 0 && nome[i] != "- -")
-            {
-                material[i] = materialPlayer;
-            }
             dano[i] = list.dano;
             phispe[i] = list.phispe;
             alvo[i] = list.alvo;
@@ -251,6 +247,16 @@ public class Player : MonoBehaviour
 
     public IEnumerator UsarAtaque(int id)
     {
+        int materialSemNome;
+        if (material[id] == 0)
+        {
+            materialSemNome = materialPlayer;
+        }
+        else
+        {
+            materialSemNome = material[id];
+        }
+
         descri.SetActive(false);
         descri.GetComponent<Descricao>().rEmConta = 0;
 
@@ -336,7 +342,7 @@ public class Player : MonoBehaviour
                             attackDamage = Mathf.Round((float)phiDamage * ((modPhiDamage * -1) + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) + (enemy.phiDefense + enemy.modPhiDefense));
                         }
 
-                        if (material[id] == enemy.materialInimigo)
+                        if (materialSemNome == enemy.materialInimigo)
                         {
                             attackDamage = Mathf.Round(attackDamage * 0.8f);
                         }
@@ -357,7 +363,7 @@ public class Player : MonoBehaviour
                             attackDamage = Mathf.Round((float)speDamage * ((modSpeDamage * -1) + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) - (enemy.speDefense - enemy.modSpeDefense));
                         }
 
-                        if (material[id] == enemy.materialInimigo)
+                        if (materialSemNome == enemy.materialInimigo)
                         {
                             attackDamage = Mathf.Round(attackDamage * 0.8f);
                         }
