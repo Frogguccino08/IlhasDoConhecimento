@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 3Metal
+  m_Name: 5 - Criatura de Cana
   m_EditorClassIdentifier: 
-  id: 12
-  nome: Produtor
-  material: 4
-  imgPadrao: {fileID: 4368721552205358013, guid: 7ea1886316ee689479a57f1b4140b8ea, type: 3}
+  id: 8
+  nome: Criatura de Cana
+  material: 5
+  imgPadrao: {fileID: 1077599535965890597, guid: ec6f72d79c468a445ba440dfd677f49c, type: 3}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 5
-  pDefense: 4
-  sDamage: 1
-  sDefense: 2
-  mainStatus: 1
+  pDamage: 2
+  pDefense: 3
+  sDamage: 2
+  sDefense: 3
+  mainStatus: 0
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 110000001200000014000000040000001300000000000000
+  listaAtaquesNvl2: 1500000016000000180000001b0000000000000000000000
+  listaAtaquesNvl3: 15000000160000001800000004000000170000001b000000

@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 3Organic
+  m_Name: 2 - Troll de Sacola
   m_EditorClassIdentifier: 
-  id: 13
-  nome: Mosca Infectada
-  material: 5
-  imgPadrao: {fileID: -3046374602303404648, guid: e8166b96367085940825b7ea7960f2ac, type: 3}
+  id: 15
+  nome: Troll de sacola
+  material: 2
+  imgPadrao: {fileID: -5522358789462119685, guid: 6fbff92342fd708458b5845ad9873785, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2
-  pDefense: 4
-  sDamage: 2
-  sDefense: 4
-  mainStatus: 0
+  pDefense: 5
+  sDamage: 4
+  sDefense: 1
+  mainStatus: 2
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 15000000160000001800000004000000170000001b000000
+  listaAtaquesNvl3: 090000000a0000000c000000040000000b00000000000000

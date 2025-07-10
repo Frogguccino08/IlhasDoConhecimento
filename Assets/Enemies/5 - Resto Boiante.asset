@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 1Paper
+  m_Name: 5 - Resto Boiante
   m_EditorClassIdentifier: 
-  id: 4
-  nome: Origami
-  material: 1
-  imgPadrao: {fileID: 925540064159583759, guid: 5d0b3dcb886899c45b49042140f592db, type: 3}
+  id: 3
+  nome: Resto boiante
+  material: 5
+  imgPadrao: {fileID: 7199566774060951326, guid: 0e3ba0163ee0ce44db406f72c43c7308, type: 3}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 2
-  pDefense: 1
-  sDamage: 2
+  pDamage: 1
+  pDefense: 3
+  sDamage: 1
   sDefense: 3
-  mainStatus: 4
-  listaAtaquesNvl1: 020000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 050000000600000008000000000000000000000000000000
+  mainStatus: 0
+  listaAtaquesNvl1: 01000000000000001b000000000000000000000000000000
+  listaAtaquesNvl2: 1500000016000000180000001b0000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
