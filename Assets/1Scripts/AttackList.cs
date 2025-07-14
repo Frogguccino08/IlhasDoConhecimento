@@ -528,14 +528,14 @@ public class AttackList : MonoBehaviour
                 isPassiva = false;
                 break;
             case 42:
-                nome = "Troca de material (Metal <-> Plástico)";
-                desc = "Uma habilidade que faz o personagem mudar de material";
+                nome = "Stance change";
+                desc = "Yoko changes combat stance, changing between metal/phyDamage and Paper/SpeDefense";
                 material = 0;
                 dano = 0;
                 phispe = false;
                 alvo = false;
                 quantidade = 0;
-                carga = 1;
+                carga = 3;
                 temEfeito = true;
                 isPassiva = false;
                 break;
@@ -1286,24 +1286,24 @@ public class AttackList : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        if (player.materialPlayer == 2)
+                        if (player.materialPlayer == 1)
                         {
-                            control.efeitoAtq = "Material trocado para Metal";
+                            control.efeitoAtq = "Material Changed to Metal";
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            control.efeitoAtq = "Material trocado para Plástico";
+                            control.efeitoAtq = "Material changed to Paper";
                         }
                     }
                     else
                     {
-                        if (enemy.materialInimigo == 2)
+                        if (enemy.materialInimigo == 1)
                         {
-                            control.efeitoAtq = "Material trocado para Metal";
+                            control.efeitoAtq = "Material Changed to Metal";
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            control.efeitoAtq = "Material trocado para Plástico";
+                            control.efeitoAtq = "Material changed to Paper";
                         }
                     }
                 }
@@ -1312,15 +1312,16 @@ public class AttackList : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        if (player.materialPlayer == 2)
+                        if (player.materialPlayer == 1)
                         {
                             player.materialPlayer = 4;
-                            control.efeitoAtq = "Material trocado para Metal";
+                            player.efeitosAtivos[5] += 3;
+
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            player.materialPlayer = 2;
-                            control.efeitoAtq = "Material trocado para Plástico";
+                            player.materialPlayer = 1;
+                            player.efeitosAtivos[2] += 3;
                         }
 
                         for (int i = 0; i < 6; i++)
@@ -1331,15 +1332,15 @@ public class AttackList : MonoBehaviour
                     }
                     else
                     {
-                        if (enemy.materialInimigo == 2)
+                        if (enemy.materialInimigo == 1)
                         {
                             enemy.materialInimigo = 4;
-                            control.efeitoAtq = "Material trocado para Metal";
+                            enemy.efeitosAtivos[5] += 3;
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            player.materialPlayer = 2;
-                            control.efeitoAtq = "Material trocado para Plástico";
+                            enemy.materialInimigo = 1;
+                            enemy.efeitosAtivos[2] += 3;
                         }
                     }
                 }

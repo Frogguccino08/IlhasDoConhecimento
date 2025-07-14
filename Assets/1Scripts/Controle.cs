@@ -116,7 +116,7 @@ public class Controle : MonoBehaviour
         yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
-        if (player.temEfeito[player.idAtaqueUsado] == true)
+        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
@@ -125,7 +125,11 @@ public class Controle : MonoBehaviour
         if (player.efeitosAtivos[7] > 0)
                 player.quantBlock = player.efeitosAtivos[1];
 
-        player.list.AtaquesComEfeitos(true, player.ataqueUsado, 4, player, enemy);
+        if (pulouTurno == false)
+        {
+            player.list.AtaquesComEfeitos(true, player.ataqueUsado, 4, player, enemy);
+        }
+
         for (int i = 0; i < 6; i++)
         {
             if (player.isPassive[i])
@@ -161,22 +165,28 @@ public class Controle : MonoBehaviour
         player.EfeitoCausado(2, player.attackPublic, (int)player.danoPublic);
         if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
 
-        // Turno do inimigo
-        if (turno != 2 && turno != 1)
+        if (pulouTurno == true)
         {
-            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
+            pulouTurno = false;
+        }
             
-            if (enemy.efeitosAtivos[6] > 0)
-        {
-            enemy.currentCharge += 1;
-            enemy.efeitosAtivos[6] -= 1;
-        }
-        if (enemy.efeitosAtivos[12] > 0)
-        {
-            enemy.currentCharge -= 1;
-            enemy.efeitosAtivos[12] -= 1;
-        }
-        }
+
+        // Turno do inimigo
+            if (turno != 2 && turno != 1)
+            {
+                enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
+
+                if (enemy.efeitosAtivos[6] > 0)
+                {
+                    enemy.currentCharge += 1;
+                    enemy.efeitosAtivos[6] -= 1;
+                }
+                if (enemy.efeitosAtivos[12] > 0)
+                {
+                    enemy.currentCharge -= 1;
+                    enemy.efeitosAtivos[12] -= 1;
+                }
+            }
         enemy.EscolherAtaque();
 
         texto.enabled = true;
