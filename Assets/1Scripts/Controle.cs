@@ -115,12 +115,17 @@ public class Controle : MonoBehaviour
         texto.enabled = true;
         yield return EsperarTeclaEspaco();
 
-        //Escrever o efeito na tela
-        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
+        if (pulouTurno == true)
         {
-            texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
         }
+
+        //Escrever o efeito na tela
+            if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
+            {
+                texto.text = efeitoAtq;
+                yield return EsperarTeclaEspaco();
+            }
 
         if (player.efeitosAtivos[7] > 0)
                 player.quantBlock = player.efeitosAtivos[1];

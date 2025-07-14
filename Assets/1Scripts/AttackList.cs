@@ -539,6 +539,18 @@ public class AttackList : MonoBehaviour
                 temEfeito = true;
                 isPassiva = false;
                 break;
+            case 43:
+                nome = "Soul katana";
+                desc = "Yoko slashes with her spirit embuid katana, ignoring defense";
+                material = 4;
+                dano = 2;
+                phispe = true;
+                alvo = true;
+                quantidade = 1;
+                carga = 3;
+                temEfeito = true;
+                isPassiva = false;
+                break;
         }
     }
 
@@ -1342,6 +1354,19 @@ public class AttackList : MonoBehaviour
                             enemy.materialInimigo = 1;
                             enemy.efeitosAtivos[2] += 3;
                         }
+                    }
+                }
+                break;
+            case 43:
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        player.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
+                    }
+                    else
+                    {
+                        enemy.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
                     }
                 }
                 break;
