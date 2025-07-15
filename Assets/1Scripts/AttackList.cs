@@ -528,8 +528,8 @@ public class AttackList : MonoBehaviour
                 isPassiva = false;
                 break;
             case 42:
-                nome = "Stance change";
-                desc = "Yoko changes combat stance, changing between metal/phyDamage and Paper/SpeDefense";
+                nome = "Troca de postura";
+                desc = "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância";
                 material = 0;
                 dano = 0;
                 phispe = false;
@@ -540,8 +540,8 @@ public class AttackList : MonoBehaviour
                 isPassiva = false;
                 break;
             case 43:
-                nome = "Soul katana";
-                desc = "Yoko slashes with her spirit embuid katana, ignoring defense";
+                nome = "Katana de alma";
+                desc = "O personagem corta com a katana ignorando defesa física";
                 material = 4;
                 dano = 2;
                 phispe = true;
@@ -1293,29 +1293,29 @@ public class AttackList : MonoBehaviour
                     }
                 }
                 break;
-            case 42: //Troca de material
+            case 42: //Troca de postura
                 if (quando == 0)
                 {
                     if (quem == true)
                     {
                         if (player.materialPlayer == 1)
                         {
-                            control.efeitoAtq = "Material Changed to Metal";
+                            control.efeitoAtq = player.nickName + " trocou de material para Metal";
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            control.efeitoAtq = "Material changed to Paper";
+                            control.efeitoAtq = player.nickName + " trocou de material para Papel";
                         }
                     }
                     else
                     {
                         if (enemy.materialInimigo == 1)
                         {
-                            control.efeitoAtq = "Material Changed to Metal";
+                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Metal";
                         }
                         else if (player.materialPlayer == 4)
                         {
-                            control.efeitoAtq = "Material changed to Paper";
+                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Papel";
                         }
                     }
                 }
@@ -1363,10 +1363,12 @@ public class AttackList : MonoBehaviour
                     if (quem == true)
                     {
                         player.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
+                        control.efeitoAtq = player.nickName + " ignorou a defesa de " + enemy.nomeinimigo;
                     }
                     else
                     {
                         enemy.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
+                        control.efeitoAtq = enemy.nomeinimigo + " ignorou a defesa de " + player.nickName;
                     }
                 }
                 break;
