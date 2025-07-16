@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     public bool[] efeitosUsados = new bool[19];
 
     public HealthBar healthbar;
-    public AttackList list;
+    public AttacksEfeitos list;
     public EnemyList enemyList;
     public Player enemy;
     public Controle control;

@@ -653,10 +653,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 840040416}
   fundo: {fileID: 2086139744}
+  desc: {fileID: 560313086}
   idAtaque: 0
   idAtaqueAntigo: 0
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &52892869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,12 +1436,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 1276334842}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &110869688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,10 +1900,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 256397781}
   fundo: {fileID: 666396427}
+  desc: {fileID: 560313086}
   idAtaque: 0
   idAtaqueAntigo: 0
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &215052711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,12 +5378,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 1890350967}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &618230583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,7 +5673,7 @@ MonoBehaviour:
   control: {fileID: 618230584}
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
-  list: {fileID: 0}
+  list: {fileID: 1364166977}
   butoes:
   - {fileID: 0}
   - {fileID: 0}
@@ -5690,10 +5690,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 0}
   fundo: {fileID: 0}
+  desc: {fileID: 0}
   idAtaque: 0
   idAtaqueAntigo: 0
   ataque: 0
-  desc: {fileID: 0}
 --- !u!1 &645821904
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,12 +6769,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 1385233828}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &783192066
 GameObject:
   m_ObjectHideFlags: 0
@@ -8750,10 +8750,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a841638f5400098489a56778e0a32bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TuOuOutro: 0
   texto: {fileID: 136635602}
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
+  TuOuOutro: 0
 --- !u!1 &1052532593
 GameObject:
   m_ObjectHideFlags: 0
@@ -9994,12 +9994,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 1083857801}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &1177606377
 GameObject:
   m_ObjectHideFlags: 0
@@ -10110,10 +10110,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 339433084}
   fundo: {fileID: 1762837414}
+  desc: {fileID: 560313086}
   idAtaque: 1
   idAtaqueAntigo: 1
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &1177606383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10976,6 +10976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364166978}
   - component: {fileID: 1364166977}
+  - component: {fileID: 1364166979}
   m_Layer: 0
   m_Name: AttackList
   m_TagString: Untagged
@@ -11021,6 +11022,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364166979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364166976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5da2a8f9bec7624f9d10887754361bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacks:
+    id: 0
+    nome: 
+    desc: 
+    material: 0
+    dano: 0
+    phispe: 0
+    alvo: 0
+    quantidade: 0
+    carga: 0
+    temEfeito: 0
+    isPassiva: 0
 --- !u!1 &1368325187
 GameObject:
   m_ObjectHideFlags: 0
@@ -11861,12 +11886,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 45424042}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &1413089295
 GameObject:
   m_ObjectHideFlags: 0
@@ -13033,10 +13058,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 941756240}
   fundo: {fileID: 977412110}
+  desc: {fileID: 560313086}
   idAtaque: 0
   idAtaqueAntigo: 0
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &1575066223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13760,10 +13785,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 2140886733}
   fundo: {fileID: 51706920}
+  desc: {fileID: 560313086}
   idAtaque: 4
   idAtaqueAntigo: 4
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &1645262132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16400,10 +16425,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 1571981466}
   fundo: {fileID: 280595508}
+  desc: {fileID: 560313086}
   idAtaque: 0
   idAtaqueAntigo: 0
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &1960648988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17156,10 +17181,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 2009163336}
   fundo: {fileID: 2122575048}
+  desc: {fileID: 560313086}
   idAtaque: 5
   idAtaqueAntigo: 5
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &2035061074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17363,12 +17388,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ataqueUtilizado: 0
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
   text: {fileID: 1403356085}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
-  ataqueUtilizado: 0
 --- !u!1 &2063568121
 GameObject:
   m_ObjectHideFlags: 0
@@ -17594,10 +17619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a841638f5400098489a56778e0a32bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TuOuOutro: 1
   texto: {fileID: 1147755577}
   player: {fileID: 221998462}
   enemy: {fileID: 265112125}
+  TuOuOutro: 1
 --- !u!1 &2079654393
 GameObject:
   m_ObjectHideFlags: 0
@@ -18056,10 +18081,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 432833306}
   fundo: {fileID: 978500582}
+  desc: {fileID: 560313086}
   idAtaque: 2
   idAtaqueAntigo: 2
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &2101420689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18302,10 +18327,10 @@ MonoBehaviour:
   telaAtaquesAntigos: {fileID: 2118290193}
   texto: {fileID: 2144050899}
   fundo: {fileID: 1514382061}
+  desc: {fileID: 560313086}
   idAtaque: 3
   idAtaqueAntigo: 3
   ataque: 0
-  desc: {fileID: 560313086}
 --- !u!114 &2115166263
 MonoBehaviour:
   m_ObjectHideFlags: 0

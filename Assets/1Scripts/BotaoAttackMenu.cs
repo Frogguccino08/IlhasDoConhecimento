@@ -14,7 +14,7 @@ public class BotaoAttackMenu : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public GameObject desc;
     public TMP_Text textNome;
     public TMP_Text textCarga;
-    public AttackList list;
+    public AttacksEfeitos list;
 
     //Função ao iniciar, Coloca os ataques dos personagens no menu
     void Awake()

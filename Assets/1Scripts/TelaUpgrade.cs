@@ -9,7 +9,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public Controle control;
     public GameObject oProprio;
     public Player player;
-    public AttackList list;
+    public AttacksEfeitos list;
     public Butao[] butoes = new Butao[6];
 
     public TelaUpgrade[] osDois = new TelaUpgrade[2];

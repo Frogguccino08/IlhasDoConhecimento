@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AttackList : MonoBehaviour
+public class AttacksEfeitos : MonoBehaviour
 {
     //Chamado de outro objeto
     public Controle control;

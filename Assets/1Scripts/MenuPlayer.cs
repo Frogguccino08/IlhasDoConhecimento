@@ -25,7 +25,7 @@ public class MenuPlayer : MonoBehaviour
     public TMP_Text textMaterial;
     public TMP_Text textVida;
     public PersonagemSelecionado selecionado;
-    public AttackList list;
+    public AttacksEfeitos list;
  
     public GameObject Vazio;
     public GameObject Cheio;

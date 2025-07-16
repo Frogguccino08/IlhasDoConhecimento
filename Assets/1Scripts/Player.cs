@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     public HealthBar healthbar;
     public TMP_Text text;
-    public AttackList list;
+    public AttacksEfeitos list;
     public Enemy enemy;
     public TMP_Text textoAtaque;
     public Controle control;

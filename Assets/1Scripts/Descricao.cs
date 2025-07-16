@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Descricao : MonoBehaviour
 {
     //Chamado de outros objetos
-    public AttackList list;
+    public AttacksEfeitos list;
     public PersonagemSelecionado perso;
     public Player player;
     public Scene cena;
