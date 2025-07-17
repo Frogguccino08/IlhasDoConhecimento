@@ -60,25 +60,25 @@ public class Player : MonoBehaviour
     public bool rAgora;
 
     public int[] attackID = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public string[] nome = new string[6];
-    //[HideInInspector]
+    [HideInInspector]
     public string[] desc = new string[6];
-    //[HideInInspector]
+    [HideInInspector]
     public int[] material = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public int[] dano = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public bool[] phispe = new bool[6];
-    //[HideInInspector]
+    [HideInInspector]
     public bool[] alvo = new bool[6];
-    //[HideInInspector]
+    [HideInInspector]
     public int[] quantidade = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public int[] carga = new int[6];
-    //[HideInInspector]
+    [HideInInspector]
     public bool[] temEfeito = new bool[6];
-    //[HideInInspector]
+    [HideInInspector]
     public bool[] isPassive = new bool[6];
 
 
@@ -233,6 +233,7 @@ public class Player : MonoBehaviour
         {
             Attacks ataque = lista.CriarAtaques(attackID[i]);
 
+            attackID[i] = ataque.id;
             nome[i] = ataque.nome;
             desc[i] = ataque.desc;
             material[i] = ataque.material;

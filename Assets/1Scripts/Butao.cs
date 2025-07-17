@@ -45,7 +45,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             cor = player.materialPlayer;
         }
 
-        if (player.material[id] == 0 && player.nome[id] == "- -")
+        if (player.nome[id] == "- -")
             {
                 //Nenhum ataque
                 this.GetComponent<Image>().color = new Color32(147, 115, 80, 255);

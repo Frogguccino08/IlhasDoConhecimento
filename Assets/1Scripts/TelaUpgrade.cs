@@ -35,7 +35,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //Função colocada no botão de pular, adiciona pontos e vai pro proximo turno
     public void Pular()
     {
-        control.pontosRodada += 100;
+        control.pontosRodada += 150;
         control.textoArea.text = "Pontuação:\n" + control.pontosRodada;
 
         control.processguir = true;
@@ -135,11 +135,6 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         texto.text = ataqueA.nome;
 
-        if (ataqueA.material == 0)
-        {
-            ataqueA.material = player.materialPlayer;
-        }
-
         if (ataqueA.material == 1)
         {
             //Papel
@@ -176,11 +171,6 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Attacks ataqueA = lista.CriarAtaques(idAtaqueAntigo);
 
         texto.text = ataqueA.nome;
-
-        if (ataqueA.material == 0)
-        {
-            ataqueA.material = player.materialPlayer;
-        }
 
         if (ataqueA.nome == "- -")
         {
@@ -235,10 +225,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     player.AtaquesSelecionados();
 
 
-                    for (int o = 0; o < 6; o++)
-                    {
-                        butoes[o].ColocandoAtaque(o);
-                    }
+                    butoes[i].ColocandoAtaque(i);
 
                     control.processguir = true;
                     oProprio.SetActive(false);

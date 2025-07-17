@@ -15,7 +15,7 @@ public class SkipButton : MonoBehaviour
         StartCoroutine(control.Turno(false));
         control.turno++;
 
-        control.pontosRodada += 50;
+        control.pontosRodada += 25;
         control.textoArea.text = "Pontuação:\n " + control.pontosRodada;
 
         if (control.pontosRodada > control.escolha.pontos)
