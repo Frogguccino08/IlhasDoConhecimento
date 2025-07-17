@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
     public TMP_Text textoAtaque;
     public GameObject simBoss;
     public TMP_Text nomeTela;
+    public AttacksList lista;
 
     public GameObject upgrade;
 
@@ -68,6 +69,8 @@ public class Enemy : MonoBehaviour
     int[] chance = new int[6];
     [HideInInspector]
     public string[] nome = new string[6];
+    [HideInInspector]
+    public string[] desc = new string[6];
     [HideInInspector]
     public int[] material = new int[6];
     [HideInInspector]
@@ -441,16 +444,17 @@ public class Enemy : MonoBehaviour
     {
         for (i = 0; i < 6; i++)
         {
-            list.CriarAtaque(attackID[i]);
-            nome[i] = list.nome;
-            material[i] = list.material;
-            dano[i] = list.dano;
-            phispe[i] = list.phispe;
-            alvo[i] = list.alvo;
-            quantidade[i] = list.quantidade;
-            carga[i] = list.carga;
-            temEfeito[i] = list.temEfeito;
-            isPassive[i] = list.isPassiva;
+            Attacks ataque = lista.CriarAtaques(attackID[i]);
+            nome[i] = ataque.nome;
+            desc[i] = ataque.desc;
+            material[i] = ataque.material;
+            dano[i] = ataque.dano;
+            phispe[i] = ataque.phispe;
+            alvo[i] = ataque.alvo;
+            quantidade[i] = ataque.quantidade;
+            carga[i] = ataque.carga;
+            temEfeito[i] = ataque.temEfeito;
+            isPassive[i] = ataque.isPassiva;
 
             //Debug.Log("Ataque selecionado Id: " + attackID[i] + " (" + nome[i] + ")");
         }

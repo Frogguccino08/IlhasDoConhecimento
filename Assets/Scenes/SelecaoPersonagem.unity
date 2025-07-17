@@ -178,6 +178,17 @@ MonoBehaviour:
   textNome: {fileID: 1810188066}
   textCarga: {fileID: 379728132}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &13681959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,6 +1876,17 @@ MonoBehaviour:
   textNome: {fileID: 634064442}
   textCarga: {fileID: 1201369475}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &170479298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,6 +1984,17 @@ MonoBehaviour:
   textNome: {fileID: 983452665}
   textCarga: {fileID: 880345693}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &230365758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2621,6 +2654,17 @@ MonoBehaviour:
   textNome: {fileID: 98803314}
   textCarga: {fileID: 1891593939}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &287607600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,6 +2898,17 @@ MonoBehaviour:
   textNome: {fileID: 920925783}
   textCarga: {fileID: 2119043177}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &302332987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,6 +3151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5da2a8f9bec7624f9d10887754361bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listaAtaques: []
+  attacks:
+    id: 0
+    nome: 
+    desc: 
+    material: 0
+    dano: 0
+    phispe: 0
+    alvo: 0
+    quantidade: 0
+    carga: 0
+    temEfeito: 0
+    isPassiva: 0
 --- !u!1 &355622718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +3843,17 @@ MonoBehaviour:
   textNome: {fileID: 880772026}
   textCarga: {fileID: 434105470}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &404011800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,6 +4166,17 @@ MonoBehaviour:
   textNome: {fileID: 1400149344}
   textCarga: {fileID: 779512257}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &439327152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,6 +4757,17 @@ MonoBehaviour:
   textNome: {fileID: 1509391891}
   textCarga: {fileID: 771483867}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &531247203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5594,6 +5695,17 @@ MonoBehaviour:
   textNome: {fileID: 1812301543}
   textCarga: {fileID: 1545685311}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &647243598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6040,6 +6152,17 @@ MonoBehaviour:
   textNome: {fileID: 1654492807}
   textCarga: {fileID: 1848548193}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &773292200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6273,6 +6396,17 @@ MonoBehaviour:
   textNome: {fileID: 958760494}
   textCarga: {fileID: 1898756623}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &779991270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9082,6 +9216,17 @@ MonoBehaviour:
   textNome: {fileID: 819488845}
   textCarga: {fileID: 1881860615}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &992336521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9256,6 +9401,17 @@ MonoBehaviour:
   textNome: {fileID: 797597371}
   textCarga: {fileID: 874820308}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1062600360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11998,6 +12154,17 @@ MonoBehaviour:
   player: {fileID: 0}
   cena:
     m_Handle: 0
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  materialA: 0
+  danoA: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  cargaA: 0
+  temEfeito: 0
+  isPassiva: 0
   nomeAtq: {fileID: 1663028367}
   material: {fileID: 1414025845}
   imgMaterial: {fileID: 577958295}
@@ -13245,6 +13412,17 @@ MonoBehaviour:
   textNome: {fileID: 937197866}
   textCarga: {fileID: 2138476805}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1600464359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13691,6 +13869,17 @@ MonoBehaviour:
   textNome: {fileID: 1189107079}
   textCarga: {fileID: 134073887}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1640742752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14211,6 +14400,17 @@ MonoBehaviour:
   textNome: {fileID: 392084881}
   textCarga: {fileID: 1583303366}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1664486988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14308,6 +14508,17 @@ MonoBehaviour:
   textNome: {fileID: 1889569566}
   textCarga: {fileID: 118038728}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1664805739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14405,6 +14616,17 @@ MonoBehaviour:
   textNome: {fileID: 1196842979}
   textCarga: {fileID: 340810116}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1714796511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15803,6 +16025,17 @@ MonoBehaviour:
   textNome: {fileID: 453179306}
   textCarga: {fileID: 2041525943}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &1857295013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18210,6 +18443,17 @@ MonoBehaviour:
   textNome: {fileID: 285949242}
   textCarga: {fileID: 1412042830}
   list: {fileID: 353352697}
+  lista: {fileID: 353352699}
+  nome: 
+  descA: 
+  material: 0
+  dano: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  carga: 0
+  temEfeito: 0
+  isPassiva: 0
 --- !u!114 &2069517911
 MonoBehaviour:
   m_ObjectHideFlags: 0

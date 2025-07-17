@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public TMP_Text textoAtaque;
     public Controle control;
     public ConhecimentoControl controlConheci;
+    public AttacksList lista;
 
     public PersonagemSelecionado perso;
     public PCsSO pc;
@@ -59,26 +60,27 @@ public class Player : MonoBehaviour
     public bool rAgora;
 
     public int[] attackID = new int[6];
-    [HideInInspector]
+    //[HideInInspector]
     public string[] nome = new string[6];
-    [HideInInspector]
+    //[HideInInspector]
     public string[] desc = new string[6];
-    [HideInInspector]
+    //[HideInInspector]
     public int[] material = new int[6];
-    [HideInInspector]
+    //[HideInInspector]
     public int[] dano = new int[6];
-    [HideInInspector]
+    //[HideInInspector]
     public bool[] phispe = new bool[6];
-    [HideInInspector]
+    //[HideInInspector]
     public bool[] alvo = new bool[6];
-    [HideInInspector]
+    //[HideInInspector]
     public int[] quantidade = new int[6];
-    [HideInInspector]
+    //[HideInInspector]
     public int[] carga = new int[6];
-    [HideInInspector]
+    //[HideInInspector]
     public bool[] temEfeito = new bool[6];
-    [HideInInspector]
+    //[HideInInspector]
     public bool[] isPassive = new bool[6];
+
 
 
     void Update()
@@ -227,21 +229,20 @@ public class Player : MonoBehaviour
 
     public void AtaquesSelecionados()
     {
-        for(i=0; i<6; i++)
+        for (int i = 0; i < 6; i++)
         {
-            list.CriarAtaque(attackID[i]);
-            nome[i] = list.nome;
-            desc[i] = list.desc;
-            material[i] = list.material;
-            dano[i] = list.dano;
-            phispe[i] = list.phispe;
-            alvo[i] = list.alvo;
-            quantidade[i] = list.quantidade;
-            carga[i] = list.carga;
-            temEfeito[i] = list.temEfeito;
-            isPassive[i] = list.isPassiva;
+            Attacks ataque = lista.CriarAtaques(attackID[i]);
 
-            //Debug.Log("Ataque selecionado Id: " + attackID[i] + " (" + nome[i] + ")");
+            nome[i] = ataque.nome;
+            desc[i] = ataque.desc;
+            material[i] = ataque.material;
+            dano[i] = ataque.dano;
+            phispe[i] = ataque.phispe;
+            alvo[i] = ataque.alvo;
+            quantidade[i] = ataque.quantidade;
+            carga[i] = ataque.carga;
+            temEfeito[i] = ataque.temEfeito;
+            isPassive[i] = ataque.isPassiva;
         }
     }
 

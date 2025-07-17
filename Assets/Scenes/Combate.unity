@@ -637,6 +637,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -1884,6 +1885,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -2171,6 +2173,7 @@ MonoBehaviour:
   textoAtaque: {fileID: 1218689500}
   control: {fileID: 618230584}
   controlConheci: {fileID: 378630052}
+  lista: {fileID: 1364166979}
   perso: {fileID: 0}
   pc: {fileID: 0}
   descri: {fileID: 1984335213}
@@ -3030,6 +3033,7 @@ MonoBehaviour:
   textoAtaque: {fileID: 1218689500}
   simBoss: {fileID: 1818483657}
   nomeTela: {fileID: 1803927225}
+  lista: {fileID: 1364166979}
   upgrade: {fileID: 632770179}
   novosAtaques:
   - {fileID: 1960648987}
@@ -3051,6 +3055,13 @@ MonoBehaviour:
   escolha: {fileID: 0}
   attackID: 010000000200000003000000040000000400000004000000
   nome:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  desc:
   - 
   - 
   - 
@@ -5110,6 +5121,17 @@ MonoBehaviour:
   player: {fileID: 0}
   cena:
     m_Handle: 0
+  lista: {fileID: 1364166979}
+  nome: 
+  descA: 
+  materialA: 0
+  danoA: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  cargaA: 0
+  temEfeito: 0
+  isPassiva: 0
   nomeAtq: {fileID: 2025305292}
   material: {fileID: 1900269936}
   imgMaterial: {fileID: 595333081}
@@ -5674,6 +5696,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 0}
   - {fileID: 0}
@@ -10094,6 +10117,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -10997,16 +11021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 618230584}
-  nome: 
-  desc: 
-  material: 0
-  dano: 0
-  phispe: 0
-  alvo: 0
-  quantidade: 0
-  carga: 0
-  temEfeito: 0
-  isPassiva: 0
 --- !u!4 &1364166978
 Transform:
   m_ObjectHideFlags: 0
@@ -11034,6 +11048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5da2a8f9bec7624f9d10887754361bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listaAtaques: []
   attacks:
     id: 0
     nome: 
@@ -13042,6 +13057,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -13769,6 +13785,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -16409,6 +16426,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -16541,6 +16559,17 @@ MonoBehaviour:
   player: {fileID: 0}
   cena:
     m_Handle: 0
+  lista: {fileID: 1364166979}
+  nome: 
+  descA: 
+  materialA: 0
+  danoA: 0
+  phispe: 0
+  alvo: 0
+  quantidade: 0
+  cargaA: 0
+  temEfeito: 0
+  isPassiva: 0
   nomeAtq: {fileID: 1022691454}
   material: {fileID: 1454933830}
   imgMaterial: {fileID: 470852633}
@@ -17165,6 +17194,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -18065,6 +18095,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -18311,6 +18342,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
+  lista: {fileID: 0}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}

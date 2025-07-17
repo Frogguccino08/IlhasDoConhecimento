@@ -15,17 +15,43 @@ public class BotaoAttackMenu : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public TMP_Text textNome;
     public TMP_Text textCarga;
     public AttacksEfeitos list;
+    public AttacksList lista;
+
+    //Variáveis dos ataques
+    public string nome;
+    public string descA;
+    public int material;
+    public int dano;
+    public bool phispe;
+    public bool alvo;
+    public int quantidade;
+    public int carga;
+    public bool temEfeito;
+    public bool isPassiva;
+    //lista.CriarAtaques(Id, nome, descA, material, dano, phispe, alvo, quantidade, carga, temEfeito, isPassiva);
+    //lista = GameObject.Find("AttackList").GetComponent<AttacksList>();
 
     //Função ao iniciar, Coloca os ataques dos personagens no menu
-    void Awake()
+    void Start()
     {
-        list.CriarAtaque(pc.listaAtaquesIniciais[id]);
-        textNome.text = list.nome;
-        textCarga.text = list.carga.ToString();
+        Attacks ataque = lista.CriarAtaques(pc.listaAtaquesIniciais[id]);
+        nome = ataque.nome;
+        descA = ataque.desc;
+        material = ataque.material;
+        dano = ataque.dano;
+        phispe = ataque.phispe;
+        alvo = ataque.alvo;
+        quantidade = ataque.quantidade;
+        carga = ataque.carga;
+        temEfeito = ataque.temEfeito;
+        isPassiva = ataque.isPassiva;
+
+        textNome.text = nome;
+        textCarga.text = carga.ToString();
 
         descri = desc.GetComponent<Descricao>();
 
-        if(pc.listaAtaquesIniciais[id] == 0 && list.nome == "- -")
+        if(pc.listaAtaquesIniciais[id] == 0 && nome == "- -")
         {
             itself.SetActive(false);
         }

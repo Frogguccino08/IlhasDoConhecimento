@@ -10,6 +10,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public GameObject oProprio;
     public Player player;
     public AttacksEfeitos list;
+    public AttacksList lista;
     public Butao[] butoes = new Butao[6];
 
     public TelaUpgrade[] osDois = new TelaUpgrade[2];
@@ -29,7 +30,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public int idAtaqueAntigo;
 
     public int ataque;
-    
+
 
     //Função colocada no botão de pular, adiciona pontos e vai pro proximo turno
     public void Pular()
@@ -128,36 +129,36 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
         } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
-        list.CriarAtaque(idAtaque);
+        Attacks ataqueA = lista.CriarAtaques(idAtaque);
 
-        texto.text = list.nome;
+        texto.text = ataqueA.nome;
 
-        if (list.material == 0)
+        if (ataqueA.material == 0)
         {
-            list.material = player.materialPlayer;
+            ataqueA.material = player.materialPlayer;
         }
 
-        if (list.material == 1)
+        if (ataqueA.material == 1)
         {
             //Papel
             fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
         }
-        else if (list.material == 2)
+        else if (ataqueA.material == 2)
         {
             //Plastico
             fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
         }
-        else if (list.material == 3)
+        else if (ataqueA.material == 3)
         {
             //Vidro
             fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
         }
-        else if (list.material == 4)
+        else if (ataqueA.material == 4)
         {
             //Metal
             fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
         }
-        else if (list.material == 5)
+        else if (ataqueA.material == 5)
         {
             //Organico
             fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
@@ -170,41 +171,41 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void FazerAtaquesAntigo(int idzinho)
     {
         idAtaqueAntigo = player.attackID[idzinho];
-        list.CriarAtaque(idAtaqueAntigo);
+        Attacks ataqueA = lista.CriarAtaques(idAtaqueAntigo);
 
-        texto.text = list.nome;
+        texto.text = ataqueA.nome;
 
-        if (list.material == 0)
+        if (ataqueA.material == 0)
         {
-            list.material = player.materialPlayer;
+            ataqueA.material = player.materialPlayer;
         }
 
-        if (list.nome == "- -")
+        if (ataqueA.nome == "- -")
         {
             //Nenhum ataque
             fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
         }
-        else if (list.material == 1)
+        else if (ataqueA.material == 1)
         {
             //Papel
             fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
         }
-        else if (list.material == 2)
+        else if (ataqueA.material == 2)
         {
             //Plastico
             fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
         }
-        else if (list.material == 3)
+        else if (ataqueA.material == 3)
         {
             //Vidro
             fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
         }
-        else if (list.material == 4)
+        else if (ataqueA.material == 4)
         {
             //Metal
             fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
         }
-        else if (list.material == 5)
+        else if (ataqueA.material == 5)
         {
             //Organico
             fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);

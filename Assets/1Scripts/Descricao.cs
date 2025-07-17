@@ -10,6 +10,20 @@ public class Descricao : MonoBehaviour
     public PersonagemSelecionado perso;
     public Player player;
     public Scene cena;
+    public AttacksList lista;
+
+    //Variáveis dos ataques
+    public string nome;
+    public string descA;
+    public int materialA;
+    public int danoA;
+    public bool phispe;
+    public bool alvo;
+    public int quantidade;
+    public int cargaA;
+    public bool temEfeito;
+    public bool isPassiva;
+    //lista.CriarAtaques(Id, nome, descA, material, dano, phispe, alvo, quantidade, carga, temEfeito, isPassiva);
 
     //Chamado de objetos dentro da própria descrição
     public TMP_Text nomeAtq;
@@ -34,11 +48,11 @@ public class Descricao : MonoBehaviour
         }
 
         perso = PersonagemSelecionado.instance;
-        list.CriarAtaque(id);
+        Attacks ataque = lista.CriarAtaques(id);
 
-        nomeAtq.text = list.nome;
+        nomeAtq.text = ataque.nome;
 
-        switch (list.material)
+        switch (ataque.material)
         {
             case 0:
                 material.text = "Material";
@@ -86,51 +100,51 @@ public class Descricao : MonoBehaviour
                 break;
         }
 
-        if (list.isPassiva == true)
+        if (ataque.isPassiva == true)
         {
             phispepas.enabled = true;
             phispepas.text = "Pas";
         }
         else
         {
-            if (list.phispe == true && list.dano != 0)
+            if (ataque.phispe == true && ataque.dano != 0)
             {
                 phispepas.enabled = true;
                 phispepas.text = "Fís";
             }
-            else if (list.phispe == false && list.dano != 0)
+            else if (ataque.phispe == false && ataque.dano != 0)
             {
                 phispepas.enabled = true;
                 phispepas.text = "Dis";
             }
-            else if (list.dano == 0)
+            else if (ataque.dano == 0)
             {
                 phispepas.enabled = false;
             }
         }
 
-        carga.text = "Carga: " + list.carga;
+        carga.text = "Carga: " + ataque.carga;
 
-        if (list.dano != 0)
+        if (ataque.dano != 0)
         {
             if (player == null)
             {
                 dano.enabled = true;
-                dano.text = list.quantidade + " x " + list.dano;
+                dano.text = ataque.quantidade + " x " + ataque.dano;
                 dano.color = Color.black;
             }
             else
             {
                 dano.enabled = true;
-                if (list.phispe == true)
+                if (ataque.phispe == true)
                 {
-                    dano.text = list.quantidade + " x " + (list.dano + player.modPhiDamage + rEmConta);
+                    dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
 
-                    if (list.dano > list.dano + player.modPhiDamage + rEmConta)
+                    if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
                     {
                         dano.color = Color.red;
                     }
-                    else if (list.dano < list.dano + player.modPhiDamage + rEmConta)
+                    else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
                     {
                         dano.color = Color.green;
                     }
@@ -141,21 +155,21 @@ public class Descricao : MonoBehaviour
                 }
                 else
                 {
-                    dano.text = list.quantidade + " x " + (list.dano + player.modSpeDamage + rEmConta);
+                    dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
 
-                    if (list.dano > list.dano + player.modSpeDamage + rEmConta && list.dano > 0)
+                    if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
                     {
                         dano.color = Color.red;
                     }
-                    else if (list.dano > list.dano + player.modSpeDamage + rEmConta && list.dano < 0)
+                    else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
                     {
                         dano.color = Color.green;
                     }
-                    else if (list.dano < list.dano + player.modSpeDamage + rEmConta && list.dano > 0)
+                    else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
                     {
                         dano.color = Color.green;
                     }
-                    else if (list.dano < list.dano + player.modSpeDamage + rEmConta && list.dano < 0)
+                    else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
                     {
                         dano.color = Color.red;
                     }
@@ -173,6 +187,6 @@ public class Descricao : MonoBehaviour
             dano.enabled = false;
         }
 
-        desc.text = list.desc;
+        desc.text = ataque.desc;
     }
 }
