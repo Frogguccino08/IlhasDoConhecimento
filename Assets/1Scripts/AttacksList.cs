@@ -55,14 +55,6 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", 4, 2, true, true, 1, 3, true, false));
     }
 
-    void Start()
-    {
-        foreach (Attacks attacks in listaAtaques)
-        {
-            Debug.Log("Id: " + attacks.id + " , Nome: " + attacks.nome);
-        }
-    }
-
     public Attacks CriarAtaques(int id)
     {
         return listaAtaques[id];

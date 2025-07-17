@@ -637,7 +637,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -10117,7 +10117,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -13785,7 +13785,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -17194,7 +17194,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -18095,7 +18095,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
@@ -18342,7 +18342,7 @@ MonoBehaviour:
   oProprio: {fileID: 632770179}
   player: {fileID: 221998462}
   list: {fileID: 1364166977}
-  lista: {fileID: 0}
+  lista: {fileID: 1364166979}
   butoes:
   - {fileID: 1164163721}
   - {fileID: 107630818}
