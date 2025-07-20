@@ -35,6 +35,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //Função colocada no botão de pular, adiciona pontos e vai pro proximo turno
     public void Pular()
     {
+        player.telaUpgradeOn = false;
         control.pontosRodada += 150;
         control.textoArea.text = "Pontuação:\n" + control.pontosRodada;
 
@@ -135,31 +136,36 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         texto.text = ataqueA.nome;
 
-        if (ataqueA.material == 1)
-        {
-            //Papel
-            fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
-        }
-        else if (ataqueA.material == 2)
-        {
-            //Plastico
-            fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
-        }
-        else if (ataqueA.material == 3)
-        {
-            //Vidro
-            fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
-        }
-        else if (ataqueA.material == 4)
-        {
-            //Metal
-            fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
-        }
-        else if (ataqueA.material == 5)
-        {
-            //Organico
-            fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
-        }
+        if (ataqueA.material == 0)
+            {
+                //Sem material
+                fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
+            }
+            else if (ataqueA.material == 1)
+            {
+                //Papel
+                fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
+            }
+            else if (ataqueA.material == 2)
+            {
+                //Plastico
+                fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
+            }
+            else if (ataqueA.material == 3)
+            {
+                //Vidro
+                fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
+            }
+            else if (ataqueA.material == 4)
+            {
+                //Metal
+                fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
+            }
+            else if (ataqueA.material == 5)
+            {
+                //Organico
+                fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
+            }
 
         ataque = idAtaque;
     }

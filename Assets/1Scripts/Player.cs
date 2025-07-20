@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
     public int quantBlock;
     public int idAtaqueUsado;
     public bool rAgora;
+    public bool telaUpgradeOn = false;
 
     public int[] attackID = new int[6];
     [HideInInspector]

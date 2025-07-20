@@ -414,6 +414,7 @@ public class Enemy : MonoBehaviour
 
         if (control.inimigoAtual == ((forcaAtual * 5) + 2) || control.inimigoAtual == ((forcaAtual * 5) + 4) || control.inimigoAtual == ((forcaAtual * 5) + 1))
         {
+            enemy.telaUpgradeOn = true;
             control.texto.enabled = false;
             upgrade.SetActive(true);
             for (i = 0; i < 3; i++)

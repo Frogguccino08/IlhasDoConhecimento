@@ -55,14 +55,14 @@ public class Descricao : MonoBehaviour
         switch (ataque.material)
         {
             case 0:
-                material.text = "Material";
+                material.text = " Sem Material";
 
-                if (perso.perso != null)
+                if (perso.perso != null && player.telaUpgradeOn == false)
                 {
                     switch (perso.perso.material)
                     {
                         default:
-                            material.text = "Material";
+                            material.text = "Sem Material";
                             break;
                         case 1:
                             material.text = "Papel";
@@ -125,7 +125,7 @@ public class Descricao : MonoBehaviour
 
         carga.text = "Carga: " + ataque.carga;
 
-        if (ataque.dano != 0)
+        if (ataque.dano != 0 && player.telaUpgradeOn == false)
         {
             if (player == null)
             {
