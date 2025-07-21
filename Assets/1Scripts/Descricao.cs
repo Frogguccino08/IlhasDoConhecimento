@@ -36,15 +36,18 @@ public class Descricao : MonoBehaviour
 
     //Variável
     public int rEmConta = 0;
+    public bool upgradeAtivo = false;
 
 
     //Função responsável por toda a parte de escrever toda a descrição
     public void BotandoDescricao(int id)
     {
         cena = SceneManager.GetActiveScene();
+
         if (cena.name == "Combate")
         {
             player = GameObject.Find("Player").GetComponent<Player>();
+            upgradeAtivo = player.telaUpgradeOn;
         }
 
         perso = PersonagemSelecionado.instance;
@@ -62,22 +65,22 @@ public class Descricao : MonoBehaviour
                     switch (perso.perso.material)
                     {
                         default:
-                            material.text = "Sem Material";
+                            material.text = "Sem Material *";
                             break;
                         case 1:
-                            material.text = "Papel";
+                            material.text = "Papel *";
                             break;
                         case 2:
-                            material.text = "Plástico";
+                            material.text = "Plástico *";
                             break;
                         case 3:
-                            material.text = "Vidro";
+                            material.text = "Vidro *";
                             break;
                         case 4:
-                            material.text = "Metal";
+                            material.text = "Metal *";
                             break;
                         case 5:
-                            material.text = "Orgânico";
+                            material.text = "Orgânico *";
                             break;
                     }
                 }
@@ -125,61 +128,61 @@ public class Descricao : MonoBehaviour
 
         carga.text = "Carga: " + ataque.carga;
 
-        if (ataque.dano != 0 && player.telaUpgradeOn == false)
+        if (ataque.dano != 0 && upgradeAtivo == false)
         {
-            if (player == null)
-            {
-                dano.enabled = true;
-                dano.text = ataque.quantidade + " x " + ataque.dano;
-                dano.color = Color.black;
-            }
-            else
-            {
-                dano.enabled = true;
-                if (ataque.phispe == true)
+                if (player == null)
                 {
-                    dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
-
-                    if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
-                    {
-                        dano.color = Color.red;
-                    }
-                    else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
-                    {
-                        dano.color = Color.green;
-                    }
-                    else
-                    {
-                        dano.color = Color.black;
-                    }
+                    dano.enabled = true;
+                    dano.text = ataque.quantidade + " x " + ataque.dano;
+                    dano.color = Color.black;
                 }
                 else
                 {
-                    dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
+                    dano.enabled = true;
+                    if (ataque.phispe == true)
+                    {
+                        dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
 
-                    if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                    {
-                        dano.color = Color.red;
-                    }
-                    else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
-                    {
-                        dano.color = Color.green;
-                    }
-                    else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                    {
-                        dano.color = Color.green;
-                    }
-                    else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
-                    {
-                        dano.color = Color.red;
+                        if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
+                        {
+                            dano.color = Color.red;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else
+                        {
+                            dano.color = Color.black;
+                        }
                     }
                     else
                     {
-                        dano.color = Color.black;
-                    }
-                }
+                        dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
 
-            }
+                        if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.red;
+                        }
+                        else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.red;
+                        }
+                        else
+                        {
+                            dano.color = Color.black;
+                        }
+                    }
+
+                }
 
         }
         else
