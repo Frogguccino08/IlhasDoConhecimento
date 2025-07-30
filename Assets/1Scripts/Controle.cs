@@ -229,6 +229,17 @@ public class Controle : MonoBehaviour
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
         if (enemy.efeitosUsados[16]) yield return EsperarTeclaEspaco();
 
+        if (enemy.currentHealth <= 0)
+        {
+            yield return StartCoroutine(enemy.Morto());
+
+            inimigoAtual++;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
+
+            AtualizarEstadoBotoes();
+            yield break;
+        }
+
         enemy.EfeitoCausado(2, enemy.attackPublic, (int)enemy.danoPublic);
         if (enemy.efeitosUsados[18]) yield return EsperarTeclaEspaco();
 
