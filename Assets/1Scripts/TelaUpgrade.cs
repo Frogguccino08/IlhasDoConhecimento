@@ -178,7 +178,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         texto.text = ataqueA.nome;
 
-        if (ataqueA.nome == "- -")
+        if (ataqueA.material == 0)
         {
             //Nenhum ataque
             fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
