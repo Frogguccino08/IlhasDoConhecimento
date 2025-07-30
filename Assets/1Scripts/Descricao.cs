@@ -110,12 +110,12 @@ public class Descricao : MonoBehaviour
         }
         else
         {
-            if (ataque.phispe == true && ataque.dano != 0)
+            if (ataque.phispe == true)
             {
                 phispepas.enabled = true;
                 phispepas.text = "Fís";
             }
-            else if (ataque.phispe == false && ataque.dano != 0)
+            else if (ataque.phispe == false)
             {
                 phispepas.enabled = true;
                 phispepas.text = "Dis";
@@ -128,7 +128,7 @@ public class Descricao : MonoBehaviour
 
         carga.text = "Carga: " + ataque.carga;
 
-        if (ataque.dano != 0 && upgradeAtivo == false)
+        if (ataque.dano != 0)
         {
                 if (player == null)
                 {

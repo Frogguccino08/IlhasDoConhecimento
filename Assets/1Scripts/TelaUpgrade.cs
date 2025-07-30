@@ -234,6 +234,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     butoes[i].ColocandoAtaque(i);
 
                     control.processguir = true;
+                    player.telaUpgradeOn = false;
                     oProprio.SetActive(false);
 
                     break;
@@ -254,6 +255,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
 
         control.processguir = true;
+        player.telaUpgradeOn = false;
         oProprio.SetActive(false);
         telaAtaques.SetActive(false);
         telaAtaquesAntigos.SetActive(false);
