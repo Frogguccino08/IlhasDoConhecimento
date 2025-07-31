@@ -60,9 +60,9 @@ public class Descricao : MonoBehaviour
             case 0:
                 material.text = " Sem Material";
 
-                if (perso.perso != null && player.telaUpgradeOn == false)
+                if (player != null && player.telaUpgradeOn == false)
                 {
-                    switch (perso.perso.material)
+                    switch (player.materialPlayer)
                     {
                         default:
                             material.text = "Sem Material *";
