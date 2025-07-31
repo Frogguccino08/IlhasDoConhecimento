@@ -215,25 +215,25 @@ public class AttacksEfeitos : MonoBehaviour
 
                     if (quem == true)
                     {
-                        if (player.material[player.idAtaqueUsado] == 3)
+                        if (player.material[player.idAtaqueUsado] == 3 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 3))
                         {
                             rand = UnityEngine.Random.Range(1, 20);
 
                             if (rand > 15)
                             {
-                                player.efeitosAtivos[4] += 2;
+                                player.efeitosAtivos[4] += 3;
                             }
                         }
                     }
                     else
                     {
-                        if (enemy.material[enemy.idAtaqueUsado] == 3)
+                        if (enemy.material[enemy.idAtaqueUsado] == 3 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 3))
                         {
                             rand = UnityEngine.Random.Range(1, 20);
 
                             if (rand > 15)
                             {
-                                enemy.efeitosAtivos[4] += 2;
+                                enemy.efeitosAtivos[4] += 3;
                             }
                         }
                     }
@@ -289,25 +289,25 @@ public class AttacksEfeitos : MonoBehaviour
 
                     if (quem == true)
                     {
-                        if (player.material[player.idAtaqueUsado] == 4)
+                        if (player.material[player.idAtaqueUsado] == 4 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 4))
                         {
                             rand = UnityEngine.Random.Range(1, 20);
 
                             if (rand > 15)
                             {
-                                player.efeitosAtivos[5] += 2;
+                                player.efeitosAtivos[5] += 3;
                             }
                         }
                     }
                     else
                     {
-                        if (enemy.material[enemy.idAtaqueUsado] == 4)
+                        if (enemy.material[enemy.idAtaqueUsado] == 4 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 4))
                         {
                             rand = UnityEngine.Random.Range(1, 20);
 
                             if (rand > 15)
                             {
-                                enemy.efeitosAtivos[5] += 2;
+                                enemy.efeitosAtivos[5] += 3;
                             }
                         }
                     }
@@ -363,25 +363,26 @@ public class AttacksEfeitos : MonoBehaviour
 
                     if (quem == true)
                     {
-                        rand = UnityEngine.Random.Range(1, 20);
-
-                        if (rand > 15)
+                        if (player.material[player.idAtaqueUsado] == 5 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 5))
                         {
-                            player.efeitosAtivos[6] += 2;
+                            rand = UnityEngine.Random.Range(1, 20);
 
-                            if (player.rAgora == true)
+                            if (rand > 15)
                             {
-                                player.efeitosAtivos[6] += 1;
+                                player.efeitosAtivos[6] += 2;
                             }
                         }
                     }
                     else
                     {
-                        rand = UnityEngine.Random.Range(1, 20);
-
-                        if (rand > 15)
+                        if (enemy.material[enemy.idAtaqueUsado] == 5 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 5))
                         {
-                            enemy.efeitosAtivos[6] += 2;
+                            rand = UnityEngine.Random.Range(1, 20);
+
+                            if (rand > 15)
+                            {
+                                enemy.efeitosAtivos[6] += 2;
+                            }
                         }
                     }
                 }

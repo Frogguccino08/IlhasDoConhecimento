@@ -30,7 +30,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(18, "Lâmina afiada", "Ataque mais forte de metal que diminue a defesa física do alvo", 4, 2, true, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(19, "batida pesada", "Ataque poderoso de metal sem efeito extra", 4, 4, true, true, 3, 4, false, false));
         listaAtaques.Add(new Attacks(20, "Casca de metal", "Recebe duas cargas de bloqueio e aumenta seu ataque físico", 4, 0, false, false, 0, 3, true, false));
-        listaAtaques.Add(new Attacks(21, "Absorção", "Após usar um ataque no inimigo tem uma chance de aumentar seu ganho de conhecimento", 5, 0, false, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(21, "Absorção", "Após usar um ataque Orgânico no inimigo tem uma chance de aumentar seu ganho de conhecimento", 5, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(22, "Golpe de restos", "Ataque mais forte Orgânico que diminue o ganho de conhecimento do inimigo", 5, 2, true, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(23, "Batida de sujeira", "Um ataque poderoso Orgânico sem efeito extra", 5, 4, true, true, 3, 4, false, false));
         listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e por 2 turnos recupera parte da vida", 5, 0, false, false, 0, 3, true, false));
