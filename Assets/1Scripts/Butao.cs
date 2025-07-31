@@ -118,8 +118,9 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função para quando clicar escolher o ataque
     public void Onclick()
     {
-        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id])
+        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false)
         {
+            player.butaoClicado = true;
             StartCoroutine(player.UsarAtaque(id));
             ataqueUtilizado = true;
         }

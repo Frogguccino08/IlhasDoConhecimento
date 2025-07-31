@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
     public int idAtaqueUsado;
     public bool rAgora;
     public bool telaUpgradeOn = false;
+    public bool butaoClicado = false;
 
     public int[] attackID = new int[6];
     [HideInInspector]
@@ -530,6 +531,7 @@ public class Player : MonoBehaviour
             }
         
         control.AtaqueFeito();
+        butaoClicado = false;
     }
 
     public void EfeitoCausado(int i, float attackDamage, int dano)
