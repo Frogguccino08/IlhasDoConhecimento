@@ -135,54 +135,59 @@ public class Descricao : MonoBehaviour
                     dano.enabled = true;
                     dano.text = ataque.quantidade + " x " + ataque.dano;
                     dano.color = Color.black;
-                }
-                else
+                }else if(player != null && player.telaUpgradeOn == true)
                 {
                     dano.enabled = true;
-                    if (ataque.phispe == true)
-                    {
-                        dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
-
-                        if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
-                        {
-                            dano.color = Color.red;
-                        }
-                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
-                        {
-                            dano.color = Color.green;
-                        }
-                        else
-                        {
-                            dano.color = Color.black;
-                        }
-                    }
-                    else
-                    {
-                        dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
-
-                        if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                        {
-                            dano.color = Color.red;
-                        }
-                        else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
-                        {
-                            dano.color = Color.green;
-                        }
-                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                        {
-                            dano.color = Color.green;
-                        }
-                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
-                        {
-                            dano.color = Color.red;
-                        }
-                        else
-                        {
-                            dano.color = Color.black;
-                        }
-                    }
-
+                    dano.text = ataque.quantidade + " x " + ataque.dano;
+                    dano.color = Color.black;
                 }
+                else
+                    {
+                        dano.enabled = true;
+                        if (ataque.phispe == true)
+                        {
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
+
+                            if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
+                            {
+                                dano.color = Color.red;
+                            }
+                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
+                            {
+                                dano.color = Color.green;
+                            }
+                            else
+                            {
+                                dano.color = Color.black;
+                            }
+                        }
+                        else
+                        {
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
+
+                            if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                            {
+                                dano.color = Color.red;
+                            }
+                            else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                            {
+                                dano.color = Color.green;
+                            }
+                            else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                            {
+                                dano.color = Color.green;
+                            }
+                            else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                            {
+                                dano.color = Color.red;
+                            }
+                            else
+                            {
+                                dano.color = Color.black;
+                            }
+                        }
+
+                    }
 
         }
         else
