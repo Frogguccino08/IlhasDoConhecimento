@@ -79,6 +79,7 @@ public class Controle : MonoBehaviour
         
         if (enemy.currentHealth <= 0)
         {
+            player.butaoClicado = false;
             DesativarBotao();
 
             texto.enabled = true;
