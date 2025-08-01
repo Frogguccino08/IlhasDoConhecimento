@@ -15,13 +15,12 @@ public class SkipButton : MonoBehaviour
         StartCoroutine(control.Turno(false));
         control.turno++;
 
-        control.pontosRodada += 25;
+        control.pontosRodada += 5;
         control.textoArea.text = "Pontuação:\n " + control.pontosRodada;
 
         if (control.pontosRodada > control.escolha.pontos)
         {
-            control.escolha.pontos = control.pontosRodada;
-            control.pontMax.text = "Pontuação Máxima: " + control.escolha.pontos;
+            control.pontMax.text = "Pontuação Máxima: " + control.pontosRodada;
         }
     }
 }

@@ -25,6 +25,7 @@ public class Controle : MonoBehaviour
     public ConhecimentoControl conhecimento;
     public TMP_Text pontMax;
     public TMP_Text inimigoTurno;
+    public bool telaSair = false;
 
     public GameObject descricao;
     public GameObject descricaoGrande;
@@ -388,8 +389,7 @@ public class Controle : MonoBehaviour
 
         if (pontosRodada > escolha.pontos)
         {
-            escolha.pontos = pontosRodada;
-            pontMax.text = "Pontuação Máxima: " + escolha.pontos;
+            pontMax.text = "Pontuação Máxima: " + pontosRodada;
         }
     }
 }

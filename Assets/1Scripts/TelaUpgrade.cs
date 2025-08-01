@@ -36,7 +36,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void Pular()
     {
         player.telaUpgradeOn = false;
-        control.pontosRodada += 150;
+        control.pontosRodada += 250;
         control.textoArea.text = "Pontuação:\n" + control.pontosRodada;
 
         control.processguir = true;
@@ -44,8 +44,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         if (control.pontosRodada > control.escolha.pontos)
         {
-            control.escolha.pontos = control.pontosRodada;
-            control.pontMax.text = "Pontuação Máxima: " + control.escolha.pontos;
+            control.pontMax.text = "Pontuação Máxima: " + control.pontosRodada;
         }
     }
 
