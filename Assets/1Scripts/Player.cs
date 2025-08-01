@@ -87,6 +87,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (efeitosAtivos[1] > 15)
+        {
+            efeitosAtivos[1] = 15;
+        }
+
         modPhiDamage = 0;
         enemy.modPhiDefense = 0;
         modSpeDamage = 0;
