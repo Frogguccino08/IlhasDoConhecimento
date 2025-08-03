@@ -370,8 +370,20 @@ public class Enemy : MonoBehaviour
 
         if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
         {
+            int num = efeitosAtivos[1] - quantBlock;
             efeitosAtivos[1] = quantBlock;
-            Debug.Log("Inimigo esta exposto e não pode receber mais bloquear");
+
+            for (int i = 0; i < num; i++)
+            {
+                if (efeitosAtivos[7] > 0)
+                {
+                    efeitosAtivos[7] -= 1;
+                }
+                else
+                {
+                    efeitosAtivos[1] += 1;
+                }
+            }
         }
 
         if (inimigoEscolhido.imgPadrao != null)
@@ -508,8 +520,20 @@ public class Enemy : MonoBehaviour
 
         if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
         {
+            int num = efeitosAtivos[1] - quantBlock;
             efeitosAtivos[1] = quantBlock;
-            Debug.Log("Inimigo esta exposto e não pode receber mais bloquear");
+
+            for (int i = 0; i < num; i++)
+            {
+                if (efeitosAtivos[7] > 0)
+                {
+                    efeitosAtivos[7] -= 1;
+                }
+                else
+                {
+                    efeitosAtivos[1] += 1;
+                }
+            }
         }
 
 
@@ -675,8 +699,20 @@ public class Enemy : MonoBehaviour
 
             if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
             {
+                int num = efeitosAtivos[1] - quantBlock;
                 efeitosAtivos[1] = quantBlock;
-                Debug.Log("Inimigo esta exposto e não pode receber mais bloquear");
+
+                for (int i = 0; i < num; i++)
+                {
+                    if (efeitosAtivos[7] > 0)
+                    {
+                        efeitosAtivos[7] -= 1;
+                    }
+                    else
+                    {
+                        efeitosAtivos[1] += 1;
+                    }
+                }
             }
         }
 
