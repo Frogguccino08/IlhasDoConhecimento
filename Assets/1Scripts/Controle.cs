@@ -151,8 +151,20 @@ public class Controle : MonoBehaviour
 
         if (player.efeitosAtivos[7] > 0 && player.quantBlock < player.efeitosAtivos[1])
         {
+            int num = player.efeitosAtivos[1] - player.quantBlock;
             player.efeitosAtivos[1] = player.quantBlock;
-            Debug.Log("Você está exposto, não pode mais bloquear");
+
+            for (int i = 0; i < num; i++)
+            {
+                if (player.efeitosAtivos[7] > 0)
+                {
+                    player.efeitosAtivos[7] -= 1;
+                }
+                else
+                {
+                    player.efeitosAtivos[1] += 1;
+                }
+                }
         }
 
         player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
@@ -224,8 +236,20 @@ public class Controle : MonoBehaviour
 
         if (enemy.efeitosAtivos[7] > 0 && enemy.quantBlock < enemy.efeitosAtivos[1])
         {
+            int num = enemy.efeitosAtivos[1] - enemy.quantBlock;
             enemy.efeitosAtivos[1] = enemy.quantBlock;
-            Debug.Log("Você está exposto, não pode mais bloquear");
+
+            for (int i = 0; i < num; i++)
+            {
+                if (enemy.efeitosAtivos[7] > 0)
+                {
+                    enemy.efeitosAtivos[7] -= 1;
+                }
+                else
+                {
+                    enemy.efeitosAtivos[1] += 1;
+                }
+            }
         }
 
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
