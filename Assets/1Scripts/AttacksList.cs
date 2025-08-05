@@ -56,6 +56,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", 5, -3, false, false, 1, 2, false, false));
         listaAtaques.Add(new Attacks(45, "Avião de papel", "Ataque fraco de papel sem efeito extra", 1, 1, false, true, 1, 0, false, false));
         listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos", 5, 0, false, true, 0, 4, true, false));
+        listaAtaques.Add(new Attacks(47, "Atacar ponto fraco", "Esse ataque causa mais dano caso o inimigo esteja exposto", 0, 2, true, true, 1, 3, true, false));
     }
 
     public Attacks CriarAtaques(int id)

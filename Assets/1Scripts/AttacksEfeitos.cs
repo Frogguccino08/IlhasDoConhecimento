@@ -840,6 +840,35 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            case 47:
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.efeitosAtivos[7] > 0)
+                        {
+                            player.modPhiDamage += 2;
+                            control.efeitoAtq = "Ataque causou mais dano por estar exposto";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque deu dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.efeitosAtivos[7] > 0)
+                        {
+                            enemy.modPhiDamage += 2;
+                            control.efeitoAtq = "Ataque causou mais dano por estar exposto";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque deu dano normal";
+                        }
+                    }
+                }
+                break;
         }
     }
 }
