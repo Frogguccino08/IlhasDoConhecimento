@@ -671,7 +671,6 @@ public class Enemy : MonoBehaviour
             }
 
             danoPublic = attackDamage;
-            Debug.Log("Dano: " + danoPublic);
 
 
             if (efeitosAtivos[7] > 0)
