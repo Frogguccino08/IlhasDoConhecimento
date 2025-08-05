@@ -823,6 +823,23 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            case 46:
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        player.efeitosAtivos[18] += 3;
+                        enemy.efeitosAtivos[16] += 3;
+                        control.efeitoAtq = player.nickName + " recebeu Nutrindo e " + enemy.nomeinimigo + " recebeu Cacos";
+                    }
+                    else
+                    {
+                        enemy.efeitosAtivos[18] += 3;
+                        player.efeitosAtivos[16] += 3;
+                        control.efeitoAtq = enemy.nomeinimigo + " recebeu Nutrindo e " + player.nickName + " recebeu Cacos";
+                    }
+                }
+                break;
         }
     }
 }
