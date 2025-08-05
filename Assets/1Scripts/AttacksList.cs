@@ -54,6 +54,8 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", 0, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", 4, 2, true, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", 5, -3, false, false, 1, 2, false, false));
+        listaAtaques.Add(new Attacks(45, "Avião de papel", "Ataque fraco de papel sem efeito extra", 1, 1, false, true, 1, 0, false, false));
+        
     }
 
     public Attacks CriarAtaques(int id)

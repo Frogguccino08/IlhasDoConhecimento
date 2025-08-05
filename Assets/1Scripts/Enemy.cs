@@ -811,6 +811,15 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        //Ataques de cura são evitados com bastante vida
+        for (i = 0; i < 6; i++)
+        {
+            if (attackID[i] != 0 && dano[i] < 0 && currentHealth >= (maxHealth / 4))
+            {
+                chance[i] -= 25;
+            }
+        }
+
         //regra final 1: Se é passiva não tem como escolher
         for (i = 0; i < 6; i++)
         {
@@ -831,11 +840,20 @@ public class Enemy : MonoBehaviour
             }
         }
 
-
+        //Regra final 3: Ataques com chance negativa viram zero
         for (i = 0; i < 6; i++)
         {
-            Debug.Log("Chance do ataque " + i + ": " + chance[i]);
+            if (attackID[i] != 0 && chance[i] < 0)
+            {
+                chance[i] = 0;
+            }
         }
+
+
+        for (i = 0; i < 6; i++)
+            {
+                Debug.Log("Chance do ataque " + i + ": " + chance[i]);
+            }
 
         //Escolher o ataque e usa-lo
         for (i = 0; i < 6; i++)
