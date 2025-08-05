@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
     public int idAtaqueUsado;
 
     int cont;
-    int forcaAtual = 0;
+    public int forcaAtual = 0;
     bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
@@ -596,6 +596,7 @@ public class Enemy : MonoBehaviour
                     if (enemy.efeitosAtivos[1] > 0)
                     {
                         EfeitoCausado(0, attackDamage, dano[id]);
+                        attackDamage = 0;
                     }
                     else
                     {
@@ -670,6 +671,7 @@ public class Enemy : MonoBehaviour
             }
 
             danoPublic = attackDamage;
+            Debug.Log("Dano: " + danoPublic);
 
 
             if (efeitosAtivos[7] > 0)

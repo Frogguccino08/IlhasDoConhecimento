@@ -869,6 +869,25 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            case 48:
+                if (quando == 3)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.danoPublic == 0 && enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.phispe[enemy.idAtaqueUsado] == true && enemy.alvo[enemy.idAtaqueUsado] == true)
+                        {
+                            enemy.CausarDano(enemy.maxHealth / 10);
+                        }
+                    }
+                    else
+                    {
+                        if (player.danoPublic == 0 && player.dano[player.idAtaqueUsado] > 0 && player.phispe[player.idAtaqueUsado] == true && player.alvo[player.idAtaqueUsado] == true)
+                        {
+                            player.CausarDano(player.maxHealth / 10);
+                        }
+                    }
+                }
+                break;
         }
     }
 }

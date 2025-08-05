@@ -412,6 +412,7 @@ public class Player : MonoBehaviour
                     if (enemy.efeitosAtivos[1] > 0)
                     {
                         EfeitoCausado(0, attackDamage, dano[id]);
+                        attackDamage = 0;
                     }
                     else
                     {
