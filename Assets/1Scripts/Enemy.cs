@@ -971,6 +971,8 @@ public class Enemy : MonoBehaviour
                 efeitosAtivos[18] -= 1;
                 textoAtaque.text = "Vida Recuperada pelo nutrindo";
                 efeitosUsados[18] = true;
+                //Arrumar essa bosta
+                //healthbar.MudarBarra(currentHealth);
             }
         }
     }

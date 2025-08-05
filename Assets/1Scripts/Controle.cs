@@ -77,7 +77,7 @@ public class Controle : MonoBehaviour
     IEnumerator ExecutarTurnoInimigo()
     {
         DesativarBotao();
-        
+
         if (enemy.currentHealth <= 0)
         {
             player.butaoClicado = false;
@@ -123,14 +123,14 @@ public class Controle : MonoBehaviour
         }
 
         //Escrever o efeito na tela
-            if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
-            {
-                texto.text = efeitoAtq;
-                yield return EsperarTeclaEspaco();
-            }
+        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
+        {
+            texto.text = efeitoAtq;
+            yield return EsperarTeclaEspaco();
+        }
 
         if (player.efeitosAtivos[7] > 0)
-                player.quantBlock = player.efeitosAtivos[1];
+            player.quantBlock = player.efeitosAtivos[1];
 
         if (pulouTurno == false)
         {
@@ -164,7 +164,7 @@ public class Controle : MonoBehaviour
                 {
                     player.efeitosAtivos[1] += 1;
                 }
-                }
+            }
         }
 
         player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
@@ -174,7 +174,7 @@ public class Controle : MonoBehaviour
         {
             yield return StartCoroutine(player.Morto());
             inimigoAtual = 1;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield return EsperarTeclaEspaco();
             PersonagemSelecionado.instance.Resetar();
             SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
@@ -188,24 +188,24 @@ public class Controle : MonoBehaviour
         {
             pulouTurno = false;
         }
-            
+
 
         // Turno do inimigo
-            if (turno != 2 && turno != 1)
-            {
-                enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
+        if (turno != 2 && turno != 1)
+        {
+            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
 
-                if (enemy.efeitosAtivos[6] > 0)
-                {
-                    enemy.currentCharge += 1;
-                    enemy.efeitosAtivos[6] -= 1;
-                }
-                if (enemy.efeitosAtivos[12] > 0)
-                {
-                    enemy.currentCharge -= 1;
-                    enemy.efeitosAtivos[12] -= 1;
-                }
+            if (enemy.efeitosAtivos[6] > 0)
+            {
+                enemy.currentCharge += 1;
+                enemy.efeitosAtivos[6] -= 1;
             }
+            if (enemy.efeitosAtivos[12] > 0)
+            {
+                enemy.currentCharge -= 1;
+                enemy.efeitosAtivos[12] -= 1;
+            }
+        }
         enemy.EscolherAtaque();
 
         texto.enabled = true;
@@ -253,7 +253,18 @@ public class Controle : MonoBehaviour
         }
 
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
-        if (enemy.efeitosUsados[16]) yield return EsperarTeclaEspaco();
+        if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
+
+        if (enemy.currentHealth <= 0)
+        {
+            enemy.GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(enemy.Morto());
+            AtualizarEstadoBotoes();
+            inimigoAtual++;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
+            StartCoroutine(Turno(false));
+            yield break;
+        }
 
         enemy.EfeitoCausado(2, enemy.attackPublic, (int)enemy.danoPublic);
         if (enemy.efeitosUsados[18]) yield return EsperarTeclaEspaco();
