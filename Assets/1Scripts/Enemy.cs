@@ -307,10 +307,10 @@ public class Enemy : MonoBehaviour
         {
             maxHealth *= 2;
             maxCharge += 2;
-            phiDamage += 1;
-            phiDefense += 1;
-            speDamage += 1;
-            speDefense += 1;
+            phiDamage += 1 + forcaAtual;
+            phiDefense += 1 + forcaAtual;
+            speDamage += 1 + forcaAtual;
+            speDefense += 1 + forcaAtual;
         }
 
         cont = 0;
@@ -801,7 +801,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        //regra 4: ataques com efeito 
+        //regra 4: ataques com efeito tem mais chance de usar nos primeiros 2 turnos
         for (i = 0; i < 6; i++)
         {
             if (attackID[i] != 0 && control.turno < 5 && temEfeito[i] == true)
@@ -869,6 +869,7 @@ public class Enemy : MonoBehaviour
                             Debug.Log("Inimigo pulou o proprio turno");
                             textoAtaque.text = "Inimigo pulou o proprio turno";
                             StartCoroutine(control.Turno(true));
+                            break;
                         }
                         else
                         {

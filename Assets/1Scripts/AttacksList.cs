@@ -33,7 +33,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(21, "Absorção", "Após usar um ataque Orgânico no inimigo tem uma chance de aumentar seu ganho de conhecimento", 5, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(22, "Golpe de restos", "Ataque mais forte Orgânico que diminue o ganho de conhecimento do inimigo", 5, 2, true, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(23, "Batida de sujeira", "Um ataque poderoso Orgânico sem efeito extra", 5, 4, true, true, 3, 4, false, false));
-        listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e por 2 turnos recupera parte da vida", 5, 0, false, false, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e recupera parte da vida no final do turno", 5, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(25, "Aumentar Marcha", "Aumenta seu dano físico por 2 turnos mas diminue a defesa física pelo mesmo tempo", 4, 0, false, false, 0, 2, true, false));
         listaAtaques.Add(new Attacks(26, "Espalhar cacos", "Ataque extremamente fraco de vidro que coloca cacos no inimigo (causa dano no final do turno)", 3, 1, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(27, "Reciclar vida", "Cura parte da própria vida e continua curando por mais 2 turnos", 5, -3, false, false, 1, 4, true, false));
@@ -53,6 +53,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 5 bloqueio em si mesmo", 0, 0, false, false, 1, 5, true, false));
         listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", 0, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", 4, 2, true, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", 5, -3, false, false, 1, 2, false, false));
     }
 
     public Attacks CriarAtaques(int id)

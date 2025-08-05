@@ -413,7 +413,7 @@ public class AttacksEfeitos : MonoBehaviour
                     if (quem == true)
                     {
                         player.efeitosAtivos[1] += 2;
-                        player.efeitosAtivos[18] += 3;
+                        player.efeitosAtivos[18] += 1;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e mais conhecimento";
 
                         if (player.rAgora == true)
@@ -425,7 +425,7 @@ public class AttacksEfeitos : MonoBehaviour
                     else
                     {
                         enemy.efeitosAtivos[1] += 2;
-                        enemy.efeitosAtivos[18] += 3;
+                        enemy.efeitosAtivos[18] += 1;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e mais conhecimento";
                     }
                 }
