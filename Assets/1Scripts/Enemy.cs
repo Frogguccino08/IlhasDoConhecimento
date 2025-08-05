@@ -794,7 +794,7 @@ public class Enemy : MonoBehaviour
         //regra 3: Ataques de cura caso abaixo de 50% vida mais chance
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && alvo[i] == false && dano[i] < 0 && currentHealth > (maxHealth / 2))
+            if (attackID[i] != 0 && alvo[i] == false && dano[i] < 0 && currentHealth <= (maxHealth / 4))
             {
                 chance[i] += 25;
                 Debug.Log(nome[i] + " Chance aumentada por estar abaixo de 50% de vida e ser uma cura");
@@ -816,6 +816,7 @@ public class Enemy : MonoBehaviour
         {
             if (attackID[i] != 0 && dano[i] < 0 && currentHealth >= (maxHealth / 4))
             {
+                Debug.Log(nome[i] +" Chance diminuida por ser cura com bastante vida");
                 chance[i] -= 25;
             }
         }
@@ -845,6 +846,7 @@ public class Enemy : MonoBehaviour
         {
             if (attackID[i] != 0 && chance[i] < 0)
             {
+                Debug.Log(nome[i] + " Chance zerada por estar negativa");
                 chance[i] = 0;
             }
         }
