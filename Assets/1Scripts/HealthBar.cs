@@ -14,9 +14,9 @@ public class HealthBar : MonoBehaviour
     public void MudarBarra(float health)
     {
         slider.value = health;
-        if (health < 4 && health > 0)
+        if (health < 2 && health > 0)
         {
-            slider.value = 5;
+            slider.value = 3;
         }
         fill.color = gradient.Evaluate(slider.normalizedValue);
 

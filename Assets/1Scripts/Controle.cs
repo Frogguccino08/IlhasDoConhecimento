@@ -258,11 +258,12 @@ public class Controle : MonoBehaviour
         if (enemy.currentHealth <= 0)
         {
             enemy.GetComponent<SpriteRenderer>().enabled = false;
+            inimigoAtual++;
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();
-            inimigoAtual++;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             StartCoroutine(Turno(false));
+            turno = 0;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield break;
         }
 
