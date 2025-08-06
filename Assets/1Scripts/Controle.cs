@@ -132,6 +132,8 @@ public class Controle : MonoBehaviour
         if (player.efeitosAtivos[7] > 0)
             player.quantBlock = player.efeitosAtivos[1];
 
+        player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 4, player, enemy);
+
         if (pulouTurno == false)
         {
             player.list.AtaquesComEfeitos(true, player.ataqueUsado, 4, player, enemy);
@@ -221,6 +223,7 @@ public class Controle : MonoBehaviour
         if (enemy.efeitosAtivos[7] > 0)
             enemy.quantBlock = enemy.efeitosAtivos[1];
 
+        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 4, player, enemy);
         enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 4, player, enemy);
         for (int i = 0; i < 6; i++)
         {

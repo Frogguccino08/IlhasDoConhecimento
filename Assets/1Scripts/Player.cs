@@ -318,6 +318,8 @@ public class Player : MonoBehaviour
             quantBlock = efeitosAtivos[1];
         }
 
+        list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 0, this, enemy);
+
         list.AtaquesComEfeitos(true, attackID[id], 0, this, enemy);
 
         for (i = 0; i < 6; i++)
@@ -504,6 +506,8 @@ public class Player : MonoBehaviour
             {
                 quantBlock = efeitosAtivos[1];
             }
+
+            list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 2, this, enemy);
 
             if (temEfeito[id] == true)
             {

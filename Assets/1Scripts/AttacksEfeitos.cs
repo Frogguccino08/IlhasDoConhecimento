@@ -24,6 +24,72 @@ public class AttacksEfeitos : MonoBehaviour
         */
         switch (o)
         {
+            //Floresta Orgânica
+            case -5:
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Floresta composta player");
+                    }
+                    else
+                    {
+                        Debug.Log("Floresta composta Inimigo");
+                    }
+                }
+                break;
+            case -4:
+                if (quando == 2)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Os arquivos player");
+                    }
+                    else
+                    {
+                        Debug.Log("Os arquivos Inimigo");
+                    }
+                }
+                break;
+            case -3:
+                if (quando == 4)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Comunidade Abandonada player");
+                    }
+                    else
+                    {
+                        Debug.Log("Comunidade Abandonada Inimigo");
+                    }
+                }
+                break;
+            case -2:
+                if (quando == 6)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Coração da Ilha player");
+                    }
+                    else
+                    {
+                        Debug.Log("Coração da Ilha Inimigo");
+                    }
+                }
+                break;
+            case -1:
+                if (quando == 6)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Costa de Vidro player");
+                    }
+                    else
+                    {
+                        Debug.Log("Costa de Vidro Inimigo");
+                    }
+                }
+                break;
             case 3: //Bloquear
                 if (quando == 0)
                 {

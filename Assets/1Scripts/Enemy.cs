@@ -352,6 +352,9 @@ public class Enemy : MonoBehaviour
             quantBlock = efeitosAtivos[1];
         }
 
+        list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 6, enemy, this);
+        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 6, enemy, this);
+
         for (i = 0; i < 6; i++)
         {
             if (isPassive[i] == true)
@@ -500,6 +503,8 @@ public class Enemy : MonoBehaviour
         {
             quantBlock = efeitosAtivos[1];
         }
+
+        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
 
         list.AtaquesComEfeitos(false, attackID[id], 0, enemy, this);
         for (i = 0; i < 6; i++)
@@ -677,6 +682,8 @@ public class Enemy : MonoBehaviour
             {
                 quantBlock = efeitosAtivos[1];
             }
+
+            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 2, enemy, this);
 
             if (temEfeito[id] == true)
             {
