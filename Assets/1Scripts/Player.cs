@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     public bool usingR = false;
     public bool using3R = false;
+    public bool segundo3R = false;
 
     //[HideInInspector]
     public int phiDamage;
@@ -429,12 +430,12 @@ public class Player : MonoBehaviour
 
                         if (using3R == true)
                         {
+                            segundo3R = false;
                             currentR = 0;
                             controlConheci.SpawnRs();
                             using3R = false;
                         }
-
-                        textoAtaque.text = nickName + " usou: " + nome[id];
+                            textoAtaque.text = nickName + " usou: " + nome[id];
 
                         enemy.GetComponent<SpriteRenderer>().enabled = false;
                         StartCoroutine(control.Turno(false));
@@ -573,13 +574,19 @@ public class Player : MonoBehaviour
                 {
                     currentR = 0;
                 }
+                segundo3R = true;
                 controlConheci.SpawnRs();
                 yield return StartCoroutine(UsarAtaque(id));
-                textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
+                
             }
         
         control.AtaqueFeito();
         butaoClicado = false;
+        if (segundo3R == true)
+        {
+            textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
+        }
+        segundo3R = false; 
     }
 
     public void EfeitoCausado(int i, float attackDamage, int dano)

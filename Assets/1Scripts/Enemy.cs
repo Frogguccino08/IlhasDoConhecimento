@@ -352,6 +352,7 @@ public class Enemy : MonoBehaviour
             quantBlock = efeitosAtivos[1];
         }
 
+        list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 6, enemy, this);
         list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 6, enemy, this);
         list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 6, enemy, this);
 

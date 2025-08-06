@@ -133,6 +133,7 @@ public class Controle : MonoBehaviour
             player.quantBlock = player.efeitosAtivos[1];
 
         player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 4, player, enemy);
+        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 4, player, enemy);
 
         if (pulouTurno == false)
         {
@@ -231,8 +232,7 @@ public class Controle : MonoBehaviour
             if (enemy.isPassive[i])
                 enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 4, player, enemy);
         }
-
-        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 4, player, enemy);
+        
         for (int i = 0; i < 6; i++)
         {
             if (player.isPassive[i])

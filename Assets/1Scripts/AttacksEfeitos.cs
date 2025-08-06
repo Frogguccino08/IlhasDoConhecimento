@@ -26,7 +26,7 @@ public class AttacksEfeitos : MonoBehaviour
         {
             //Yoko (Metal/Papel)
             case -15:
-                if (quando == 5)
+                if (quando == 6)
                 {
                     Debug.Log("Yoko Passiva Ativada");
                 }
