@@ -319,6 +319,7 @@ public class Player : MonoBehaviour
         }
 
         list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 0, this, enemy);
+        list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 0, this, enemy);
 
         list.AtaquesComEfeitos(true, attackID[id], 0, this, enemy);
 
@@ -508,6 +509,7 @@ public class Player : MonoBehaviour
             }
 
             list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 2, this, enemy);
+            list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 2, this, enemy);
 
             if (temEfeito[id] == true)
             {

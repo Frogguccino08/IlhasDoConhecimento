@@ -515,6 +515,8 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
+
         for (i = 0; i < 6; i++)
         {
             if (enemy.isPassive[i] == true)
@@ -697,6 +699,8 @@ public class Enemy : MonoBehaviour
                 }
             }
 
+
+            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 3, enemy, this);
             for (i = 0; i < 6; i++)
             {
                 if (enemy.isPassive[i] == true)

@@ -24,6 +24,50 @@ public class AttacksEfeitos : MonoBehaviour
         */
         switch (o)
         {
+            //Yoko (Metal/Papel)
+            case -15:
+                if (quando == 5)
+                {
+                    Debug.Log("Yoko Passiva Ativada");
+                }
+                break;
+            //Jayden (Orgânico)
+            case -14:
+                if (quando == 4)
+                {
+                    Debug.Log("Jayden Passiva Ativada");
+                }
+                break;
+            //Renan (Metal)
+            case -13:
+                if (quando == 3)
+                {
+                    Debug.Log("Renan Passiva Ativada");
+                }
+                break;
+            //Kai (Vidro)
+            case -12:
+                if (quando == 2)
+                {
+                    Debug.Log("Kai Passiva Ativada");
+                }
+                break;
+            //Vlad (Plástico)
+            case -11:
+                if (quando == 1)
+                {
+                    Debug.Log("Vlad Passiva Ativada");
+                }
+                break;
+            //Amélia (Papel)
+            case -10:
+                if (quando == 0)
+                {
+                    Debug.Log("Amélia Passiva Ativada");
+                }
+                break;
+
+
             //Floresta Orgânica
             case -5:
                 if (quando == 0)
@@ -90,6 +134,8 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+
+
             case 3: //Bloquear
                 if (quando == 0)
                 {
