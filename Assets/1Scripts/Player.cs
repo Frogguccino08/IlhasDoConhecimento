@@ -434,8 +434,12 @@ public class Player : MonoBehaviour
                             currentR = 0;
                             controlConheci.SpawnRs();
                             using3R = false;
+                            textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
                         }
+                        else
+                        {
                             textoAtaque.text = nickName + " usou: " + nome[id];
+                        }
 
                         enemy.GetComponent<SpriteRenderer>().enabled = false;
                         StartCoroutine(control.Turno(false));
