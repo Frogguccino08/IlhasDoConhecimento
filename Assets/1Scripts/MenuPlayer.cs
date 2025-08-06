@@ -26,7 +26,7 @@ public class MenuPlayer : MonoBehaviour
     public TMP_Text textVida;
     public PersonagemSelecionado selecionado;
     public AttacksEfeitos list;
- 
+
     public GameObject Vazio;
     public GameObject Cheio;
     public GameObject Ataque;
@@ -175,5 +175,10 @@ public class MenuPlayer : MonoBehaviour
         PersonagemSelecionado.instance.regiao = UnityEngine.Random.Range(0, 5);
         PersonagemSelecionado.instance.perso = pc;
         SceneManager.LoadScene("Combate", LoadSceneMode.Single);
+    }
+
+    public void Voltar()
+    {
+        SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
     }
 }

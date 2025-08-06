@@ -1927,6 +1927,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153769805}
   m_CullTransparentMesh: 1
+--- !u!1 &176751410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176751412}
+  - component: {fileID: 176751411}
+  m_Layer: 0
+  m_Name: Personagem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &176751411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176751410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perso: {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
+  regiao: 2
+  pontos: 0
+--- !u!4 &176751412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176751410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.7890406, y: 0.7548716, z: -0.04005545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215052706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,6 +3236,7 @@ MonoBehaviour:
   ataqueUsado: 0
   quantBlock: 0
   idAtaqueUsado: 0
+  forcaAtual: 0
   inimigoEscolhido: {fileID: 0}
   escolha: {fileID: 0}
   attackID: 010000000200000003000000040000000400000004000000
@@ -20587,3 +20635,4 @@ SceneRoots:
   - {fileID: 1052532595}
   - {fileID: 221998461}
   - {fileID: 265112124}
+  - {fileID: 176751412}
