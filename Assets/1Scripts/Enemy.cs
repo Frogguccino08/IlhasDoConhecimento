@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -759,10 +760,10 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        //regra 0: Conferir se ele tem um ataque que causa dano e tem 1 de carga
+        //regra 0: Conferir se ele tem um ataque que causa dano e tem 1 ou menos de carga
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && alvo[i] == true && dano[i] > 0 && carga[i] == 1)
+            if (attackID[i] != 0 && alvo[i] == true && dano[i] > 0 && carga[i] <= 1)
             {
                 temAtaqueFraco = true;
             }
@@ -824,7 +825,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        //Ataques de cura são evitados com bastante vida
+        //regra 5: Ataques de cura são evitados com bastante vida
         for (i = 0; i < 6; i++)
         {
             if (attackID[i] != 0 && dano[i] < 0 && currentHealth >= (maxHealth / 4))
@@ -834,15 +835,25 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        //regra final 1: Se é passiva não tem como escolher
+        //regra 6: Ataques de cura são evitados após 40 turnos
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && isPassive[i] == true)
+            if (attackID[i] != 0 && dano[i] < 0 && control.turno >= 40)
             {
-                Debug.Log(nome[i] + " Chance eliminada por ser passiva");
-                chance[i] = 0;
+                Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
+                chance[i] -= 25;
             }
         }
+
+        //regra final 1: Se é passiva não tem como escolher
+            for (i = 0; i < 6; i++)
+            {
+                if (attackID[i] != 0 && isPassive[i] == true)
+                {
+                    Debug.Log(nome[i] + " Chance eliminada por ser passiva");
+                    chance[i] = 0;
+                }
+            }
 
         //regra final 2: Se carga maior que currentcharge não tem como escolher
         for (i = 0; i < 6; i++)
@@ -881,6 +892,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("Inimigo pulou o proprio turno");
             textoAtaque.text = "Inimigo pulou o proprio turno";
             StartCoroutine(control.Turno(true));
+            return;
         }
         else
         {

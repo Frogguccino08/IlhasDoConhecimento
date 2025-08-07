@@ -146,15 +146,27 @@ public class Descricao : MonoBehaviour
                         dano.enabled = true;
                         if (ataque.phispe == true)
                         {
+                            if(ataque.dano > 0)
                             dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
+                            else
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modPhiDamage * -1) + rEmConta);
+                            
+                        
 
-                            if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta)
+                            if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
                             {
                                 dano.color = Color.red;
                             }
-                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta)
+                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
                             {
                                 dano.color = Color.green;
+                            }else if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                            {
+                                dano.color = Color.green;
+                            }
+                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                            {
+                                dano.color = Color.red;
                             }
                             else
                             {
@@ -163,13 +175,16 @@ public class Descricao : MonoBehaviour
                         }
                         else
                         {
+                            if(ataque.dano > 0)
                             dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
+                            else
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modSpeDamage * -1) + rEmConta);
 
                             if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
                             {
                                 dano.color = Color.red;
                             }
-                            else if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                            else if (ataque.dano > ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
                             {
                                 dano.color = Color.green;
                             }
@@ -177,7 +192,7 @@ public class Descricao : MonoBehaviour
                             {
                                 dano.color = Color.green;
                             }
-                            else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano < 0)
+                            else if (ataque.dano < ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
                             {
                                 dano.color = Color.red;
                             }
