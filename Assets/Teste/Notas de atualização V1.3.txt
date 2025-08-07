@@ -1,0 +1,18 @@
+Balanceamento:
+
+
+Correção de erros:
+- Agora a diferença de dano da Carga R é mostrada na descrição do ataque.
+
+- Agora ao usar um ataque que cause dano ou cure a si mesmo o efeito de piscar vermelho ou verde respectivamente foi adicionado.
+
+- Agora a cor do dano na descrição muda caso esteja maior ou menor que o padrão para facilitar a visualização, incluindo a Carga R.
+
+- Erro que fazia com que ataques que curam, curar menos quando usando carga R ou com modificador positivo e vise versa corrigido.
+
+
+Novos Ataques:
+
+
+Novos Inimigos:
+

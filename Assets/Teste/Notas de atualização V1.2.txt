@@ -1,0 +1,30 @@
+Atualizações balanceamento:
+- Variação de dano do ataque diminuído.
+
+- Ataques médios de cada material aumentaram para 3 de carga e colocar o efeito negativo do material no inimigo.
+
+- Ataques mais fortes do material agora não causam efeito.
+
+- Na escolha de ataque de inimigo foi adicionado a regra de caso seja um boss e tenha pouca carga tem uma chance de pular o turno.
+
+- Modificadores de ataque físico e a distancia foram mudados, antes eles multiplicavam o dano final por 1.2, agora em vez disso eles somam +1 ao dano do ataque. e também é mostrado na descrição do ataque a diferença de dano.
+
+- Similar aos modificadores a carga R agora também em vez de mudar o dano final também adicionam +1 no modificador. Porém ainda não é mostrado na descrição (Trabalhando nisso)
+
+
+Correção de erros:
+- Da forma que o código era escrito os upgrades eram entregues de 2 em 2 inimigos derrotados e os inimigos mudavam de fase ou chegavam em boss em números diferentes. agora foi trocado para sempre após derrotar um boss, no primeiro inimigo após o boss, e no terceiro.
+
+- Um problema estava ocorrendo que ao utilizar um ataque que causava dano e tinha um efeito ao mesmo tempo com um R ele não era gasto, foi corrigido.
+
+- Cor do elemento de papel trocado para ficar mais fácil de ver, também trocado a cor do Orgânico desativado pois era muito similar ao metal desativado.
+
+- Erro na descrição dos ataques que fazia com que até mesmo em combate aparecesse como "Material" os ataques que ficavam no mesmo material que o personagem foi corrigido.
+
+
+Novos Ataques:
+- 
+
+
+Novos Inimigos:
+- 

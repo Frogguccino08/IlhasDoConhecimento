@@ -1,0 +1,51 @@
+Funções Adicionadas:
+- A quantidade de dano causado no ataque é mostrado na tela com uma pequena animação para melhor visualização.
+- Texto do efeito do ataque adicionado.
+- Forma na qual o jogo fazia ataques sem elemento foi mudada e corrigida.
+- Escrita do material na descrição de foi mudada, ataques sem material agora na tela inicial e upgrade mostra "sem material" e em combate mostra o material que ela está agora com um *.
+- Agora clicando "Esc" tem uma tela para sair do combate e voltar para o menu
+- Passando o mouse por cima da barra de vida do seu personagem mostra quanto de status você tem atualmente.
+- Tela inicial adicionada.
+
+
+Balanceamento:
+- Ao pular turno agora você ganha apenas 5 pontos.
+- Ao pular um upgrade agora você ganha 250 pontos.
+- Escudo agora tem um máximo de 15 total.
+- Exposto agora além de sair com o inimigo do turno também sai colocando escudo.
+- Bloqueio vivo, agora só coloca 1 nutrindo curando apenas no final do primeiro turno.
+- Bosses agora recebem mais atributos quanto maior o nível.
+- Inimigos nível baixo de orgânico trocaram o "Reciclar vida" por "Composto".
+- Inimigos agora evitar mais usar cura quando estão com mais de 25% da vida.
+
+
+Correção de erros:
+- Erro da inicialização do jogador que fazia com que a defesa a distância não ficasse correta foi arrumado.
+- Erro que faz com que não mostrasse o dano na descrição arrumado.
+- Erro que faz com que a cor do ataque sem material nos ataques antigos da tela de upgrade arrumado.
+- Erro que quando um personagem trocava de material na descrição de ataques sem material continuava o antigo arrumado.
+- Erro que na tela de upgrade ataques eram afetados por mudanças de status arrumado.
+- As passivas "Pontas afiadas" e "Quebrar espelho" não aconteciam com ataques sem material que viraram do material da passiva.
+- Erro de poder clicar rapidamente no ataque e usar duas vezes no turno corrigido
+- um inimigo ao morrer de cacos não passava para o próximo, foi corrigido.
+
+
+Novos Ataques:
+(Todos) Composto, 2 carga, Orgânico,, 1x-3 a distância, Cura mais fraca
+(Amélia) Avião de papel, 0 carga, papel, 1x1 a distância, sem efeito
+(Jayden) Roubar Nutrientes, 4 carga, Orgânico, Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos
+(Kai/Renan) Atacar ponto fraco, 3 carga, Sem material, 1x2 físico, causa mais dano caso o inimigo esteja exposto
+(Jayden/Amélia/Vlad) Armadura de espinhos, Passiva, sem material, Enquanto tiver escudo causa um pequeno dano de volta a ser atacado
+
+
+Novos Inimigos:
+
+
+Novos Personagens:
+- Personagem secreta adicionada ao jogo, junto com dois ataques especiais. Boa Sorte.
+
+
+Organização de código:
+- Forma que o jogo criava os ataques foi mudada drasticamente para melhor organização e qualidade.
+- Arquivos dos inimigos organizados para facilitar na adição de novos inimigos aos mapas.
+- Ataques sem material apareciam como o nome do material do jogador no menu, foi mudado para cor do material e o texto "sem material"

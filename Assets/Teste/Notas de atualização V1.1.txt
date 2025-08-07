@@ -1,0 +1,12 @@
+- O número do inimigo que você está agora é mostrado na tela junto com o turno que se encontra.
+
+- Quantidade de vida e atributos dos inimigos em níveis mais altos diminuído.
+
+- Bosses foram drasticamente nerfados.
+
+- Agora fala o nome do personagem ou do inimigo na caixa de texto ao invés de "Player" ou "Inimigo" apenas
+
+
+Correção de erros:
+
+- Por um erro no código as áreas que poderiam ser escolhidas no início do jogo não estavam incluindo a última área do material orgânico, agora foi corrigido.

@@ -1,0 +1,55 @@
+Funções Adicionadas:
+- Agora na hub do jogo mostra a quantidade de escudo que você ou o inimigo possuem.
+
+- Agora tem uma aba, que mostra os efeitos positivos e negativos que estão afetando o personagem.
+
+- Texto da pontuação máxima agora atualiza durante a rodada caso os pontos atuais sejam maiores do que os máximos
+
+
+Balanceamento:
+- Atributos dos inimigos reformulado, tanto em como eles são espalhados quanto como eles aumentam a cada boss.
+
+- Agora os atributos só aumentam após derrotar o boss, o que deixa os bosses mais fracos.
+
+- Ataques que você já possui não aparecem na tela de upgrades.
+
+
+Correção de erros:
+- As vezes ao usar a carga R o bônus que você recebia continuava a mostra na descrição no próximo turno, isso foi corrigido.
+
+- por causa de um erro a carga R não estava alterando nada em ataques que apenas causavam efeito, foi consertado.
+
+- Arrumado a questão que quando usado um ataque que não causa dano o jogo pulava sozinho o texto.s
+
+
+Novos Ataques:
+(Renan; Vlad) - Estilhaços, Metal, 1x1 a distância, ataque fraco de metal que coloca 3 cacos no inimigo.
+
+(Jayden) - Suco ácido, Orgânico, 0 dano a distância, Espirra líquido ácido no inimigo diminuindo a defesa física e a distância por 2 turnos.
+
+(Amélia) - Folhas Soltas, papel, 5x1 a distância, Ataque sem efeito.
+
+(Amélia) - Desinformação, Papel, 0 dano a distância, inimigo fica com menos dano a distância por 3 turnos.
+
+(Vlad) - Estagnado, Plástico, 0 dano a distância, inimigo fica com menos dano físico por 3 turnos.
+
+(Kai) - Tenderizar, Vidro, 0 dano a distância, inimigo fica com menos defesa a distância por 3 turnos.
+
+(Renan) - Derreter, Metal, 0 dano a distância, inimigo fica com menos defesa física por 3 turnos.
+
+(Jayden) - Desperdício, Orgânico, 0 dano a distância, inimigo fica com menos conhecimento por 3 turnos.
+
+(Kai) - Arremesso de garrafa, Vidro, 3x3 dano a distância, ataque também causa cacos.
+
+(Vlad) - Martelo de brinquedo, Plástico, 1x5 dano físico, deixa o inimigo com 2 exposto.
+
+(Vlad) - Tiro de canudo, Plástico, 2x3 dano a distância, cada tiro remove 2 bloqueios.
+
+(Amélia) - Aprender, Papel, 1x3 dano a distância, deixa o inimigo com 2 exposto.
+
+(Todos) - Tapa leve, sem material, 1x1 dano físico, não custa nenhum conhecimento.
+
+(Todos)- Barreira perfeita, sem material, 0 dano, coloca 5 bloqueio.
+
+
+Novos Inimigos:
