@@ -171,6 +171,11 @@ public class Controle : MonoBehaviour
         }
 
         player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
+        if (turno > 1)
+        {
+            enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
+        }
+
         if (player.efeitosUsados[16]) yield return EsperarTeclaEspaco();
 
         if (player.currentHealth <= 0)
@@ -258,6 +263,7 @@ public class Controle : MonoBehaviour
         }
 
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
+        player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
         if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
 
         if (enemy.currentHealth <= 0)

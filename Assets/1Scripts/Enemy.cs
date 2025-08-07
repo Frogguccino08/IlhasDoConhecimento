@@ -958,15 +958,6 @@ public class Enemy : MonoBehaviour
 
         if (i == 1) //No final do turno
         {
-            //entre 2 e 12 (Todos os efeitos que passam no final do turno)
-            for (int fo = 2; fo <= 12; fo++)
-            {
-                if (efeitosAtivos[fo] > 0)
-                {
-                    efeitosAtivos[fo] -= 1;
-                }
-            }
-
             //16. Cacos
             if (efeitosAtivos[16] > 0)
             {
@@ -997,6 +988,18 @@ public class Enemy : MonoBehaviour
                 efeitosUsados[18] = true;
                 //Arrumar essa bosta
                 //healthbar.MudarBarra(currentHealth);
+            }
+        }
+
+        if (i == 3)
+        {
+            //entre 2 e 12 (Todos os efeitos que passam no final do turno)
+            for (int fo = 2; fo <= 12; fo++)
+            {
+                if (efeitosAtivos[fo] > 0)
+                {
+                    efeitosAtivos[fo] -= 1;
+                }
             }
         }
     }

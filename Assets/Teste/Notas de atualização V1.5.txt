@@ -17,6 +17,7 @@ Balanceamento:
 - Bosses agora recebem mais atributos quanto maior o nível.
 - Inimigos nível baixo de orgânico trocaram o "Reciclar vida" por "Composto".
 - Inimigos agora evitar mais usar cura quando estão com mais de 25% da vida.
+- Efeitos (Não considerando nutrindo, cacos e bloqueio) agora acabam no final do turno da próxima pessoa no turno, exp. algo seu sai no final do proximo turno inimigo
 
 
 Correção de erros:

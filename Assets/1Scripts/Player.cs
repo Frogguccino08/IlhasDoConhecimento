@@ -595,17 +595,17 @@ public class Player : MonoBehaviour
 
     public void EfeitoCausado(int i, float attackDamage, int dano)
     {
-        for(int us = 1; us < 19; us++)
+        for (int us = 1; us < 19; us++)
         {
             efeitosUsados[us] = false;
         }
 
-        if(i == 0) //logo após calcular o dano
+        if (i == 0) //logo após calcular o dano
         {
             //0. Bloqueio
-            if(enemy.efeitosAtivos[1] > 0)
+            if (enemy.efeitosAtivos[1] > 0)
             {
-                if(dano > 0)
+                if (dano > 0)
                 {
                     attackDamage = 0;
                     Debug.Log("Ataque bloqueado");
@@ -614,19 +614,10 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(i == 1) //No final do turno
+        if (i == 1) //No final do turno
         {
-            //entre 2 e 12 (Todos os efeitos que passam no final do turno)
-            for(int fo = 2; fo <= 12; fo++)
-            {
-                if(efeitosAtivos[fo] > 0)
-                {
-                    efeitosAtivos[fo] -= 1;
-                }
-            }
-
             //16.Cacos
-            if(efeitosAtivos[16] > 0)
+            if (efeitosAtivos[16] > 0)
             {
                 attackDamage = Mathf.Round(maxHealth * 0.125f);
                 CausarDano(attackDamage);
@@ -636,10 +627,10 @@ public class Player : MonoBehaviour
                 efeitosUsados[16] = true;
             }
         }
-        if(i == 2) //No final do turno tbm só que separado pro nutrindo
+        if (i == 2) //No final do turno tbm só que separado pro nutrindo
         {
             //18.Nutrindo
-            if(efeitosAtivos[18] > 0)
+            if (efeitosAtivos[18] > 0)
             {
                 attackDamage = Mathf.Round((maxHealth * 0.125f) * -1);
                 CausarDano(attackDamage);
@@ -647,6 +638,18 @@ public class Player : MonoBehaviour
                 efeitosAtivos[18] -= 1;
                 textoAtaque.text = "Vida Recuperada pelo nutrindo";
                 efeitosUsados[18] = true;
+            }
+        }
+
+        if (i == 3) //No final do turno de todos
+        {
+            //entre 2 e 12 (Todos os efeitos que passam no final do turno)
+            for (int fo = 2; fo <= 12; fo++)
+            {
+                if (efeitosAtivos[fo] > 0)
+                {
+                    efeitosAtivos[fo] -= 1;
+                }
             }
         }
     }
