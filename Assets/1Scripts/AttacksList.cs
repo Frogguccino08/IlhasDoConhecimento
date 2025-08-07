@@ -5,12 +5,12 @@ public class AttacksList : MonoBehaviour
 {
     public List<Attacks> listaAtaques = new List<Attacks>();
     public Attacks attacks;
-    
+
 
     void Awake()
     {
         //int Id, string Nome, string Desc, tipo1, tipo2 int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
-        //Tipo {Attacks.Tipo.dano, Attacks.Tipo.cura, Attacks.Tipo.suporte, Attacks.Tipo.zero}
+        //Tipo {Attacks.Tipo.golpe, Attacks.Tipo.suporte, Attacks.Tipo.bloqueio, Attacks.Tipo.passiva, Attacks.Tipo.cura, Attacks.Tipo.cura}
         listaAtaques.Add(new Attacks(0, "- -", "Esse ataque não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaAtaques.Add(new Attacks(1, "Ataque purificador", "Ataque físico comum com o mesmo material de quem o utiliza", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 2, true, true, 1, 1, false, false));
         listaAtaques.Add(new Attacks(2, "Disparo purificador", "Ataque a distância comum com o mesmo material de quem o utiliza", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 2, false, true, 1, 1, false, false));
@@ -35,10 +35,10 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(21, "Absorção", "Após usar um ataque Orgânico no inimigo tem uma chance de aumentar seu ganho de conhecimento", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(22, "Golpe de restos", "Ataque mais forte Orgânico que diminue o ganho de conhecimento do inimigo", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 2, true, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(23, "Batida de sujeira", "Um ataque poderoso Orgânico sem efeito extra", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 4, true, true, 3, 4, false, false));
-        listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e recupera parte da vida no final do turno", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, false, false, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e recupera parte da vida no final do turno", Attacks.Tipo.bloqueio, Attacks.Tipo.cura, 5, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(25, "Aumentar Marcha", "Aumenta seu dano físico por 2 turnos mas diminue a defesa física pelo mesmo tempo", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, false, false, 0, 2, true, false));
         listaAtaques.Add(new Attacks(26, "Espalhar cacos", "Ataque extremamente fraco de vidro que coloca cacos no inimigo (causa dano no final do turno)", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 1, false, true, 1, 2, true, false));
-        listaAtaques.Add(new Attacks(27, "Reciclar vida", "Cura parte da própria vida e continua curando por mais 2 turnos", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, -3, false, false, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(27, "Reciclar vida", "Cura parte da própria vida e continua curando por mais 2 turnos", Attacks.Tipo.suporte, Attacks.Tipo.cura, 5, -3, false, false, 1, 4, true, false));
         listaAtaques.Add(new Attacks(28, "Estilhaços", "Ataque fraco de metal que causa cacos no inimigo", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 1, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(29, "Suco ácido", "diminue a defesa física e a distância do alvo por 3 turnos", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(30, "Folhas soltas", "Ataque extremamente fraco de papel porém que ataca várias vezes", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 1, false, true, 5, 3, false, false));
@@ -55,11 +55,12 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 5 bloqueio em si mesmo", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, false, false, 1, 5, true, false));
         listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 2, true, true, 1, 3, true, false));
-        listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, -3, false, false, 1, 2, false, false));
+        listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.suporte, Attacks.Tipo.cura, 5, -3, false, false, 1, 2, false, false));
         listaAtaques.Add(new Attacks(45, "Avião de papel", "Ataque fraco de papel sem efeito extra", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 1, false, true, 1, 0, false, false));
-        listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, false, true, 0, 4, true, false));
+        listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos", Attacks.Tipo.suporte, Attacks.Tipo.cura, 5, 0, false, true, 0, 4, true, false));
         listaAtaques.Add(new Attacks(47, "Atacar ponto fraco", "Esse ataque causa mais dano caso o inimigo esteja exposto", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 2, true, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(48, "Armadura de espinhos", "Enquanto tiver escudo causa um pequeno dano de volta a ser atacado", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(49, "Corte", "Golpe fraco de metal sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 1, true, true, 1, 0, false, false));
     }
 
     public Attacks CriarAtaques(int id)
