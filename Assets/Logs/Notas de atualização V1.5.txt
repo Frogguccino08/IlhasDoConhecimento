@@ -6,14 +6,16 @@ Funções Adicionadas:
 - Agora clicando "Esc" tem uma tela para sair do combate e voltar para o menu
 - Passando o mouse por cima da barra de vida do seu personagem mostra quanto de status você tem atualmente.
 - Tela inicial adicionada.
+- Personagens 
 
 
 Visual:
 - Rework visual: Amélia
 - Rework visual: Vlad
+- Rework visual: ???
 
 
-Efeitos especiais:
+Efeitos especiais além de ataques:
 -Renan, Usar o 3R da +1 de dano no ataque.
 -Coração da Ilha, Personagens que não sejam metal ficam com -1 defesa física no inicio do turno.
 -Metal -> Papel, Atacar com um ataque que causa dano faz um segundo ataque bem fraco.
@@ -49,7 +51,13 @@ Novos Ataques:
 (Jayden) Roubar Nutrientes, 4 carga, Orgânico, Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos
 (Kai/Renan) Atacar ponto fraco, 3 carga, Sem material, 1x2 físico, causa mais dano caso o inimigo esteja exposto
 (Jayden/Amélia/Vlad) Armadura de espinhos, Passiva, sem material, Enquanto tiver escudo causa um pequeno dano de volta a ser atacado
-(Renan) Corte, 0 carga, metal, 1x1 físico, sem efeito
+(Renan/Amélia) Corte, 0 carga, metal, 1x1 físico, sem efeito
+(Inimigos) Ataque poluente, 1 carga, 1x2 físico, sem efeito
+(inimigos) Disparo poluente, 1 carga, 1x2 a distância, sem efeito
+(Renan/Amélia) Batida energizada, 3 carga, 1x3 físico, causa mais dano em alvos de metal
+(Renan) Passar óleo, 4 carga, 1x-3, cura uma pequena quantidade de vida e aumenta dano físico por 2 turnos
+(Renan) Campo magnético, passiva, caso esteja contra um inimigo de metal recebe +1 de defesa física e a distância no inicio do turno
+(Renan/Amélia/ Vlad) Entortar, passiva, Ataques que causam dano físico em inimigos de metal fazem eles ficarem com -2 de defesa física
 
 
 Novos Inimigos:

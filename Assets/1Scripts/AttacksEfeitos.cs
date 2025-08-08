@@ -938,7 +938,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 43:
+            case 43: //Katana de alma
                 if (quando == 0)
                 {
                     if (quem == true)
@@ -953,7 +953,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 46:
+            case 46: //Roubar nutriente
                 if (quando == 0)
                 {
                     if (quem == true)
@@ -970,7 +970,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 47:
+            case 47: //Atacar ponto fraco
                 if (quando == 0)
                 {
                     if (quem == true)
@@ -999,7 +999,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 48:
+            case 48: //Armadura de Espinhos
                 if (quando == 3)
                 {
                     if (quem == true)
@@ -1014,6 +1014,90 @@ public class AttacksEfeitos : MonoBehaviour
                         if (player.danoPublic == 0 && player.dano[player.idAtaqueUsado] > 0 && player.phispe[player.idAtaqueUsado] == true && player.alvo[player.idAtaqueUsado] == true)
                         {
                             player.CausarDano(player.maxHealth / 10);
+                        }
+                    }
+                }
+                break;
+            case 50: //Batida energizada
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 4)
+                        {
+                            player.modPhiDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 4)
+                        {
+                            enemy.modPhiDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                }
+                break;
+            case 53: //Passar óleo
+                if (quando == 2)
+                {
+                    if (quem == true)
+                    {
+                        player.efeitosAtivos[5] += 3;
+                        control.efeitoAtq = "Dano físico aumentado";
+                    }
+                    else
+                    {
+                        enemy.efeitosAtivos[5] += 3;
+                        control.efeitoAtq = "Dano físico aumentado";
+                    }
+                }
+                break;
+            case 54: //Campo magnético
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 4)
+                        {
+                            player.efeitosAtivos[2] += 1;
+                            player.efeitosAtivos[3] += 1;
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 4)
+                        {
+                            enemy.efeitosAtivos[2] += 1;
+                            enemy.efeitosAtivos[3] += 1;
+                        }
+                    }
+                }
+                break;
+            case 55: //Entortar
+                if (quando == 4)
+                {
+                    if (quem == true)
+                    {
+                        if (player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0 && enemy.materialInimigo == 4)
+                        {
+                            enemy.efeitosAtivos[11] += 2;
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.phispe[enemy.idAtaqueUsado] == true && enemy.dano[enemy.idAtaqueUsado] > 0 && player.materialPlayer == 4)
+                        {
+                            player.efeitosAtivos[11] += 2;
                         }
                     }
                 }
