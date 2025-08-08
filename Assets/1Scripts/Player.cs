@@ -760,7 +760,7 @@ public class Player : MonoBehaviour
         }
         else if (materialPlayer == 2)
         {
-            cor.color = new Color32(86, 7, 13, 255);
+            cor.color = new Color32(86, 7, 13, 240);
         }else if (materialPlayer == 3)
         {
             cor.color = new Color32(0, 54, 0, 255);

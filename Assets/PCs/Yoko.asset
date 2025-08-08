@@ -17,7 +17,8 @@ MonoBehaviour:
   nickName: Yoko
   material: 1
   imgMenu: {fileID: 5041406280902375210, guid: a752cd5940c70cc48ad99232b1c65639, type: 3}
-  imgCombate: {fileID: 5041406280902375210, guid: a752cd5940c70cc48ad99232b1c65639, type: 3}
+  imgCombate: {fileID: -8671974145919482100, guid: 164c4389dd04020459347e05359e7a9a, type: 3}
+  Cor: {fileID: 8607443389332853153, guid: 954064ac29e466248af0f39a983b3fad, type: 3}
   maxHealth: 50
   maxCharge: 5
   pDamage: 3
