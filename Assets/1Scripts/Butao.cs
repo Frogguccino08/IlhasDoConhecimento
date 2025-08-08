@@ -118,7 +118,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função para quando clicar escolher o ataque
     public void Onclick()
     {
-        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false)
+        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
         {
             player.butaoClicado = true;
             StartCoroutine(player.UsarAtaque(id));
@@ -210,7 +210,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função que faz segurar o botão começar a carga R
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id])
+        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
         {
             StartCoroutine(EsperandoR());
         }
@@ -219,7 +219,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função de aparecer a descrição quando passa o mouse por cima
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (desc != null)
+        if (desc != null && control.telaSair == false)
         {
             desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
             desc.SetActive(true);
