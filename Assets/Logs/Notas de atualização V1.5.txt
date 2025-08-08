@@ -8,6 +8,11 @@ Funções Adicionadas:
 - Tela inicial adicionada.
 
 
+Visual:
+- Rework visual: Amélia
+- Rework visual: Vlad
+
+
 Efeitos especiais:
 -Renan, Usar o 3R da +1 de dano no ataque.
 -Coração da Ilha, Personagens que não sejam metal ficam com -1 defesa física no inicio do turno.
