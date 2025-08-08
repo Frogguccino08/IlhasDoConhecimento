@@ -1,7 +1,7 @@
 [System.Serializable]
 public class Attacks
 {
-    public enum Tipo {golpe, suporte, bloqueio, passiva, cura, zero}
+    public enum Tipo {golpe, suporte, negativo, bloqueio, passiva, cura, troca, zero}
 
     public int id;
     public string nome;

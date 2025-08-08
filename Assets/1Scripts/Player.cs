@@ -68,6 +68,10 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public string[] desc = new string[6];
     [HideInInspector]
+    public Attacks.Tipo[] tipo1 = new Attacks.Tipo[6];
+    [HideInInspector]
+    public Attacks.Tipo[] tipo2 = new Attacks.Tipo[6];
+    [HideInInspector]
     public int[] material = new int[6];
     [HideInInspector]
     public int[] dano = new int[6];
@@ -257,6 +261,8 @@ public class Player : MonoBehaviour
             attackID[i] = ataque.id;
             nome[i] = ataque.nome;
             desc[i] = ataque.desc;
+            tipo1[i] = ataque.tipo1;
+            tipo2[i] = ataque.tipo2;
             material[i] = ataque.material;
             dano[i] = ataque.dano;
             phispe[i] = ataque.phispe;

@@ -73,6 +73,10 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public string[] desc = new string[6];
     [HideInInspector]
+    public Attacks.Tipo[] tipo1 = new Attacks.Tipo[6];
+    [HideInInspector]
+    public Attacks.Tipo[] tipo2 = new Attacks.Tipo[6];
+    [HideInInspector]
     public int[] material = new int[6];
     [HideInInspector]
     public int[] dano = new int[6];
@@ -470,6 +474,8 @@ public class Enemy : MonoBehaviour
             Attacks ataque = lista.CriarAtaques(attackID[i]);
             nome[i] = ataque.nome;
             desc[i] = ataque.desc;
+            tipo1[i] = ataque.tipo1;
+            tipo2[i] = ataque.tipo2;
             material[i] = ataque.material;
             dano[i] = ataque.dano;
             phispe[i] = ataque.phispe;
@@ -774,7 +780,7 @@ public class Enemy : MonoBehaviour
         //regra 1: Ataque com maior dano mais chance
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && alvo[i] == true && dano[i] > 0 && currentCharge <= carga[i])
+            if (attackID[i] != 0 && alvo[i] == true && dano[i] > 0 && currentCharge >= carga[i])
             {
                 if (dano[i] * quantidade[i] > maiorDano)
                 {
@@ -792,9 +798,15 @@ public class Enemy : MonoBehaviour
         //regra 2: Ataque com maior cura mais chance
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && alvo[i] == false && dano[i] < 0 && currentCharge <= carga[i])
+            int subida = 0;
+
+            if (attackID[i] != 0 && alvo[i] == false && dano[i] < 0 && currentCharge >= carga[i])
             {
-                if (dano[i] * quantidade[i] < maiorCura)
+                if (tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura)
+                {
+                    subida = 2;
+                }
+                if (dano[i] * quantidade[i] - subida < maiorCura)
                 {
                     maiorCura = dano[i] * quantidade[i];
                     maiorCuraTemporario = i;
@@ -810,7 +822,7 @@ public class Enemy : MonoBehaviour
         //regra 3: Ataques de cura caso abaixo de 50% vida mais chance
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && alvo[i] == false && dano[i] < 0 && currentHealth <= (maxHealth / 4))
+            if (attackID[i] != 0 && alvo[i] == false && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && currentHealth <= (maxHealth / 4))
             {
                 chance[i] += 25;
                 Debug.Log(nome[i] + " Chance aumentada por estar abaixo de 50% de vida e ser uma cura");
@@ -830,7 +842,7 @@ public class Enemy : MonoBehaviour
         //regra 5: Ataques de cura são evitados com bastante vida
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && dano[i] < 0 && currentHealth >= (maxHealth / 4))
+            if (attackID[i] != 0 && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && currentHealth >= (maxHealth / 4))
             {
                 Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
                 chance[i] -= 25;
@@ -840,7 +852,7 @@ public class Enemy : MonoBehaviour
         //regra 6: Ataques de cura são evitados após 40 turnos
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && dano[i] < 0 && control.turno >= 40)
+            if (attackID[i] != 0 && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && control.turno >= 40)
             {
                 Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
                 chance[i] -= 25;
@@ -883,11 +895,30 @@ public class Enemy : MonoBehaviour
             Debug.Log("Chance do ataque " + i + ": " + chance[i]);
         }
 
-        //Escolher o ataque e usa-lo
+        //Regra final 4: Caso tenha algum ataque com mais carga do que tem atualmente chance de pular turno
         for (i = 0; i < 6; i++)
         {
-            maximo += chance[i];
+            if (attackID[i] != 0 && carga[i] > currentCharge)
+            {
+                Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
+
+                int tentarPular = UnityEngine.Random.Range(1, 21);
+                if (tentarPular <= 8)
+                {
+                    Debug.Log("Inimigo pulou o proprio turno");
+                    textoAtaque.text = "Inimigo pulou o proprio turno";
+                    StartCoroutine(control.Turno(true));
+                    return;
+                }
+            }
         }
+
+
+        //Escolher o ataque e usa-lo
+            for (i = 0; i < 6; i++)
+            {
+                maximo += chance[i];
+            }
 
         if (maximo == 0)
         {
@@ -916,20 +947,20 @@ public class Enemy : MonoBehaviour
                             Debug.Log("Inimigo pulou o proprio turno");
                             textoAtaque.text = "Inimigo pulou o proprio turno";
                             StartCoroutine(control.Turno(true));
-                            break;
+                            return;
                         }
                         else
                         {
                             StartCoroutine(UsarAtaque(i));
                             StartCoroutine(control.Turno(true));
-                            break;
+                            return;
                         }
                     }
                     else
                     {
                         StartCoroutine(UsarAtaque(i));
                         StartCoroutine(control.Turno(true));
-                        break;
+                        return;
                     }
                 }
             }
