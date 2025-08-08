@@ -17,8 +17,8 @@ MonoBehaviour:
   nickName: Vlad
   material: 2
   imgMenu: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
-  imgCombate: {fileID: 4846502171467417176, guid: e5186d4917f2693459c5c351869a2421, type: 3}
-  Cor: {fileID: -5570935581769922947, guid: db808041185a3a84f865601cd6dde753, type: 3}
+  imgCombate: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
+  Cor: {fileID: 0}
   maxHealth: 50
   maxCharge: 5
   pDamage: 3

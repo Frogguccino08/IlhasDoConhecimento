@@ -8,6 +8,12 @@ Funções Adicionadas:
 - Tela inicial adicionada.
 
 
+Efeitos especiais:
+-Renan, Usar o 3R da +1 de dano no ataque.
+-Coração da Ilha, Personagens que não sejam metal ficam com -1 defesa física no inicio do turno.
+-Metal -> Papel, Atacar com um ataque que causa dano faz um segundo ataque bem fraco.
+
+
 Balanceamento:
 - Ao pular turno agora você ganha apenas 5 pontos.
 - Ao pular um upgrade agora você ganha 250 pontos.
@@ -18,6 +24,7 @@ Balanceamento:
 - Inimigos nível baixo de orgânico trocaram o "Reciclar vida" por "Composto".
 - Inimigos agora evitar mais usar cura quando estão com mais de 25% da vida.
 - Efeitos (Não considerando nutrindo, cacos e bloqueio) agora acabam no final do turno da próxima pessoa no turno, exp. algo seu sai no final do proximo turno inimigo
+- Escolha de ataques do inimigo foi melhorado.
 
 
 Correção de erros:
