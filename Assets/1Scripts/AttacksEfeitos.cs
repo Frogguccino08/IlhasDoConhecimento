@@ -907,12 +907,14 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             player.materialPlayer = 4;
                             player.efeitosAtivos[5] += 3;
+                            player.CorDetalhes();
 
                         }
                         else if (player.materialPlayer == 4)
                         {
                             player.materialPlayer = 1;
                             player.efeitosAtivos[2] += 3;
+                            player.CorDetalhes();
                         }
 
                         for (int i = 0; i < 6; i++)
