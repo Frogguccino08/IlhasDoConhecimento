@@ -44,6 +44,7 @@ Novos Ataques:
 (Jayden) Roubar Nutrientes, 4 carga, Orgânico, Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos
 (Kai/Renan) Atacar ponto fraco, 3 carga, Sem material, 1x2 físico, causa mais dano caso o inimigo esteja exposto
 (Jayden/Amélia/Vlad) Armadura de espinhos, Passiva, sem material, Enquanto tiver escudo causa um pequeno dano de volta a ser atacado
+(Renan) Corte, 0 carga, metal, 1x1 físico, sem efeito
 
 
 Novos Inimigos:
