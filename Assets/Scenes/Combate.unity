@@ -1956,8 +1956,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perso: {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
-  regiao: 2
+  perso: {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
+  regiao: 1
   pontos: 0
 --- !u!4 &176751412
 Transform:
@@ -2339,6 +2339,7 @@ MonoBehaviour:
   danoTxt: {fileID: 7025367212556292054, guid: d4efbfbdbaddc1d479c9982bbe905cd7, type: 3}
   usingR: 0
   using3R: 0
+  segundo3R: 0
   phiDamage: 5
   phiDefense: 5
   speDamage: 5
@@ -9959,7 +9960,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76d9a17d07d199d4083d6fe7e97a71ef, type: 2}
   - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
   osArquivosNL3:
-  - {fileID: 11400000, guid: 93b8bc7d65eab4b4994fd4e9c7b1e389, type: 2}
+  - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
   - {fileID: 11400000, guid: 6df40f8d1aabf014280af86dbbfa70c4, type: 2}
   florestaCompostaNL1:
   - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}
@@ -12389,6 +12390,8 @@ MonoBehaviour:
     id: 0
     nome: 
     desc: 
+    tipo1: 0
+    tipo2: 0
     material: 0
     dano: 0
     phispe: 0

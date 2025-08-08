@@ -214,6 +214,8 @@ public class Controle : MonoBehaviour
                 enemy.efeitosAtivos[12] -= 1;
             }
         }
+
+        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
         enemy.EscolherAtaque();
 
         texto.enabled = true;

@@ -632,7 +632,7 @@ public class Enemy : MonoBehaviour
                 if (dano[id] != 0)
                 {
                     //StartCoroutine(CorDanoSelf(id));
-                    
+
                     if (phispe[id] == true)
                     {
                         if (dano[id] > 0)
@@ -660,7 +660,7 @@ public class Enemy : MonoBehaviour
                         {
                             attackDamage = Mathf.Round((float)speDamage * ((modSpeDamage * -1) + dano[id]) * (UnityEngine.Random.Range(0.8f, 1.2f)));
                         }
-                        
+
                         if (attackDamage <= 0 && dano[id] > 0)
                         {
                             attackDamage = 1;
@@ -729,6 +729,8 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
+
+        Fraquezas(id);
 
         textoAtaque.text = nomeinimigo + " usou: " + nome[id];
 
@@ -830,7 +832,7 @@ public class Enemy : MonoBehaviour
         {
             if (attackID[i] != 0 && dano[i] < 0 && currentHealth >= (maxHealth / 4))
             {
-                Debug.Log(nome[i] +" Chance diminuida por ser cura com bastante vida");
+                Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
                 chance[i] -= 25;
             }
         }
@@ -846,14 +848,14 @@ public class Enemy : MonoBehaviour
         }
 
         //regra final 1: Se é passiva não tem como escolher
-            for (i = 0; i < 6; i++)
+        for (i = 0; i < 6; i++)
+        {
+            if (attackID[i] != 0 && isPassive[i] == true)
             {
-                if (attackID[i] != 0 && isPassive[i] == true)
-                {
-                    Debug.Log(nome[i] + " Chance eliminada por ser passiva");
-                    chance[i] = 0;
-                }
+                Debug.Log(nome[i] + " Chance eliminada por ser passiva");
+                chance[i] = 0;
             }
+        }
 
         //regra final 2: Se carga maior que currentcharge não tem como escolher
         for (i = 0; i < 6; i++)
@@ -877,9 +879,9 @@ public class Enemy : MonoBehaviour
 
 
         for (i = 0; i < 6; i++)
-            {
-                Debug.Log("Chance do ataque " + i + ": " + chance[i]);
-            }
+        {
+            Debug.Log("Chance do ataque " + i + ": " + chance[i]);
+        }
 
         //Escolher o ataque e usa-lo
         for (i = 0; i < 6; i++)
@@ -1029,7 +1031,7 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(0.1f);
     }
-    
+
     public IEnumerator CorDanoSelf(int id, float danoAqui)
     {
         GameObject obj;
@@ -1047,17 +1049,42 @@ public class Enemy : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
-        if(dano[id] > 0 && efeitosAtivos[1] > 0)
+        if (dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
         }
-        if(dano[id] < 0)
+        if (dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-            yield return new WaitForSeconds(0.2f);
-            GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+    }
+    
+    public void Fraquezas(int id)
+    {
+        //Metal -> Papel
+        if (dano[id] > 0 && enemy.materialPlayer == 1 && (material[id] == 4 || (material[id] == 0 && materialInimigo == 4)))
+        {
+            float dano;
+
+            dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
+
+            if (dano < 1)
+                dano = 1;
+
+            if (enemy.efeitosAtivos[1] > 0)
+            {
+                dano = 0;
+                enemy.efeitosAtivos[1] -= 1;
+            }
+
+            Debug.Log("Dano causado pelo efeito: " + dano);
+
+            enemy.CausarDano(dano);
+            Debug.Log("Fraqueza Metal -> Papel Ativada");
+        }
     }
 }

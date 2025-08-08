@@ -38,11 +38,15 @@ public class AttacksEfeitos : MonoBehaviour
                     Debug.Log("Jayden Passiva Ativada");
                 }
                 break;
-            //Renan (Metal)
+            //Renan (Metal) //Sobreaquecer
             case -13:
-                if (quando == 3)
+                if (quando == 0)
                 {
-                    Debug.Log("Renan Passiva Ativada");
+                    if ((player.using3R == true || player.segundo3R == true) && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
+                    {
+                        player.modPhiDamage += 1;
+                        Debug.Log("Sobreaquecer Ativado");
+                    }
                 }
                 break;
             //Kai (Vidro)
@@ -82,6 +86,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            //Os Arquivos
             case -4:
                 if (quando == 2)
                 {
@@ -95,6 +100,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            //Comunidade Abandonada
             case -3:
                 if (quando == 4)
                 {
@@ -108,19 +114,29 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            //Coraçãoda da Ilha
             case -2:
-                if (quando == 6)
+                if (quando == 0)
                 {
                     if (quem == true)
                     {
-                        Debug.Log("Coração da Ilha player");
+                        if (player.materialPlayer != 4)
+                        {
+                            player.efeitosAtivos[11] += 1;
+                            Debug.Log("Calor de derreter Ativado");
+                        }
                     }
                     else
                     {
-                        Debug.Log("Coração da Ilha Inimigo");
+                        if (enemy.materialInimigo != 4)
+                        {
+                            enemy.efeitosAtivos[11] += 1;
+                            Debug.Log("Calor de derreter Ativado");
+                        }
                     }
                 }
                 break;
+            //Costa de vidro
             case -1:
                 if (quando == 6)
                 {

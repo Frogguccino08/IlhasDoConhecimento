@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     public PCsSO pc;
 
     public GameObject descri;
-    
+
     int i;
     public float attackPublic;
     public float danoPublic;
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
             modPhiDamage = 1;
             modSpeDamage = 1;
         }
-        
+
 
         if (efeitosAtivos[2] > 0) //Aumentar defesa a distancia
         {
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
         speDamage = pc.sDamage;
         speDefense = pc.sDefense;
 
-        for(i=1; i<19; i++)
+        for (i = 1; i < 19; i++)
         {
             efeitosAtivos[i] = 0;
         }
@@ -172,9 +172,9 @@ public class Player : MonoBehaviour
         healthbar.MaximoVida(maxHealth);
         text.text = nickName + " " + currentHealth + "/" + maxHealth;
         healthbar.MudarBarra(currentHealth);
-        
 
-        for(i=0; i<4; i++)
+
+        for (i = 0; i < 4; i++)
         {
             attackID[i] = pc.listaAtaquesIniciais[i];
         }
@@ -182,20 +182,20 @@ public class Player : MonoBehaviour
         AtaquesSelecionados();
         controlConheci.SpawnConhecimento(maxCharge, currentCharge);
 
-        if(efeitosAtivos[7] > 0 )
+        if (efeitosAtivos[7] > 0)
         {
             quantBlock = efeitosAtivos[1];
         }
-        
-        for(i = 0; i < 6; i++)
+
+        for (i = 0; i < 6; i++)
         {
-            if(isPassive[i] == true)
+            if (isPassive[i] == true)
             {
                 list.AtaquesComEfeitos(true, attackID[i], 6, this, enemy);
             }
         }
 
-        if(efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
+        if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
         {
             int num = efeitosAtivos[1] - quantBlock;
             efeitosAtivos[1] = quantBlock;
@@ -219,10 +219,11 @@ public class Player : MonoBehaviour
     {
         currentHealth -= attackDamage;
 
-        if(currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
-        }else if(currentHealth < 0)
+        }
+        else if (currentHealth < 0)
         {
             currentHealth = 0;
         }
@@ -234,11 +235,11 @@ public class Player : MonoBehaviour
     public IEnumerator Morto()
     {
         control.turno = 0;
-        control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual +"       Turno: " + control.turno;
+        control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual + "       Turno: " + control.turno;
         control.DesativarBotao();
         control.texto.text = "Você foi derrotado\nEsperando input para voltar ao menu";
 
-        if(control.pontosRodada >= perso.pontos)
+        if (control.pontosRodada >= perso.pontos)
         {
             perso.pontos = control.pontosRodada;
         }
@@ -313,7 +314,7 @@ public class Player : MonoBehaviour
             currentR -= 1;
             controlConheci.SpawnRs();
         }
-        
+
         if (efeitosAtivos[7] > 0)
         {
             quantBlock = efeitosAtivos[1];
@@ -555,42 +556,44 @@ public class Player : MonoBehaviour
             }
         }
 
+        Fraquezas(id);
+
         rAgora = false;
 
         textoAtaque.text = nickName + " usou: " + nome[id];
 
         if (using3R == false)
+        {
+            if (dano[id] == 0)
             {
-                if (dano[id] == 0)
-                {
-                    yield return StartCoroutine(control.EsperarTeclaEspaco());
-                }
-                StartCoroutine(control.Turno(false));
+                yield return StartCoroutine(control.EsperarTeclaEspaco());
             }
-            else if (using3R == true)
+            StartCoroutine(control.Turno(false));
+        }
+        else if (using3R == true)
+        {
+            using3R = false;
+            if (dano[id] != 0)
             {
-                using3R = false;
-                if (dano[id] != 0)
-                {
-                    currentR = -1;
-                }
-                else
-                {
-                    currentR = 0;
-                }
-                segundo3R = true;
-                controlConheci.SpawnRs();
-                yield return StartCoroutine(UsarAtaque(id));
-                
+                currentR = -1;
             }
-        
+            else
+            {
+                currentR = 0;
+            }
+            segundo3R = true;
+            controlConheci.SpawnRs();
+            yield return StartCoroutine(UsarAtaque(id));
+
+        }
+
         control.AtaqueFeito();
         butaoClicado = false;
         if (segundo3R == true)
         {
             textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
         }
-        segundo3R = false; 
+        segundo3R = false;
     }
 
     public void EfeitoCausado(int i, float attackDamage, int dano)
@@ -671,20 +674,20 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
-        if(enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
+        if (enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
         }
-        if(enemy.dano[id] < 0)
+        if (enemy.dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-            yield return new WaitForSeconds(0.2f);
-            GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(0.1f);
     }
-    
+
     public IEnumerator CorDanoSelf(int id, float danoAqui)
     {
         GameObject obj;
@@ -697,17 +700,42 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
-        if(dano[id] > 0 && efeitosAtivos[1] > 0)
+        if (dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
         }
-        if(dano[id] < 0)
+        if (dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-            yield return new WaitForSeconds(0.2f);
-            GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    public void Fraquezas(int id)
+    {
+        //Metal -> Papel
+        if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
+        {
+            float dano;
+
+            dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
+
+            if (dano < 1)
+                dano = 1;
+
+            if (enemy.efeitosAtivos[1] > 0)
+            {
+                dano = 0;
+                enemy.efeitosAtivos[1] -= 1;
+            }
+
+            Debug.Log("Dano causado pelo efeito: " + dano);
+
+            enemy.CausarDano(dano);
+            Debug.Log("Fraqueza Metal -> Papel Ativada");
+        }
     }
 }

@@ -39,6 +39,14 @@ public class MenuPlayer : MonoBehaviour
         EscolhendoPlayer();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
+        }
+    }
+
     //Função que coloca as informações do personagem no espaço dele no menu de seleção
     public void EscolhendoPlayer()
     {
