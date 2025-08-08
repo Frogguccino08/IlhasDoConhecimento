@@ -17,7 +17,8 @@ MonoBehaviour:
   nickName: "Am\xE9lia"
   material: 1
   imgMenu: {fileID: -4685546300340680123, guid: 75a8f35131feaa148be3d699d377127d, type: 3}
-  imgCombate: {fileID: -4685546300340680123, guid: 75a8f35131feaa148be3d699d377127d, type: 3}
+  imgCombate: {fileID: -3901075043145232935, guid: 84c475ed8908a02468ea3703403d58ba, type: 3}
+  Cor: {fileID: -950934680416320257, guid: 2973fbb6d5f758e4ab5d2ac2f2e5e7f0, type: 3}
   maxHealth: 50
   maxCharge: 5
   pDamage: 2

@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
 
     public PersonagemSelecionado perso;
     public PCsSO pc;
+    public SpriteRenderer cor;
 
     public GameObject descri;
 
@@ -158,6 +159,12 @@ public class Player : MonoBehaviour
         maxCharge = pc.maxCharge;
 
         GetComponent<SpriteRenderer>().sprite = pc.imgCombate;
+
+        if (pc.Cor != null)
+        {
+            cor.sprite = pc.Cor;
+            CorDetalhes();
+        }
 
 
         phiDamage = pc.pDamage;
@@ -743,5 +750,27 @@ public class Player : MonoBehaviour
             enemy.CausarDano(dano);
             Debug.Log("Fraqueza Metal -> Papel Ativada");
         }
+    }
+
+    public void CorDetalhes()
+    {
+        if (materialPlayer == 1)
+        {
+            cor.color = new Color32(51, 58, 99, 255);
+        }
+        else if (materialPlayer == 2)
+        {
+            cor.color = new Color32(86, 7, 13, 255);
+        }else if (materialPlayer == 3)
+        {
+            cor.color = new Color32(0, 54, 0, 255);
+        }else if (materialPlayer == 4)
+        {
+            cor.color = new Color32(136, 98, 22, 255);
+        }else if (materialPlayer == 5)
+        {
+            cor.color = new Color32(90, 78, 53, 255);
+        }
+        
     }
 }

@@ -9,6 +9,7 @@ public class PCsSO : ScriptableObject
     public int material; //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
     public Sprite imgMenu;
     public Sprite imgCombate;
+    public Sprite Cor;
 
     public float maxHealth;
     public int maxCharge;
