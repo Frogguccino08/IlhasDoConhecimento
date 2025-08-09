@@ -89,6 +89,8 @@ public class Controle : MonoBehaviour
             player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
             if (player.currentHealth <= 0)
             {
+                player.cor.enabled = false;
+                player.GetComponent<SpriteRenderer>().enabled = false;
                 yield return StartCoroutine(player.Morto());
                 inimigoAtual = 1;
                 inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
@@ -180,6 +182,8 @@ public class Controle : MonoBehaviour
 
         if (player.currentHealth <= 0)
         {
+            player.cor.enabled = false;
+            player.GetComponent<SpriteRenderer>().enabled = false;
             yield return StartCoroutine(player.Morto());
             inimigoAtual = 1;
             inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
@@ -270,6 +274,7 @@ public class Controle : MonoBehaviour
 
         if (enemy.currentHealth <= 0)
         {
+            enemy.cor.enabled = false;
             enemy.GetComponent<SpriteRenderer>().enabled = false;
             inimigoAtual++;
             StartCoroutine(enemy.Morto());
@@ -286,6 +291,8 @@ public class Controle : MonoBehaviour
         // Verifica se o jogador morreu
         if (player.currentHealth <= 0)
         {
+            player.cor.enabled = false;
+            player.GetComponent<SpriteRenderer>().enabled = false;
             texto.enabled = true;
             yield return StartCoroutine(player.Morto());
             inimigoAtual = 1;

@@ -455,6 +455,7 @@ public class Player : MonoBehaviour
                             textoAtaque.text = nickName + " usou: " + nome[id];
                         }
 
+                        enemy.cor.enabled = false;
                         enemy.GetComponent<SpriteRenderer>().enabled = false;
                         StartCoroutine(control.Turno(false));
                         yield break;

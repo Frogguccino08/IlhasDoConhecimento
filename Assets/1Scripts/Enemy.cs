@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
     bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
+    public SpriteRenderer cor;
 
     public int[] attackID = new int[6];
     [HideInInspector]
@@ -399,7 +400,15 @@ public class Enemy : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = inimigoEscolhido.imgPadrao;
         }
+
         GetComponent<SpriteRenderer>().enabled = true;
+        cor.enabled = true;
+
+        if (inimigoEscolhido.cor != null)
+        {
+            cor.sprite = inimigoEscolhido.cor;
+            CorDetalhes();
+        }
     }
 
 
@@ -621,6 +630,7 @@ public class Enemy : MonoBehaviour
 
                     if (enemy.currentHealth <= 0)
                     {
+                        enemy.cor.enabled = false;
                         enemy.GetComponent<SpriteRenderer>().enabled = false;
                         textoAtaque.text = nomeinimigo + " usou: " + nome[id];
                         StartCoroutine(control.Turno(false));
@@ -915,10 +925,10 @@ public class Enemy : MonoBehaviour
 
 
         //Escolher o ataque e usa-lo
-            for (i = 0; i < 6; i++)
-            {
-                maximo += chance[i];
-            }
+        for (i = 0; i < 6; i++)
+        {
+            maximo += chance[i];
+        }
 
         if (maximo == 0)
         {
@@ -1093,7 +1103,7 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(0.1f);
     }
-    
+
     public void Fraquezas(int id)
     {
         //Metal -> Papel
@@ -1117,5 +1127,27 @@ public class Enemy : MonoBehaviour
             enemy.CausarDano(dano);
             Debug.Log("Fraqueza Metal -> Papel Ativada");
         }
+    }
+    
+    public void CorDetalhes()
+    {
+        if (materialInimigo == 1)
+        {
+            cor.color = new Color32(51, 58, 99, 255);
+        }
+        else if (materialInimigo == 2)
+        {
+            cor.color = new Color32(86, 7, 13, 240);
+        }else if (materialInimigo == 3)
+        {
+            cor.color = new Color32(0, 54, 0, 255);
+        }else if (materialInimigo == 4)
+        {
+            cor.color = new Color32(136, 98, 22, 255);
+        }else if (materialInimigo == 5)
+        {
+            cor.color = new Color32(90, 78, 53, 255);
+        }
+        
     }
 }

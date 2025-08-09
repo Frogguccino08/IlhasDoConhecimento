@@ -7,6 +7,7 @@ public class EnemiesSO : ScriptableObject
     public string nome;
     public int material; //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
     public Sprite imgPadrao;
+    public Sprite cor;
 
     public float maxHealth;
     public int maxCharge;
