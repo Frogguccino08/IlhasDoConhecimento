@@ -2,6 +2,7 @@ Funções Adicionadas:
 
 
 Visual:
+- Rework visual: Renan
 
 
 Efeitos especiais além de ataques:
@@ -14,6 +15,8 @@ Balanceamento:
 
 
 Correção de erros:
+- Detalhes coloridos não piscavam ao tomar dano ou curar vida junto com o resto do personagem.
+- Quando usava um ataque apenas com cura o jogo não esperava a efeito de piscar.
 
 
 Novos Ataques:
