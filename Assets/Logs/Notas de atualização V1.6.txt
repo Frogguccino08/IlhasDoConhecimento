@@ -1,0 +1,30 @@
+Funções Adicionadas:
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+-Renan, Usar o 3R da +1 de dano no ataque.
+-Coração da Ilha, Personagens que não sejam metal ficam com -1 defesa física no inicio do turno.
+-Metal -> Papel, Atacar com um ataque que causa dano faz um segundo ataque bem fraco.
+
+
+Balanceamento:
+
+
+Correção de erros:
+
+
+Novos Ataques:
+(Renan/Amélia) Corte, 0 carga, metal, 1x1 físico, sem efeito
+(Renan/Amélia) Batida energizada, 3 carga, 1x3 físico, causa mais dano em alvos de metal
+(Renan) Passar óleo, 4 carga, 1x-3, cura uma pequena quantidade de vida e aumenta dano físico por 2 turnos
+(Renan) Campo magnético, passiva, caso esteja contra um inimigo de metal recebe +1 de defesa física e a distância no inicio do turno
+(Renan/Amélia/ Vlad) Entortar, passiva, Ataques que causam dano físico em inimigos de metal fazem eles ficarem com -2 de defesa física
+
+
+Novos Inimigos:
+
+
+Organização de código:
