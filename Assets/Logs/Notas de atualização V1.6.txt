@@ -17,6 +17,8 @@ Correção de erros:
 
 
 Novos Ataques:
+(Inimigos) Ataque poluente, 1 carga, 1x2 físico, sem efeito
+(inimigos) Disparo poluente, 1 carga, 1x2 a distância, sem efeito
 (Renan/Amélia) Corte, 0 carga, metal, 1x1 físico, sem efeito
 (Renan/Amélia) Batida energizada, 3 carga, 1x3 físico, causa mais dano em alvos de metal
 (Renan) Passar óleo, 4 carga, 1x-3, cura uma pequena quantidade de vida e aumenta dano físico por 2 turnos
