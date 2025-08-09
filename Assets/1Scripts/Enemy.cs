@@ -570,8 +570,6 @@ public class Enemy : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    //yield return StartCoroutine(enemy.CorDano(id, attackDamage));
-
                     if (phispe[id] == true)
                     {
                         if (dano[id] > 0)
@@ -647,8 +645,6 @@ public class Enemy : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    //StartCoroutine(CorDanoSelf(id));
-
                     if (phispe[id] == true)
                     {
                         if (dano[id] > 0)
@@ -684,7 +680,7 @@ public class Enemy : MonoBehaviour
                         Debug.Log("Dano causado foi especial");
                     }
 
-                    StartCoroutine(CorDanoSelf(id, attackDamage));
+                    yield return StartCoroutine(CorDanoSelf(id, attackDamage));
 
                     Debug.Log("Dano causado ou curado: " + attackDamage);
                     CausarDano(attackDamage);

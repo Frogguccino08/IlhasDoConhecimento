@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perso: {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
+  perso: {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   regiao: 1
   pontos: 0
 --- !u!4 &176751412

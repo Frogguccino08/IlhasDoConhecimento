@@ -380,8 +380,6 @@ public class Player : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    //yield return StartCoroutine(enemy.CorDano(id));
-
                     if (phispe[id] == true)
                     {
                         if (dano[id] > 0)
@@ -471,8 +469,6 @@ public class Player : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    //StartCoroutine(CorDanoSelf(id, attackDamage));
-
                     if (phispe[id] == true)
                     {
                         if (dano[id] > 0)
@@ -508,7 +504,7 @@ public class Player : MonoBehaviour
                         Debug.Log("Dano causado foi especial");
                     }
 
-                    StartCoroutine(CorDanoSelf(id, attackDamage));
+                    yield return StartCoroutine(CorDanoSelf(id, attackDamage));
 
                     Debug.Log("Dano causado ou curado: " + attackDamage);
                     CausarDano(attackDamage);
@@ -687,18 +683,23 @@ public class Player : MonoBehaviour
         if (enemy.dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            cor.color = Color.red;
         }
         if (enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
+            cor.color = Color.grey;
         }
         if (enemy.dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            cor.color = Color.green;
+
         }
 
         yield return new WaitForSeconds(0.2f);
         GetComponent<SpriteRenderer>().color = Color.white;
+        CorDetalhes();
         yield return new WaitForSeconds(0.1f);
     }
 
@@ -713,18 +714,23 @@ public class Player : MonoBehaviour
         if (dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            cor.color = Color.red;
+            
         }
         if (dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
+            cor.color = Color.grey;
         }
         if (dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            cor.color = Color.green;
         }
 
         yield return new WaitForSeconds(0.2f);
         GetComponent<SpriteRenderer>().color = Color.white;
+        CorDetalhes();
         yield return new WaitForSeconds(0.1f);
     }
 

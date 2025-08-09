@@ -17,8 +17,8 @@ MonoBehaviour:
   nickName: Renan
   material: 4
   imgMenu: {fileID: -7788754932503422137, guid: 0d8596dbad9d1c349b773c6ecb246b86, type: 3}
-  imgCombate: {fileID: -7788754932503422137, guid: 0d8596dbad9d1c349b773c6ecb246b86, type: 3}
-  Cor: {fileID: 0}
+  imgCombate: {fileID: -5576196498910948109, guid: 19d13cdef161a974c94af004c22ba629, type: 3}
+  Cor: {fileID: 6068346816875252649, guid: f55f0a494f9b3294f99c780b6f0d8f77, type: 3}
   maxHealth: 50
   maxCharge: 5
   pDamage: 4
