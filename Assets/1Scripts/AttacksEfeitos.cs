@@ -40,7 +40,6 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Renan (Metal) //Sobreaquecer
             case -13:
-            /*
                 if (quando == 0)
                 {
                     if ((player.using3R == true || player.segundo3R == true) && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
@@ -49,7 +48,6 @@ public class AttacksEfeitos : MonoBehaviour
                         Debug.Log("Sobreaquecer Ativado");
                     }
                 }
-            */
                 break;
             //Kai (Vidro)
             case -12:
@@ -118,7 +116,6 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Coração da Ilha
             case -2:
-            /*
                 if (quando == 0)
                 {
                     if (quem == true)
@@ -138,7 +135,6 @@ public class AttacksEfeitos : MonoBehaviour
                         }
                     }
                 }
-            */
                 break;
             //Costa de vidro
             case -1:
