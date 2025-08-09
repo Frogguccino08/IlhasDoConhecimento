@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -402,12 +401,16 @@ public class Enemy : MonoBehaviour
         }
 
         GetComponent<SpriteRenderer>().enabled = true;
-        cor.enabled = true;
 
         if (inimigoEscolhido.cor != null)
         {
+            cor.enabled = true;
             cor.sprite = inimigoEscolhido.cor;
             CorDetalhes();
+        }
+        else
+        {
+            cor.enabled = false;
         }
     }
 
@@ -1054,18 +1057,22 @@ public class Enemy : MonoBehaviour
         if (enemy.dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            cor.color = Color.red;
         }
         if (enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
+            cor.color = Color.grey;
         }
         if (enemy.dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            cor.color = Color.green;
         }
 
         yield return new WaitForSeconds(0.2f);
         GetComponent<SpriteRenderer>().color = Color.white;
+        CorDetalhes();
         yield return new WaitForSeconds(0.1f);
     }
 
@@ -1085,18 +1092,22 @@ public class Enemy : MonoBehaviour
         if (dano[id] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            cor.color = Color.red;
         }
         if (dano[id] > 0 && efeitosAtivos[1] > 0)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
+            cor.color = Color.grey;
         }
         if (dano[id] < 0)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            cor.color = Color.green;
         }
 
         yield return new WaitForSeconds(0.2f);
         GetComponent<SpriteRenderer>().color = Color.white;
+        CorDetalhes();
         yield return new WaitForSeconds(0.1f);
     }
 

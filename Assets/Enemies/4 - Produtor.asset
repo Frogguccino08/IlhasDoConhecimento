@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 12
   nome: Produtor
   material: 4
-  imgPadrao: {fileID: 4368721552205358013, guid: 7ea1886316ee689479a57f1b4140b8ea, type: 3}
+  imgPadrao: {fileID: -2060860046015905523, guid: f8b508b829e50404eb7644f587dcbe23, type: 3}
+  cor: {fileID: -5837191353100487640, guid: 721d76a5215cf0d49b0a85381e60a4cf, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 5
