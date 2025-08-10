@@ -9946,12 +9946,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52d2ce8132e97cf419cf8bf697da668f, type: 2}
   coracaoDaIlhaNL1:
   - {fileID: 11400000, guid: 4b49cf0b0aba3f746b415d6f80aee7c9, type: 2}
+  - {fileID: 11400000, guid: ba45487c2ac5d0b43aee3ea33f1dd6fc, type: 2}
+  - {fileID: 11400000, guid: ca6bc1bfd6e1a834cab6267a7a1ee869, type: 2}
   coracaoDaIlhaNL2:
   - {fileID: 11400000, guid: 4b49cf0b0aba3f746b415d6f80aee7c9, type: 2}
   - {fileID: 11400000, guid: 71456acee37bef9408cd668ccefd1573, type: 2}
+  - {fileID: 11400000, guid: ba45487c2ac5d0b43aee3ea33f1dd6fc, type: 2}
+  - {fileID: 11400000, guid: 93865191103a7cd4cbd1cdcd5f950051, type: 2}
+  - {fileID: 11400000, guid: d8fbeefc2fa60994e98a6b7a11f6a97b, type: 2}
+  - {fileID: 11400000, guid: 5628e4d480a5f0a428ea3e72155539c6, type: 2}
   coracaoDaIlhaNL3:
   - {fileID: 11400000, guid: 71456acee37bef9408cd668ccefd1573, type: 2}
   - {fileID: 11400000, guid: 8dd95e4128f79434782f08cddca21a91, type: 2}
+  - {fileID: 11400000, guid: 93865191103a7cd4cbd1cdcd5f950051, type: 2}
+  - {fileID: 11400000, guid: e21e074833a963a4383749e6105133c6, type: 2}
   comunidadeAbandonadaNL1:
   - {fileID: 11400000, guid: 4a0849d6c0308d44a80769fea5fa9cc4, type: 2}
   comunidadeAbandonadaNL2:
@@ -16515,8 +16523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.126, y: 0}
-  m_SizeDelta: {x: -0.252, y: 0}
+  m_AnchoredPosition: {x: -0.065526, y: 0}
+  m_SizeDelta: {x: -0.13105, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803927225
 MonoBehaviour:

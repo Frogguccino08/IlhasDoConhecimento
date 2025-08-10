@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: "4 - Formiga pote de \xF3leo"
+  m_EditorClassIdentifier: 
+  nome: "Formiga pote de \xF3leo"
+  material: 4
+  imgPadrao: {fileID: 1479209406578670884, guid: b191ad8d748561740a0b2974eabf930a, type: 3}
+  cor: {fileID: -8124178363039254375, guid: 0862ade55e5882d45b2e1d6a03b155f8, type: 3}
+  maxHealth: 25
+  maxCharge: 4
+  pDamage: 2
+  pDefense: 2
+  sDamage: 1
+  sDefense: 2
+  mainStatus: 1
+  listaAtaquesNvl1: 330000003500000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000

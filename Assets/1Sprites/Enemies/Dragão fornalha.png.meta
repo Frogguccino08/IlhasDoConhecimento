@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f76b59f1076866e4c9bf40f6fe433890
+guid: 131614ede4dab7748bd5cf6ccd2e00af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7386115494194349172
-    second: 1Glass_0
+      213: -7014816390859741973
+    second: "Drag\xE3o fornalha_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 170
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1Glass_0
+      name: "Drag\xE3o fornalha_0"
       rect:
         serializedVersion: 2
-        x: 131
-        y: 0
-        width: 377
-        height: 564
+        x: 347
+        y: 307
+        width: 530
+        height: 663
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8b7982671f3f7990800000000000000
-      internalID: -7386115494194349172
+      spriteID: be4a73a98ad56ae90800000000000000
+      internalID: -7014816390859741973
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 241c608fe92342e41a3e86a99c2ae97b
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1Glass_0: -7386115494194349172
+      "Drag\xE3o fornalha_0": -7014816390859741973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

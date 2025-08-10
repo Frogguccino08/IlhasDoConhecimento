@@ -259,6 +259,15 @@ public class Enemy : MonoBehaviour
 
         nomeinimigo = inimigoEscolhido.nome;
         nomeTela.text = nomeinimigo;
+        if (nomeinimigo.Length <= 15)
+        {
+            nomeTela.fontSize = 0.6f;
+        }
+        else
+        {
+            nomeTela.fontSize = 0.5f;
+        }
+
         maxHealth = inimigoEscolhido.maxHealth + (inimigoEscolhido.maxHealth * forcaAtual);
         maxCharge = inimigoEscolhido.maxCharge + (forcaAtual * 2);
         materialInimigo = inimigoEscolhido.material;

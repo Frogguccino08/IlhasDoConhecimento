@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
+  m_Name: "4 - Drag\xE3o fornalha"
+  m_EditorClassIdentifier: 
+  nome: "Drag\xE3o Fornalha"
+  material: 4
+  imgPadrao: {fileID: -7014816390859741973, guid: 131614ede4dab7748bd5cf6ccd2e00af, type: 3}
+  cor: {fileID: -1755206098298814672, guid: aa246d3ab98e74f45a89d6fe093698d4, type: 3}
+  maxHealth: 25
+  maxCharge: 3
+  pDamage: 4
+  pDefense: 3
+  sDamage: 2
+  sDefense: 3
+  mainStatus: 1
+  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 1100000012000000130000001c000000220000002c000000

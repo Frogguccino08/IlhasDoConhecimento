@@ -1,8 +1,11 @@
 Funções Adicionadas:
+- Nome do inimigo agora muda de tamanho da forte caso o nome seja muito grande
 
 
 Visual:
 - Rework visual: Renan
+- Rework visual: (Inimigo) Produtor
+- rework visual (Apenas cor de detalhes): 
 
 
 Efeitos especiais além de ataques:
@@ -30,6 +33,12 @@ Novos Ataques:
 
 
 Novos Inimigos:
+- Formiga pote de óleo
+- Bateria Sobrecarregada
+- Bloqueador
+- Bico serrilhado
+- Tamanduá magnético
+- Dragão fornalha
 
 
 Organização de código:

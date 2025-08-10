@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f76b59f1076866e4c9bf40f6fe433890
+guid: 584ac8e0d89279f458b64504ed977474
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7386115494194349172
-    second: 1Glass_0
+      213: -4805194557468247164
+    second: "Tatu magn\xE9ticoCor_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 170
+  spritePixelsToUnits: 115
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1Glass_0
+      name: "Tatu magn\xE9ticoCor_0"
       rect:
         serializedVersion: 2
-        x: 131
-        y: 0
-        width: 377
-        height: 564
+        x: 344
+        y: 185
+        width: 616
+        height: 665
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8b7982671f3f7990800000000000000
-      internalID: -7386115494194349172
+      spriteID: 48bf67d4205805db0800000000000000
+      internalID: -4805194557468247164
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 480678fc9e70cd042b65d4670821f3c6
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1Glass_0: -7386115494194349172
+      "Tatu magn\xE9ticoCor_0": -4805194557468247164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
