@@ -20,6 +20,7 @@ Balanceamento:
 Correção de erros:
 - Detalhes coloridos não piscavam ao tomar dano ou curar vida junto com o resto do personagem.
 - Quando usava um ataque apenas com cura o jogo não esperava a efeito de piscar.
+- Detalhes coloridos continuavam no cenário caso trocasse para um inimigo sem detalhes.
 
 
 Novos Ataques:
