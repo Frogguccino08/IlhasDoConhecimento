@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 4 - Produtor
   m_EditorClassIdentifier: 
-  id: 12
   nome: Produtor
   material: 4
   imgPadrao: {fileID: -2060860046015905523, guid: f8b508b829e50404eb7644f587dcbe23, type: 3}
@@ -20,10 +19,10 @@ MonoBehaviour:
   maxHealth: 25
   maxCharge: 3
   pDamage: 5
-  pDefense: 4
+  pDefense: 3
   sDamage: 1
-  sDefense: 2
+  sDefense: 3
   mainStatus: 1
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 110000001200000014000000040000001300000000000000
+  listaAtaquesNvl3: 0400000011000000250000002f0000003500000000000000

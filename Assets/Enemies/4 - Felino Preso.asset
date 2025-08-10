@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 4 - Felino Preso
   m_EditorClassIdentifier: 
-  id: 7
   nome: Felino preso
   material: 4
-  imgPadrao: {fileID: -6286882563345578043, guid: 5650604b58e1fe047872739a487fd4bf, type: 3}
+  imgPadrao: {fileID: -5186497949635248561, guid: 523a9384d08d38d46988c15bee9baa66, type: 3}
+  cor: {fileID: 5560215506695371320, guid: 2e177aaff32ec7b4baa7a06a92e3ff87, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 4
   pDefense: 3
-  sDamage: 2
-  sDefense: 1
+  sDamage: 1
+  sDefense: 2
   mainStatus: 1
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 110000001200000014000000000000000000000000000000
-  listaAtaquesNvl3: 110000001200000014000000040000001300000000000000
+  listaAtaquesNvl2: 31000000120000001c000000000000000000000000000000
+  listaAtaquesNvl3: 040000002f00000012000000140000000000000000000000

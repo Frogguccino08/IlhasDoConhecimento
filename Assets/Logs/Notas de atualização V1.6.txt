@@ -1,11 +1,11 @@
 Funções Adicionadas:
-- Nome do inimigo agora muda de tamanho da forte caso o nome seja muito grande
+- Nome do inimigo agora muda de tamanho da forte caso o nome seja muito grande.
 
 
 Visual:
-- Rework visual: Renan
-- Rework visual: (Inimigo) Produtor
-- rework visual (Apenas cor de detalhes): 
+- Rework visual: Renan.
+- Rework visual: (Inimigo) Produtor.
+- rework visual (Apenas cor de detalhes): Felino preso, tatu motorizado.
 
 
 Efeitos especiais além de ataques:
@@ -15,6 +15,8 @@ Efeitos especiais além de ataques:
 
 
 Balanceamento:
+- Ataques de todos os antigos inimigos de metal alterados.
+- atributos felino preso e produtor alterados.
 
 
 Correção de erros:
@@ -24,22 +26,23 @@ Correção de erros:
 
 
 Novos Ataques:
-(Inimigos) Ataque poluente, 1 carga, 1x2 físico, sem efeito
-(inimigos) Disparo poluente, 1 carga, 1x2 a distância, sem efeito
-(Renan/Amélia) Corte, 0 carga, metal, 1x1 físico, sem efeito
-(Renan/Amélia) Batida energizada, 3 carga, 1x3 físico, causa mais dano em alvos de metal
-(Renan) Passar óleo, 4 carga, 1x-3, cura uma pequena quantidade de vida e aumenta dano físico por 2 turnos
-(Renan) Campo magnético, passiva, caso esteja contra um inimigo de metal recebe +1 de defesa física e a distância no inicio do turno
-(Renan/Amélia/ Vlad) Entortar, passiva, Ataques que causam dano físico em inimigos de metal fazem eles ficarem com -2 de defesa física
+(Inimigos) Ataque poluente, 1 carga, 1x2 físico, sem efeito.
+(inimigos) Disparo poluente, 1 carga, 1x2 a distância, sem efeito.
+(Renan/Amélia) Corte, 0 carga, metal, 1x1 físico, sem efeito.
+(Renan/Amélia) Batida energizada, 3 carga, 1x3 físico, causa mais dano em alvos de metal.
+(Renan) Passar óleo, 4 carga, 1x-3, cura uma pequena quantidade de vida e aumenta dano físico por 2 turnos.
+(Renan) Campo magnético, passiva, caso esteja contra um inimigo de metal recebe +1 de defesa física e a distância no inicio do turno.
+(Renan/Amélia/ Vlad) Entortar, passiva, Ataques que causam dano físico em inimigos de metal fazem eles ficarem com -2 de defesa física.
 
 
 Novos Inimigos:
-- Formiga pote de óleo
-- Bateria Sobrecarregada
-- Bloqueador
-- Bico serrilhado
-- Tamanduá magnético
-- Dragão fornalha
+- Formiga pote de óleo.
+- Bateria Sobrecarregada.
+- Bloqueador.
+- Bico serrilhado.
+- Tamanduá magnético.
+- Dragão fornalha.
 
 
 Organização de código:
+- objetos que salvam as informações dos inimigos levemente alterada removendo parte desnecessária.

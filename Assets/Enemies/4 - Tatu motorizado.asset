@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 4 - Tatu motorizado
   m_EditorClassIdentifier: 
-  id: 2
   nome: Tatu Motorizado
   material: 4
-  imgPadrao: {fileID: -7838710799957409677, guid: 263cb4c76ee8af74b98870c2ba406bc6, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 2734736830773091239, guid: 48a3fddf337f3cd4a8654e08a30237af, type: 3}
+  cor: {fileID: -9164108266042520916, guid: dd6f33a724867e64ab3ff9ae9cc5db7a, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 3
@@ -25,5 +24,5 @@ MonoBehaviour:
   sDefense: 2
   mainStatus: 1
   listaAtaquesNvl1: 330000001900000000000000000000000000000000000000
-  listaAtaquesNvl2: 110000001200000014000000190000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
