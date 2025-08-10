@@ -1009,7 +1009,10 @@ public class AttacksEfeitos : MonoBehaviour
                         if (enemy.danoPublic == 0 && enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.phispe[enemy.idAtaqueUsado] == true && enemy.alvo[enemy.idAtaqueUsado] == true)
                         {
                             enemy.CausarDano(enemy.maxHealth / 10);
-                            enemy.efeitosAtivos[1] -= 1;
+                            if (enemy.efeitosAtivos[1] > 1)
+                            {
+                                enemy.efeitosAtivos[1] -= 1;
+                            }
                         }
                     }
                     else
@@ -1017,7 +1020,10 @@ public class AttacksEfeitos : MonoBehaviour
                         if (player.danoPublic == 0 && player.dano[player.idAtaqueUsado] > 0 && player.phispe[player.idAtaqueUsado] == true && player.alvo[player.idAtaqueUsado] == true)
                         {
                             player.CausarDano(player.maxHealth / 10);
-                            player.efeitosAtivos[1] -= 1;
+                            if (player.efeitosAtivos[1] > 1)
+                            {
+                                player.efeitosAtivos[1] -= 1;
+                            }
                         }
                     }
                 }
