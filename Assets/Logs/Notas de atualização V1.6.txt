@@ -23,6 +23,9 @@ Correção de erros:
 - Detalhes coloridos não piscavam ao tomar dano ou curar vida junto com o resto do personagem.
 - Quando usava um ataque apenas com cura o jogo não esperava a efeito de piscar.
 - Detalhes coloridos continuavam no cenário caso trocasse para um inimigo sem detalhes.
+- Detalhes no personagem ou inimigo que ficavam dentro da parte colorida não mostrava.
+- Armadura de espinhos conseguia deixar sua vida em decimais.
+- Armadura de espinhos não tirava o segundo escudo.
 
 
 Novos Ataques:
