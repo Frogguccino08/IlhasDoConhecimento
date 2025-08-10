@@ -18,10 +18,10 @@ MonoBehaviour:
   cor: {fileID: 8588697488369809721, guid: 30cd8bd109670c64aaa1812fb8404536, type: 3}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 1
-  pDefense: 1
+  pDamage: 3
+  pDefense: 2
   sDamage: 1
-  sDefense: 1
+  sDefense: 4
   mainStatus: 2
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 300000003100000003000000140000000000000000000000

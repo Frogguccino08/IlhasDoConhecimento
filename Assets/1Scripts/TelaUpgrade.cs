@@ -76,6 +76,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //Função que aumenta um atributo baseado em qual botão você clicar
     public void AtributoIncrease(int i)
     {
+        player.telaUpgradeOn = false;
         switch (i)
         {
             case 0:

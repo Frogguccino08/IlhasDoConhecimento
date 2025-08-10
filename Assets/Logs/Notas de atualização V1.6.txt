@@ -26,6 +26,8 @@ Correção de erros:
 - Detalhes no personagem ou inimigo que ficavam dentro da parte colorida não mostrava.
 - Armadura de espinhos conseguia deixar sua vida em decimais.
 - Armadura de espinhos não tirava o segundo escudo.
+- Aumentar atributo nos upgrade faz com que a descrição em combate ficasse "sem material" e o modificador não aparecia no ataque.
+- Texto de 3R aparecia no ataque logo após o 3R e caso o inimigo morria.
 
 
 Novos Ataques:

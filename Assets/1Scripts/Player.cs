@@ -440,16 +440,18 @@ public class Player : MonoBehaviour
                     {
                         rAgora = false;
 
-                        if (using3R == true)
+                        if (segundo3R == true)
                         {
                             segundo3R = false;
+                            using3R = false;
                             currentR = 0;
                             controlConheci.SpawnRs();
-                            using3R = false;
                             textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
                         }
                         else
                         {
+                            using3R = false;
+                            segundo3R = false;
                             textoAtaque.text = nickName + " usou: " + nome[id];
                         }
 
