@@ -459,6 +459,33 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds(0.01f);
+
+        if (control.inimigoAtual != (forcaAtual * 5) + 1)
+        {
+            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
+            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge, enemy.currentCharge);
+        }
+        else
+        {
+            enemy.currentHealth = enemy.maxHealth;
+            enemy.healthbar.MudarBarra(enemy.currentHealth);
+            enemy.text.text = enemy.nickName + " " + enemy.currentHealth + "/" + enemy.maxHealth;
+
+            for (i = 1; i <= 18; i++)
+            {
+                enemy.efeitosAtivos[i] = 0;
+            }
+
+            control.texto.enabled = true;
+            control.texto.text = "Seu personagem descansou. Sua vida foi recuperada e efeitos zerados";
+
+            while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                yield return null;
+            }
+        }
+
         if (control.inimigoAtual == ((forcaAtual * 5) + 2) || control.inimigoAtual == ((forcaAtual * 5) + 4) || control.inimigoAtual == ((forcaAtual * 5) + 1))
         {
             enemy.telaUpgradeOn = true;
@@ -482,8 +509,7 @@ public class Enemy : MonoBehaviour
 
 
         InicializarInimigo();
-        enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
-        enemy.controlConheci.SpawnConhecimento(enemy.maxCharge, enemy.currentCharge);
+
         control.AtivarBotao();
         control.texto.enabled = false;
     }
@@ -925,6 +951,27 @@ public class Enemy : MonoBehaviour
                 {
                     Debug.Log("Inimigo pulou o proprio turno");
                     textoAtaque.text = "Inimigo pulou o proprio turno";
+                    
+                    list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
+
+                    for (i = 0; i < 6; i++)
+                    {
+                        if (isPassive[i] == true)
+                        {
+                            list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
+                        }
+                    }
+
+                    list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
+
+                    for (i = 0; i < 6; i++)
+                    {
+                        if (enemy.isPassive[i] == true)
+                        {
+                            list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
+                        }
+                    }
+
                     StartCoroutine(control.Turno(true));
                     return;
                 }
@@ -942,6 +989,27 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Inimigo pulou o proprio turno");
             textoAtaque.text = "Inimigo pulou o proprio turno";
+            
+            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
+                    
+            for (i = 0; i < 6; i++)
+            {
+                if (isPassive[i] == true)
+                {
+                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
+                }
+            }
+
+            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
+
+            for (i = 0; i < 6; i++)
+            {
+                if (enemy.isPassive[i] == true)
+                {
+                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
+                }
+            }
+
             StartCoroutine(control.Turno(true));
             return;
         }
@@ -964,6 +1032,25 @@ public class Enemy : MonoBehaviour
                         {
                             Debug.Log("Inimigo pulou o proprio turno");
                             textoAtaque.text = "Inimigo pulou o proprio turno";
+                            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
+                                    
+                            for (i = 0; i < 6; i++)
+                            {
+                                if (isPassive[i] == true)
+                                {
+                                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
+                                }
+                            }
+
+                            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
+
+                            for (i = 0; i < 6; i++)
+                            {
+                                if (enemy.isPassive[i] == true)
+                                {
+                                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
+                                }
+                            }
                             StartCoroutine(control.Turno(true));
                             return;
                         }

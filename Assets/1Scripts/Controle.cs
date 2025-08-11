@@ -108,6 +108,8 @@ public class Controle : MonoBehaviour
                 if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
             }
 
+            player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
+
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();
             inimigoAtual++;
@@ -195,6 +197,8 @@ public class Controle : MonoBehaviour
 
         player.EfeitoCausado(2, player.attackPublic, (int)player.danoPublic);
         if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
+
+        player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
 
         if (pulouTurno == true)
         {

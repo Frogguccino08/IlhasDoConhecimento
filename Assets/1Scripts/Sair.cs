@@ -11,6 +11,7 @@ public class Sair : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == false)
         {
             control.telaSair = true;
+            control.descricao.SetActive(false);
             tela.SetActive(true);
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == true)

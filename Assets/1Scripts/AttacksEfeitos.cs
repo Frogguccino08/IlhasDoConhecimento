@@ -858,7 +858,7 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 5;
+                        player.efeitosAtivos[1] += 4;
                         control.efeitoAtq = player.nickName + " Ganhou escudo";
 
                         if (player.rAgora == true)
@@ -868,7 +868,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 5;
+                        enemy.efeitosAtivos[1] += 4;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo";
                     }
                 }

@@ -16006,13 +16006,13 @@ RectTransform:
   - {fileID: 1025599296}
   - {fileID: 503761861}
   - {fileID: 1491340143}
-  - {fileID: 1997487526}
   - {fileID: 360975098}
   - {fileID: 445400576}
   - {fileID: 1139930232}
   - {fileID: 632770180}
   - {fileID: 1984335214}
   - {fileID: 1353329328}
+  - {fileID: 1997487526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

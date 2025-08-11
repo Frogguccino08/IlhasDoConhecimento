@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tatu Motorizado_0: 2734736830773091239
+      Tatu Motorizado_1: -3333104275664333112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
