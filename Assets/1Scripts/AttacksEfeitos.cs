@@ -17,7 +17,7 @@ public class AttacksEfeitos : MonoBehaviour
         GameObject obj;
         obj = Instantiate(pas, new Vector3(), quaternion.identity);
         obj.transform.SetParent(canvas.transform);
-        obj.transform.SetSiblingIndex(9);
+        obj.transform.SetSiblingIndex(8);
         pasList.Add(obj);
 
         obj.GetComponent<Passiva>().titulo.text = nomePas;
@@ -89,7 +89,7 @@ public class AttacksEfeitos : MonoBehaviour
             kct.transform.position = kct.transform.position + new Vector3(0, (1.33f * pasList.IndexOf(kct)), 0);
         }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
 
         Destroy(pasList[0]);
         pasList.RemoveAt(0);

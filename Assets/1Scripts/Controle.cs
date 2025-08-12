@@ -110,6 +110,8 @@ public class Controle : MonoBehaviour
 
             player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
 
+            enemy.GetComponent<SpriteRenderer>().enabled = false;
+            enemy.cor.enabled = false;
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();
             inimigoAtual++;
@@ -280,6 +282,7 @@ public class Controle : MonoBehaviour
         {
             enemy.cor.enabled = false;
             enemy.GetComponent<SpriteRenderer>().enabled = false;
+            enemy.cor.enabled = false;
             inimigoAtual++;
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();

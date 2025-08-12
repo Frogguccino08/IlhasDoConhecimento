@@ -463,6 +463,7 @@ public class Player : MonoBehaviour
 
                         enemy.cor.enabled = false;
                         enemy.GetComponent<SpriteRenderer>().enabled = false;
+                        enemy.cor.enabled = false;
                         StartCoroutine(control.Turno(false));
                         yield break;
                     }

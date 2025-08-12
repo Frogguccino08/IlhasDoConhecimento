@@ -6,6 +6,8 @@ Correção de erros:
 - Caso você ou o inimigo pulassem o turno, efeitos passivos incluindo de região que aconteciam ao clicar qualquer ataque não aconteciam.
 - Ao derrotar o inimigo efeitos que passam no final do turno não passavam.
 - Ao usar o 3R e o inimigo morrer no primeiro ataque você não perdia a carga.
+- Sprite do inimigo não sumia com alguns casos ao morrer.
+- Problema na barra de vida não mostrar quando o inimigo estava com quase nada de vida.
 
 
 Balanceamento:

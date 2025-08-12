@@ -1108,6 +1108,8 @@ public class Enemy : MonoBehaviour
 
                 if (currentHealth <= 0)
                 {
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    cor.enabled = false;
                     StartCoroutine(Morto());
                 }
             }

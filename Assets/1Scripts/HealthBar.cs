@@ -9,14 +9,16 @@ public class HealthBar : MonoBehaviour
 
     public Image fill;
 
+    private float max;
+
 
     //Função responsável por mudar a quantidade que mostra na barra de vida de acordo com a vida
     public void MudarBarra(float health)
     {
         slider.value = health;
-        if (health < 2 && health > 0)
+        if (health < (max / 20) && health > 0)
         {
-            slider.value = 3;
+            slider.value = max / 20;
         }
         fill.color = gradient.Evaluate(slider.normalizedValue);
 
@@ -25,6 +27,7 @@ public class HealthBar : MonoBehaviour
     //Função que muda o máximo da barra para o máximo de vida do personagem
     public void MaximoVida(float vidamaxima)
     {
+        max = vidamaxima;
         slider.maxValue = vidamaxima;
         fill.color = gradient.Evaluate(1f);
     }
