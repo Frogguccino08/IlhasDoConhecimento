@@ -5,14 +5,17 @@ Correção de erros:
 - Descrição de ataque e tela de upgrade apareciam por cima da tela de sair do combate.
 - Caso você ou o inimigo pulassem o turno, efeitos passivos incluindo de região que aconteciam ao clicar qualquer ataque não aconteciam.
 - Ao derrotar o inimigo efeitos que passam no final do turno não passavam.
+- Ao usar o 3R e o inimigo morrer no primeiro ataque você não perdia a carga.
 
 
 Balanceamento:
 - Barreira perfeita aumenta 4 de escudo não 5.
 
 
+
 Funções Adicionadas:
 - Ao derrotar um boss o seu personagem descansa, recuperando a vida ao máximo, e zerando todos os efeitos, tanto negativo quanto positivo.
+- Agora passivas, suas, do inimigo, do cenário e de fraqueza de material ao ativarem mostram na tela por alguns segundos.
 
 
 Visual:

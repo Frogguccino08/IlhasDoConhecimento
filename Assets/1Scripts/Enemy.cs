@@ -1209,7 +1209,7 @@ public class Enemy : MonoBehaviour
 
     public void Fraquezas(int id)
     {
-        //Metal -> Papel
+        //Metal -> Papel (3 no efeito)
         if (dano[id] > 0 && enemy.materialPlayer == 1 && (material[id] == 4 || (material[id] == 0 && materialInimigo == 4)))
         {
             float dano;
@@ -1229,6 +1229,8 @@ public class Enemy : MonoBehaviour
 
             enemy.CausarDano(dano);
             Debug.Log("Fraqueza Metal -> Papel Ativada");
+
+            StartCoroutine(list.AparecerPassiva(3, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
         }
     }
     

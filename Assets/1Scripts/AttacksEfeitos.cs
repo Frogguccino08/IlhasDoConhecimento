@@ -1,10 +1,105 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class AttacksEfeitos : MonoBehaviour
 {
     //Chamado de outro objeto
+    public Canvas canvas;
     public Controle control;
+    public GameObject pas;
+    public List<GameObject> pasList = new List<GameObject>();
+
+    public IEnumerator AparecerPassiva(int quem, string nomePas, string desc)
+    {
+        GameObject obj;
+        obj = Instantiate(pas, new Vector3(), quaternion.identity);
+        obj.transform.SetParent(canvas.transform);
+        obj.transform.SetSiblingIndex(9);
+        pasList.Add(obj);
+
+        obj.GetComponent<Passiva>().titulo.text = nomePas;
+        obj.GetComponent<Passiva>().desc.text = desc;
+
+        obj.transform.position = new Vector3(0, 0.2f, 0);
+
+        if (quem == 0)
+        {
+            obj.GetComponent<Passiva>().nomeChar.text = control.player.nickName;
+        }
+        else if (quem ==1)
+        {
+            obj.GetComponent<Passiva>().nomeChar.text = control.enemy.nomeinimigo;
+        }
+        else if (quem == 2)
+        {
+            string regis = "???";
+
+            switch (control.escolha.regiao)
+            {
+                case 0:
+                    regis = "Costa de vidro";
+                    break;
+                case 1:
+                    regis = "Coração da ilha";
+                    break;
+                case 2:
+                    regis = "Comunidade abandonada";
+                    break;
+                case 3:
+                    regis = "Os arquivos";
+                    break;
+                case 4:
+                    regis = "Floresta composta";
+                    break;
+            }
+
+            obj.GetComponent<Passiva>().nomeChar.text = regis;
+        }
+        else
+        {
+            string weak = "???";
+
+            switch (quem)
+            {
+                default:
+                    break;
+                case 3:
+                    weak = "Metal -> Papel";
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+            }
+
+            obj.GetComponent<Passiva>().nomeChar.text = weak;
+        }
+        
+
+        foreach (GameObject kct in pasList)
+        {
+            kct.transform.position = new Vector3(0, 0.2f, 0);
+            kct.transform.position = kct.transform.position + new Vector3(0, (1.33f * pasList.IndexOf(kct)), 0);
+        }
+
+        yield return new WaitForSeconds(2.5f);
+
+        Destroy(pasList[0]);
+        pasList.RemoveAt(0);
+        
+        foreach (GameObject kct in pasList)
+        {
+            kct.transform.position = new Vector3(0, 0.2f, 0);
+            kct.transform.position = kct.transform.position + new Vector3(0, (1.33f * pasList.IndexOf(kct)), 0);
+        }
+    }
     
     //Especiais:               //Papel:                     //Plastico:                 //Vidro:                        //Metal:                    //Organico
     //1.Bloquear(Added)        //2.Informado(+defDis)       //3.Duradouro(+defFis)      //4.perfurante(+AtqDis)         //5.Afiado(+atqFis)         //6.Adubando(+Conhec)
@@ -47,6 +142,11 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         player.modPhiDamage += 1;
                         Debug.Log("Sobreaquecer Ativado");
+
+                        if (player.using3R == true)
+                        {
+                            StartCoroutine(AparecerPassiva(0, "Sobreaquecer", "Primeiro golpe do ataque ficou mais forte"));
+                        }
                     }
                 }
                 break;
@@ -125,6 +225,7 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             player.efeitosAtivos[11] += 1;
                             Debug.Log("Calor de derreter Ativado");
+                            StartCoroutine(AparecerPassiva(2, "Calor de derreter", "Sua defesa física diminuiu por não ser metal"));
                         }
                     }
                     else
@@ -133,6 +234,7 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             enemy.efeitosAtivos[11] += 1;
                             Debug.Log("Calor de derreter Ativado");
+                            StartCoroutine(AparecerPassiva(2, "Calor de derreter", "Defesa física do inimigo diminuiu por não ser metal"));
                         }
                     }
                 }
@@ -206,6 +308,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[2] += 2;
+                                StartCoroutine(AparecerPassiva(0, "Leitura", "Defesa a distância aumentou após ser atingido"));
                             }
                         }
                     }
@@ -217,6 +320,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[2] += 2;
+                                StartCoroutine(AparecerPassiva(1, "Leitura", "Defesa a distância aumentou após ser atingido"));
                             }
                         }
                     }
@@ -278,6 +382,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[3] += 2;
+                                StartCoroutine(AparecerPassiva(0, "Material resistênte", "Defesa física aumentou após ser atingido"));
                             }
                         }
                     }
@@ -289,6 +394,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[3] += 2;
+                                StartCoroutine(AparecerPassiva(1, "Material resistênte", "Defesa física aumentou após ser atingido"));
                             }
                         }
                     }
@@ -351,6 +457,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[4] += 3;
+                                StartCoroutine(AparecerPassiva(0, "Quebrar espelho", "Dano a distância aumentou após esse ataque"));
                             }
                         }
                     }
@@ -363,6 +470,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[4] += 3;
+                                StartCoroutine(AparecerPassiva(1, "Quebrar espelho", "Dano a distância aumentou após esse ataque"));
                             }
                         }
                     }
@@ -425,6 +533,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[5] += 3;
+                                StartCoroutine(AparecerPassiva(0, "Pontas afiadas", "Dano físico aumentou após esse ataque"));
                             }
                         }
                     }
@@ -437,6 +546,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[5] += 3;
+                                StartCoroutine(AparecerPassiva(1, "Pontas afiadas", "Dano físico aumentou após esse ataque"));
                             }
                         }
                     }
@@ -499,6 +609,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[6] += 2;
+                                StartCoroutine(AparecerPassiva(0, "Absorção", "Aumentou ganho de conhecimento após esse ataque"));
                             }
                         }
                     }
@@ -511,6 +622,7 @@ public class AttacksEfeitos : MonoBehaviour
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[6] += 2;
+                                StartCoroutine(AparecerPassiva(1, "Absorção", "Aumentou ganho de conhecimento após esse ataque"));
                             }
                         }
                     }
@@ -1014,6 +1126,8 @@ public class AttacksEfeitos : MonoBehaviour
                             {
                                 player.efeitosAtivos[1] -= 1;
                             }
+
+                            StartCoroutine(AparecerPassiva(0, "Armadura de espinhos", "Inimigo tomou dano dos espinhos"));
                         }
                     }
                     else
@@ -1025,6 +1139,8 @@ public class AttacksEfeitos : MonoBehaviour
                             {
                                 enemy.efeitosAtivos[1] -= 1;
                             }
+
+                            StartCoroutine(AparecerPassiva(1, "Armadura de espinhos", "Você tomou dano dos espinhos"));
                         }
                     }
                 }
@@ -1082,6 +1198,7 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             player.efeitosAtivos[2] += 1;
                             player.efeitosAtivos[3] += 1;
+                            StartCoroutine(AparecerPassiva(0, "Campo magnético", "O inimigo de metal aumentou suas defesas"));
                         }
                     }
                     else
@@ -1090,6 +1207,7 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             enemy.efeitosAtivos[2] += 1;
                             enemy.efeitosAtivos[3] += 1;
+                            StartCoroutine(AparecerPassiva(1, "Campo magnético", "Você ser de metal aumentou as defesas do inimigo"));
                         }
                     }
                 }
@@ -1102,6 +1220,7 @@ public class AttacksEfeitos : MonoBehaviour
                         if (player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0 && enemy.materialInimigo == 4)
                         {
                             enemy.efeitosAtivos[11] += 2;
+                            StartCoroutine(AparecerPassiva(0, "Entortar", "Seu ataque diminuiu a defesa do inimigo de metal"));
                         }
                     }
                     else
@@ -1109,6 +1228,7 @@ public class AttacksEfeitos : MonoBehaviour
                         if (enemy.phispe[enemy.idAtaqueUsado] == true && enemy.dano[enemy.idAtaqueUsado] > 0 && player.materialPlayer == 4)
                         {
                             player.efeitosAtivos[11] += 2;
+                            StartCoroutine(AparecerPassiva(1, "Entortar", "O ataque diminuiu sua defesa por você ser de metal"));
                         }
                     }
                 }

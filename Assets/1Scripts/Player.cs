@@ -450,6 +450,12 @@ public class Player : MonoBehaviour
                         }
                         else
                         {
+                            if (using3R == true)
+                            {
+                                currentR = 0;
+                                controlConheci.SpawnRs();
+                            }
+
                             using3R = false;
                             segundo3R = false;
                             textoAtaque.text = nickName + " usou: " + nome[id];
@@ -738,7 +744,7 @@ public class Player : MonoBehaviour
 
     public void Fraquezas(int id)
     {
-        //Metal -> Papel
+        //Metal -> Papel (3 no efeito)
         if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
         {
             float dano;
@@ -758,6 +764,8 @@ public class Player : MonoBehaviour
 
             enemy.CausarDano(dano);
             Debug.Log("Fraqueza Metal -> Papel Ativada");
+
+            StartCoroutine(list.AparecerPassiva(3, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
         }
     }
 
