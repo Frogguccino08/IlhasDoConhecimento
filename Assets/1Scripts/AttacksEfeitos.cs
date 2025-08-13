@@ -111,7 +111,9 @@ public class AttacksEfeitos : MonoBehaviour
     {
         //'quem' true == player, false == enemy.
         //'o' Numero do ataque na função de cima.
-        //'quando' 0==Antes do ataque, 1==Antes do ataque inimigo, 2==Após calcular o dano, 3==Após calcular o dano inimigo, 4==final do turno, 5==final do turno inimigo, 6==Ao iniciar Qualquer um dos dois.
+        //'quando' 0==Antes do ataque, 1==Antes do ataque inimigo, 2==Após calcular o dano, 3==Após calcular o dano inimigo, 4==final do turno, 5==final do turno inimigo,
+        // 6==Ao inicializar qualquer um dos dois.
+        //'quando' 7==Antes de cada golpe do ataque, 8==Antes de cada golpe do ataque inimigo, 9==Assim que inicia o turno, 10==Assim que inicia o turno inimigo
         // Se temEfeito == true Colocar o que acontece quando usar uma carga de R (if(usingR == true)) aqui no quem == true, e também terminar com o codigo abaixo:
         /*
                     player.currentR -= 1;
@@ -136,18 +138,20 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Renan (Metal) //Sobreaquecer
             case -13:
-                if (quando == 0)
+                if (quando == 7)
                 {
                     if ((player.using3R == true || player.segundo3R == true) && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
                     {
                         player.modPhiDamage += 1;
                         Debug.Log("Sobreaquecer Ativado");
-
-                        if (player.using3R == true)
-                        {
-                            StartCoroutine(AparecerPassiva(0, "Sobreaquecer", "Primeiro golpe do ataque ficou mais forte"));
-                        }
                     }
+                }
+                if (quando == 0)
+                {
+                    if (player.using3R == true)
+                        {
+                            StartCoroutine(AparecerPassiva(0, "Sobreaquecer", "O ataques ficaram ficou mais forte"));
+                        }
                 }
                 break;
             //Kai (Vidro)
@@ -189,7 +193,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Os Arquivos
             case -4:
-                if (quando == 2)
+                if (quando == 7)
                 {
                     if (quem == true)
                     {
@@ -217,7 +221,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Coração da Ilha
             case -2:
-                if (quando == 0)
+                if (quando == 9)
                 {
                     if (quem == true)
                     {
@@ -253,6 +257,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+
 
 
             case 3: //Bloquear
@@ -654,19 +659,19 @@ public class AttacksEfeitos : MonoBehaviour
                     if (quem == true)
                     {
                         player.efeitosAtivos[1] += 2;
-                        player.efeitosAtivos[18] += 1;
+                        player.efeitosAtivos[6] += 2;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e mais conhecimento";
 
                         if (player.rAgora == true)
                         {
                             player.efeitosAtivos[1] += 1;
-                            player.efeitosAtivos[18] += 1;
+                            player.efeitosAtivos[6] += 1;
                         }
                     }
                     else
                     {
                         enemy.efeitosAtivos[1] += 2;
-                        enemy.efeitosAtivos[18] += 1;
+                        enemy.efeitosAtivos[6] += 2;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e mais conhecimento";
                     }
                 }
@@ -917,7 +922,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 38: //Tiro de canudo
-                if (quando == 2)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1054,7 +1059,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 43: //Katana de alma
-                if (quando == 0)
+                if (quando == 7)
                 {
                     if (quem == true)
                     {
@@ -1086,7 +1091,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 47: //Atacar ponto fraco
-                if (quando == 0)
+                if (quando == 7)
                 {
                     if (quem == true)
                     {
@@ -1146,7 +1151,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 50: //Batida energizada
-                if (quando == 0)
+                if (quando == 7)
                 {
                     if (quem == true)
                     {
@@ -1175,7 +1180,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 53: //Passar óleo
-                if (quando == 2)
+                if (quando == 0)
                 {
                     if (quem == true)
                     {
@@ -1190,7 +1195,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 54: //Campo magnético
-                if (quando == 0)
+                if (quando == 7)
                 {
                     if (quem == true)
                     {
@@ -1213,7 +1218,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 55: //Entortar
-                if (quando == 4)
+                if (quando == 2)
                 {
                     if (quem == true)
                     {

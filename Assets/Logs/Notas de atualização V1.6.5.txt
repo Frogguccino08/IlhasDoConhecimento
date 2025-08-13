@@ -12,12 +12,19 @@ Correção de erros:
 
 Balanceamento:
 - Barreira perfeita aumenta 4 de escudo não 5.
+- Bloqueio vivo agora aumenta o conhecimento em vez de dar nutrindo.
 
 
 
 Funções Adicionadas:
 - Ao derrotar um boss o seu personagem descansa, recuperando a vida ao máximo, e zerando todos os efeitos, tanto negativo quanto positivo.
 - Agora passivas, suas, do inimigo, do cenário e de fraqueza de material ao ativarem mostram na tela por alguns segundos.
+- Adicionado quatro opções de momentos para acontecer ataques e principalmente passivas:
+No inicio do turno sem precisar escolher um ataque antes;
+No inicio do turno inicio do turno inimigo sem ele escolher o ataque dele;
+A cada golpe no ataque;
+a cada golpe no ataque inimigo.
+
 
 
 Visual:

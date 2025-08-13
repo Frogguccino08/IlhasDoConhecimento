@@ -421,6 +421,25 @@ public class Enemy : MonoBehaviour
         {
             cor.enabled = false;
         }
+
+        //Efeitos iniciais número 9
+        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, enemy, this);
+
+        for (i = 0; i < 6; i++)
+        {
+            if (isPassive[i] == true)
+            {
+                list.AtaquesComEfeitos(false, attackID[i], 9, enemy, this);
+            }
+        }
+        
+        for (i = 0; i < 6; i++)
+        {
+            if (enemy.isPassive[i] == true)
+            {
+                list.AtaquesComEfeitos(true, attackID[i], 10, enemy, this);
+            }
+        }
     }
 
 
@@ -604,6 +623,28 @@ public class Enemy : MonoBehaviour
         //Caso cause dano
         for (int quant = 0; quant < quantidade[id]; quant++)
         {
+            //Efeito número 7 e 8 do player
+            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 7, enemy, this);
+            list.AtaquesComEfeitos(false, attackID[id], 7, enemy, this);
+
+            for (i = 0; i < 6; i++)
+            {
+                if (isPassive[i] == true)
+                {
+                    list.AtaquesComEfeitos(false, attackID[i], 7, enemy, this);
+                }
+            }
+
+            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 8, enemy, this);
+
+            for (i = 0; i < 6; i++)
+            {
+                if (enemy.isPassive[i] == true)
+                {
+                    list.AtaquesComEfeitos(true, enemy.attackID[i], 8, enemy, this);
+                }
+            }
+
             if (alvo[id] == true)
             {
                 if (dano[id] != 0)

@@ -225,8 +225,28 @@ public class Controle : MonoBehaviour
             }
         }
 
-        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
+
+        // Efeito inicio do turno inimigo
+        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, player, enemy);
+        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 10, player, enemy);
+        enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 9, player, enemy);
+        for (int i = 0; i < 6; i++)
+        {
+            if (enemy.isPassive[i])
+                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 9, player, enemy);
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            if (player.isPassive[i])
+                player.list.AtaquesComEfeitos(true, player.attackID[i], 10, player, enemy);
+        }
+
+        player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 10, player, enemy);
+        
+        //Após escolher o ataque
         enemy.EscolherAtaque();
+        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
 
         texto.enabled = true;
         yield return EsperarTeclaEspaco();
@@ -249,7 +269,7 @@ public class Controle : MonoBehaviour
             if (enemy.isPassive[i])
                 enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 4, player, enemy);
         }
-        
+
         for (int i = 0; i < 6; i++)
         {
             if (player.isPassive[i])
@@ -303,7 +323,7 @@ public class Controle : MonoBehaviour
             texto.enabled = true;
             yield return StartCoroutine(player.Morto());
             inimigoAtual = 1;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield return EsperarTeclaEspaco();
             PersonagemSelecionado.instance.Resetar();
             SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
@@ -329,6 +349,23 @@ public class Controle : MonoBehaviour
         conhecimento.SpawnConhecimento(player.maxCharge, player.currentCharge);
 
         AtualizarEstadoBotoes();
+
+        player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, player, enemy);
+        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 9, player, enemy);
+
+        for (int i = 0; i < 6; i++)
+        {
+            if (player.isPassive[i])
+                player.list.AtaquesComEfeitos(true, player.attackID[i], 9, player, enemy);
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            if (enemy.isPassive[i])
+                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 10, player, enemy);
+        }
+
+        enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 10, player, enemy);
     }
 
 
