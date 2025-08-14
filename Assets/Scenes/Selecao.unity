@@ -505,6 +505,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
   pequeno: {fileID: 5548241101861490766, guid: 4f798b352ca3fbb43b5dd601afcc8888, type: 3}
+  canva: {fileID: 2005335195}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

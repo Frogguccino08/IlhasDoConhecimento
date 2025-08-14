@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TelaSelecao : MonoBehaviour
@@ -26,7 +27,7 @@ public class TelaSelecao : MonoBehaviour
 
             persosDesc.Add(Instantiate(pequeno, transform.position, Quaternion.identity));
 
-            
+            persosDesc[perso.IndexOf(boneco)].transform.SetParent(canva.transform);
             persosDesc[perso.IndexOf(boneco)].transform.localPosition = new Vector3(0.5f, 0.5f, 0);
         }
     }
