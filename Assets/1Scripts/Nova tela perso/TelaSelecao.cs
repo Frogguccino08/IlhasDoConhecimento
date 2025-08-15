@@ -9,6 +9,7 @@ public class TelaSelecao : MonoBehaviour
     public List<PCsSO> perso = new List<PCsSO>();
     public GameObject pequeno;
     public GameObject canva;
+    public GameObject descCompleta;
 
     int down = 0;
     string material = "???";
@@ -80,6 +81,8 @@ public class TelaSelecao : MonoBehaviour
             {
                 down = 0;
             }
+
+            persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().pc = boneco;
         }
     }
 }
