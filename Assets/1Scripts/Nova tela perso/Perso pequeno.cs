@@ -25,5 +25,6 @@ public class Persopequeno : MonoBehaviour
         perso.perso = pc;
         canva.SetActive(false);
         descCompleta.SetActive(true);
+        descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
     }
 }
