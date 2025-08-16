@@ -4,6 +4,7 @@ using UnityEngine;
 public class AttacksList : MonoBehaviour
 {
     public List<Attacks> listaAtaques = new List<Attacks>();
+    public List<Attacks> listaHabilidades = new List<Attacks>();
     public Attacks attacks;
 
 
@@ -11,7 +12,7 @@ public class AttacksList : MonoBehaviour
     {
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
         //Tipo {Attacks.Tipo.golpe, Attacks.Tipo.suporte, Attacks.Tipo.bloqueio, Attacks.Tipo.passiva, Attacks.Tipo.cura, Attacks.Tipo.cura}
-        listaAtaques.Add(new Attacks(0, "- -", "Esse ataque não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaAtaques.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaAtaques.Add(new Attacks(1, "Ataque purificador", "Ataque físico comum com o mesmo material de quem o utiliza", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, true, true, 1, 1, false, false));
         listaAtaques.Add(new Attacks(2, "Disparo purificador", "Ataque a distância comum com o mesmo material de quem o utiliza", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, false, true, 1, 1, false, false));
         listaAtaques.Add(new Attacks(3, "Bloquear", "Recebe 2 bloqueio", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 0, 2, true, false));
@@ -67,10 +68,24 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(53, "Passar óleo", "Cura uma pequena quantidade de vida e aumenta seu dano físico por 3 turnos", Attacks.Tipo.cura, Attacks.Tipo.suporte, 4, -3, false, false, 1, 4, true, false));
         listaAtaques.Add(new Attacks(54, "Campo magnético", "Caso esteja contra um inimigo de metal, recebe +1 defesa física e defesa a distância no início do turno", Attacks.Tipo.passiva, Attacks.Tipo.suporte, 4, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(55, "Entortar", "Ataques que causam dano físico em inimigos de metal fazem eles ficarem com menos defesa física", Attacks.Tipo.passiva, Attacks.Tipo.negativo, 0, 0, true, true, 0, 0, true, true));
+
+        listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(4, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(3, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(2, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(1, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
     }
 
-    public Attacks CriarAtaques(int id)
+    public Attacks CriarAtaques(int id, bool habilidade)
     {
-        return listaAtaques[id];
+        if (habilidade == false)
+        {
+            return listaAtaques[id];
+        }
+        else
+        {
+            return listaHabilidades[id];
+        }
     }
 }

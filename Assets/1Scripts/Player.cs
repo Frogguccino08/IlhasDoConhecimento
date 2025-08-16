@@ -282,7 +282,7 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            Attacks ataque = lista.CriarAtaques(attackID[i]);
+            Attacks ataque = lista.CriarAtaques(attackID[i], false);
 
             attackID[i] = ataque.id;
             nome[i] = ataque.nome;

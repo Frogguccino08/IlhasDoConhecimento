@@ -30,6 +30,6 @@ public class Sair : MonoBehaviour
     public void Quitar()
     {
         PersonagemSelecionado.instance.Resetar();
-        SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
+        SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
 }

@@ -40,9 +40,10 @@ public class Descricao : MonoBehaviour
 
 
     //Função responsável por toda a parte de escrever toda a descrição
-    public void BotandoDescricao(int id)
+    public void BotandoDescricao(int id, bool habilidade)
     {
         cena = SceneManager.GetActiveScene();
+        Attacks ataque;
 
         if (cena.name == "Combate")
         {
@@ -51,7 +52,14 @@ public class Descricao : MonoBehaviour
         }
 
         perso = PersonagemSelecionado.instance;
-        Attacks ataque = lista.CriarAtaques(id);
+        if (habilidade == false)
+        {
+            ataque = lista.CriarAtaques(id, false);
+        }
+        else
+        {
+            ataque = lista.CriarAtaques(id, true);
+        }
 
         nomeAtq.text = ataque.nome;
 

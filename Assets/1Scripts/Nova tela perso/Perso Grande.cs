@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class PersoGrande : MonoBehaviour
     public AttacksList list;
 
     public GameObject[] attacks = new GameObject[4];
+    public GameObject habilidade;
 
 
     void Awake()
@@ -35,6 +37,9 @@ public class PersoGrande : MonoBehaviour
 
     public void ColocarPersonagem()
     {
+        //Imagem
+        imgPersonagem.sprite = pc.perso.imgMenu;
+
         //Parte escrita tranquila
         nome.text = pc.perso.nome;
 
@@ -58,6 +63,91 @@ public class PersoGrande : MonoBehaviour
         }
 
         vida.text = "Vida: " + pc.perso.maxHealth;
+
+        for (int i = 0; i < 4; i++)
+        {
+            attacks[i].GetComponent<Ataques>().id = pc.perso.listaAtaquesIniciais[i];
+            attacks[i].GetComponent<Ataques>().ColocarAtaque();
+
+            if (attacks[i].GetComponent<Ataques>().id == 0)
+            {
+                attacks[i].SetActive(false);
+            }
+            else
+            {
+                attacks[i].SetActive(true);
+            }
+        }
+
+        habilidade.GetComponent<Ataques>().ColocarAtaque();
+
+        //Quadrados
+
+        //Conhecimento
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.maxCharge)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 3.94f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 3.94f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
+        //Dano físico
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.pDamage)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 3.34f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 3.34f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
+        //Defesa física
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.pDefense)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.74f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.74f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
+        //Dano à distância
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.sDamage)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.14f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.14f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
+        //Defesa à distância
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.sDefense)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 1.54f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 1.54f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
     }
 
 
@@ -69,8 +159,8 @@ public class PersoGrande : MonoBehaviour
             foreach (GameObject obj in quads)
             {
                 Destroy(obj);
-                quads.Remove(obj);
             }
+            quads.Clear();
         }
         canva.SetActive(true);
         esseCanva.SetActive(false);
@@ -79,7 +169,7 @@ public class PersoGrande : MonoBehaviour
 
     public void Jogando()
     {
-        pc.regiao = Random.Range(0, 5);
+        pc.regiao = UnityEngine.Random.Range(0, 5);
         SceneManager.LoadScene("Combate", LoadSceneMode.Single);
     }
 }

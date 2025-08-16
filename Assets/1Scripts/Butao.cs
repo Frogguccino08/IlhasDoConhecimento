@@ -148,7 +148,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
                     {
                         desc.GetComponent<Descricao>().rEmConta = 1;
                     }
-                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
 
                     if (player.currentR == 3)
                     {
@@ -159,7 +159,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
                             player.using3R = true;
                             Debug.Log("3R Usado");
                             desc.GetComponent<Descricao>().rEmConta = 0;
-                            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+                            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
                         }
                         else
                         {
@@ -167,7 +167,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
                             player.usingR = false;
                             player.using3R = false;
                             desc.GetComponent<Descricao>().rEmConta = 0;
-                            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+                            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
                             yield break;
 
                         }
@@ -179,7 +179,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
                     player.usingR = false;
                     player.using3R = false;
                     desc.GetComponent<Descricao>().rEmConta = 0;
-                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
                     yield break;
                 }
 
@@ -200,7 +200,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
                     player.usingR = false;
                     player.using3R = false;
                     desc.GetComponent<Descricao>().rEmConta = 0;
-                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+                    desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
                     yield break;
                 }
             }
@@ -221,7 +221,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     {
         if (desc != null && control.telaSair == false)
         {
-            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id]);
+            desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
             desc.SetActive(true);
         }
     }

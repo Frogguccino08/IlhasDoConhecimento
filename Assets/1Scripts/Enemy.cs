@@ -537,7 +537,7 @@ public class Enemy : MonoBehaviour
     {
         for (i = 0; i < 6; i++)
         {
-            Attacks ataque = lista.CriarAtaques(attackID[i]);
+            Attacks ataque = lista.CriarAtaques(attackID[i], false);
             nome[i] = ataque.nome;
             desc[i] = ataque.desc;
             tipo1[i] = ataque.tipo1;

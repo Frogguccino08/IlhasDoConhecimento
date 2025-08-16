@@ -96,7 +96,7 @@ public class Controle : MonoBehaviour
                 inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
                 yield return EsperarTeclaEspaco();
                 PersonagemSelecionado.instance.Resetar();
-                SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
+                SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
                 yield break;
             }
 
@@ -193,7 +193,7 @@ public class Controle : MonoBehaviour
             inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield return EsperarTeclaEspaco();
             PersonagemSelecionado.instance.Resetar();
-            SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
+            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
             yield break;
         }
 
@@ -326,7 +326,7 @@ public class Controle : MonoBehaviour
             inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
             yield return EsperarTeclaEspaco();
             PersonagemSelecionado.instance.Resetar();
-            SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
+            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
             yield break;
         }
 

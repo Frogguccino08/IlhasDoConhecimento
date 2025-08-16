@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TelaSelecao : MonoBehaviour
 {
@@ -83,6 +84,8 @@ public class TelaSelecao : MonoBehaviour
             }
 
             persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().pc = boneco;
+
+            persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().personagem.GetComponent<Image>().sprite = perso[perso.IndexOf(boneco)].imgMenu;
         }
     }
 }

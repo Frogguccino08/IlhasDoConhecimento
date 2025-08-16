@@ -5,6 +5,6 @@ public class StarMenu : MonoBehaviour
 {
     public void RushMode()
     {
-        SceneManager.LoadScene("SelecaoPersonagem", LoadSceneMode.Single);
+        SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
 }

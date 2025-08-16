@@ -130,7 +130,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
         } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
-        Attacks ataqueA = lista.CriarAtaques(idAtaque);
+        Attacks ataqueA = lista.CriarAtaques(idAtaque, false);
         Debug.Log(idAtaque);
         Debug.Log(ataqueA);
 
@@ -174,7 +174,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void FazerAtaquesAntigo(int idzinho)
     {
         idAtaqueAntigo = player.attackID[idzinho];
-        Attacks ataqueA = lista.CriarAtaques(idAtaqueAntigo);
+        Attacks ataqueA = lista.CriarAtaques(idAtaqueAntigo, false);
 
         texto.text = ataqueA.nome;
 
@@ -266,7 +266,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (desc != null)
         {
-            desc.GetComponent<Descricao>().BotandoDescricao(ataque);
+            desc.GetComponent<Descricao>().BotandoDescricao(ataque, false);
             desc.SetActive(true);
         }
     }

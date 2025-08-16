@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d917ad3c2a117364b8d3ecd68284d027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personagem: {fileID: 5548241101861490766}
   nome: {fileID: 3799962884292442772}
   material: {fileID: 2224066740153468312}
   materialTxt: {fileID: 1921174784578109409}
