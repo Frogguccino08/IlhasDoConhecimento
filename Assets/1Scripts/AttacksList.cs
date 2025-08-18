@@ -16,7 +16,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(1, "Ataque purificador", "Ataque físico comum com o mesmo material de quem o utiliza", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, true, true, 1, 1, false, false));
         listaAtaques.Add(new Attacks(2, "Disparo purificador", "Ataque a distância comum com o mesmo material de quem o utiliza", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, false, true, 1, 1, false, false));
         listaAtaques.Add(new Attacks(3, "Bloquear", "Recebe 2 bloqueio", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 0, 2, true, false));
-        listaAtaques.Add(new Attacks(4, "Expor inimigo", "Faz o inimigo não poder aumentar sua quantidade de bloqueio por 2 turnos", Attacks.Tipo.negativo, Attacks.Tipo.zero, 0, 0, true, true, 0, 2, true, false));
+        listaAtaques.Add(new Attacks(4, "Expor inimigo", "Faz o inimigo não poder aumentar sua quantidade de bloqueio por 2 turnos", Attacks.Tipo.exposto, Attacks.Tipo.zero, 0, 0, true, true, 0, 2, true, false));
         listaAtaques.Add(new Attacks(5, "Leitura", "Após ser atacado tem chance de aumentar sua defesa a distância", Attacks.Tipo.passiva, Attacks.Tipo.suporte, 1, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(6, "Corte de papel", "Ataque mais forte de papel que diminue o dano a distância do inimigo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 1, 2, false, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(7, "Tornado de origami", "Um ataque poderoso de papel sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 4, false, true, 3, 4, false, false));
@@ -49,7 +49,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(34, "Derreter", "Diminue a defesa física do inimigo por 3 turnos", Attacks.Tipo.negativo, Attacks.Tipo.zero, 4, 0, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(35, "Desperdício", "Diminue o ganho de conhecimento do inimigo por 3 turnos", Attacks.Tipo.negativo, Attacks.Tipo.zero, 5, 0, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(36, "Arremesso de garrafa", "Ataque mediano de Vidro que causa cacos", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 3, 3, false, true, 3, 5, true, false));
-        listaAtaques.Add(new Attacks(37, "Martelo de brinquedo", "Ataque com bastante dano que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 5, true, true, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(37, "Martelo de brinquedo", "Ataque com bastante dano que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 2, 5, true, true, 1, 4, true, false));
         listaAtaques.Add(new Attacks(38, "Tiro de canudo", "Ataque com dano razoável porém que remove 2 bloqueio ao invés de 1 (3 com carga R)", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 3, false, true, 1, 4, true, false));
         listaAtaques.Add(new Attacks(39, "Aprendendo", "Ataque fraco de papel que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 1, 3, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(40, "Tapa leve", "Ataque muito fraco sem elemento sem custo e sem efeito", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 1, true, true, 1, 0, false, false));
