@@ -1,7 +1,7 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Ataques : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -16,6 +16,11 @@ public class Ataques : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     void Awake()
     {
         pc = PersonagemSelecionado.instance;
+
+        if (SceneManager.GetActiveScene().name == "Combate")
+        {
+            ColocarAtaque();
+        }
     }
 
     public void ColocarAtaque()

@@ -34,12 +34,54 @@ public class Controle : MonoBehaviour
     public PersonagemSelecionado escolha;
     public TMP_Text textoArea;
 
+    public GameObject textoRegiao;
+    public GameObject[] vidas = new GameObject[2];
+    public GameObject espacoAtaques;
+    public GameObject[] escritos = new GameObject[2];
+    public GameObject efeitosTela;
+
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
     {
         escolha = PersonagemSelecionado.instance;
-        StartCoroutine(TextoRegiao());
+
+        StartCoroutine(LigarTela());
+    }
+
+    //Espera mostrar a região e depois liga todas as coisas
+    IEnumerator LigarTela()
+    {
+        textoRegiao.SetActive(true);
+
+        switch (escolha.regiao)
+        {
+            case 0: //costa
+                textoRegiao.GetComponent<TMP_Text>().text = "Costa de Cacos";
+                break;
+            case 1: //coração
+                textoRegiao.GetComponent<TMP_Text>().text = "Coração da Ilha";
+                break;
+            case 2: //comunidade
+                textoRegiao.GetComponent<TMP_Text>().text = "Comunidade Abandonada";
+                break;
+            case 3: //arquivos
+                textoRegiao.GetComponent<TMP_Text>().text = "Os arquivos";
+                break;
+            case 4: //floresta
+                textoRegiao.GetComponent<TMP_Text>().text = "Floresta Composta";
+                break;
+        }
+
+        yield return new WaitForSeconds(3);
+
+        vidas[0].SetActive(true);
+        vidas[1].SetActive(true);
+        textoRegiao.SetActive(false);
+        espacoAtaques.SetActive(true);
+        escritos[0].SetActive(true);
+        escritos[1].SetActive(true);
+        efeitosTela.SetActive(true);
 
         texto.enabled = false;
         player.InicializarPlayer();
@@ -50,7 +92,8 @@ public class Controle : MonoBehaviour
 
         pontosRodada = 0;
 
-        inimigoTurno.text = "Inimigo: " + inimigoAtual +"       Turno: " + turno;
+        inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
+        textoArea.text = "Pontuação:\n " + pontosRodada;
     }
 
     //Função responsável por trocar de turno
@@ -438,32 +481,6 @@ public class Controle : MonoBehaviour
 
         yield return new WaitForSeconds(0.01f);
         paraEsperar = false;
-    }
-
-    //Função que muda o texto da região que você está e depois troca para os pontos
-    IEnumerator TextoRegiao()
-    {
-        switch (escolha.regiao)
-        {
-            case 0: //costa
-                textoArea.text = "Costa de Cacos";
-                break;
-            case 1: //coração
-                textoArea.text = "Coração da Ilha";
-                break;
-            case 2: //comunidade
-                textoArea.text = "Comunidade Abandonada";
-                break;
-            case 3: //arquivos
-                textoArea.text = "Os arquivos";
-                break;
-            case 4: //floresta
-                textoArea.text = "Floresta Composta";
-                break;
-        }
-
-        yield return new WaitForSeconds(3);
-        textoArea.text = "Pontuação:\n " + pontosRodada;
     }
 
     //Função que remove o aviso para o programa que o ataque foi utilizado

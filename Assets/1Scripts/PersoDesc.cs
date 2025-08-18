@@ -8,16 +8,20 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public GameObject telaDesc;
     public TMP_Text texto;
     public Player player;
+    public GameObject descHabilidade;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         telaDesc.SetActive(true);
         telaDesc.transform.SetSiblingIndex(20);
         texto.text = "Dano físico: " + player.phiDamage + "\nDano a dist: " + player.speDamage + "\nDefesa física: " + player.phiDefense + "\nDefesa a dist: " + player.speDefense;
+        descHabilidade.SetActive(true);
+        descHabilidade.GetComponent<Descricao>().BotandoDescricao(player.perso.perso.id, true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         telaDesc.SetActive(false);
+        descHabilidade.SetActive(false);
     }
 }

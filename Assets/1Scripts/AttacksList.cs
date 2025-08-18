@@ -72,7 +72,7 @@ public class AttacksList : MonoBehaviour
         listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaHabilidades.Add(new Attacks(4, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaHabilidades.Add(new Attacks(3, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
-        listaHabilidades.Add(new Attacks(2, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
+        listaHabilidades.Add(new Attacks(2, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaHabilidades.Add(new Attacks(1, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
         listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, false, false));
     }

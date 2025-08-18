@@ -5125,6 +5125,7 @@ MonoBehaviour:
   - {fileID: 1952613051}
   - {fileID: 490406108}
   habilidade: {fileID: 1900562402}
+  descri: {fileID: 426583751}
 --- !u!1 &1658035454
 GameObject:
   m_ObjectHideFlags: 0

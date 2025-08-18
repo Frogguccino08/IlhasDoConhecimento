@@ -111,112 +111,124 @@ public class Descricao : MonoBehaviour
                 break;
         }
 
-        if (ataque.isPassiva == true)
+        if (phispepas != null)
         {
-            phispepas.enabled = true;
-            phispepas.text = "Pas";
-        }
-        else
-        {
-            if (ataque.phispe == true)
+            if (ataque.isPassiva == true)
             {
                 phispepas.enabled = true;
-                phispepas.text = "Fís";
+                phispepas.text = "Pas";
             }
-            else if (ataque.phispe == false)
+            else
             {
-                phispepas.enabled = true;
-                phispepas.text = "Dis";
-            }
-            else if (ataque.dano == 0)
-            {
-                phispepas.enabled = false;
+                if (ataque.phispe == true)
+                {
+                    phispepas.enabled = true;
+                    phispepas.text = "Fís";
+                }
+                else if (ataque.phispe == false)
+                {
+                    phispepas.enabled = true;
+                    phispepas.text = "Dis";
+                }
+                else if (ataque.dano == 0)
+                {
+                    phispepas.enabled = false;
+                }
             }
         }
 
-        carga.text = "Carga: " + ataque.carga;
-
-        if (ataque.dano != 0)
+        if (carga != null)
         {
+            carga.text = "Carga: " + ataque.carga;
+        }
+
+        if (dano != null)
+        {
+            if (ataque.dano != 0)
+            {
                 if (player == null)
                 {
                     dano.enabled = true;
                     dano.text = ataque.quantidade + " x " + ataque.dano;
                     dano.color = Color.black;
-                }else if(player != null && player.telaUpgradeOn == true)
+                }
+                else if (player != null && player.telaUpgradeOn == true)
                 {
                     dano.enabled = true;
                     dano.text = ataque.quantidade + " x " + ataque.dano;
                     dano.color = Color.black;
                 }
                 else
+                {
+                    dano.enabled = true;
+                    if (ataque.phispe == true)
                     {
-                        dano.enabled = true;
-                        if (ataque.phispe == true)
-                        {
-                            if(ataque.dano > 0)
+                        if (ataque.dano > 0)
                             dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
-                            else
+                        else
                             dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modPhiDamage * -1) + rEmConta);
-                            
-                        
 
-                            if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
-                            {
-                                dano.color = Color.red;
-                            }
-                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
-                            {
-                                dano.color = Color.green;
-                            }else if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
-                            {
-                                dano.color = Color.green;
-                            }
-                            else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
-                            {
-                                dano.color = Color.red;
-                            }
-                            else
-                            {
-                                dano.color = Color.black;
-                            }
+
+
+                        if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.red;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.red;
                         }
                         else
                         {
-                            if(ataque.dano > 0)
+                            dano.color = Color.black;
+                        }
+                    }
+                    else
+                    {
+                        if (ataque.dano > 0)
                             dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
-                            else
+                        else
                             dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modSpeDamage * -1) + rEmConta);
 
-                            if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                            {
-                                dano.color = Color.red;
-                            }
-                            else if (ataque.dano > ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
-                            {
-                                dano.color = Color.green;
-                            }
-                            else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
-                            {
-                                dano.color = Color.green;
-                            }
-                            else if (ataque.dano < ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
-                            {
-                                dano.color = Color.red;
-                            }
-                            else
-                            {
-                                dano.color = Color.black;
-                            }
+                        if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.red;
                         }
-
+                        else if (ataque.dano > ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        {
+                            dano.color = Color.green;
+                        }
+                        else if (ataque.dano < ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
+                        {
+                            dano.color = Color.red;
+                        }
+                        else
+                        {
+                            dano.color = Color.black;
+                        }
                     }
 
+                }
+
+            }
+            else
+            {
+                dano.enabled = false;
+            }
         }
-        else
-        {
-            dano.enabled = false;
-        }
+        
 
         desc.text = ataque.desc;
     }

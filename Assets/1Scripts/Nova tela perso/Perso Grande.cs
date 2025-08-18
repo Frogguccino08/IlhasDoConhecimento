@@ -28,10 +28,20 @@ public class PersoGrande : MonoBehaviour
     public GameObject[] attacks = new GameObject[4];
     public GameObject habilidade;
 
+    public GameObject descri;
+
 
     void Awake()
     {
         pc = PersonagemSelecionado.instance;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Voltando();
+        }
     }
 
 
@@ -153,6 +163,7 @@ public class PersoGrande : MonoBehaviour
 
     public void Voltando()
     {
+        descri.SetActive(false);
         Debug.Log("Clicado");
         if (quads != null)
         {

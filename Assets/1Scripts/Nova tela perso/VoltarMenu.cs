@@ -7,4 +7,12 @@ public class VoltarMenu : MonoBehaviour
     {
         SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
+        }
+    }
 }
