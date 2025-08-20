@@ -11,6 +11,7 @@ public class PersoGrande : MonoBehaviour
     public TMP_Text material;
 
     public Image imgPersonagem;
+    public Image corPersonagem;
     public Image imgMaterial;
 
     public TMP_Text vida;
@@ -48,7 +49,10 @@ public class PersoGrande : MonoBehaviour
     public void ColocarPersonagem()
     {
         //Imagem
-        imgPersonagem.sprite = pc.perso.imgMenu;
+        imgPersonagem.sprite = pc.perso.imgCombate;
+        corPersonagem.sprite = pc.perso.Cor;
+
+        CorDetalhes();
 
         //Parte escrita tranquila
         nome.text = pc.perso.nome;
@@ -182,5 +186,36 @@ public class PersoGrande : MonoBehaviour
     {
         pc.regiao = UnityEngine.Random.Range(0, 5);
         SceneManager.LoadScene("Combate", LoadSceneMode.Single);
+    }
+
+    public void CorDetalhes()
+    {
+        corPersonagem.enabled = false;
+
+        if (pc.perso.Cor != null)
+        {
+            corPersonagem.enabled = true;
+
+            if (pc.perso.material == 1)
+            {
+                corPersonagem.color = new Color32(51, 58, 99, 255);
+            }
+            else if (pc.perso.material == 2)
+            {
+                corPersonagem.color = new Color32(86, 7, 13, 240);
+            }
+            else if (pc.perso.material == 3)
+            {
+                corPersonagem.color = new Color32(0, 54, 0, 255);
+            }
+            else if (pc.perso.material == 4)
+            {
+                corPersonagem.color = new Color32(136, 98, 22, 255);
+            }
+            else if (pc.perso.material == 5)
+            {
+                corPersonagem.color = new Color32(90, 78, 53, 255);
+            }
+        }
     }
 }
