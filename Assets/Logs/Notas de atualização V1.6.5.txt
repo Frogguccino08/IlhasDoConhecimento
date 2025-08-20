@@ -29,6 +29,7 @@ a cada golpe no ataque inimigo.
 
 Visual:
 - Nova tela de seleção de personagem adicionada
+- Tela rápida mostrando a região aparece ao entrar no combate
 
 
 Efeitos especiais além de ataques:

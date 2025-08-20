@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
 
     public int[] attackID = new int[6];
     [HideInInspector]
-    int[] chance = new int[6];
+    int[] chance = new int[7];
     [HideInInspector]
     public string[] nome = new string[6];
     [HideInInspector]
@@ -835,10 +835,9 @@ public class Enemy : MonoBehaviour
         int maiorDanoTemporario = 4;
         int maiorCura = 0;
         int maiorCuraTemporario = 4;
-        bool temAtaqueFraco = false;
 
         //Zerando tudo
-        for (i = 0; i < 6; i++)
+        for (i = 0; i < 7; i++)
         {
             chance[i] = 0;
         }
@@ -850,15 +849,6 @@ public class Enemy : MonoBehaviour
             if (attackID[i] != 0)
             {
                 chance[i] += 25;
-            }
-        }
-
-        //regra 0: Conferir se ele tem um ataque que causa dano e tem 1 ou menos de carga
-        for (i = 0; i < 6; i++)
-        {
-            if (attackID[i] != 0 && alvo[i] == true && dano[i] > 0 && carga[i] <= 1)
-            {
-                temAtaqueFraco = true;
             }
         }
 
@@ -974,50 +964,21 @@ public class Enemy : MonoBehaviour
             }
         }
 
-
-        for (i = 0; i < 6; i++)
-        {
-            Debug.Log("Chance do ataque " + i + ": " + chance[i]);
-        }
-
-        //Regra final 4: Caso tenha algum ataque com mais carga do que tem atualmente chance de pular turno
+        //Regra final 4: Caso tenha algum ataque tenha mais carga do que tem atualmente chance de pular turno
         for (i = 0; i < 6; i++)
         {
             if (attackID[i] != 0 && carga[i] > currentCharge)
             {
                 Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
-
-                int tentarPular = UnityEngine.Random.Range(1, 21);
-                if (tentarPular <= 8)
-                {
-                    Debug.Log("Inimigo pulou o proprio turno");
-                    textoAtaque.text = "Inimigo pulou o proprio turno";
-                    
-                    list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
-
-                    for (i = 0; i < 6; i++)
-                    {
-                        if (isPassive[i] == true)
-                        {
-                            list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-                        }
-                    }
-
-                    list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-                    for (i = 0; i < 6; i++)
-                    {
-                        if (enemy.isPassive[i] == true)
-                        {
-                            list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-                        }
-                    }
-
-                    StartCoroutine(control.Turno(true));
-                    return;
-                }
+                chance[6] += 50;
             }
         }
+
+        for (i = 0; i < 6; i++)
+        {
+            Debug.Log("Chance do ataque " + i + ": " + chance[i]);
+        }
+        Debug.Log("Chance de pular: " + chance[6]);
 
 
         //Escolher o ataque e usa-lo
@@ -1058,56 +1019,43 @@ public class Enemy : MonoBehaviour
         {
             ataqueEscolhido = UnityEngine.Random.Range(1, maximo + 1);
             Debug.Log("Numero escolhido: " + ataqueEscolhido);
-            for (i = 0; i < 6; i++)
+            for (i = 0; i < 7; i++)
             {
-                if (ataqueEscolhido > chance[i])
+                if (i == 6)
+                {
+                    Debug.Log("Inimigo pulou o proprio turno");
+                    textoAtaque.text = "Inimigo pulou o proprio turno";
+                    list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
+
+                    for (i = 0; i < 6; i++)
+                    {
+                        if (isPassive[i] == true)
+                        {
+                            list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
+                        }
+                    }
+
+                    list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
+
+                    for (i = 0; i < 6; i++)
+                    {
+                        if (enemy.isPassive[i] == true)
+                        {
+                            list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
+                        }
+                    }
+
+                    StartCoroutine(control.Turno(true));
+                    return;
+                }else if (ataqueEscolhido > chance[i])
                 {
                     ataqueEscolhido -= chance[i];
                 }
                 else
                 {
-                    if (currentCharge <= 2)
-                    {
-                        int tentarPular = UnityEngine.Random.Range(1, 21);
-                        if (tentarPular <= 10 && temAtaqueFraco == false)
-                        {
-                            Debug.Log("Inimigo pulou o proprio turno");
-                            textoAtaque.text = "Inimigo pulou o proprio turno";
-                            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
-                                    
-                            for (i = 0; i < 6; i++)
-                            {
-                                if (isPassive[i] == true)
-                                {
-                                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-                                }
-                            }
-
-                            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-                            for (i = 0; i < 6; i++)
-                            {
-                                if (enemy.isPassive[i] == true)
-                                {
-                                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-                                }
-                            }
-                            StartCoroutine(control.Turno(true));
-                            return;
-                        }
-                        else
-                        {
-                            StartCoroutine(UsarAtaque(i));
-                            StartCoroutine(control.Turno(true));
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        StartCoroutine(UsarAtaque(i));
-                        StartCoroutine(control.Turno(true));
-                        return;
-                    }
+                    StartCoroutine(UsarAtaque(i));
+                    StartCoroutine(control.Turno(true));
+                    return;
                 }
             }
         }
