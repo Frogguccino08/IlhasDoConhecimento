@@ -6409,6 +6409,7 @@ MonoBehaviour:
   text: {fileID: 1038328460}
   codigoZerado: 1
   pc: {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
+  tela: {fileID: 2005335200}
 --- !u!4 &1966948901
 Transform:
   m_ObjectHideFlags: 0
@@ -6550,6 +6551,7 @@ MonoBehaviour:
   pequeno: {fileID: 5548241101861490766, guid: 4f798b352ca3fbb43b5dd601afcc8888, type: 3}
   canva: {fileID: 2005335195}
   descCompleta: {fileID: 1654444109}
+  pc: {fileID: 0}
 --- !u!1 &2009108612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6996,5 +6998,5 @@ SceneRoots:
   - {fileID: 2005335199}
   - {fileID: 1654444113}
   - {fileID: 11650851}
-  - {fileID: 1245900992}
   - {fileID: 1966948901}
+  - {fileID: 1245900992}

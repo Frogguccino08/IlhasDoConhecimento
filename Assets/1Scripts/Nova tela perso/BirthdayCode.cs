@@ -8,6 +8,7 @@ public class BirthdayCode : MonoBehaviour
     public TMP_Text text;
     public bool codigoZerado = true;
     public PCsSO pc;
+    public TelaSelecao tela;
 
     void Update()
     {
@@ -59,7 +60,7 @@ public class BirthdayCode : MonoBehaviour
 
         text.text = "Code Activated!!!";
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.5f);
             if (text.GetComponent<TMP_Text>().enabled == false)
@@ -73,8 +74,15 @@ public class BirthdayCode : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.3f);
-        PersonagemSelecionado.instance.regiao = UnityEngine.Random.Range(0, 5);
-        PersonagemSelecionado.instance.perso = pc;
-        SceneManager.LoadScene("Combate", LoadSceneMode.Single);
+        PersonagemSelecionado.instance.unlock[5] = true;
+        foreach (GameObject obj in tela.persosDesc)
+        {
+            Destroy(obj);
+        }
+        tela.persosDesc.Clear();
+        foreach (PCsSO boneco in tela.perso)
+        {
+            tela.ColocarPersonagem(boneco);
+        }
     }
 }

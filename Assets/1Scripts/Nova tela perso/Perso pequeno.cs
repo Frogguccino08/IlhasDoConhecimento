@@ -14,9 +14,13 @@ public class Persopequeno : MonoBehaviour
     PersonagemSelecionado perso;
     public GameObject descCompleta;
 
-    void Start()
+    void Awake()
     {
         perso = PersonagemSelecionado.instance;
+    }
+
+    void Start()
+    {
         canva = GameObject.Find("Canvas");
         descCompleta = canva.GetComponent<TelaSelecao>().descCompleta;
     }
@@ -24,8 +28,11 @@ public class Persopequeno : MonoBehaviour
     public void OnClickPequeno()
     {
         perso.perso = pc;
+        if (perso.unlock[perso.perso.id] == true)
+        {
         canva.SetActive(false);
         descCompleta.SetActive(true);
         descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
+        }
     }
 }

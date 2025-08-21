@@ -148,10 +148,10 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 if (quando == 0)
                 {
-                    if (player.using3R == true)
-                        {
-                            StartCoroutine(AparecerPassiva(0, "Sobreaquecer", "O ataques ficaram ficou mais forte"));
-                        }
+                    if ((player.using3R == true|| player.segundo3R == true) && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
+                    {
+                        StartCoroutine(AparecerPassiva(0, "Sobreaquecer", "O ataques ficaram ficou mais forte"));
+                    }
                 }
                 break;
             //Kai (Vidro)
