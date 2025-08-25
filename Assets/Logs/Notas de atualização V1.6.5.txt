@@ -1,4 +1,5 @@
 Organização de código:
+- Jeito que faz o inimigo pular o próprio turno foi alterada para ajudar na escolha do inimigo.
 
 
 Correção de erros:
@@ -24,6 +25,7 @@ No inicio do turno sem precisar escolher um ataque antes;
 No inicio do turno inicio do turno inimigo sem ele escolher o ataque dele;
 A cada golpe no ataque;
 a cada golpe no ataque inimigo.
+- A cada boss derrotado a região pode mudar.
 
 
 

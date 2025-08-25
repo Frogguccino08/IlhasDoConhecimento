@@ -533,8 +533,13 @@ public class Enemy : MonoBehaviour
 
         if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0)
         {
+            int pre;
+            pre = escolha.regiao;
             escolha.regiao = UnityEngine.Random.Range(0, 5);
-            yield return StartCoroutine(control.LigarTela());
+            if (pre != escolha.regiao)
+            {
+                yield return StartCoroutine(control.LigarTela());
+            }
         }
 
 
