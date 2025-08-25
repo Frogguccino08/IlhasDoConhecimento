@@ -496,6 +496,11 @@ public class Enemy : MonoBehaviour
                 enemy.efeitosAtivos[i] = 0;
             }
 
+            for (i = 1; i <= 18; i++)
+            {
+                efeitosAtivos[i] = 0;
+            }
+
             control.texto.enabled = true;
             control.texto.text = "Seu personagem descansou. Sua vida foi recuperada e efeitos zerados";
 
@@ -524,6 +529,12 @@ public class Enemy : MonoBehaviour
             upgrade.GetComponent<TelaUpgrade>().telaAtaques.SetActive(false);
             upgrade.GetComponent<TelaUpgrade>().telaAtributos.SetActive(false);
             yield return control.TelaUpgrade();
+        }
+
+        if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0)
+        {
+            escolha.regiao = UnityEngine.Random.Range(0, 5);
+            yield return StartCoroutine(control.LigarTela());
         }
 
 

@@ -186,6 +186,7 @@ MonoBehaviour:
   perso: {fileID: 0}
   regiao: 0
   pontos: 0
+  unlock: 010101010100
 --- !u!4 &244199876
 Transform:
   m_ObjectHideFlags: 0

@@ -39,6 +39,8 @@ public class Controle : MonoBehaviour
     public GameObject espacoAtaques;
     public GameObject[] escritos = new GameObject[2];
     public GameObject efeitosTela;
+    public GameObject[] imgPlayer = new GameObject[2];
+    public GameObject RsConheci;
 
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
@@ -50,8 +52,19 @@ public class Controle : MonoBehaviour
     }
 
     //Espera mostrar a região e depois liga todas as coisas
-    IEnumerator LigarTela()
+    public IEnumerator LigarTela()
     {
+        vidas[0].SetActive(false);
+        vidas[1].SetActive(false);
+        textoRegiao.SetActive(true);
+        espacoAtaques.SetActive(false);
+        escritos[0].SetActive(false);
+        escritos[1].SetActive(false);
+        efeitosTela.SetActive(false);
+        RsConheci.SetActive(false);
+        imgPlayer[0].SetActive(false);
+        imgPlayer[1].SetActive(false);
+
         textoRegiao.SetActive(true);
 
         switch (escolha.regiao)
@@ -82,6 +95,9 @@ public class Controle : MonoBehaviour
         escritos[0].SetActive(true);
         escritos[1].SetActive(true);
         efeitosTela.SetActive(true);
+        RsConheci.SetActive(true);
+        imgPlayer[0].SetActive(true);
+        imgPlayer[1].SetActive(true);
 
         texto.enabled = false;
         player.InicializarPlayer();

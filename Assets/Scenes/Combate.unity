@@ -1959,7 +1959,7 @@ MonoBehaviour:
   perso: {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   regiao: 1
   pontos: 0
-  unlock: 
+  unlock: 010101010100
 --- !u!4 &176751412
 Transform:
   m_ObjectHideFlags: 0
@@ -4387,7 +4387,7 @@ MonoBehaviour:
   Vazio: {fileID: 7479736070205721985, guid: 8f5ae887b33380e4b8163179503e9eae, type: 3}
   Cheio: {fileID: 6182228761364075970, guid: e97329b549ac1dc45a725f4ce2197906, type: 3}
   R: {fileID: 4843428628644673607, guid: a151d6d607c7b454daf048b0b140ea09, type: 3}
-  canva: {fileID: 1741430779}
+  salvar: {fileID: 1152595929}
   player: {fileID: 221998462}
   conhecimentosInstanciados: []
   RAtivos: []
@@ -6308,6 +6308,10 @@ MonoBehaviour:
   - {fileID: 445400573}
   - {fileID: 1139930231}
   efeitosTela: {fileID: 631541095}
+  imgPlayer:
+  - {fileID: 221998460}
+  - {fileID: 1327823488}
+  RsConheci: {fileID: 1152595929}
 --- !u!4 &618230585
 Transform:
   m_ObjectHideFlags: 0
@@ -11523,6 +11527,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147755575}
   m_CullTransparentMesh: 1
+--- !u!1 &1152595929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152595930}
+  m_Layer: 5
+  m_Name: Rs e Conhecimento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1152595930
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152595929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1741430780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1154231514
 GameObject:
   m_ObjectHideFlags: 0
@@ -16644,6 +16683,7 @@ RectTransform:
   - {fileID: 360975098}
   - {fileID: 445400576}
   - {fileID: 757938277}
+  - {fileID: 1152595930}
   - {fileID: 1139930232}
   - {fileID: 632770180}
   - {fileID: 1984335214}

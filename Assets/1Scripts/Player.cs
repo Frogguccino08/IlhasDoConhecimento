@@ -315,7 +315,7 @@ public class Player : MonoBehaviour
         descri.SetActive(false);
         descri.GetComponent<Descricao>().rEmConta = 0;
 
-        if (using3R == false)
+        if (segundo3R == false)
         {
             currentCharge -= carga[id];
             controlConheci.SpawnConhecimento(maxCharge, currentCharge);

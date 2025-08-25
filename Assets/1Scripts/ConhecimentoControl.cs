@@ -7,7 +7,7 @@ public class ConhecimentoControl : MonoBehaviour
     public GameObject Vazio;
     public GameObject Cheio;
     public GameObject R;
-    public Canvas canva;
+    public GameObject salvar;
     public Player player;
 
     //Variaveis que precisa
@@ -88,7 +88,7 @@ public class ConhecimentoControl : MonoBehaviour
                 obj = Instantiate(Vazio, new Vector3(-9.7f + (i * 0.4f), 2.89f, 0f), Quaternion.identity);
             }
 
-            obj.transform.SetParent(canva.transform);
+            obj.transform.SetParent(salvar.transform);
             conhecimentosInstanciados.Add(obj);
         }
     }
@@ -115,7 +115,7 @@ public class ConhecimentoControl : MonoBehaviour
             }
 
             objR = Instantiate(R, new Vector3(-3f + (o * 0.4f), 3.7f, 0f), Quaternion.identity);
-            objR.transform.SetParent(canva.transform);
+            objR.transform.SetParent(salvar.transform);
             objR.transform.SetSiblingIndex(4);
             RAtivos.Add(objR);
         }
