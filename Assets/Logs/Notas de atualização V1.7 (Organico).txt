@@ -1,0 +1,22 @@
+Funções Adicionadas:
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+
+
+Balanceamento:
+
+
+Correção de erros:
+
+
+Novos Ataques:
+
+
+Novos Inimigos:
+
+
+Organização de código:
