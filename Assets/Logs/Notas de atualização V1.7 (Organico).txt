@@ -5,6 +5,8 @@ Visual:
 
 
 Efeitos especiais além de ataques:
+- Jayden, Usar 3R com um ataque apenas de efeito cura uma pequena quantidade de vida.
+- Floresta composta, Chance de ou aumentar ou diminuir o ganho de conhecimento nesse turno. Personagens orgânicos só são afetados pelo ganho.
 
 
 Balanceamento:
@@ -12,6 +14,8 @@ Balanceamento:
 
 
 Correção de erros:
+- Efeitos de região no player já mostravam antes mesmo de finalizar a tela da região.
+- Usar 3R em ataques de cura faziam com que você ficasse com -1 de carga R.
 
 
 Novos Ataques:

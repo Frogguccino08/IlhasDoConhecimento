@@ -302,7 +302,7 @@ public class Controle : MonoBehaviour
         }
 
         player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 10, player, enemy);
-        
+
         //Após escolher o ataque
         enemy.EscolherAtaque();
         enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
@@ -393,22 +393,6 @@ public class Controle : MonoBehaviour
         texto.enabled = false;
         AtivarBotao();
 
-        player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge);
-        if (player.efeitosAtivos[6] > 0)
-        {
-            player.currentCharge += 1;
-            player.efeitosAtivos[6] -= 1;
-        }
-        if (player.efeitosAtivos[12] > 0)
-        {
-            player.currentCharge -= 1;
-            player.efeitosAtivos[12] -= 1;
-        }
-
-        conhecimento.SpawnConhecimento(player.maxCharge, player.currentCharge);
-
-        AtualizarEstadoBotoes();
-
         player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, player, enemy);
         player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 9, player, enemy);
 
@@ -425,6 +409,22 @@ public class Controle : MonoBehaviour
         }
 
         enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 10, player, enemy);
+        
+        player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge);
+        if (player.efeitosAtivos[6] > 0)
+        {
+            player.currentCharge += 1;
+            player.efeitosAtivos[6] -= 1;
+        }
+        if (player.efeitosAtivos[12] > 0)
+        {
+            player.currentCharge -= 1;
+            player.efeitosAtivos[12] -= 1;
+        }
+
+        conhecimento.SpawnConhecimento(player.maxCharge, player.currentCharge);
+
+        AtualizarEstadoBotoes();
     }
 
 

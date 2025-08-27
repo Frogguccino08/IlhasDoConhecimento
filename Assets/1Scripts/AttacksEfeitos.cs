@@ -131,9 +131,14 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Jayden (Orgânico)
             case -14:
-                if (quando == 4)
+                if (quando == 0)
                 {
-                    Debug.Log("Jayden Passiva Ativada");
+                    if (player.using3R == true && player.dano[player.idAtaqueUsado] == 0)
+                    {
+                        player.CausarDano(Mathf.Round(player.currentHealth * 0.125f * -1));
+                        Debug.Log("Mistura energética ativada");
+                        StartCoroutine(AparecerPassiva(0, "Mistura energética", "Curou um pouco de vida com esse ataque"));
+                    }
                 }
                 break;
             //Renan (Metal) //Sobreaquecer
@@ -179,15 +184,31 @@ public class AttacksEfeitos : MonoBehaviour
 
             //Floresta Orgânica
             case -5:
-                if (quando == 0)
+                if (quando == 9)
                 {
                     if (quem == true)
                     {
-                        Debug.Log("Floresta composta player");
-                    }
-                    else
-                    {
-                        Debug.Log("Floresta composta Inimigo");
+                        int rand = UnityEngine.Random.Range(0, 21);
+
+                        if (rand > 10 && rand < 16)
+                        {
+                            player.efeitosAtivos[6] += 1;
+                            enemy.efeitosAtivos[6] += 1;
+                            StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Todos Ganharão mais conhecimento nesse turno"));
+                        }
+                        else if (rand > 15 && rand < 21)
+                        {
+                            if (player.materialPlayer != 5)
+                            {
+                                player.efeitosAtivos[12] += 1;
+                                StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Você ganhou menos conhecimento"));
+                            }
+                            if (enemy.materialInimigo != 5)
+                            {
+                                enemy.efeitosAtivos[12] += 1;
+                                StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Inimigo ganhará menos conhecimento"));
+                            }
+                        }
                     }
                 }
                 break;
@@ -243,7 +264,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Costa de vidro
+            //Costa de cacos
             case -1:
                 if (quando == 6)
                 {

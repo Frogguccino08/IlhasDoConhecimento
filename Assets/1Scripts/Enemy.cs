@@ -424,6 +424,7 @@ public class Enemy : MonoBehaviour
 
         //Efeitos iniciais número 9
         list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, enemy, this);
+        list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, enemy, this);
 
         for (i = 0; i < 6; i++)
         {

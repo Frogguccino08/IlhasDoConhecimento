@@ -223,25 +223,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
-        //Efeitos iniciais número 9
-        list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 9, this, enemy);
-
-        for (i = 0; i < 6; i++)
-        {
-            if (isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(true, attackID[i], 9, this, enemy);
-            }
-        }
-
-        for (i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(false, attackID[i], 10, this, enemy);
-            }
-        }
     }
 
 
@@ -633,7 +614,7 @@ public class Player : MonoBehaviour
         else if (using3R == true)
         {
             using3R = false;
-            if (dano[id] != 0)
+            if (dano[id] > 0)
             {
                 currentR = -1;
             }
