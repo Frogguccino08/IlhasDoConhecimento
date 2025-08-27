@@ -47,6 +47,7 @@ public class Controle : MonoBehaviour
     void Start()
     {
         escolha = PersonagemSelecionado.instance;
+        player.InicializarPlayer();
 
         StartCoroutine(LigarTela());
     }
@@ -100,7 +101,6 @@ public class Controle : MonoBehaviour
         imgPlayer[1].SetActive(true);
 
         texto.enabled = false;
-        player.InicializarPlayer();
         enemy.InicializarInimigo();
         AtualizarEstadoBotoes();
         StartCoroutine(Turno(true));
