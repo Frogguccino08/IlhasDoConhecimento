@@ -8,6 +8,7 @@ Efeitos especiais além de ataques:
 
 
 Balanceamento:
+- Composto aumentado para -4 cura e para 4 carga
 
 
 Correção de erros:

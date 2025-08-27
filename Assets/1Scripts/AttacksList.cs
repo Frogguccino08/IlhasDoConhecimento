@@ -56,7 +56,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 5 bloqueio em si mesmo", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 1, 5, true, false));
         listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", Attacks.Tipo.troca, Attacks.Tipo.suporte, 0, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 2, true, true, 1, 3, true, false));
-        listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -3, false, false, 1, 2, false, false));
+        listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -4, false, false, 1, 3, false, false));
         listaAtaques.Add(new Attacks(45, "Avião de papel", "Ataque fraco de papel sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 1, false, true, 1, 0, false, false));
         listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos", Attacks.Tipo.cura, Attacks.Tipo.negativo, 5, 0, false, true, 0, 4, true, false));
         listaAtaques.Add(new Attacks(47, "Atacar ponto fraco", "Esse ataque causa mais dano caso o inimigo esteja exposto", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, true, true, 1, 3, true, false));
