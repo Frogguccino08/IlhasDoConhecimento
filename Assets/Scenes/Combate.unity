@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
-  regiao: 3
+  regiao: 1
   pontos: 0
   unlock: 010101010100
 --- !u!4 &176751412
