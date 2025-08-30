@@ -2,15 +2,18 @@ Funções Adicionadas:
 
 
 Visual:
+- Mudado a aparencia das passivas para deixar a tela menos lotada.
 
 
 Efeitos especiais além de ataques:
-- Jayden, Usar 3R com um ataque apenas de efeito cura uma pequena quantidade de vida.
+- Jayden, Usar 3R com um ataque apenas de efeito cura 1/8 da sua vida máxima
 - Floresta composta, Chance de ou aumentar ou diminuir o ganho de conhecimento nesse turno. Personagens orgânicos só são afetados pelo ganho.
+- Orgânico -> Metal, atacar um alvo de metal com um ataque organico diminue seu ataque físico e tem uma chance de diminuir ganho de conhecimento também.
 
 
 Balanceamento:
-- Composto aumentado para -4 cura e para 3 carga
+- Composto aumentado para -4 cura e para 3 carga.
+- Roubar nutrientes agora adiciona +2 nutrindo e caco.
 
 
 Correção de erros:
@@ -21,11 +24,16 @@ Correção de erros:
 
 
 Novos Ataques:
-Derrubar, Orgânico, 1x1 dano físico, 0 carga.
-Criar fungos, Orgânico, 1x3 a distância, 3 carga, causa mais dano em alvos de orgânico.
-Espirro de chorume, Orgânico, 2x4 a distância, 4 carga, Deixa o alvo exposto +2.
-Solo ruim, Orgânico, 3 carga, Remove todo o nutrindo que o alvo tenha.
-Enxame de pragas, Orgânico, 1x3 a distância, 3 carga, "Ataque fraco orgânico que causa cacos no alvo"
+- Derrubar, Orgânico, 1x1 dano físico, 0 carga.
+- Criar fungos, Orgânico, 1x3 a distância, 3 carga, causa mais dano em alvos de orgânico.
+- Espirro de chorume, Orgânico, 2x4 a distância, 4 carga, Deixa o alvo exposto +2.
+- Solo ruim, Orgânico, 3 carga, Remove todo o nutrindo que o alvo tenha.
+- Enxame de pragas, Orgânico, 1x3 a distância, 3 carga, Causa cacos no alvo.
+- Limpar terreno, Sem material, 5 carga, Limpa todos os efeitos, negativos e positivos dos dois lados do combate.
+- Corpo quente, Sem material, passiva, Ataques físicos contra essa passiva tem chance de diminuir a defesa física e a distância do atacante.
+- Estômago forte, Sem material, passiva, Atacar um alvo orgânico consome uma parte do inimigo recuperando uma pequena parcela de vida.
+- Guia, Sem material, passiva, Pequenos ajudantes usam um segundo ataque menor após você usar um ataque de dano.
+
 
 
 Novos Inimigos:

@@ -767,29 +767,45 @@ public class Player : MonoBehaviour
 
     public void Fraquezas(int id)
     {
-        //Metal -> Papel (3 no efeito)
-        if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
+        //Orgânico -> Metal (3 no efeito)
+        if (dano[id] > 0 && enemy.materialInimigo == 4 && (material[id] == 5 || (material[id] == 0 && materialPlayer == 5)))
         {
-            float dano;
+            int rand = UnityEngine.Random.Range(1, 21);
 
-            dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
-
-            if (dano < 1)
-                dano = 1;
-
-            if (enemy.efeitosAtivos[1] > 0)
+            enemy.efeitosAtivos[9] += 1;
+            if (rand >= 15)
             {
-                dano = 0;
-                enemy.efeitosAtivos[1] -= 1;
+                enemy.efeitosAtivos[12] += 1;
+                StartCoroutine(list.AparecerPassiva(3, "Enferrujar", "Ataque físico foi diminuído e ganho de conhecimento abaixou"));
             }
-
-            Debug.Log("Dano causado pelo efeito: " + dano);
-
-            enemy.CausarDano(dano);
-            Debug.Log("Fraqueza Metal -> Papel Ativada");
-
-            StartCoroutine(list.AparecerPassiva(3, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
+            else
+            {
+                StartCoroutine(list.AparecerPassiva(3, "Enferrujar", "Ataque físico foi diminuído"));
+            }
         }
+        //Metal -> Papel (4 no efeito)
+            if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
+            {
+                float dano;
+
+                dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
+
+                if (dano < 1)
+                    dano = 1;
+
+                if (enemy.efeitosAtivos[1] > 0)
+                {
+                    dano = 0;
+                    enemy.efeitosAtivos[1] -= 1;
+                }
+
+                Debug.Log("Dano causado pelo efeito: " + dano);
+
+                enemy.CausarDano(dano);
+                Debug.Log("Fraqueza Metal -> Papel Ativada");
+
+                StartCoroutine(list.AparecerPassiva(4, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
+            }
     }
 
     public void CorDetalhes()

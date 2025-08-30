@@ -17,13 +17,11 @@ public class AttacksEfeitos : MonoBehaviour
         GameObject obj;
         obj = Instantiate(pas, new Vector3(), quaternion.identity);
         obj.transform.SetParent(canvas.transform);
-        obj.transform.SetSiblingIndex(8);
+        obj.transform.SetSiblingIndex(9);
         pasList.Add(obj);
 
         obj.GetComponent<Passiva>().titulo.text = nomePas;
         obj.GetComponent<Passiva>().desc.text = desc;
-
-        obj.transform.position = new Vector3(0, 0.2f, 0);
 
         if (quem == 0)
         {
@@ -67,9 +65,10 @@ public class AttacksEfeitos : MonoBehaviour
                 default:
                     break;
                 case 3:
-                    weak = "Metal -> Papel";
+                    weak = "Orgânico -> Metal";
                     break;
                 case 4:
+                    weak = "Metal -> Papel";
                     break;
                 case 5:
                     break;
@@ -85,8 +84,8 @@ public class AttacksEfeitos : MonoBehaviour
 
         foreach (GameObject kct in pasList)
         {
-            kct.transform.position = new Vector3(0, 0.2f, 0);
-            kct.transform.position = kct.transform.position + new Vector3(0, (1.33f * pasList.IndexOf(kct)), 0);
+            kct.transform.position = new Vector3(0, -0.04f, 0);
+            kct.transform.position = kct.transform.position + new Vector3(0, (0.8f * pasList.IndexOf(kct)), 0);
         }
 
         yield return new WaitForSeconds(3.5f);
@@ -96,8 +95,8 @@ public class AttacksEfeitos : MonoBehaviour
         
         foreach (GameObject kct in pasList)
         {
-            kct.transform.position = new Vector3(0, 0.2f, 0);
-            kct.transform.position = kct.transform.position + new Vector3(0, (1.33f * pasList.IndexOf(kct)), 0);
+            kct.transform.position = new Vector3(0, -0.04f, 0);
+            kct.transform.position = kct.transform.position + new Vector3(0, (0.8f * pasList.IndexOf(kct)), 0);
         }
     }
     
@@ -135,7 +134,7 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (player.using3R == true && player.dano[player.idAtaqueUsado] == 0)
                     {
-                        player.CausarDano(Mathf.Round(player.currentHealth * 0.125f * -1));
+                        player.CausarDano(Mathf.Round(player.maxHealth * 0.125f * -1));
                         Debug.Log("Mistura energética ativada");
                         StartCoroutine(AparecerPassiva(0, "Mistura energética", "Curou um pouco de vida com esse ataque"));
                     }
@@ -186,27 +185,31 @@ public class AttacksEfeitos : MonoBehaviour
             case -5:
                 if (quando == 9)
                 {
-                    if (quem == true)
+                    if (quem == true && control.turno > 1)
                     {
-                        int rand = UnityEngine.Random.Range(0, 21);
+                        int rand = UnityEngine.Random.Range(1, 21);
 
                         if (rand > 10 && rand < 16)
                         {
                             player.efeitosAtivos[6] += 1;
                             enemy.efeitosAtivos[6] += 1;
-                            StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Todos Ganharão mais conhecimento nesse turno"));
+                            StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Todos ganharam mais conhecimento nesse turno"));
                         }
                         else if (rand > 15 && rand < 21)
                         {
                             if (player.materialPlayer != 5)
                             {
                                 player.efeitosAtivos[12] += 1;
-                                StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Você ganhou menos conhecimento"));
+
                             }
                             if (enemy.materialInimigo != 5)
                             {
                                 enemy.efeitosAtivos[12] += 1;
-                                StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Inimigo ganhará menos conhecimento"));
+                            }
+
+                            if (player.materialPlayer != 5 || enemy.materialInimigo != 5)
+                            {
+                                StartCoroutine(AparecerPassiva(2, "Nutrientes do chão", "Todos, menos orgânicos, ganharam menos conhecimento"));
                             }
                         }
                     }
@@ -330,7 +333,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.dano[enemy.idAtaqueUsado] > 0)
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[2] += 2;
@@ -342,7 +345,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.dano[player.idAtaqueUsado] > 0)
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[2] += 2;
@@ -404,7 +407,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.dano[enemy.idAtaqueUsado] > 0)
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
                             if (rand > 15)
                             {
                                 player.efeitosAtivos[3] += 2;
@@ -416,7 +419,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.dano[player.idAtaqueUsado] > 0)
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
                             if (rand > 15)
                             {
                                 enemy.efeitosAtivos[3] += 2;
@@ -478,7 +481,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.material[player.idAtaqueUsado] == 3 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 3))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -491,7 +494,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.material[enemy.idAtaqueUsado] == 3 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 3))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -554,7 +557,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.material[player.idAtaqueUsado] == 4 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 4))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -567,7 +570,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.material[enemy.idAtaqueUsado] == 4 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 4))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -630,7 +633,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.material[player.idAtaqueUsado] == 5 || (player.material[player.idAtaqueUsado] == 0 && player.materialPlayer == 5))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -643,7 +646,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.material[enemy.idAtaqueUsado] == 5 || (enemy.material[enemy.idAtaqueUsado] == 0 && enemy.materialInimigo == 5))
                         {
-                            rand = UnityEngine.Random.Range(1, 20);
+                            rand = UnityEngine.Random.Range(1, 21);
 
                             if (rand > 15)
                             {
@@ -1099,8 +1102,8 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[18] += 3;
-                        enemy.efeitosAtivos[16] += 3;
+                        player.efeitosAtivos[18] += 2;
+                        enemy.efeitosAtivos[16] += 2;
                         control.efeitoAtq = player.nickName + " recebeu Nutrindo e " + enemy.nomeinimigo + " recebeu Cacos";
 
                         if (player.rAgora == true)
@@ -1111,8 +1114,8 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                     else
                     {
-                        enemy.efeitosAtivos[18] += 3;
-                        player.efeitosAtivos[16] += 3;
+                        enemy.efeitosAtivos[18] += 2;
+                        player.efeitosAtivos[16] += 2;
                         control.efeitoAtq = enemy.nomeinimigo + " recebeu Nutrindo e " + player.nickName + " recebeu Cacos";
                     }
                 }
@@ -1353,6 +1356,152 @@ public class AttacksEfeitos : MonoBehaviour
                         control.efeitoAtq = player.nickName + " ficou com cacos";
                     }
                 }
+                break;
+            case 61: //Limpar terreno
+                if (quando == 0)
+                {
+                    for (int i = 0; i < 19; i++)
+                    {
+                        player.efeitosAtivos[i] = 0;
+                        enemy.efeitosAtivos[i] = 0;
+                        control.efeitoAtq = "Terreno foi resetado";
+                    }
+                }
+                break;
+            case 62: //Corpo quente
+                if (quando == 3)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.phispe[enemy.idAtaqueUsado] == true && enemy.dano[enemy.idAtaqueUsado] > 0)
+                        {
+                            int rand = UnityEngine.Random.Range(1, 21);
+
+                            if (rand >= 15)
+                            {
+                                enemy.efeitosAtivos[10] += 2;
+                                enemy.efeitosAtivos[11] += 2;
+                                StartCoroutine(AparecerPassiva(0, "Corpo Quente", "Defesas do inimigo diminuiram após fazer contato com você"));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
+                        {
+                            int rand = UnityEngine.Random.Range(1, 21);
+
+                            if (rand >= 15)
+                            {
+                                player.efeitosAtivos[10] += 2;
+                                player.efeitosAtivos[11] += 2;
+                                StartCoroutine(AparecerPassiva(1, "Corpo Quente", "Suas defesas diminuiram após fazer contato com o inimigo"));
+                            }
+                        }
+                    }
+                }
+                break;
+            case 63: //Estômago forte
+                if (quando == 2)
+                {
+                    if (quem == true)
+                    {
+                        if (player.dano[player.idAtaqueUsado] > 0 && player.phispe[player.idAtaqueUsado] == true && enemy.materialInimigo == 5)
+                        {
+                            float dano = Mathf.Floor(player.dano[player.idAtaqueUsado] / 4 * -1);
+
+                            if (dano >= 0)
+                                dano = -1;
+
+                            Debug.Log("Dano que seria curado: " + dano);
+                            player.CausarDano(dano);
+                            StartCoroutine(AparecerPassiva(0, "Estômago forte", "Consumiu parte do inimigo curando uma parcela de vida"));
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.phispe[enemy.idAtaqueUsado] == true && player.materialPlayer == 5)
+                        {
+                            float dano = Mathf.Floor(enemy.dano[enemy.idAtaqueUsado] / 4 * -1);
+
+                            if (dano >= 0)
+                                dano = -1;
+
+                            Debug.Log("Dano que seria curado: " + dano);
+                            enemy.CausarDano(dano);
+                            StartCoroutine(AparecerPassiva(1, "Estômago forte", "Consumiu parte do jogador curando uma parcela de vida"));
+                        }
+                    }
+                }
+                break;
+            case 64: //Guia
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
+                        {
+                            StartCoroutine(AparecerPassiva(0, "Guia", "Ajudantes de " + player.nickName + " atacaram o inimigo"));
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
+                        {
+                            StartCoroutine(AparecerPassiva(1, "Guia", "Ajudantes de " + enemy.nomeinimigo + " atacaram o jogador"));
+                        }
+                    }
+                }
+                if (quando == 2)
+                    {
+                        if (quem == true)
+                        {
+                            if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
+                            {
+                                float phispe;
+
+                                if (player.phispe[player.idAtaqueUsado] == true)
+                                {
+                                    phispe = player.modPhiDamage;
+                                }
+                                else
+                                {
+                                    phispe = player.modSpeDamage;
+                                }
+
+                                float dano = Mathf.Ceil((player.dano[player.idAtaqueUsado] + phispe) / 4);
+                                if (dano <= 0)
+                                    dano = 1;
+
+                                enemy.CausarDano(dano);
+                                StartCoroutine(enemy.CorDano(player.idAtaqueUsado, dano));
+                            }
+                        }
+                        else
+                        {
+
+                            if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
+                            {
+                                float phispe;
+
+                                if (enemy.phispe[enemy.idAtaqueUsado] == true)
+                                {
+                                    phispe = enemy.modPhiDamage;
+                                }
+                                else
+                                {
+                                    phispe = enemy.modSpeDamage;
+                                }
+
+                                float dano = Mathf.Ceil((enemy.dano[enemy.idAtaqueUsado] + phispe) / 4);
+                                if (dano <= 0)
+                                    dano = 1;
+
+                                player.CausarDano(dano);
+                                StartCoroutine(player.CorDano(enemy.idAtaqueUsado, dano));
+                            }
+                        }
+                    }
                 break;
         }
     }

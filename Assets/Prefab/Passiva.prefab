@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.09949997}
-  m_SizeDelta: {x: 0, y: -1.0304}
+  m_AnchoredPosition: {x: 1.0996, y: 0.19422}
+  m_SizeDelta: {x: -2.1992, y: -0.49895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3214069931511372768
 CanvasRenderer:
@@ -92,15 +92,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.36665}
-  m_SizeDelta: {x: 0, y: -0.7333}
+  m_AnchoredPosition: {x: 0, y: -0.15924996}
+  m_SizeDelta: {x: 0, y: -0.3185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8815142235074982231
 CanvasRenderer:
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
-  m_fontSizeBase: 0.25
+  m_fontSize: 0.17
+  m_fontSizeBase: 0.17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.018900037}
+  m_AnchoredPosition: {x: 0, y: -0.018899858}
   m_SizeDelta: {x: -0.099999905, y: -0.037800074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5018403755269547399
@@ -388,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 17.41, y: -4.762702}
-  m_SizeDelta: {x: 5, y: 1.33}
+  m_SizeDelta: {x: 5, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8032088538492093578
 CanvasRenderer:
@@ -443,7 +443,6 @@ MonoBehaviour:
   nomeChar: {fileID: 3468636964405552015}
   titulo: {fileID: 154528518607468549}
   desc: {fileID: 3702000443252215325}
-  espaco: {fileID: 5710954103132164315}
 --- !u!1 &7074561357940083213
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +477,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.4661}
-  m_SizeDelta: {x: 0, y: -0.9324}
+  m_AnchoredPosition: {x: -1.3504999, y: 0.2305}
+  m_SizeDelta: {x: -2.7009, y: -0.461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6547212874030681887
 CanvasRenderer:
@@ -509,7 +508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nome do personagem
+  m_text: Floresta Composta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -536,15 +535,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

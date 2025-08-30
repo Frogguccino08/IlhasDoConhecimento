@@ -58,7 +58,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 2, true, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -4, false, false, 1, 3, false, false));
         listaAtaques.Add(new Attacks(45, "Avião de papel", "Ataque fraco de papel sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 1, false, true, 1, 0, false, false));
-        listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo por 3 turnos", Attacks.Tipo.cura, Attacks.Tipo.negativo, 5, 0, false, true, 0, 4, true, false));
+        listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo", Attacks.Tipo.cura, Attacks.Tipo.negativo, 5, 0, false, true, 0, 4, true, false));
         listaAtaques.Add(new Attacks(47, "Atacar ponto fraco", "Esse ataque causa mais dano caso o inimigo esteja exposto", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, true, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(48, "Armadura de espinhos", "Enquanto tiver escudo causa um pequeno dano de volta a ser atacado mas perde +1 escudo", Attacks.Tipo.passiva, Attacks.Tipo.golpe, 0, 0, true, true, 0, 0, true, true));
         listaAtaques.Add(new Attacks(49, "Corte", "Golpe fraco de metal sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 1, true, true, 1, 0, false, false));
@@ -73,6 +73,10 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(58, "Espirro de chorume", "Ataque poderoso orgânico que deixa o alvo exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 5, 4, false, true, 2, 4, true, false));
         listaAtaques.Add(new Attacks(59, "Solo ruim", "Remove todo o nutrindo que o alvo tenha", Attacks.Tipo.negativo, Attacks.Tipo.zero, 5, 0, false, true, 0, 3, true, false));
         listaAtaques.Add(new Attacks(60, "Enxame de pragas", "Ataque fraco orgânico que causa cacos no alvo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 5, 3, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(61, "Limpar terreno", "Limpa todos os efeitos, negativos e positivos dos dois lados do combate", Attacks.Tipo.negativo, Attacks.Tipo.suporte, 0, 0, false, false, 0, 5, true, false));
+        listaAtaques.Add(new Attacks(62, "Corpo quente", "Ataques físicos contra você tem chance de diminuir a defesa física e a distância do atacante", Attacks.Tipo.passiva, Attacks.Tipo.negativo, 0, 0, true, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(63, "Estômago forte", "Atacar um alvo orgânico consome uma parte do inimigo recuperando uma pequena parcela de vida", Attacks.Tipo.passiva, Attacks.Tipo.cura, 0, 0, true, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(64, "Guia", "Pequenos ajudantes usam um segundo ataque menor após você usar um ataque", Attacks.Tipo.passiva, Attacks.Tipo.golpe, 0, 0, false, true, 0, 0, true, true));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));

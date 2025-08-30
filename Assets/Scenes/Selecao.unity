@@ -3461,8 +3461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perso: {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
-  regiao: 1
+  perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
+  regiao: 5
   pontos: 0
   unlock: 010101010100
 --- !u!4 &1245900992
