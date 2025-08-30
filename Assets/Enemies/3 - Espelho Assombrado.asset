@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 3 - Espelho Assombrado
   m_EditorClassIdentifier: 
-  id: 6
   nome: Espelho assombrado
   material: 3
   imgPadrao: {fileID: 6929270282667665257, guid: 968ba35695249a54583f344ae8e31bd7, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

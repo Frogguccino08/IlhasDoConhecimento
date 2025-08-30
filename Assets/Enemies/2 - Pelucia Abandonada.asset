@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 2 - Pelucia Abandonada
   m_EditorClassIdentifier: 
-  id: 10
   nome: Pelucia Abandonada
   material: 2
   imgPadrao: {fileID: -693856583408116806, guid: ae79e60de822c7a4a9e412658a18e81d, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 3

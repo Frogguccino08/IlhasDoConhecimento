@@ -1102,6 +1102,12 @@ public class AttacksEfeitos : MonoBehaviour
                         player.efeitosAtivos[18] += 3;
                         enemy.efeitosAtivos[16] += 3;
                         control.efeitoAtq = player.nickName + " recebeu Nutrindo e " + enemy.nomeinimigo + " recebeu Cacos";
+
+                        if (player.rAgora == true)
+                        {
+                            player.efeitosAtivos[18] += 1;
+                            enemy.efeitosAtivos[16] += 1;
+                        }
                     }
                     else
                     {
@@ -1207,6 +1213,11 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         player.efeitosAtivos[5] += 3;
                         control.efeitoAtq = "Dano físico aumentado";
+
+                        if (player.rAgora == true)
+                        {
+                            player.efeitosAtivos[5] += 1;
+                        }
                     }
                     else
                     {
@@ -1256,6 +1267,90 @@ public class AttacksEfeitos : MonoBehaviour
                             player.efeitosAtivos[11] += 2;
                             StartCoroutine(AparecerPassiva(1, "Entortar", "O ataque diminuiu sua defesa por você ser de metal"));
                         }
+                    }
+                }
+                break;
+            case 57: //Criar fungos
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 5)
+                        {
+                            player.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 5)
+                        {
+                            enemy.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                }
+                break;
+            case 58: //Ataque de chorume
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[7] += 2;
+                        control.efeitoAtq = enemy.nomeinimigo + " ficou com exposto";
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[7] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[7] += 2;
+                        control.efeitoAtq = player.nickName + "Alvo ficou com exposto";
+                    }
+                }
+                break;
+            case 59: //Solo ruim
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[18] = 0;
+                        control.efeitoAtq = "Nutrindo de " + enemy.nome + " anulado";
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[18] = 0;
+                        control.efeitoAtq = "Nutrindo do " + player.nickName + " anulado";
+                    }
+                }
+                break;
+            case 60: //Enxame de pragas
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[16] += 2;
+                        control.efeitoAtq = enemy.nomeinimigo + " ficou com cacos";
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[16] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[16] += 2;
+                        control.efeitoAtq = player.nickName + " ficou com cacos";
                     }
                 }
                 break;

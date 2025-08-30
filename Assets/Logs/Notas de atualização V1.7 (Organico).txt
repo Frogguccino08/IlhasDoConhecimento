@@ -10,15 +10,22 @@ Efeitos especiais além de ataques:
 
 
 Balanceamento:
-- Composto aumentado para -4 cura e para 4 carga
+- Composto aumentado para -4 cura e para 3 carga
 
 
 Correção de erros:
 - Efeitos de região no player já mostravam antes mesmo de finalizar a tela da região.
 - Usar 3R em ataques de cura faziam com que você ficasse com -1 de carga R.
+- Ataques adicionados com a atualização de metal para frente não tinham efeito com carga R.
+- O Player estava perdendo dois dos efeitos por turno
 
 
 Novos Ataques:
+Derrubar, Orgânico, 1x1 dano físico, 0 carga.
+Criar fungos, Orgânico, 1x3 a distância, 3 carga, causa mais dano em alvos de orgânico.
+Espirro de chorume, Orgânico, 2x4 a distância, 4 carga, Deixa o alvo exposto +2.
+Solo ruim, Orgânico, 3 carga, Remove todo o nutrindo que o alvo tenha.
+Enxame de pragas, Orgânico, 1x3 a distância, 3 carga, Causa cacos no alvo.
 
 
 Novos Inimigos:

@@ -68,6 +68,12 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(53, "Passar óleo", "Cura uma pequena quantidade de vida e aumenta seu dano físico por 3 turnos", Attacks.Tipo.cura, Attacks.Tipo.suporte, 4, -3, false, false, 1, 4, true, false));
         listaAtaques.Add(new Attacks(54, "Campo magnético", "Caso esteja contra um inimigo de metal, recebe +1 defesa física e defesa a distância no início do turno", Attacks.Tipo.passiva, Attacks.Tipo.suporte, 4, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(55, "Entortar", "Ataques que causam dano físico em inimigos de metal fazem eles ficarem com menos defesa física", Attacks.Tipo.passiva, Attacks.Tipo.negativo, 0, 0, true, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(56, "Derrubar", "Golpe fraco orgânico sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 5, 1, true, true, 1, 0, false, false));
+        listaAtaques.Add(new Attacks(57, "Criar fungos", "Ataque médio que causa mais dano em alvos de orgânico", Attacks.Tipo.golpe, Attacks.Tipo.zero, 5, 3, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(58, "Espirro de chorume", "Ataque poderoso orgânico que deixa o alvo exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 5, 4, false, true, 2, 4, true, false));
+        listaAtaques.Add(new Attacks(59, "Solo ruim", "Remove todo o nutrindo que o alvo tenha", Attacks.Tipo.negativo, Attacks.Tipo.zero, 5, 0, false, true, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(60, "Enxame de pragas", "Ataque fraco orgânico que causa cacos no alvo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 5, 3, false, true, 1, 3, true, false));
+        //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(1, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));

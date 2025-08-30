@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 1 - Livro Vivo
   m_EditorClassIdentifier: 
-  id: 9
   nome: Livro Vivo
   material: 1
   imgPadrao: {fileID: -1086824279499431053, guid: 5939cdf57e5cc6f4eb7bdbf1cc134492, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

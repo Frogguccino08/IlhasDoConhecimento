@@ -354,7 +354,7 @@ public class Controle : MonoBehaviour
         }
 
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
-        player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
+        //player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
         if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
 
         if (enemy.currentHealth <= 0)

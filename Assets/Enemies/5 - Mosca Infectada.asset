@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 5 - Mosca Infectada
   m_EditorClassIdentifier: 
-  id: 13
   nome: Mosca Infectada
   material: 5
   imgPadrao: {fileID: -3046374602303404648, guid: e8166b96367085940825b7ea7960f2ac, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

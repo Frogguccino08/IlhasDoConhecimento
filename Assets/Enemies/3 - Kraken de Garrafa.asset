@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 3 - Kraken de Garrafa
   m_EditorClassIdentifier: 
-  id: 11
   nome: Kraken de garrafa
   material: 3
   imgPadrao: {fileID: -2477447995894762238, guid: e322e274c00c61e4a94e8d4b0e306358, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 4

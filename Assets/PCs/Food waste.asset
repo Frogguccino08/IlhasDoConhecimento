@@ -18,6 +18,7 @@ MonoBehaviour:
   material: 5
   imgMenu: {fileID: -4688110017258223430, guid: 5727fdc4c0cc0de4eb4b3096c1e30aad, type: 3}
   imgCombate: {fileID: -4688110017258223430, guid: 5727fdc4c0cc0de4eb4b3096c1e30aad, type: 3}
+  Cor: {fileID: 0}
   maxHealth: 50
   maxCharge: 5
   pDamage: 3

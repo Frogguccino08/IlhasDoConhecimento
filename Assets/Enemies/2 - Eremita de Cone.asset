@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 2 - Eremita de Cone
   m_EditorClassIdentifier: 
-  id: 5
   nome: Eremita de Cone
   material: 2
   imgPadrao: {fileID: -4656711305438085947, guid: 773490631f3ba914dab07b188ef7cc0f, type: 3}

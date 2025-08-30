@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 1 - Artilharia de Papel
   m_EditorClassIdentifier: 
-  id: 14
   nome: Artilharia de papel
   material: 1
   imgPadrao: {fileID: -5147858445845741297, guid: e5f953350124ce44e81ea0f97d2a105b, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

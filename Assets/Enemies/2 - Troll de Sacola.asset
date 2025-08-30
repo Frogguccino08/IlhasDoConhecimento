@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 2 - Troll de Sacola
   m_EditorClassIdentifier: 
-  id: 15
   nome: Troll de sacola
   material: 2
   imgPadrao: {fileID: -5522358789462119685, guid: 6fbff92342fd708458b5845ad9873785, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

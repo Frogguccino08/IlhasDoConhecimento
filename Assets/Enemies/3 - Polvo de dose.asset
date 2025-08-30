@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 3 - Polvo de dose
   m_EditorClassIdentifier: 
-  id: 1
   nome: Polvo de Dose
   material: 3
   imgPadrao: {fileID: -7386115494194349172, guid: f76b59f1076866e4c9bf40f6fe433890, type: 3}

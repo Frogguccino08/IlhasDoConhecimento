@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 1 - Origami
   m_EditorClassIdentifier: 
-  id: 4
   nome: Origami
   material: 1
   imgPadrao: {fileID: 925540064159583759, guid: 5d0b3dcb886899c45b49042140f592db, type: 3}

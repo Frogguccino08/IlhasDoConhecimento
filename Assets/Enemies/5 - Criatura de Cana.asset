@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 5 - Criatura de Cana
   m_EditorClassIdentifier: 
-  id: 8
   nome: Criatura de Cana
   material: 5
   imgPadrao: {fileID: 1077599535965890597, guid: ec6f72d79c468a445ba440dfd677f49c, type: 3}
+  cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2
