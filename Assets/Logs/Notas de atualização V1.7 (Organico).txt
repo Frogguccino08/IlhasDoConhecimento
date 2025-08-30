@@ -25,7 +25,7 @@ Derrubar, Orgânico, 1x1 dano físico, 0 carga.
 Criar fungos, Orgânico, 1x3 a distância, 3 carga, causa mais dano em alvos de orgânico.
 Espirro de chorume, Orgânico, 2x4 a distância, 4 carga, Deixa o alvo exposto +2.
 Solo ruim, Orgânico, 3 carga, Remove todo o nutrindo que o alvo tenha.
-Enxame de pragas, Orgânico, 1x3 a distância, 3 carga, Causa cacos no alvo.
+Enxame de pragas, Orgânico, 1x3 a distância, 3 carga, "Ataque fraco orgânico que causa cacos no alvo"
 
 
 Novos Inimigos:
