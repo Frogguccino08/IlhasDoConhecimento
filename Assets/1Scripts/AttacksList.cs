@@ -5,6 +5,7 @@ public class AttacksList : MonoBehaviour
 {
     public List<Attacks> listaAtaques = new List<Attacks>();
     public List<Attacks> listaHabilidades = new List<Attacks>();
+    public List<Attacks> listaRegiao = new List<Attacks>();
     public Attacks attacks;
 
 
@@ -85,6 +86,12 @@ public class AttacksList : MonoBehaviour
         listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
+
+        listaRegiao.Add(new Attacks(0, "Costa de Cacos", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(1, "Calor de derreter", "Personagens não metal perder defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(2, "Comunidade Abandonada", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(3, "Os Arquivos", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(4, "Nutrientes do chão", "Chance de aumentar ou diminuir conhecimento, Orgânicos só são afetados pelo aumento", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
     }
 
     public Attacks CriarAtaques(int id, bool habilidade)
