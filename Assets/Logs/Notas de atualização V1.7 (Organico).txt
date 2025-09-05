@@ -15,6 +15,7 @@ Efeitos especiais além de ataques:
 Balanceamento:
 - Composto aumentado para -4 cura e para 3 carga.
 - Roubar nutrientes agora adiciona +2 nutrindo e caco.
+- Inimigos agora iniciam com +1 de carga para cada boss derrotado.
 
 
 Correção de erros:

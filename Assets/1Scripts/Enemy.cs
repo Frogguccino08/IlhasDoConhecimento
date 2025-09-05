@@ -356,7 +356,7 @@ public class Enemy : MonoBehaviour
         }
 
         currentHealth = maxHealth;
-        currentCharge = 1;
+        currentCharge = 1 + forcaAtual;
         healthbar.MaximoVida(maxHealth);
         healthbar.MudarBarra(currentHealth);
         AtaquesSelecionados();
