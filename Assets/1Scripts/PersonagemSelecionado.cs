@@ -9,6 +9,7 @@ public class PersonagemSelecionado : MonoBehaviour
     public int regiao;
     public int pontos;
     public List<bool> unlock = new List<bool>();
+    public bool modoHistoria = false;
 
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()

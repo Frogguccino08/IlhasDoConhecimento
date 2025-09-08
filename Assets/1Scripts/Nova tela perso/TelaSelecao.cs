@@ -19,11 +19,22 @@ public class TelaSelecao : MonoBehaviour
     void Start()
     {
         pc = PersonagemSelecionado.instance;
+        
+        
+        if (pc.modoHistoria == false)
+        {
+            Debug.Log("Modo Rush");
+        }
+        else
+        {
+            Debug.Log("Modo história");
+        }
+
 
         foreach (PCsSO boneco in perso)
-            {
-                ColocarPersonagem(boneco);
-            }
+        {
+            ColocarPersonagem(boneco);
+        }
     }
 
     public void ColocarPersonagem(PCsSO boneco)

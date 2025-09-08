@@ -187,6 +187,7 @@ MonoBehaviour:
   regiao: 0
   pontos: 0
   unlock: 010101010100
+  modoHistoria: 0
 --- !u!4 &244199876
 Transform:
   m_ObjectHideFlags: 0
@@ -1256,11 +1257,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1576309617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1058368912}
+        m_TargetAssemblyTypeName: StarMenu, Assembly-CSharp
+        m_MethodName: Selecao
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1872124025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,8 +1462,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1058368912}
         m_TargetAssemblyTypeName: StarMenu, Assembly-CSharp
-        m_MethodName: RushMode
-        m_Mode: 1
+        m_MethodName: Selecao
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
