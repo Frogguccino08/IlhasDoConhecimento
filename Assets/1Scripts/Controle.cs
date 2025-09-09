@@ -15,6 +15,11 @@ public class Controle : MonoBehaviour
 
     public int pontosRodada;
 
+    //Para a tela de vitória
+    public GameObject CanvaVitoria;
+    public TMP_Text textoComemorativo;
+    public bool vitoriaOn = false;
+
     //Chamados de outros Objetos
     public Player player;
     public Butao[] butao = new Butao[6];
@@ -409,7 +414,7 @@ public class Controle : MonoBehaviour
         }
 
         enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 10, player, enemy);
-        
+
         player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge);
         if (player.efeitosAtivos[6] > 0)
         {
@@ -524,5 +529,30 @@ public class Controle : MonoBehaviour
         {
             pontMax.text = "Pontuação Máxima: " + pontosRodada;
         }
+    }
+
+    //Função para aparecer uma tela de vitória
+    public IEnumerator TelaVitoria()
+    {
+        CanvaVitoria.SetActive(true);
+
+        vidas[0].SetActive(false);
+        vidas[1].SetActive(false);
+        textoRegiao.SetActive(true);
+        espacoAtaques.SetActive(false);
+        escritos[0].SetActive(false);
+        escritos[1].SetActive(false);
+        efeitosTela.SetActive(false);
+        RsConheci.SetActive(false);
+        imgPlayer[0].SetActive(false);
+        imgPlayer[1].SetActive(false);
+
+        while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && vitoriaOn != false)
+        {
+            yield return null;
+        }
+
+        PersonagemSelecionado.instance.Resetar();
+        SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
 }

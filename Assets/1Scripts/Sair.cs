@@ -8,7 +8,7 @@ public class Sair : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == false)
+        if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == false && control.vitoriaOn == false)
         {
             control.telaSair = true;
             control.descricao.SetActive(false);
@@ -31,5 +31,10 @@ public class Sair : MonoBehaviour
     {
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+    }
+
+    public void VitoriaSair()
+    {
+        control.vitoriaOn = false;
     }
 }

@@ -146,10 +146,17 @@ public class Enemy : MonoBehaviour
     {
         escolha = PersonagemSelecionado.instance;
 
-        if (control.inimigoAtual == 1)
+        if (control.inimigoAtual == 21 && escolha.modoHistoria == true)
         {
-            forcaAtual = 0;
+            control.vitoriaOn = true;
+            StartCoroutine(control.TelaVitoria());
+            return;
         }
+
+        if (control.inimigoAtual == 1)
+            {
+                forcaAtual = 0;
+            }
 
         if (control.inimigoAtual % 5 == 0)
         {
@@ -532,7 +539,7 @@ public class Enemy : MonoBehaviour
             yield return control.TelaUpgrade();
         }
 
-        if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0)
+        if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0 && escolha.modoHistoria == false)
         {
             int pre;
             pre = escolha.regiao;

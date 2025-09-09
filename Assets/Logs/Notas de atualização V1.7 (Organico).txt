@@ -1,5 +1,8 @@
 Funções Adicionadas:
 - Ao passar o mouse no nome do personagem agora aparece o efeito da região.
+- Dando inicio no modo história:
+Diferenciar pro jogo se está no modo historia ou rush
+tela de vitória aparece após o quarto boss no modo história
 
 
 Visual:
