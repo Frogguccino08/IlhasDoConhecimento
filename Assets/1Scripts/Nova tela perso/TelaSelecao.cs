@@ -61,8 +61,6 @@ public class TelaSelecao : MonoBehaviour
             }
         }
 
-        Debug.Log(perso[perso.IndexOf(boneco)].nome + ", down: " + down + ", index: " + index);
-
         persosDesc.Add(Instantiate(pequeno, transform.position, Quaternion.identity));
 
         persosDesc[perso.IndexOf(boneco)].transform.SetParent(canva.transform);
