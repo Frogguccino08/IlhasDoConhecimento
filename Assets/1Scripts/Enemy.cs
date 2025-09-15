@@ -669,51 +669,55 @@ public class Enemy : MonoBehaviour
                 }
             }
 
+            //Modificadores facilitados
+            float danoAtual = 0;
+            float defesaAtual = 0;
+
+            if (dano[id] != 0)
+            {
+                if (phispe[id] == true)
+                {
+                    danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
+                    if (alvo[id] == true)
+                        defesaAtual = enemy.modPhiDamage + enemy.phiDefense;
+                    else
+                        defesaAtual = modPhiDamage + phiDefense;
+                }
+                else
+                {
+                    danoAtual = Mathf.Round(speDamage * (modSpeDamage + Mathf.Abs(dano[id])));
+                    if (alvo[id] == true)
+                        defesaAtual = enemy.modSpeDamage + enemy.speDefense;
+                    else
+                        defesaAtual = modSpeDamage + speDefense;
+                }
+
+                if (material[id] == materialInimigo)
+                {
+                    danoAtual += 1;
+                }
+
+                if (material[id] == enemy.materialPlayer || (material[id] == 0 && materialInimigo == enemy.materialPlayer))
+                {
+                    danoAtual -= 1;
+                }
+
+                if (dano[id] < 0)
+                {
+                    danoAtual *= -1;
+                    defesaAtual = 0;
+                }
+            }
+
             if (alvo[id] == true)
             {
                 if (dano[id] != 0)
                 {
-                    if (phispe[id] == true)
-                    {
-                        if (dano[id] > 0)
-                        {
-                            attackDamage = Mathf.Round((float)phiDamage * (modPhiDamage + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) - (enemy.phiDefense + enemy.modPhiDefense));
-                        }
-                        else if (dano[id] < 0)
-                        {
-                            attackDamage = Mathf.Round((float)phiDamage * ((modPhiDamage * -1) + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) + (enemy.phiDefense + enemy.modPhiDefense));
-                        }
+                    attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
 
-                        if (materialSemNome == enemy.materialPlayer)
-                        {
-                            attackDamage = Mathf.Round(attackDamage * 0.8f);
-                        }
-                        if (attackDamage <= 0 && dano[id] > 0)
-                        {
-                            attackDamage = 1;
-                        }
-                        Debug.Log("Dano causado foi físico");
-                    }
-                    else if (phispe[id] == false)
+                    if (attackDamage <= 0 && dano[id] > 0)
                     {
-                        if (dano[id] > 0)
-                        {
-                            attackDamage = Mathf.Round((float)speDamage * (modSpeDamage + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) - (enemy.speDefense + enemy.modSpeDefense));
-                        }
-                        else if (dano[id] < 0)
-                        {
-                            attackDamage = Mathf.Round((float)speDamage * ((modSpeDamage * -1) + dano[id]) * UnityEngine.Random.Range(0.9f, 1.1f) - (enemy.speDefense - enemy.modSpeDefense));
-                        }
-
-                        if (materialSemNome == enemy.materialPlayer)
-                        {
-                            attackDamage = Mathf.Round(attackDamage * 0.8f);
-                        }
-                        if (attackDamage <= 0 && dano[id] > 0)
-                        {
-                            attackDamage = 1;
-                        }
-                        Debug.Log("Dano causado foi especial");
+                        attackDamage = 1;
                     }
 
                     yield return StartCoroutine(enemy.CorDano(id, attackDamage));
