@@ -184,7 +184,15 @@ public class PersoGrande : MonoBehaviour
 
     public void Jogando()
     {
-        pc.regiao = UnityEngine.Random.Range(0, 5);
+        if (pc.modoHistoria == false)
+        {
+            pc.regiao = UnityEngine.Random.Range(0, 5);
+        }
+        else
+        {
+            pc.regiao = pc.perso.regioes[0];
+        }
+
         SceneManager.LoadScene("Combate", LoadSceneMode.Single);
     }
 

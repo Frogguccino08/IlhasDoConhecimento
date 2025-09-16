@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Playable Character", menuName = "Character")]
 public class PCsSO : ScriptableObject
 {
+    //Necessidades personagem  
     public int id;
     public string nome;
     public string nickName;
@@ -11,6 +12,8 @@ public class PCsSO : ScriptableObject
     public Sprite imgCombate;
     public Sprite Cor;
 
+
+    //Atributos para combate
     public float maxHealth;
     public int maxCharge;
     public int pDamage;
@@ -18,6 +21,13 @@ public class PCsSO : ScriptableObject
     public int sDamage;
     public int sDefense;
 
+
+    //Parte de ataques
     public int[] listaAtaquesIniciais = new int[4];
     public int[] listaAtaquesAprendiveis;
+
+
+    //Modo história
+    public int[] regioes = new int[4];
+    public EnemiesSO[] inimigos = new EnemiesSO[20];
 }

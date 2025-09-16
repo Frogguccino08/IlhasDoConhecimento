@@ -180,83 +180,92 @@ public class Enemy : MonoBehaviour
             efeitosAtivos[i] = 0;
         }
 
-        switch (escolha.regiao)
+
+        if (escolha.modoHistoria == true)
         {
-            case 0: //costa
-                if (control.inimigoAtual < 5)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL1[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL1.Count)];
-                }
-                else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL2[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL2.Count)];
-                }
-                else if (control.inimigoAtual >= 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL3[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL3.Count)];
-                }
-                break;
-
-            case 1: //coração
-                if (control.inimigoAtual < 5)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL1[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL1.Count)];
-                }
-                else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL2[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL2.Count)];
-                }
-                else if (control.inimigoAtual >= 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL3[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL3.Count)];
-                }
-                break;
-
-            case 2: //comunidade
-                if (control.inimigoAtual < 5)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL1[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL1.Count)];
-                }
-                else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL2[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL2.Count)];
-                }
-                else if (control.inimigoAtual >= 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL3[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL3.Count)];
-                }
-                break;
-
-            case 3: //arquivos
-                if (control.inimigoAtual < 5)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL1[UnityEngine.Random.Range(0, enemyList.osArquivosNL1.Count)];
-                }
-                else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL2[UnityEngine.Random.Range(0, enemyList.osArquivosNL2.Count)];
-                }
-                else if (control.inimigoAtual >= 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL3[UnityEngine.Random.Range(0, enemyList.osArquivosNL3.Count)];
-                }
-                break;
-
-            case 4: //floresta
-                if (control.inimigoAtual < 5)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL1[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL1.Count)];
-                }
-                else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL2[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL2.Count)];
-                }
-                else if (control.inimigoAtual >= 10)
-                {
-                    inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL3[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL3.Count)];
-                }
-                break;
+            inimigoEscolhido = escolha.perso.inimigos[control.inimigoAtual - 1];
         }
+        else
+        {
+            switch (escolha.regiao)
+            {
+                case 0: //costa
+                    if (control.inimigoAtual < 5)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL1[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL1.Count)];
+                    }
+                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL2[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL2.Count)];
+                    }
+                    else if (control.inimigoAtual >= 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL3[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL3.Count)];
+                    }
+                    break;
+
+                case 1: //coração
+                    if (control.inimigoAtual < 5)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL1[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL1.Count)];
+                    }
+                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL2[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL2.Count)];
+                    }
+                    else if (control.inimigoAtual >= 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL3[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL3.Count)];
+                    }
+                    break;
+
+                case 2: //comunidade
+                    if (control.inimigoAtual < 5)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL1[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL1.Count)];
+                    }
+                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL2[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL2.Count)];
+                    }
+                    else if (control.inimigoAtual >= 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL3[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL3.Count)];
+                    }
+                    break;
+
+                case 3: //arquivos
+                    if (control.inimigoAtual < 5)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL1[UnityEngine.Random.Range(0, enemyList.osArquivosNL1.Count)];
+                    }
+                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL2[UnityEngine.Random.Range(0, enemyList.osArquivosNL2.Count)];
+                    }
+                    else if (control.inimigoAtual >= 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL3[UnityEngine.Random.Range(0, enemyList.osArquivosNL3.Count)];
+                    }
+                    break;
+
+                case 4: //floresta
+                    if (control.inimigoAtual < 5)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL1[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL1.Count)];
+                    }
+                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL2[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL2.Count)];
+                    }
+                    else if (control.inimigoAtual >= 10)
+                    {
+                        inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL3[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL3.Count)];
+                    }
+                    break;
+            }
+        }
+        
 
         //Funcionalidade para todo o inimigo
         modPhiDamage = 0;
@@ -548,6 +557,12 @@ public class Enemy : MonoBehaviour
             {
                 yield return StartCoroutine(control.LigarTela());
             }
+        }
+
+        if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0 && escolha.modoHistoria == true)
+        {
+            escolha.regiao = escolha.perso.regioes[forcaAtual];
+            yield return StartCoroutine(control.LigarTela());
         }
 
 
