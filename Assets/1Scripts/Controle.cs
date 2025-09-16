@@ -111,7 +111,10 @@ public class Controle : MonoBehaviour
         StartCoroutine(Turno(true));
         Debug.Log("Combate iniciou");
 
-        pontosRodada = 0;
+        if (inimigoAtual == 1)
+        {
+            pontosRodada = 0;
+        }
 
         inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
         textoArea.text = "Pontuação:\n " + pontosRodada;
@@ -534,6 +537,7 @@ public class Controle : MonoBehaviour
     //Função para aparecer uma tela de vitória
     public IEnumerator TelaVitoria()
     {
+        escolha.pontos = pontosRodada;
         CanvaVitoria.SetActive(true);
 
         vidas[0].SetActive(false);

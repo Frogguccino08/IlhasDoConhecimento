@@ -4,6 +4,8 @@ Funções Adicionadas:
 - Dando inicio no modo história:
 Diferenciar pro jogo se está no modo historia ou rush
 tela de vitória aparece após o quarto boss no modo história
+Escolher previamente as regiões no modo história
+Escolher previamente os inimigos da região
 
 
 Visual:
@@ -26,8 +28,9 @@ Correção de erros:
 - Efeitos de região no player já mostravam antes mesmo de finalizar a tela da região.
 - Usar 3R em ataques de cura faziam com que você ficasse com -1 de carga R.
 - Ataques adicionados com a atualização de metal para frente não tinham efeito com carga R.
-- O Player estava perdendo dois dos efeitos por turno
-- A carga de R não estava aumentando a quantidade de dano/cura do ataque, apenas aumentando o efeito;
+- O Player estava perdendo dois dos efeitos por turno.
+- A carga de R não estava aumentando a quantidade de dano/cura do ataque, apenas aumentando o efeito.
+- O ponto zerava ao trocar de região, foi resolvido.
 
 
 Novos Ataques:

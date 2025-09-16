@@ -145,18 +145,11 @@ public class Enemy : MonoBehaviour
     public void InicializarInimigo()
     {
         escolha = PersonagemSelecionado.instance;
-
-        if (control.inimigoAtual == 21 && escolha.modoHistoria == true)
-        {
-            control.vitoriaOn = true;
-            StartCoroutine(control.TelaVitoria());
-            return;
-        }
-
+        
         if (control.inimigoAtual == 1)
-            {
-                forcaAtual = 0;
-            }
+        {
+            forcaAtual = 0;
+        }
 
         if (control.inimigoAtual % 5 == 0)
         {
@@ -490,12 +483,21 @@ public class Enemy : MonoBehaviour
         control.DesativarBotao();
         control.texto.text = "INIMIGO PURIFICADO\nEsperando input";
 
+        yield return new WaitForSeconds(0.01f);
+
         while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
         {
             yield return null;
         }
 
         yield return new WaitForSeconds(0.01f);
+
+        if (control.inimigoAtual == 21 && escolha.modoHistoria == true)
+        {
+            control.vitoriaOn = true;
+            StartCoroutine(control.TelaVitoria());
+            yield break;
+        }
 
         if (control.inimigoAtual != (forcaAtual * 5) + 1)
         {
