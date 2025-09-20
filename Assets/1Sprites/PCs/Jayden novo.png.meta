@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b5200c076bce4d04987fead54045566e
+guid: b792091c548122c40a75fb6cf7baa7e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -391978876986899813
-    second: Jayden_0
+      213: 4686307157147945793
+    second: Jayden novo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jayden_0
+      name: Jayden novo_0
       rect:
         serializedVersion: 2
         x: 256
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b924db5c9496f8af0800000000000000
-      internalID: -391978876986899813
+      spriteID: 14b8c22c78b190140800000000000000
+      internalID: 4686307157147945793
       vertices: []
       indices: 
       edges: []

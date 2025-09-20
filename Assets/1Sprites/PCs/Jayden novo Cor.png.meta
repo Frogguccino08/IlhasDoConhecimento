@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: bb737a728bca6a14ba7ef888c18e4334
+guid: 4733907f5107e6c49a7daedc068b0dd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7057868823855226421
-    second: Jayden Cor_0
+      213: -4807892783205300527
+    second: Jayden novo Cor_0
   - first:
-      213: -9078073017035336927
-    second: Jayden Cor_1
+      213: -1162941256213608292
+    second: Jayden novo Cor_1
   - first:
-      213: -4411179865740525329
-    second: Jayden Cor_2
+      213: 4131723212542505491
+    second: Jayden novo Cor_2
   - first:
-      213: 5355536839722150184
-    second: Jayden Cor_3
+      213: 5515092466239409538
+    second: Jayden novo Cor_3
   - first:
-      213: -6354880908951117613
-    second: Jayden Cor_4
+      213: -4318708005466171805
+    second: Jayden novo Cor_4
   - first:
-      213: 3440440910987484989
-    second: Jayden Cor_5
+      213: -6268174238351607736
+    second: Jayden novo Cor_5
   - first:
-      213: 1241832049193489204
-    second: Jayden Cor_6
+      213: 6058709224048557889
+    second: Jayden novo Cor_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jayden Cor_0
+      name: Jayden novo Cor_0
       rect:
         serializedVersion: 2
         x: 256
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc12ecae2b96d0e90800000000000000
-      internalID: -7057868823855226421
+      spriteID: 1d642eaacfee64db0800000000000000
+      internalID: -4807892783205300527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_1
+      name: Jayden novo Cor_1
       rect:
         serializedVersion: 2
         x: 695
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 123dc8e40b4340280800000000000000
-      internalID: -9078073017035336927
+      spriteID: c98cdb8c6176cdfe0800000000000000
+      internalID: -1162941256213608292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_2
+      name: Jayden novo Cor_2
       rect:
         serializedVersion: 2
         x: 786
@@ -190,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe04e26984758c2c0800000000000000
-      internalID: -4411179865740525329
+      spriteID: 312f4d9fe54d65930800000000000000
+      internalID: 4131723212542505491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_3
+      name: Jayden novo Cor_3
       rect:
         serializedVersion: 2
         x: 805
@@ -212,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82928218160b25a40800000000000000
-      internalID: 5355536839722150184
+      spriteID: 28d02a9b06b898c40800000000000000
+      internalID: 5515092466239409538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_4
+      name: Jayden novo Cor_4
       rect:
         serializedVersion: 2
         x: 734
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d0ae00ab7deec7a0800000000000000
-      internalID: -6354880908951117613
+      spriteID: 3669d8553fdd014c0800000000000000
+      internalID: -4318708005466171805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_5
+      name: Jayden novo Cor_5
       rect:
         serializedVersion: 2
         x: 815
@@ -256,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3f5122c7c6eebf20800000000000000
-      internalID: 3440440910987484989
+      spriteID: 8483ccc8db8f209a0800000000000000
+      internalID: -6268174238351607736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jayden Cor_6
+      name: Jayden novo Cor_6
       rect:
         serializedVersion: 2
         x: 347
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4339fd25bafdb3110800000000000000
-      internalID: 1241832049193489204
+      spriteID: 14ffbc850fbd41450800000000000000
+      internalID: 6058709224048557889
       vertices: []
       indices: 
       edges: []
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f95aded3041067f428c44d565c942071
+    spriteID: 8a60e0d46848c784689fe73c519fb3df
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Jayden Cor_0: -7057868823855226421
-      Jayden Cor_1: -9078073017035336927
-      Jayden Cor_2: -4411179865740525329
-      Jayden Cor_3: 5355536839722150184
-      Jayden Cor_4: -6354880908951117613
-      Jayden Cor_5: 3440440910987484989
-      Jayden Cor_6: 1241832049193489204
+      Jayden novo Cor_0: -4807892783205300527
+      Jayden novo Cor_1: -1162941256213608292
+      Jayden novo Cor_2: 4131723212542505491
+      Jayden novo Cor_3: 5515092466239409538
+      Jayden novo Cor_4: -4318708005466171805
+      Jayden novo Cor_5: -6268174238351607736
+      Jayden novo Cor_6: 6058709224048557889
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
