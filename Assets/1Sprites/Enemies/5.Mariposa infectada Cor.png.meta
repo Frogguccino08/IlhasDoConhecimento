@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 7b735d09d66ac8a4f90e99211f5ff294
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6557037245296425208
+    second: Mariposa infectada Cor_0
+  - first:
+      213: 8455785966988928815
+    second: Mariposa infectada Cor_1
+  - first:
+      213: 8774912881816040844
+    second: Mariposa infectada Cor_2
+  - first:
+      213: 5544424448157375510
+    second: Mariposa infectada Cor_3
+  - first:
+      213: 8413669588387252742
+    second: Mariposa infectada Cor_4
+  - first:
+      213: -6850941046920128999
+    second: Mariposa infectada Cor_5
+  - first:
+      213: 447032388784762666
+    second: Mariposa infectada Cor_6
+  - first:
+      213: 5851301125117646920
+    second: Mariposa infectada Cor_7
+  - first:
+      213: -29863853066062526
+    second: Mariposa infectada Cor_8
+  - first:
+      213: -3472020192236574503
+    second: Mariposa infectada Cor_9
+  - first:
+      213: 8303325549570989685
+    second: Mariposa infectada Cor_10
+  - first:
+      213: -4131776253937533328
+    second: Mariposa infectada Cor_11
+  - first:
+      213: -197721337163153669
+    second: Mariposa infectada Cor_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 140
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 154
+        width: 646
+        height: 635
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 807c917bd59b005a0800000000000000
+      internalID: -6557037245296425208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 659
+        width: 26
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27ab1b498cf85570800000000000000
+      internalID: 8455785966988928815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_2
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 706
+        width: 29
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85f4a746c0c6c970800000000000000
+      internalID: 8774912881816040844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_3
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 658
+        width: 44
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61c5964f8a0c1fc40800000000000000
+      internalID: 5544424448157375510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_4
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 692
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a4451c9eb53c470800000000000000
+      internalID: 8413669588387252742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_5
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 651
+        width: 58
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916de296a619ce0a0800000000000000
+      internalID: -6850941046920128999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_6
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 608
+        width: 57
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f2c90d69d243600800000000000000
+      internalID: 447032388784762666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_7
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 615
+        width: 86
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8481b7c2f5ff33150800000000000000
+      internalID: 5851301125117646920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_8
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 542
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2457f5edbf6e59ff0800000000000000
+      internalID: -29863853066062526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_9
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 526
+        width: 62
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d861ccd708e0dfc0800000000000000
+      internalID: -3472020192236574503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 448
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e9a9c28965b3370800000000000000
+      internalID: 8303325549570989685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_11
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 465
+        width: 27
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07eb8ac536bf8a6c0800000000000000
+      internalID: -4131776253937533328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariposa infectada Cor_12
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 420
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfeffddcd7d814df0800000000000000
+      internalID: -197721337163153669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 69082320ebe640040b587244cb06b81f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mariposa infectada Cor_0: -6557037245296425208
+      Mariposa infectada Cor_1: 8455785966988928815
+      Mariposa infectada Cor_10: 8303325549570989685
+      Mariposa infectada Cor_11: -4131776253937533328
+      Mariposa infectada Cor_12: -197721337163153669
+      Mariposa infectada Cor_2: 8774912881816040844
+      Mariposa infectada Cor_3: 5544424448157375510
+      Mariposa infectada Cor_4: 8413669588387252742
+      Mariposa infectada Cor_5: -6850941046920128999
+      Mariposa infectada Cor_6: 447032388784762666
+      Mariposa infectada Cor_7: 5851301125117646920
+      Mariposa infectada Cor_8: -29863853066062526
+      Mariposa infectada Cor_9: -3472020192236574503
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

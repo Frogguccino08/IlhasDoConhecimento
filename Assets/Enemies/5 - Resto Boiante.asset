@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Resto boiante
   material: 5
-  imgPadrao: {fileID: 5111309131274810306, guid: 98b77709af6d18f48b64c8e214bf11ae, type: 3}
-  cor: {fileID: 7963029512028500163, guid: 404430a1254ee774ab0c7f0ff0151eeb, type: 3}
+  imgPadrao: {fileID: 582130108836360881, guid: a7cee21270d0fc3428edb3722946d7ed, type: 3}
+  cor: {fileID: -2497704144159285515, guid: 307dbe00aab31bd4584676ead8ed64b2, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

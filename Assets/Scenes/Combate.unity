@@ -2172,7 +2172,7 @@ MonoBehaviour:
   regiao: 0
   pontos: 0
   unlock: 010101010100
-  modoHistoria: 0
+  modoHistoria: 1
 --- !u!4 &176751412
 Transform:
   m_ObjectHideFlags: 0
