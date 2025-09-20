@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Criatura de Cana
   material: 5
-  imgPadrao: {fileID: 5262946585701318318, guid: e6b950ec90e171544b6069b9ebf28419, type: 3}
-  cor: {fileID: 7335269065018527688, guid: 953bbb93cca739449b796817c0637576, type: 3}
+  imgPadrao: {fileID: -694197874937811014, guid: e6b950ec90e171544b6069b9ebf28419, type: 3}
+  cor: {fileID: 5973439743347570871, guid: 9d79b38477aa3234684cd97df5e381c4, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

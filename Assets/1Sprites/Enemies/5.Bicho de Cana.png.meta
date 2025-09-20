@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e3ba0163ee0ce44db406f72c43c7308
+guid: e6b950ec90e171544b6069b9ebf28419
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7199566774060951326
-    second: 1Organic_0
+      213: -694197874937811014
+    second: Bicho de Cana_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1Organic_0
+      name: Bicho de Cana_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 86
-        width: 174
-        height: 325
+        x: 324
+        y: 268
+        width: 392
+        height: 415
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e17ab9806dff9e360800000000000000
-      internalID: 7199566774060951326
+      spriteID: abf2084f5b6bd56f0800000000000000
+      internalID: -694197874937811014
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 926ffdf7b3d521e4c9dfb300a8aa51e1
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1Organic_0: 7199566774060951326
+      Bicho de Cana_0: -694197874937811014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

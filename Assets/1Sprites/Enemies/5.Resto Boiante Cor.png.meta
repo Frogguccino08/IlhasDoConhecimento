@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: e8166b96367085940825b7ea7960f2ac
+guid: 404430a1254ee774ab0c7f0ff0151eeb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3046374602303404648
-    second: 3Organic_0
+      213: 7963029512028500163
+    second: Resto Boiante Cor_0
+  - first:
+      213: 4137857658680374212
+    second: Resto Boiante Cor_1
+  - first:
+      213: 7916564086252383657
+    second: Resto Boiante Cor_2
+  - first:
+      213: 528938846753982697
+    second: Resto Boiante Cor_3
+  - first:
+      213: -2136387361788196981
+    second: Resto Boiante Cor_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3Organic_0
+      name: Resto Boiante Cor_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 149
-        width: 141
-        height: 186
+        x: 431
+        y: 321
+        width: 209
+        height: 402
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8950fe8807a19b5d0800000000000000
-      internalID: -3046374602303404648
+      spriteID: 3c03968b62d528e60800000000000000
+      internalID: 7963029512028500163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resto Boiante Cor_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 507
+        width: 33
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3f5c40e9f9c6930800000000000000
+      internalID: 4137857658680374212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resto Boiante Cor_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 388
+        width: 19
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad20bab7194ddd60800000000000000
+      internalID: 7916564086252383657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resto Boiante Cor_3
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 394
+        width: 21
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e80da4241b275700800000000000000
+      internalID: 528938846753982697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resto Boiante Cor_4
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 413
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b870bf573070a52e0800000000000000
+      internalID: -2136387361788196981
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4812b2b7b0bdb7a40a9076302d588951
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3Organic_0: -3046374602303404648
+      Resto Boiante Cor_0: 7963029512028500163
+      Resto Boiante Cor_1: 4137857658680374212
+      Resto Boiante Cor_2: 7916564086252383657
+      Resto Boiante Cor_3: 528938846753982697
+      Resto Boiante Cor_4: -2136387361788196981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

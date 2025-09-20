@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Mosca Infectada
   material: 5
-  imgPadrao: {fileID: -3046374602303404648, guid: e8166b96367085940825b7ea7960f2ac, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -6763926426582261413, guid: 7899c417cdcb6894dba9cd927bf113f5, type: 3}
+  cor: {fileID: 7899432093344086996, guid: d1430e3cd883ad44b932d2f4368cc2dc, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

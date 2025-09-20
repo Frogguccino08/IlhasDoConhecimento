@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ec6f72d79c468a445ba440dfd677f49c
+guid: 7899c417cdcb6894dba9cd927bf113f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1077599535965890597
-    second: 2Organic_0
+      213: -6763926426582261413
+    second: Mosca infectada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2Organic_0
+      name: Mosca infectada_0
       rect:
         serializedVersion: 2
-        x: 173
-        y: 100
-        width: 166
-        height: 289
+        x: 426
+        y: 387
+        width: 239
+        height: 337
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5286f5f811764fe00800000000000000
-      internalID: 1077599535965890597
+      spriteID: b51efa870c4b122a0800000000000000
+      internalID: -6763926426582261413
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2Organic_0: 1077599535965890597
+      Mosca infectada_0: -6763926426582261413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

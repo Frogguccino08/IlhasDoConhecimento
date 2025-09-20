@@ -9,6 +9,7 @@ Escolher previamente os inimigos da região
 
 
 Visual:
+- Rework visual de Inimigos: Criatura de cana (completo), Resto boiante, mosca infectada.
 - Rework visual Jayden Adicionado.
 - Mudado a aparencia das passivas para deixar a tela menos lotada.
 

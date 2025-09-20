@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e6b950ec90e171544b6069b9ebf28419
+guid: d1430e3cd883ad44b932d2f4368cc2dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5262946585701318318
-    second: Bicho de cana_0
+      213: 7899432093344086996
+    second: Mosca infectada Cor_0
+  - first:
+      213: -7708258822915283267
+    second: Mosca infectada Cor_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bicho de cana_0
+      name: Mosca infectada Cor_0
       rect:
         serializedVersion: 2
-        x: 311
-        y: 285
-        width: 335
-        height: 454
+        x: 426
+        y: 387
+        width: 239
+        height: 337
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eaef490190eb90940800000000000000
-      internalID: 5262946585701318318
+      spriteID: 4db381bc2ab60ad60800000000000000
+      internalID: 7899432093344086996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca infectada Cor_1
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 388
+        width: 108
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db62d5fc073c60590800000000000000
+      internalID: -7708258822915283267
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ca0f915929013646ac56b5801172f6f
+    spriteID: fbba52bb415c1c34b8ab9006bf5567ac
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bicho de cana_0: 5262946585701318318
+      Mosca infectada Cor_0: 7899432093344086996
+      Mosca infectada Cor_1: -7708258822915283267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
