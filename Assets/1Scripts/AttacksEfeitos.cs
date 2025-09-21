@@ -1328,7 +1328,7 @@ public class AttacksEfeitos : MonoBehaviour
                     if (quem == true)
                     {
                         enemy.efeitosAtivos[18] = 0;
-                        control.efeitoAtq = "Nutrindo de " + enemy.nome + " anulado";
+                        control.efeitoAtq = "Nutrindo de " + enemy.nomeinimigo + " anulado";
                     }
                     else
                     {

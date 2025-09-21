@@ -1,0 +1,30 @@
+Funções Adicionadas:
+
+Dando inicio no modo história (Ainda não disponível para jogar):
+- Diferenciar pro jogo se está no modo historia ou rush
+- tela de vitória aparece após o quarto boss no modo história
+- Escolher previamente as regiões no modo história
+- Escolher previamente os inimigos da região
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+
+
+Balanceamento:
+
+
+Correção de erros:
+- Descrição de efeito do solo ruim não mostrava o nome do inimigo.
+
+
+Novos Ataques:
+
+
+
+Novos Inimigos:
+
+
+Organização de código:
