@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
-  m_Name: MetalHead
+  m_Name: 4 - Renan
   m_EditorClassIdentifier: 
   id: 3
   nome: "Renan \"O pe\xE3o\""
@@ -26,4 +26,26 @@ MonoBehaviour:
   sDamage: 2
   sDefense: 1
   listaAtaquesIniciais: 01000000030000001100000000000000
-  listaAtaquesAprendiveis: 01000000030000001100000004000000120000001300000014000000190000001b0000001c0000002200000028000000290000002c0000002f0000003100000032000000350000003600000037000000
+  listaAtaquesAprendiveis: 01000000030000001100000004000000120000001300000014000000190000001b0000001c0000002200000028000000290000002c0000002f00000031000000320000003500000036000000370000003d0000003e00000040000000
+  regioes: 00000000000000000000000000000000
+  inimigos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

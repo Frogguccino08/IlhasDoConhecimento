@@ -289,7 +289,7 @@ public class Enemy : MonoBehaviour
         switch (inimigoEscolhido.mainStatus)
         {
             case 0:
-                maxHealth += inimigoEscolhido.maxHealth * forcaAtual;
+                maxHealth += inimigoEscolhido.maxHealth * (forcaAtual - 1);
                 if (isBoss)
                 {
                     maxHealth += inimigoEscolhido.maxHealth;
@@ -1245,7 +1245,23 @@ public class Enemy : MonoBehaviour
 
     public void Fraquezas(int id)
     {
-        //Metal -> Papel (3 no efeito)
+        //Orgânico -> Metal (3 no efeito)
+        if (dano[id] > 0 && enemy.materialPlayer == 4 && (material[id] == 5 || (material[id] == 0 && materialInimigo == 5)))
+        {
+            int rand = UnityEngine.Random.Range(1, 21);
+
+            enemy.efeitosAtivos[9] += 1;
+            if (rand >= 15)
+            {
+                enemy.efeitosAtivos[12] += 1;
+                StartCoroutine(list.AparecerPassiva(3, "Enferrujar", "Ataque físico foi diminuído e ganho de conhecimento abaixou"));
+            }
+            else
+            {
+                StartCoroutine(list.AparecerPassiva(3, "Enferrujar", "Ataque físico foi diminuído"));
+            }
+        }
+        //Metal -> Papel (4 no efeito)
         if (dano[id] > 0 && enemy.materialPlayer == 1 && (material[id] == 4 || (material[id] == 0 && materialInimigo == 4)))
         {
             float dano;
@@ -1266,8 +1282,8 @@ public class Enemy : MonoBehaviour
             enemy.CausarDano(dano);
             Debug.Log("Fraqueza Metal -> Papel Ativada");
 
-            StartCoroutine(list.AparecerPassiva(3, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
-        }
+            StartCoroutine(list.AparecerPassiva(4, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
+            }
     }
     
     public void CorDetalhes()

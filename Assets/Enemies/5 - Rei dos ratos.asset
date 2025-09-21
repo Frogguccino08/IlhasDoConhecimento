@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 5 - Criatura de Cana
+  m_Name: 5 - Rei dos ratos
   m_EditorClassIdentifier: 
-  nome: Criatura de Cana
+  nome: Rei dos ratos
   material: 5
-  imgPadrao: {fileID: -694197874937811014, guid: e6b950ec90e171544b6069b9ebf28419, type: 3}
-  cor: {fileID: 5973439743347570871, guid: 9d79b38477aa3234684cd97df5e381c4, type: 3}
+  imgPadrao: {fileID: 6308197352195553138, guid: 42749e40fb6a8604e97c03e9e13e070c, type: 3}
+  cor: {fileID: 736933947746118503, guid: 49816c500ddd4e442a5c511bd27a83dd, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 3
-  pDefense: 3
+  pDefense: 4
   sDamage: 2
-  sDefense: 2
+  sDefense: 3
   mainStatus: 0
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 380000002c0000002e0000001b0000000000000000000000
-  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 4000000004000000180000002f0000001600000000000000

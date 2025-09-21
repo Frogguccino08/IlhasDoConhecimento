@@ -2169,10 +2169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
-  regiao: 0
+  regiao: 4
   pontos: 0
   unlock: 010101010100
-  modoHistoria: 1
+  modoHistoria: 0
 --- !u!4 &176751412
 Transform:
   m_ObjectHideFlags: 0
@@ -10920,13 +10920,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
   - {fileID: 11400000, guid: 6df40f8d1aabf014280af86dbbfa70c4, type: 2}
   florestaCompostaNL1:
-  - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}
-  florestaCompostaNL2:
-  - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}
-  - {fileID: 11400000, guid: 83974b6e041d7aa4d809fc92d85364e8, type: 2}
-  florestaCompostaNL3:
-  - {fileID: 11400000, guid: 83974b6e041d7aa4d809fc92d85364e8, type: 2}
   - {fileID: 11400000, guid: 390a3e75f2c39ed408fc2457a4273491, type: 2}
+  - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}
+  - {fileID: 11400000, guid: 27493e12836a44c4ea594ae1eee6679b, type: 2}
+  florestaCompostaNL2:
+  - {fileID: 11400000, guid: 83974b6e041d7aa4d809fc92d85364e8, type: 2}
+  - {fileID: 11400000, guid: 01f7664629e320240a4c5194c6867062, type: 2}
+  - {fileID: 11400000, guid: ae1624a7f8de7634d906f00ef1e96860, type: 2}
+  florestaCompostaNL3:
+  - {fileID: 11400000, guid: c2b87f7d53f89314390be95c07e5c6be, type: 2}
+  - {fileID: 11400000, guid: a0169862fc746184da9389f2b1087975, type: 2}
+  - {fileID: 11400000, guid: 66ae942857703774aa77db090b51f72e, type: 2}
 --- !u!4 &1052532595
 Transform:
   m_ObjectHideFlags: 0

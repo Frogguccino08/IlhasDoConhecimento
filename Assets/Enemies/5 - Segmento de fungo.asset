@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 5 - Criatura de Cana
+  m_Name: 5 - Segmento de fungo
   m_EditorClassIdentifier: 
-  nome: Criatura de Cana
+  nome: Segmento de fungo
   material: 5
-  imgPadrao: {fileID: -694197874937811014, guid: e6b950ec90e171544b6069b9ebf28419, type: 3}
-  cor: {fileID: 5973439743347570871, guid: 9d79b38477aa3234684cd97df5e381c4, type: 3}
+  imgPadrao: {fileID: 3556393900255523896, guid: 1bd8eebd1ae95ef4bb23f8e93dc0c8ee, type: 3}
+  cor: {fileID: -4195369962827113689, guid: f04b2b6d1fc7e184a97f6ece52f01751, type: 3}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 3
-  pDefense: 3
-  sDamage: 2
+  pDamage: 1
+  pDefense: 2
+  sDamage: 3
   sDefense: 2
-  mainStatus: 0
-  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 380000002c0000002e0000001b0000000000000000000000
+  mainStatus: 3
+  listaAtaquesNvl1: 340000003900000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000

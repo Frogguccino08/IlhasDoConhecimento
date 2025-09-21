@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
-  m_Name: Papers Please
+  m_Name: "1 - Am\xE9lia"
   m_EditorClassIdentifier: 
   id: 0
   nome: "Am\xE9lia \"A Artista\""
@@ -26,4 +26,26 @@ MonoBehaviour:
   sDamage: 3
   sDefense: 4
   listaAtaquesIniciais: 02000000030000000500000000000000
-  listaAtaquesAprendiveis: 020000000300000005000000040000000600000007000000080000001b0000001e0000001f0000002700000028000000290000002c0000002d00000030000000320000003100000037000000
+  listaAtaquesAprendiveis: 020000000300000005000000040000000600000007000000080000001b0000001e0000001f0000002700000028000000290000002c0000002d000000300000003200000031000000370000003b0000003d0000003f000000
+  regioes: 00000000000000000000000000000000
+  inimigos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 5 - Criatura de Cana
+  m_Name: 5 - Serpente de pimenta
   m_EditorClassIdentifier: 
-  nome: Criatura de Cana
+  nome: Serpente de pimenta
   material: 5
-  imgPadrao: {fileID: -694197874937811014, guid: e6b950ec90e171544b6069b9ebf28419, type: 3}
-  cor: {fileID: 5973439743347570871, guid: 9d79b38477aa3234684cd97df5e381c4, type: 3}
+  imgPadrao: {fileID: 582130108836360881, guid: a7cee21270d0fc3428edb3722946d7ed, type: 3}
+  cor: {fileID: -2497704144159285515, guid: 307dbe00aab31bd4584676ead8ed64b2, type: 3}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 3
+  pDamage: 4
   pDefense: 3
-  sDamage: 2
+  sDamage: 3
   sDefense: 2
-  mainStatus: 0
+  mainStatus: 1
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 380000002c0000002e0000001b0000000000000000000000
-  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 1d000000170000003a0000003e0000000000000000000000

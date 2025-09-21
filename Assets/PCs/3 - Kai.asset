@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
-  m_Name: Glass bottle
+  m_Name: 3 - Kai
   m_EditorClassIdentifier: 
   id: 2
   nome: "Kai \"O Gar\xE7om\""
@@ -18,6 +18,7 @@ MonoBehaviour:
   material: 3
   imgMenu: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
   imgCombate: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
+  Cor: {fileID: 0}
   maxHealth: 50
   maxCharge: 5
   pDamage: 1
@@ -25,4 +26,26 @@ MonoBehaviour:
   sDamage: 4
   sDefense: 3
   listaAtaquesIniciais: 02000000030000000d00000000000000
-  listaAtaquesAprendiveis: 02000000030000000d000000040000000e0000000f000000100000001a0000001b0000002100000028000000290000002c0000002f00000024000000
+  listaAtaquesAprendiveis: 02000000030000000d000000040000000e0000000f000000100000001a0000001b0000002100000028000000290000002c0000002f000000240000003d00000040000000
+  regioes: 00000000000000000000000000000000
+  inimigos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

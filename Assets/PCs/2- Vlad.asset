@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
-  m_Name: Plastic Chair
+  m_Name: 2- Vlad
   m_EditorClassIdentifier: 
   id: 1
   nome: "Vlad \"O Ca\xE7ador\""
@@ -26,4 +26,26 @@ MonoBehaviour:
   sDamage: 1
   sDefense: 2
   listaAtaquesIniciais: 01000000030000000900000000000000
-  listaAtaquesAprendiveis: 010000000300000009000000040000000a0000000b0000000c0000001c00000020000000250000002600000028000000290000002c0000003000000037000000
+  listaAtaquesAprendiveis: 010000000300000009000000040000000a0000000b0000000c0000001c00000020000000250000002600000028000000290000002c00000030000000370000003b0000003d0000003f000000
+  regioes: 00000000000000000000000000000000
+  inimigos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
