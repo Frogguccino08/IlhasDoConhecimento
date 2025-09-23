@@ -8,6 +8,8 @@ public class PersonagemSelecionado : MonoBehaviour
     public PCsSO perso;
     public int regiao;
     public int pontos;
+    public float[] material = new float[6];
+    
     public List<bool> unlock = new List<bool>();
     public bool modoHistoria = false;
 

@@ -2171,6 +2171,13 @@ MonoBehaviour:
   perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   regiao: 4
   pontos: 0
+  material:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   unlock: 010101010100
   modoHistoria: 0
 --- !u!4 &176751412
@@ -3628,7 +3635,6 @@ MonoBehaviour:
   maxCharge: 0
   currentCharge: 0
   materialInimigo: 0
-  telaRecompensaOn: 0
   telaRecompensa: {fileID: 1800203451}
   danoTxt: {fileID: 1137570511629793733, guid: 77cff961f1536d4448f208abbaaae206, type: 3}
   phiDamage: 5
@@ -18441,9 +18447,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419ed5d78e0f4b4e9a56db046a2a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materiais: 000000000000000000000000000000000000000000000000
+  materiais:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   enemy: {fileID: 265112125}
   teste: 1
+  perso: {fileID: 0}
 --- !u!114 &1800203453
 MonoBehaviour:
   m_ObjectHideFlags: 0

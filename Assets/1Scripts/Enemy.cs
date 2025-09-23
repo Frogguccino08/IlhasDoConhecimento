@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     public int materialInimigo;  //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
 
     //Variaveis para recompensa
-    public bool telaRecompensaOn = false;
     public GameObject telaRecompensa;
 
     //Efeito de dano
@@ -63,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     int cont;
     public int forcaAtual = 0;
-    bool isBoss = false;
+    public bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
     public SpriteRenderer cor;
@@ -500,13 +499,13 @@ public class Enemy : MonoBehaviour
 
         //Parte das recompensas
         telaRecompensa.SetActive(true);
-        telaRecompensaOn = true;
 
         while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
         {
             yield return null;
         }
 
+        telaRecompensa.GetComponent<Recompensa>().Receba();
         telaRecompensa.SetActive(false);
 
         yield return new WaitForSeconds(0.1f);
