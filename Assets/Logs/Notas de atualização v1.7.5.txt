@@ -5,6 +5,7 @@ Dando inicio no modo história (Ainda não disponível para jogar):
 - tela de vitória aparece após o quarto boss no modo história
 - Escolher previamente as regiões no modo história
 - Escolher previamente os inimigos da região
+- Ganhar recompensa a cada inimigo (fazer ser exclusivo do modo história, Escrever o resto da tela que aparece, Mostrar o icone e quantidade do material ganho, aumentar o tamanho da tela pros lados)
 
 
 Visual:
