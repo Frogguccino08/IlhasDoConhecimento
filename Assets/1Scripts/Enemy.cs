@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
 
     public int materialInimigo;  //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
 
+    //Variaveis para recompensa
+    public GameObject telaRecompensa;
 
     //Efeito de dano
     public GameObject danoTxt;
@@ -60,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     int cont;
     public int forcaAtual = 0;
-    bool isBoss = false;
+    public bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
     public SpriteRenderer cor;
@@ -289,7 +291,10 @@ public class Enemy : MonoBehaviour
         switch (inimigoEscolhido.mainStatus)
         {
             case 0:
-                maxHealth += inimigoEscolhido.maxHealth * (forcaAtual - 1);
+                if (forcaAtual > 0)
+                {
+                    maxHealth += inimigoEscolhido.maxHealth * (forcaAtual - 1);
+                }
                 if (isBoss)
                 {
                     maxHealth += inimigoEscolhido.maxHealth;
@@ -491,6 +496,19 @@ public class Enemy : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.01f);
+
+        //Parte das recompensas
+        telaRecompensa.SetActive(true);
+
+        while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            yield return null;
+        }
+
+        telaRecompensa.GetComponent<Recompensa>().Receba();
+        telaRecompensa.SetActive(false);
+
+        yield return new WaitForSeconds(0.1f);
 
         if (control.inimigoAtual == 21 && escolha.modoHistoria == true)
         {
