@@ -551,6 +551,8 @@ public class Controle : MonoBehaviour
         imgPlayer[0].SetActive(false);
         imgPlayer[1].SetActive(false);
 
+        CanvaVitoria.GetComponent<TelaVitoria>().ColocarNome();
+
         while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && vitoriaOn != false)
         {
             yield return null;
