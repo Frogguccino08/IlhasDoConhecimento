@@ -499,13 +499,13 @@ public class Enemy : MonoBehaviour
 
         //Parte das recompensas
         telaRecompensa.SetActive(true);
+        telaRecompensa.GetComponent<Recompensa>().Receba();
 
         while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
         {
             yield return null;
         }
-
-        telaRecompensa.GetComponent<Recompensa>().Receba();
+        
         telaRecompensa.SetActive(false);
 
         yield return new WaitForSeconds(0.1f);
