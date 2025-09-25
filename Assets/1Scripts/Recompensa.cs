@@ -21,6 +21,11 @@ public class Recompensa : MonoBehaviour
             bonus = 2;
         }
 
+        for (int o = 0; o < 6; o++)
+        {
+            materiais[o] = 0;
+        }
+
         //Recompensas
         if (perso.modoHistoria == true)
         {

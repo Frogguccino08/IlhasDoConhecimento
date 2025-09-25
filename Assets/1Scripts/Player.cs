@@ -405,6 +405,12 @@ public class Player : MonoBehaviour
 
             if (dano[id] != 0)
             {
+                if (rAgora == true)
+                {
+                    modPhiDamage += 1;
+                    modSpeDamage += 1;    
+                }
+
                 if (phispe[id] == true)
                 {
                     danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
@@ -431,11 +437,6 @@ public class Player : MonoBehaviour
                 {
                     danoAtual -= 1;
                 }
-
-                if (rAgora == true)
-                    {
-                        danoAtual += 1;
-                    }
 
                 if (dano[id] < 0)
                 {
@@ -511,39 +512,11 @@ public class Player : MonoBehaviour
             {
                 if (dano[id] != 0)
                 {
-                    if (phispe[id] == true)
-                    {
-                        if (dano[id] > 0)
-                        {
-                            attackDamage = Mathf.Round((float)phiDamage * (modPhiDamage + dano[id]) * (UnityEngine.Random.Range(0.8f, 1.2f)));
-                        }
-                        else if (dano[id] < 0)
-                        {
-                            attackDamage = Mathf.Round((float)phiDamage * ((modPhiDamage * -1) + dano[id]) * (UnityEngine.Random.Range(0.8f, 1.2f)));
-                        }
+                    attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
 
-                        if (attackDamage <= 0 && dano[id] > 0)
-                        {
-                            attackDamage = 1;
-                        }
-                        Debug.Log("Dano causado foi físico");
-                    }
-                    else if (phispe[id] == false)
+                    if (attackDamage <= 0 && dano[id] > 0)
                     {
-                        if (dano[id] > 0)
-                        {
-                            attackDamage = Mathf.Round((float)speDamage * (modSpeDamage + dano[id]) * (UnityEngine.Random.Range(0.8f, 1.2f)));
-                        }
-                        else if (dano[id] < 0)
-                        {
-                            attackDamage = Mathf.Round((float)speDamage * ((modSpeDamage * -1) + dano[id]) * (UnityEngine.Random.Range(0.8f, 1.2f)));
-                        }
-
-                        if (attackDamage <= 0 && dano[id] > 0)
-                        {
-                            attackDamage = 1;
-                        }
-                        Debug.Log("Dano causado foi especial");
+                        attackDamage = 1;
                     }
 
                     yield return StartCoroutine(CorDanoSelf(id, attackDamage));
