@@ -9,6 +9,9 @@ public class PersonagemSelecionado : MonoBehaviour
     public int regiao;
     public int pontos;
     public float[] material = new float[6];
+
+    public int maxRush;
+    public int maxHistoria;
     
     public List<bool> unlock = new List<bool>();
     public bool modoHistoria = false;

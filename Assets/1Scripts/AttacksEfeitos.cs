@@ -1230,7 +1230,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 54: //Campo magnético
-                if (quando == 7)
+                if (quando == 9)
                 {
                     if (quem == true)
                     {

@@ -7,6 +7,7 @@ Dando inicio no modo história (Ainda não disponível para jogar):
 - Escolher previamente as regiões no modo história
 - Escolher previamente os inimigos da região
 - Ganhar recompensa a cada inimigo
+- Diferença entre recorde de pontos do modo história e modo Rush adicionado.
 
 
 Visual:
@@ -20,6 +21,8 @@ Balanceamento:
 
 Correção de erros:
 - Descrição de efeito do solo ruim não mostrava o nome do inimigo.
+- Campo magnético estava ativando com cada ataque ao invés de no inicio do turno.
+- Inimigos não escolhiam pular o turno caso tivessem algum ataque com carga.
 
 
 Novos Ataques:

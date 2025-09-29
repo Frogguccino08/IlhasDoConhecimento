@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,14 +14,16 @@ public class TelaSelecao : MonoBehaviour
     public GameObject descCompleta;
     public PersonagemSelecionado pc;
 
+    public TMP_Text maxPoint;
+
     int down = 0;
     string material = "???";
 
     void Start()
     {
         pc = PersonagemSelecionado.instance;
-        
-        
+
+
         if (pc.modoHistoria == false)
         {
             Debug.Log("Modo Rush");
@@ -35,6 +38,8 @@ public class TelaSelecao : MonoBehaviour
         {
             ColocarPersonagem(boneco);
         }
+
+        PontoMaximo();
     }
 
     public void ColocarPersonagem(PCsSO boneco)
@@ -64,7 +69,7 @@ public class TelaSelecao : MonoBehaviour
         persosDesc.Add(Instantiate(pequeno, transform.position, Quaternion.identity));
 
         persosDesc[perso.IndexOf(boneco)].transform.SetParent(canva.transform);
-        persosDesc[perso.IndexOf(boneco)].transform.localPosition = new Vector3(-9.2f + ((index - 1) * 7), 5 - (down * 1), 0);
+        persosDesc[perso.IndexOf(boneco)].transform.localPosition = new Vector3(-9.2f + ((index - 1) * 7), 3.9f - (down * 1), 0);
 
         if (pc.unlock[perso.IndexOf(boneco)] == true)
         {
@@ -120,6 +125,18 @@ public class TelaSelecao : MonoBehaviour
         else
         {
             persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().personagem.GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    public void PontoMaximo()
+    {
+        if (pc.modoHistoria == true)
+        {
+            maxPoint.text = "Recorde modo História: " + pc.maxHistoria;
+        }
+        else
+        {
+            maxPoint.text = "Recorde modo Rush: " + pc.maxRush;
         }
     }
 }

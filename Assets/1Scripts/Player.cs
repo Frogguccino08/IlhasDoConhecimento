@@ -250,10 +250,21 @@ public class Player : MonoBehaviour
         control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual + "       Turno: " + control.turno;
         control.DesativarBotao();
         control.texto.text = "Você foi derrotado\nEsperando input para voltar ao menu";
-
-        if (control.pontosRodada >= perso.pontos)
+        
+        if (perso.modoHistoria == true && control.pontosRodada >= perso.maxHistoria)
         {
-            perso.pontos = control.pontosRodada;
+            perso.maxHistoria = control.pontosRodada;
+            perso.pontos = perso.maxHistoria;
+        }
+        else if (perso.modoHistoria == false && control.pontosRodada >= perso.maxRush)
+        {
+            perso.maxRush = control.pontosRodada;
+            perso.pontos = perso.maxRush;
+        }
+
+        while (!Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Space))
+        {
+            yield return null;
         }
 
         yield return new WaitForSeconds(0.01f);

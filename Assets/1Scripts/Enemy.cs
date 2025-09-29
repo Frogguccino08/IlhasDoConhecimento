@@ -1006,6 +1006,7 @@ public class Enemy : MonoBehaviour
             {
                 Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
                 chance[6] += 50;
+                break;
             }
         }
 
@@ -1017,7 +1018,7 @@ public class Enemy : MonoBehaviour
 
 
         //Escolher o ataque e usa-lo
-        for (i = 0; i < 6; i++)
+        for (i = 0; i <= 6; i++)
         {
             maximo += chance[i];
         }
