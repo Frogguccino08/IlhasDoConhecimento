@@ -16,4 +16,9 @@ public class StarMenu : MonoBehaviour
 
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
+
+    public void MotorBarco()
+    {
+        SceneManager.LoadScene("Motor", LoadSceneMode.Single);
+    }
 }

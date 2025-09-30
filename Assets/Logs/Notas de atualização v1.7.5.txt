@@ -24,6 +24,7 @@ Correção de erros:
 - Campo magnético estava ativando com cada ataque ao invés de no inicio do turno.
 - Inimigos não escolhiam pular o turno caso tivessem algum ataque com carga.
 - Quando inimigo pulava o turno aparecia a tela de efeito caso tivesse usado no último turno.
+- Passivas apareciam por cima da tela de melhorias.
 
 
 Novos Ataques:
