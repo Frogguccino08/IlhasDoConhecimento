@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
     public int ataqueUsado;
     public int quantBlock;
     public int idAtaqueUsado;
+    public bool pulouTurno = false;
 
     int cont;
     public int forcaAtual = 0;
@@ -616,6 +617,7 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator UsarAtaque(int id)
     {
+        pulouTurno = false;
         int materialSemNome;
         if (material[id] == 0)
         {
@@ -1049,6 +1051,7 @@ public class Enemy : MonoBehaviour
             }
 
             StartCoroutine(control.Turno(true));
+            pulouTurno = true;
             return;
         }
         else
@@ -1082,6 +1085,7 @@ public class Enemy : MonoBehaviour
                     }
 
                     StartCoroutine(control.Turno(true));
+                    pulouTurno = true;
                     return;
                 }else if (ataqueEscolhido > chance[i])
                 {

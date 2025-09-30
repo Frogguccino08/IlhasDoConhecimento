@@ -319,7 +319,7 @@ public class Controle : MonoBehaviour
         yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
-        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0)
+        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();

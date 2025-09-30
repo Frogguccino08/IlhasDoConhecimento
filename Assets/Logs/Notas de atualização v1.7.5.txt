@@ -23,10 +23,10 @@ Correção de erros:
 - Descrição de efeito do solo ruim não mostrava o nome do inimigo.
 - Campo magnético estava ativando com cada ataque ao invés de no inicio do turno.
 - Inimigos não escolhiam pular o turno caso tivessem algum ataque com carga.
+- Quando inimigo pulava o turno aparecia a tela de efeito caso tivesse usado no último turno.
 
 
 Novos Ataques:
-
 
 
 Novos Inimigos:
