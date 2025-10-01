@@ -17,7 +17,7 @@ public class AttacksEfeitos : MonoBehaviour
         GameObject obj;
         obj = Instantiate(pas, new Vector3(), quaternion.identity);
         obj.transform.SetParent(canvas.transform);
-        obj.transform.SetSiblingIndex(8);
+        obj.transform.SetSiblingIndex(7);
         pasList.Add(obj);
 
         obj.GetComponent<Passiva>().titulo.text = nomePas;

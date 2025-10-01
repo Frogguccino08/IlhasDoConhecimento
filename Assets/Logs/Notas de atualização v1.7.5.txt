@@ -30,12 +30,10 @@ Correção de erros:
 - Inimigos não escolhiam pular o turno caso tivessem algum ataque com carga.
 - Quando inimigo pulava o turno aparecia a tela de efeito caso tivesse usado no último turno.
 - Passivas apareciam por cima da tela de melhorias.
+- Texto de aviso das passivas apareciam por cima da tela de upgrades
 
 
 Novos Ataques:
 
 
 Novos Inimigos:
-
-
-Organização de código:

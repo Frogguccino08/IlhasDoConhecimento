@@ -40,12 +40,9 @@ public class Controle : MonoBehaviour
     public TMP_Text textoArea;
 
     public GameObject textoRegiao;
-    public GameObject[] vidas = new GameObject[2];
-    public GameObject espacoAtaques;
-    public GameObject[] escritos = new GameObject[2];
-    public GameObject efeitosTela;
-    public GameObject[] imgPlayer = new GameObject[2];
-    public GameObject RsConheci;
+    public GameObject telaCompleta;
+    public GameObject[] oPlayer = new GameObject[2];
+    public GameObject[] oEnemy = new GameObject[2];
 
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
@@ -60,18 +57,12 @@ public class Controle : MonoBehaviour
     //Espera mostrar a região e depois liga todas as coisas
     public IEnumerator LigarTela()
     {
-        vidas[0].SetActive(false);
-        vidas[1].SetActive(false);
         textoRegiao.SetActive(true);
-        espacoAtaques.SetActive(false);
-        escritos[0].SetActive(false);
-        escritos[1].SetActive(false);
-        efeitosTela.SetActive(false);
-        RsConheci.SetActive(false);
-        imgPlayer[0].SetActive(false);
-        imgPlayer[1].SetActive(false);
-
-        textoRegiao.SetActive(true);
+        telaCompleta.SetActive(false);
+        oPlayer[0].SetActive(false);
+        oEnemy[0].SetActive(false);
+        oPlayer[1].SetActive(false);
+        oEnemy[1].SetActive(false);
 
         switch (escolha.regiao)
         {
@@ -94,16 +85,12 @@ public class Controle : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        vidas[0].SetActive(true);
-        vidas[1].SetActive(true);
         textoRegiao.SetActive(false);
-        espacoAtaques.SetActive(true);
-        escritos[0].SetActive(true);
-        escritos[1].SetActive(true);
-        efeitosTela.SetActive(true);
-        RsConheci.SetActive(true);
-        imgPlayer[0].SetActive(true);
-        imgPlayer[1].SetActive(true);
+        telaCompleta.SetActive(true);
+        oPlayer[0].SetActive(true);
+        oEnemy[0].SetActive(true);
+        oPlayer[1].SetActive(true);
+        oEnemy[1].SetActive(true);
 
         texto.enabled = false;
         enemy.InicializarInimigo();
@@ -540,16 +527,12 @@ public class Controle : MonoBehaviour
         escolha.pontos = pontosRodada;
         CanvaVitoria.SetActive(true);
 
-        vidas[0].SetActive(false);
-        vidas[1].SetActive(false);
+        telaCompleta.SetActive(false);
         textoRegiao.SetActive(true);
-        espacoAtaques.SetActive(false);
-        escritos[0].SetActive(false);
-        escritos[1].SetActive(false);
-        efeitosTela.SetActive(false);
-        RsConheci.SetActive(false);
-        imgPlayer[0].SetActive(false);
-        imgPlayer[1].SetActive(false);
+        oPlayer[0].SetActive(false);
+        oEnemy[0].SetActive(false);
+        oPlayer[1].SetActive(false);
+        oEnemy[1].SetActive(false);
 
         CanvaVitoria.GetComponent<TelaVitoria>().ColocarNome();
 
