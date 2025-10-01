@@ -10,6 +10,11 @@ Dando inicio no modo história (Ainda não disponível para jogar):
 - Diferença entre recorde de pontos do modo história e modo Rush adicionado.
 
 
+Dando inicio a tela do motor(Ainda não disponível para entrar):
+- Mostra os dois recordes de pontos.
+- Mostra a quantidade de material que tem.
+
+
 Visual:
 
 
