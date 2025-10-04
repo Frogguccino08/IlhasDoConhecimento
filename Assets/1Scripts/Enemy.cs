@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
     public int quantBlock;
     public int idAtaqueUsado;
     public bool pulouTurno = false;
+    public bool bloqTurno = false;
 
     int cont;
     public int forcaAtual = 0;
@@ -748,6 +749,8 @@ public class Enemy : MonoBehaviour
 
             if (alvo[id] == true)
             {
+                bloqTurno = false;
+                
                 if (dano[id] != 0)
                 {
                     attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
@@ -757,18 +760,30 @@ public class Enemy : MonoBehaviour
                         attackDamage = 1;
                     }
 
-                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
-
                     if (enemy.efeitosAtivos[1] > 0)
                     {
+                        bloqTurno = true;
                         EfeitoCausado(0, attackDamage, dano[id]);
-                        attackDamage = 0;
+                        if (enemy.materialPlayer == 2 && (material[idAtaqueUsado] == 3 || (material[idAtaqueUsado] == 0 && materialInimigo == 3)))
+                        {
+                            attackDamage = Mathf.Round(attackDamage / 4);
+                            enemy.CausarDano(attackDamage);
+                            Debug.Log("Ataque não foi bloqueado completamente");
+                        }
+                        else
+                        {
+                            attackDamage = 0;
+                            Debug.Log("Ataque bloqueado");
+                        }
+                        enemy.efeitosAtivos[1] -= 1;
                     }
                     else
                     {
                         Debug.Log("Dano causado ou curado: " + attackDamage);
                         enemy.CausarDano(attackDamage);
                     }
+
+                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
 
                     if (enemy.currentHealth <= 0)
                     {
@@ -1109,19 +1124,6 @@ public class Enemy : MonoBehaviour
         {
             efeitosUsados[us] = false;
         }
-        if (i == 0) //logo após calcular o dano
-        {
-            //0. Bloqueio
-            if (enemy.efeitosAtivos[1] > 0)
-            {
-                if (dano > 0)
-                {
-                    attackDamage = 0;
-                    Debug.Log("Ataque bloqueado");
-                    enemy.efeitosAtivos[1] -= 1;
-                }
-            }
-        }
 
         if (i == 1) //No final do turno
         {
@@ -1186,7 +1188,7 @@ public class Enemy : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.red;
             cor.color = Color.red;
         }
-        if (enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
+        if (enemy.dano[id] > 0 && enemy.bloqTurno == true)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
             cor.color = Color.grey;
@@ -1278,7 +1280,12 @@ public class Enemy : MonoBehaviour
             Debug.Log("Fraqueza Metal -> Papel Ativada");
 
             StartCoroutine(list.AparecerPassiva(4, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
-            }
+        }
+        //Vidro -> Plástico (5 no efeito)
+        if (dano[id] > 0 && enemy.materialPlayer == 2 && (material[id] == 3 || material[id] == 0 && materialInimigo == 3) && bloqTurno == true)
+        {
+            StartCoroutine(list.AparecerPassiva(5, "Risco de arranhão", "Escudo não bloqueou ataque completamente"));
+        }
     }
     
     public void CorDetalhes()

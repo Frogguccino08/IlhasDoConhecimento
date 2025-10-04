@@ -63,6 +63,8 @@ public class Player : MonoBehaviour
     public bool rAgora;
     public bool telaUpgradeOn = false;
     public bool butaoClicado = false;
+    public bool bloqTurno = false;
+
 
     public int[] attackID = new int[6];
     [HideInInspector]
@@ -388,6 +390,8 @@ public class Player : MonoBehaviour
         //Caso cause dano
         for (int quant = 0; quant < quantidade[id]; quant++)
         {
+            bloqTurno = false;
+
             //Efeito número 7 e 8 pra inimigo
             list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 7, this, enemy);
             list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 7, this, enemy);
@@ -468,18 +472,30 @@ public class Player : MonoBehaviour
                         attackDamage = 1;
                     }
 
-                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
-
                     if (enemy.efeitosAtivos[1] > 0)
                     {
+                        bloqTurno = true;
                         EfeitoCausado(0, attackDamage, dano[id]);
-                        attackDamage = 0;
+                        if (enemy.materialInimigo == 2 && (material[idAtaqueUsado] == 3 || (material[idAtaqueUsado] == 0 && materialPlayer == 3)))
+                        {
+                            attackDamage = Mathf.Round(attackDamage / 4);
+                            enemy.CausarDano(attackDamage);
+                            Debug.Log("Ataque não foi bloqueado completamente");
+                        }
+                        else
+                        {
+                            attackDamage = 0;
+                            Debug.Log("Ataque bloqueado");
+                        }
+                        enemy.efeitosAtivos[1] -= 1;
                     }
                     else
                     {
                         Debug.Log("Dano causado ou curado: " + attackDamage);
                         enemy.CausarDano(attackDamage);
                     }
+
+                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
 
                     if (enemy.currentHealth <= 0)
                     {
@@ -639,20 +655,6 @@ public class Player : MonoBehaviour
             efeitosUsados[us] = false;
         }
 
-        if (i == 0) //logo após calcular o dano
-        {
-            //0. Bloqueio
-            if (enemy.efeitosAtivos[1] > 0)
-            {
-                if (dano > 0)
-                {
-                    attackDamage = 0;
-                    Debug.Log("Ataque bloqueado");
-                    enemy.efeitosAtivos[1] -= 1;
-                }
-            }
-        }
-
         if (i == 1) //No final do turno
         {
             //16.Cacos
@@ -711,7 +713,7 @@ public class Player : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.red;
             cor.color = Color.red;
         }
-        if (enemy.dano[id] > 0 && efeitosAtivos[1] > 0)
+        if (enemy.dano[id] > 0 && enemy.bloqTurno == true)
         {
             GetComponent<SpriteRenderer>().color = Color.grey;
             cor.color = Color.grey;
@@ -779,28 +781,33 @@ public class Player : MonoBehaviour
             }
         }
         //Metal -> Papel (4 no efeito)
-            if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
+        if (dano[id] > 0 && enemy.materialInimigo == 1 && (material[id] == 4 || (material[id] == 0 && materialPlayer == 4)))
+        {
+            float dano;
+
+            dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
+
+            if (dano < 1)
+                dano = 1;
+
+            if (enemy.efeitosAtivos[1] > 0)
             {
-                float dano;
-
-                dano = Mathf.Round((float)phiDamage * 0.5f * (UnityEngine.Random.Range(0.8f, 1.2f)));
-
-                if (dano < 1)
-                    dano = 1;
-
-                if (enemy.efeitosAtivos[1] > 0)
-                {
-                    dano = 0;
-                    enemy.efeitosAtivos[1] -= 1;
-                }
-
-                Debug.Log("Dano causado pelo efeito: " + dano);
-
-                enemy.CausarDano(dano);
-                Debug.Log("Fraqueza Metal -> Papel Ativada");
-
-                StartCoroutine(list.AparecerPassiva(4, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
+                dano = 0;
+                enemy.efeitosAtivos[1] -= 1;
             }
+
+            Debug.Log("Dano causado pelo efeito: " + dano);
+
+            enemy.CausarDano(dano);
+            Debug.Log("Fraqueza Metal -> Papel Ativada");
+
+            StartCoroutine(list.AparecerPassiva(4, "Fácil de cortar", "Um pequeno segundo ataque aconteceu"));
+        }
+        //Vidro -> Plástico (5 no efeito)
+        if (dano[id] > 0 && enemy.materialInimigo == 2 && (material[id] == 3 || material[id] == 0 && materialPlayer == 3) && bloqTurno == true)
+        {
+            StartCoroutine(list.AparecerPassiva(5, "Risco de arranhão", "Escudo não bloqueou ataque completamente"));
+        }
     }
 
     public void CorDetalhes()

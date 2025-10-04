@@ -19,12 +19,16 @@ Visual:
 
 
 Efeitos especiais além de ataques:
+- Efeito Costa de Cacos, Piso afiado, chance pequena de causar cacos em personagens que não sejam de vidro no inicio do turno.
+- habilidade Kai, Vidro de Cal-Soda, Ao usar 3R com um ataque de dano a distância causa +1 cacos.
+- Vidro -> Plástico, Risco de arranhão, Escudos de Plástico não bloqueiam 100% dos ataques de vidro, apenas 75%.
 
 
 Balanceamento:
 
 
 Correção de erros:
+- A tela para sair do jogo não mostrava se estivesse na tela de troca de região.
 
 
 Novos Ataques:

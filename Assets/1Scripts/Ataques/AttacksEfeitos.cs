@@ -71,6 +71,7 @@ public class AttacksEfeitos : MonoBehaviour
                     weak = "Metal -> Papel";
                     break;
                 case 5:
+                    weak = "Vidro -> Plástico";
                     break;
                 case 6:
                     break;
@@ -160,9 +161,13 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Kai (Vidro)
             case -12:
-                if (quando == 2)
+                if (quando == 0)
                 {
-                    Debug.Log("Kai Passiva Ativada");
+                    if (player.using3R == true && player.phispe[player.idAtaqueUsado] == false && player.dano[player.idAtaqueUsado] > 0)
+                    {
+                        enemy.efeitosAtivos[16] += 1;
+                        StartCoroutine(AparecerPassiva(0, "Vidro de Cal-Soda", "Ataque causou uma carga da cacos no inimigo"));
+                    }
                 }
                 break;
             //Vlad (Plástico)
@@ -269,15 +274,37 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Costa de cacos
             case -1:
-                if (quando == 6)
+                if (quando == 9)
                 {
                     if (quem == true)
                     {
-                        Debug.Log("Costa de Vidro player");
-                    }
-                    else
-                    {
-                        Debug.Log("Costa de Vidro Inimigo");
+                        int rand = UnityEngine.Random.Range(1, 21);
+
+                        if (rand > 15)
+                        {
+                            if (player.materialPlayer != 3)
+                            {
+                                player.efeitosAtivos[16] += 1;
+                            }
+
+                            if (enemy.materialInimigo != 3)
+                            {
+                                enemy.efeitosAtivos[16] += 1;
+                            }
+
+                            if (player.materialPlayer != 3 && enemy.materialInimigo != 3)
+                            {
+                                StartCoroutine(AparecerPassiva(2, "Piso Afiado", "Personagens receberam cacos"));
+                            }
+                            else if (player.materialPlayer != 3 && enemy.materialInimigo == 3)
+                            {
+                                StartCoroutine(AparecerPassiva(2, "Piso Afiado", "Você recebeu cacos"));
+                            }
+                            else if (player.materialPlayer == 3 && enemy.materialInimigo != 3)
+                            {
+                                StartCoroutine(AparecerPassiva(2, "Piso Afiado", "Inimigo recebeu cacos"));
+                            }
+                        }
                     }
                 }
                 break;
