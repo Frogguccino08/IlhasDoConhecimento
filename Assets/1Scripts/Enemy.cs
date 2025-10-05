@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
     public int ataqueUsado;
     public int quantBlock;
     public int idAtaqueUsado;
-    public bool pulouTurno = false;
+    public bool pulouTurno = true;
     public bool bloqTurno = false;
 
     int cont;
@@ -149,6 +149,8 @@ public class Enemy : MonoBehaviour
     public void InicializarInimigo()
     {
         escolha = PersonagemSelecionado.instance;
+
+        pulouTurno = true;
         
         if (control.inimigoAtual == 1)
         {

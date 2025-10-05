@@ -25,6 +25,7 @@ Efeitos especiais além de ataques:
 
 
 Balanceamento:
+- Kai não pode mais aprender "atacar ponto fraco"
 
 
 Correção de erros:
@@ -32,6 +33,14 @@ Correção de erros:
 
 
 Novos Ataques:
+- (Kai) Perfurar, 1x1 a distância no alvo, 0 carga, Ataque sem efeito especial porém não gasta conhecimento.
+- (Kai) Superfície com tensão, 1x3 a distância no alvo, 3 carga, Ataque que causa mais dano caso o alvo seja de vidro.
+- (Kai, Vlad) Tiro fragmentado, 1x1 a distância no alvo, 3 carga, Ataque que escolhe o dano entre 1 e 5 aleatoriamente antes de atacar.
+- (kai) Molotov, 1x2 a distância no alvo, 4 carga, Causa dano duas vezes uma no ataque e uma no final do próximo turno inimigo.
+- (Kai, Amélia, Vlad) Refletir, 1x1 a distância no alvo, 4 carga, Causa dano igual ao último ataque do alvo, caso o ultimo ataque não tenha dano se mantem em 1.
+- (Kai, Amélia) Ataques frágeis, passiva, Ataques de dano a distância Causam -1 em dano pórem tem uma chance de causar cacos.
+- (Renan) Espeto perfurante, 4x1 corpo a corpo no alvo, 4 carga, Deixa o alvo exposto.
+- (Jayden) Ponta infectada, passiva, chance pequena ao usar um ataque físico de diminuir qualquer um dos atributos do alvo.
 
 
 Novos Inimigos:

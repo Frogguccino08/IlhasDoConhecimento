@@ -78,9 +78,17 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(62, "Corpo quente", "Ataques físicos contra você tem chance de diminuir a defesa física e a distância do atacante", Attacks.Tipo.passiva, Attacks.Tipo.negativo, 0, 0, true, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(63, "Estômago forte", "Atacar um alvo orgânico consome uma parte do inimigo recuperando uma pequena parcela de vida", Attacks.Tipo.passiva, Attacks.Tipo.cura, 0, 0, true, true, 0, 0, true, true));
         listaAtaques.Add(new Attacks(64, "Guia", "Pequenos ajudantes usam um segundo ataque menor após você usar um ataque", Attacks.Tipo.passiva, Attacks.Tipo.golpe, 0, 0, false, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(65, "Perfurar", "Golpe fraco de vidro sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 3, 1, false, true, 1, 0, false, false));
+        listaAtaques.Add(new Attacks(66, "Superfície com tensão", "Ataque médio que causa mais dano em alvos de Vidro", Attacks.Tipo.golpe, Attacks.Tipo.zero, 3, 3, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(67, "Tiro Fragmentado", "Ataque que altera o dano aleatóriamente entre 1 e 5", Attacks.Tipo.golpe, Attacks.Tipo.zero, 3, 1, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(68, "Molotov", "Esse ataque causa dano duas vezes, uma no ataque e uma no final do turno do alvo", Attacks.Tipo.golpe, Attacks.Tipo.zero, 3, 2, false, true, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(69, "Refletir", "Ataque que causa o mesmo tanto de dano do último ataque inimigo uma vez, Falha de não foi um ataque de dano", Attacks.Tipo.golpe, Attacks.Tipo.zero, 3, 1, false, true, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(70, "Ataques frágeis", "Ataques a distância causam -1 de dano mas todos tem chance de causar cacos", Attacks.Tipo.negativo, Attacks.Tipo.passiva, 3, 0, false, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(71, "Espeto Perfurante", "Ataque físico que faz o alvo ficar exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 3, 1, true, true, 4, 4, true, false));
+        listaAtaques.Add(new Attacks(72, "Ponta infectada", "Ao usar ataques físicos tem uma chance pequena de diminuir algum atributo", Attacks.Tipo.negativo, Attacks.Tipo.passiva, 3, 0, true, true, 0, 0, true, true));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
-    //Vidro de Cal-Soda (Ao usar o 3R com um ataque de dano a distância causa 1 caco no alvo)
+        //Vidro de Cal-Soda (Ao usar o 3R com um ataque de dano a distância causa 1 caco no alvo)
         listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(1, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));

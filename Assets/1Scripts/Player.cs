@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     public bool telaUpgradeOn = false;
     public bool butaoClicado = false;
     public bool bloqTurno = false;
+    public bool pulouTurno = false;
 
 
     public int[] attackID = new int[6];
@@ -297,6 +298,8 @@ public class Player : MonoBehaviour
 
     public IEnumerator UsarAtaque(int id)
     {
+        pulouTurno = false;
+        
         int materialSemNome;
         if (material[id] == 0)
         {

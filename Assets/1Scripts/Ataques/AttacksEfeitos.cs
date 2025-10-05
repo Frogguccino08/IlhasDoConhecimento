@@ -1480,55 +1480,310 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 if (quando == 2)
+                {
+                    if (quem == true)
                     {
-                        if (quem == true)
+                        if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
                         {
-                            if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
+                            float phispe;
+
+                            if (player.phispe[player.idAtaqueUsado] == true)
                             {
-                                float phispe;
-
-                                if (player.phispe[player.idAtaqueUsado] == true)
-                                {
-                                    phispe = player.modPhiDamage;
-                                }
-                                else
-                                {
-                                    phispe = player.modSpeDamage;
-                                }
-
-                                float dano = Mathf.Ceil((player.dano[player.idAtaqueUsado] + phispe) / 4);
-                                if (dano <= 0)
-                                    dano = 1;
-
-                                enemy.CausarDano(dano);
-                                StartCoroutine(enemy.CorDano(player.idAtaqueUsado, dano));
+                                phispe = player.modPhiDamage;
                             }
+                            else
+                            {
+                                phispe = player.modSpeDamage;
+                            }
+
+                            float dano = Mathf.Ceil((player.dano[player.idAtaqueUsado] + phispe) / 4);
+                            if (dano <= 0)
+                                dano = 1;
+
+                            enemy.CausarDano(dano);
+                            StartCoroutine(enemy.CorDano(player.idAtaqueUsado, dano));
+                        }
+                    }
+                    else
+                    {
+
+                        if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
+                        {
+                            float phispe;
+
+                            if (enemy.phispe[enemy.idAtaqueUsado] == true)
+                            {
+                                phispe = enemy.modPhiDamage;
+                            }
+                            else
+                            {
+                                phispe = enemy.modSpeDamage;
+                            }
+
+                            float dano = Mathf.Ceil((enemy.dano[enemy.idAtaqueUsado] + phispe) / 4);
+                            if (dano <= 0)
+                                dano = 1;
+
+                            player.CausarDano(dano);
+                            StartCoroutine(player.CorDano(enemy.idAtaqueUsado, dano));
+                        }
+                    }
+                }
+                break;
+            case 66: //Superfície com tensão
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 3)
+                        {
+                            player.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
                         }
                         else
                         {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 3)
+                        {
+                            enemy.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                }
+                break;
+            case 67: //Tiro fragmentado
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        int rand = UnityEngine.Random.Range(0, 5);
+                        control.efeitoAtq = "Dano escolhido para o ataque foi: " + (rand + 1);
+                        player.modSpeDamage += rand;
+                    }
+                    else
+                    {
+                        int rand = UnityEngine.Random.Range(0, 5);
+                        control.efeitoAtq = "Dano escolhido para o ataque foi: " + (rand + 1);
+                        enemy.modSpeDamage += rand;
+                    }
+                }
+                break;
+            case 68: //molotov
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        control.efeitoAtq = "Fogo será espalhado no final do turno do inimigo";
+                    }
+                    else
+                    {
+                        control.efeitoAtq = "Fogo será espalhado no final do turno do seu turno";
+                    }
+                }
+                if (quando == 5)
+                {
+                    if (quem == true)
+                    {
+                        Debug.Log("Chegou aqui");
+                        float dano;
 
-                            if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
+                        dano = Mathf.Round((2 + player.speDamage + player.modSpeDamage) * UnityEngine.Random.Range(0.8f, 1.2f) - (enemy.speDefense + enemy.modSpeDefense));
+                        if (dano <= 0)
+                            dano = 1;
+                        enemy.CausarDano(dano);
+                        StartCoroutine(enemy.CorDano(player.idAtaqueUsado, dano));
+                    }
+                    else
+                    {
+                        float dano;
+
+                        dano = Mathf.Round((2 + enemy.speDamage + enemy.modSpeDamage) * UnityEngine.Random.Range(0.8f, 1.2f) - (player.speDefense + player.modSpeDefense));
+                        if (dano <= 0)
+                            dano = 1;
+                        player.CausarDano(dano);
+                        StartCoroutine(player.CorDano(enemy.idAtaqueUsado, dano));
+                    }
+                }
+                break;
+            case 69: //Refletir
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.pulouTurno == false)
+                        {
+                            player.modSpeDamage += enemy.dano[enemy.idAtaqueUsado] - 1;
+                            control.efeitoAtq = "Dano do ataque passou para: " + enemy.dano[enemy.idAtaqueUsado];
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque falhou, dano do ataque alterado para 1";
+                        }
+                    }
+                    else
+                    {
+                        if (player.dano[player.idAtaqueUsado] > 0 && player.pulouTurno == false)
+                        {
+                            enemy.modSpeDamage += player.dano[player.idAtaqueUsado] - 1;
+                            control.efeitoAtq = "Dano do ataque passou para: " + player.dano[player.idAtaqueUsado];
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque falhou, dano do ataque alterado para 1";
+                        }
+                    }
+                }
+                break;
+            case 70: //Ataques frágeis
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (player.dano[player.idAtaqueUsado] > 1 && player.phispe[player.idAtaqueUsado] == false)
+                        {
+                            player.modSpeDamage -= 1;
+                        }
+                    }
+                    else
+                    {
+                        if (enemy.dano[enemy.idAtaqueUsado] > 1 && enemy.phispe[enemy.idAtaqueUsado] == false)
+                        {
+                            enemy.modSpeDamage -= 1;
+                        }
+                    }
+                }
+                if (quando == 0)
+                {
+                    if (quem == true && player.dano[player.idAtaqueUsado] > 1 && player.phispe[player.idAtaqueUsado] == false)
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        Debug.Log("Numero que caiu: " + rand);
+
+                        if (rand > 15)
+                        {
+                            enemy.efeitosAtivos[16] += 1;
+                            StartCoroutine(AparecerPassiva(0, "Ataques frágeis", player.nickName + " Causou cacos no inimigo"));
+                        }
+                    }
+                    else if (quem == false && enemy.dano[enemy.idAtaqueUsado] > 1 && enemy.phispe[enemy.idAtaqueUsado] == false)
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        Debug.Log("Numero que caiu: " + rand);
+
+                        if (rand > 15)
+                        {
+                            player.efeitosAtivos[16] += 1;
+                            StartCoroutine(AparecerPassiva(1, "Ataques frágeis", enemy.nomeinimigo + " Causou cacos no personagem"));
+                        }
+                    }
+                }
+                break;
+            case 71: //Espeto perfurante
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[7] += 2;
+                        control.efeitoAtq = "Inimigo ficou exposto";
+
+                        if (player.rAgora == true)
+                        {
+                            enemy.efeitosAtivos[7] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[7] += 2;
+                        control.efeitoAtq = player.nickName + " ficou exposto";
+                    }
+                }
+                break;
+            case 72: //Ponta infectada
+                if (quando == 2)
+                {
+                    if (quem == true)
+                    {
+                        if (player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
+                        {
+                            int rand = UnityEngine.Random.Range(0, 21);
+                            int rand2;
+
+                            if (rand > 16)
                             {
-                                float phispe;
+                                rand2 = UnityEngine.Random.Range(8, 13);
 
-                                if (enemy.phispe[enemy.idAtaqueUsado] == true)
+                                switch (rand2)
                                 {
-                                    phispe = enemy.modPhiDamage;
+                                    case 8:
+                                        enemy.efeitosAtivos[8] += 2;
+                                        StartCoroutine(AparecerPassiva(0, "Ponta infectada", enemy.nomeinimigo + " Teve o ataque a distância diminuído."));
+                                        break;
+                                    case 9:
+                                        enemy.efeitosAtivos[9] += 2;
+                                        StartCoroutine(AparecerPassiva(0, "Ponta infectada", enemy.nomeinimigo + " Teve o ataque corpo a corpo diminuído."));
+                                        break;
+                                    case 10:
+                                        enemy.efeitosAtivos[10] += 2;
+                                        StartCoroutine(AparecerPassiva(0, "Ponta infectada", enemy.nomeinimigo + " Teve a defesa a distância diminuída."));
+                                        break;
+                                    case 11:
+                                        enemy.efeitosAtivos[11] += 2;
+                                        StartCoroutine(AparecerPassiva(0, "Ponta infectada", enemy.nomeinimigo + " Teve a defesa corpo a corpo diminuída."));
+                                        break;
+                                    case 12:
+                                        enemy.efeitosAtivos[12] += 2;
+                                        StartCoroutine(AparecerPassiva(0, "Ponta infectada", enemy.nomeinimigo + " Teve o ganho de conhecimento diminuído."));
+                                        break;
                                 }
-                                else
-                                {
-                                    phispe = enemy.modSpeDamage;
-                                }
-
-                                float dano = Mathf.Ceil((enemy.dano[enemy.idAtaqueUsado] + phispe) / 4);
-                                if (dano <= 0)
-                                    dano = 1;
-
-                                player.CausarDano(dano);
-                                StartCoroutine(player.CorDano(enemy.idAtaqueUsado, dano));
                             }
                         }
                     }
+                    else
+                    {
+                        if (enemy.phispe[enemy.idAtaqueUsado] == true && enemy.dano[enemy.idAtaqueUsado] > 0)
+                        {
+                            int rand = UnityEngine.Random.Range(0, 21);
+                            int rand2;
+
+                            if (rand > 16)
+                            {
+                                rand2 = UnityEngine.Random.Range(8, 13);
+
+                                switch (rand2)
+                                {
+                                    case 8:
+                                        player.efeitosAtivos[8] += 2;
+                                        StartCoroutine(AparecerPassiva(1, "Ponta infectada", player.nickName + " Teve o ataque a distância diminuído."));
+                                        break;
+                                    case 9:
+                                        player.efeitosAtivos[9] += 2;
+                                        StartCoroutine(AparecerPassiva(1, "Ponta infectada", player.nickName + " Teve o ataque corpo a corpo diminuído."));
+                                        break;
+                                    case 10:
+                                        player.efeitosAtivos[10] += 2;
+                                        StartCoroutine(AparecerPassiva(1, "Ponta infectada", player.nickName + " Teve a defesa a distância diminuída."));
+                                        break;
+                                    case 11:
+                                        player.efeitosAtivos[11] += 2;
+                                        StartCoroutine(AparecerPassiva(1, "Ponta infectada", player.nickName + " Teve a defesa corpo a corpo diminuída."));
+                                        break;
+                                    case 12:
+                                        player.efeitosAtivos[12] += 2;
+                                        StartCoroutine(AparecerPassiva(1, "Ponta infectada", player.nickName + " Teve o ganho de conhecimento diminuído."));
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                }
                 break;
         }
     }

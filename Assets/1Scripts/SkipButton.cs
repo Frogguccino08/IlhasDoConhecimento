@@ -10,7 +10,8 @@ public class SkipButton : MonoBehaviour
     //Função quando clica no botão de pular o seu turno pula o turno, adiciona pontos e inicia o turno inimigo 
     public void Onclick()
     {
-        //Ao clicar o ataque
+        control.player.pulouTurno = true;
+        //Ao clicar pra pular
         control.player.list.AtaquesComEfeitos(true, (control.escolha.regiao + 1) * -1, 0, control.player, control.enemy);
 
         for (int i = 0; i < 6; i++)

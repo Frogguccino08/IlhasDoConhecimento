@@ -194,6 +194,8 @@ public class Controle : MonoBehaviour
 
         player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 4, player, enemy);
         player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 4, player, enemy);
+        if (enemy.pulouTurno == false)
+            enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 5, player, enemy);
 
         if (pulouTurno == false)
         {
@@ -318,6 +320,9 @@ public class Controle : MonoBehaviour
         enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 4, player, enemy);
         player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 5, player, enemy);
         enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 4, player, enemy);
+        if(player.pulouTurno == false)
+            player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 5, player, enemy);
+
         for (int i = 0; i < 6; i++)
         {
             if (enemy.isPassive[i])
