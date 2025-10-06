@@ -546,6 +546,11 @@ public class Controle : MonoBehaviour
             yield return null;
         }
 
+        if (escolha.unlockable != 0)
+        {
+            
+        }
+
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }

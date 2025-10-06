@@ -12,6 +12,8 @@ public class PersonagemSelecionado : MonoBehaviour
 
     public int maxRush;
     public int maxHistoria;
+
+    public int unlockable;
     
     public List<bool> unlock = new List<bool>();
     public bool modoHistoria = false;
