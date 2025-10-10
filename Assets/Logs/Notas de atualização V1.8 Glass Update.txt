@@ -8,6 +8,7 @@ Dando inicio no modo história (Ainda não disponível para jogar):
 - Escolher previamente os inimigos da região
 - Ganhar recompensa a cada inimigo
 - Diferença entre recorde de pontos do modo história e modo Rush adicionado.
+- Liberar novos personagens ao terminar o modo história.
 
 
 Dando inicio a tela do motor:
