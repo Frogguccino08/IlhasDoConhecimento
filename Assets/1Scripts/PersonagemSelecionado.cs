@@ -16,6 +16,8 @@ public class PersonagemSelecionado : MonoBehaviour
     public List<bool> unlock = new List<bool>();
     public bool modoHistoria = false;
 
+    public List<PCsSO> persos = new List<PCsSO>();
+
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()
     {

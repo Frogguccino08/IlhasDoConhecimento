@@ -12,6 +12,8 @@ public class PCsSO : ScriptableObject
     public Sprite imgCombate;
     public Sprite Cor;
 
+    public int unlockable;
+
 
     //Atributos para combate
     public float maxHealth;

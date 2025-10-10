@@ -9,4 +9,9 @@ public class TelaVitoria : MonoBehaviour
     {
         texto.text = "Você chegou ao final da história como " + PersonagemSelecionado.instance.perso.nome + ".";
     }
+
+    public void ColocarPerso()
+    {
+        texto.text = PersonagemSelecionado.instance.persos[PersonagemSelecionado.instance.perso.unlockable].nome;
+    }
 }

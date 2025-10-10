@@ -3476,6 +3476,13 @@ MonoBehaviour:
   maxHistoria: 0
   unlock: 010101010100
   modoHistoria: 0
+  persos:
+  - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
+  - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
+  - {fileID: 11400000, guid: 537008348a32b554aa1fdf193a33fd18, type: 2}
+  - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
+  - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
+  - {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
 --- !u!4 &1245900992
 Transform:
   m_ObjectHideFlags: 0

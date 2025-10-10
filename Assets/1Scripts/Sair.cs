@@ -37,4 +37,9 @@ public class Sair : MonoBehaviour
     {
         control.vitoriaOn = false;
     }
+
+    public void PersoSair()
+    {
+        control.TelaPersoOn = false;
+    }
 }

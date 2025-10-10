@@ -517,7 +517,30 @@ public class Enemy : MonoBehaviour
         if (control.inimigoAtual == 21 && escolha.modoHistoria == true)
         {
             control.vitoriaOn = true;
-            StartCoroutine(control.TelaVitoria());
+            control.TelaVitoria();
+
+            while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && control.vitoriaOn != false)
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(0.02f);
+
+            if (escolha.perso.unlockable != 0 && escolha.unlock[escolha.perso.unlockable] == false)
+            {
+                control.TelaPersoOn = true;
+                control.TelaPerso();
+
+                while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && control.TelaPersoOn != false)
+                {
+                    yield return null;
+                }
+                yield return new WaitForSeconds(0.02f);
+
+                escolha.unlock[escolha.perso.unlockable] = true;
+            }
+
+            control.VoltarMenu();
+
             yield break;
         }
 

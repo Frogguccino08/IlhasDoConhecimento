@@ -19,6 +19,8 @@ public class Controle : MonoBehaviour
     public GameObject CanvaVitoria;
     public TMP_Text textoComemorativo;
     public bool vitoriaOn = false;
+    public GameObject CanvaTelaPerso;
+    public bool TelaPersoOn = false;
 
     //Chamados de outros Objetos
     public Player player;
@@ -320,7 +322,7 @@ public class Controle : MonoBehaviour
         enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 4, player, enemy);
         player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 5, player, enemy);
         enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 4, player, enemy);
-        if(player.pulouTurno == false)
+        if (player.pulouTurno == false)
             player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 5, player, enemy);
 
         for (int i = 0; i < 6; i++)
@@ -527,9 +529,8 @@ public class Controle : MonoBehaviour
     }
 
     //Função para aparecer uma tela de vitória
-    public IEnumerator TelaVitoria()
+    public void TelaVitoria()
     {
-        yield return new WaitForSeconds(0.1f);
         escolha.pontos = pontosRodada;
         CanvaVitoria.SetActive(true);
 
@@ -541,16 +542,17 @@ public class Controle : MonoBehaviour
         oEnemy[1].SetActive(false);
 
         CanvaVitoria.GetComponent<TelaVitoria>().ColocarNome();
+    }
 
+    public void TelaPerso()
+    {
+        CanvaVitoria.SetActive(false);
+        CanvaTelaPerso.SetActive(true);
+        CanvaTelaPerso.GetComponent<TelaVitoria>().ColocarPerso();
+    }
 
-        while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && vitoriaOn != false)
-        {
-            yield return null;
-        }
-
-        Debug.Log("Chegou aqui");
-
-
+    public void VoltarMenu()
+    {
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
