@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perso: {fileID: 11400000, guid: 537008348a32b554aa1fdf193a33fd18, type: 2}
+  perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   regiao: 0
   pontos: 0
   material:
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   maxRush: 0
   maxHistoria: 0
   unlock: 010101010100
-  modoHistoria: 0
+  modoHistoria: 1
 --- !u!4 &176751412
 Transform:
   m_ObjectHideFlags: 0
@@ -2739,6 +2739,8 @@ MonoBehaviour:
   rAgora: 0
   telaUpgradeOn: 0
   butaoClicado: 0
+  bloqTurno: 0
+  pulouTurno: 0
   attackID: 000000000000000000000000000000000000000000000000
   nome:
   - 
@@ -3747,6 +3749,7 @@ MonoBehaviour:
   quantBlock: 0
   idAtaqueUsado: 0
   pulouTurno: 0
+  bloqTurno: 0
   forcaAtual: 0
   isBoss: 0
   inimigoEscolhido: {fileID: 0}

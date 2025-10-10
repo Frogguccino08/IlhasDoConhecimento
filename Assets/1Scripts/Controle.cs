@@ -529,6 +529,7 @@ public class Controle : MonoBehaviour
     //Função para aparecer uma tela de vitória
     public IEnumerator TelaVitoria()
     {
+        yield return new WaitForSeconds(0.1f);
         escolha.pontos = pontosRodada;
         CanvaVitoria.SetActive(true);
 
@@ -541,15 +542,14 @@ public class Controle : MonoBehaviour
 
         CanvaVitoria.GetComponent<TelaVitoria>().ColocarNome();
 
+
         while (!Input.GetKeyUp(KeyCode.Escape) && !Input.GetKeyUp(KeyCode.KeypadEnter) && vitoriaOn != false)
         {
             yield return null;
         }
 
-        if (escolha.unlockable != 0)
-        {
-            
-        }
+        Debug.Log("Chegou aqui");
+
 
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
