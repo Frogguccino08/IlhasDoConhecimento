@@ -19,6 +19,11 @@ MonoBehaviour:
   imgMenu: {fileID: -4688110017258223430, guid: 5727fdc4c0cc0de4eb4b3096c1e30aad, type: 3}
   imgCombate: {fileID: 4686307157147945793, guid: b792091c548122c40a75fb6cf7baa7e0, type: 3}
   Cor: {fileID: -4807892783205300527, guid: 4733907f5107e6c49a7daedc068b0dd1, type: 3}
+  lore: "Um trabalhador de laborat\xF3rio de uma \xE1rea de qu\xEDmica da concha,
+    a \xE1rea faz testes com animais e ele n\xE3o consegue fazer isso sem peso na
+    consci\xEAncia e por isso ele decide sair de l\xE1. Usando o conhecimento que
+    ele aprendeu criando qu\xEDmicos de plantas para ajudar os outros. Seus ataques
+    seriam focados em org\xE2nico e ele seria um suporte de cura."
   unlockable: 5
   maxHealth: 50
   maxCharge: 5

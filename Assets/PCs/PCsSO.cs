@@ -12,6 +12,12 @@ public class PCsSO : ScriptableObject
     public Sprite imgCombate;
     public Sprite Cor;
 
+
+    //Parte de lore
+    public string lore;
+
+
+    //Personagem para ser liberado
     public int unlockable;
 
 

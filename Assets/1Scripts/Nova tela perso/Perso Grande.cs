@@ -31,6 +31,14 @@ public class PersoGrande : MonoBehaviour
 
     public GameObject descri;
 
+    //Coisas para a Lore do personagem
+    public bool oJogo = true;
+    public GameObject jogar;
+    public GameObject lore;
+    public TMP_Text historia;
+    public TMP_Text textoBt;
+
+
 
     void Awake()
     {
@@ -162,6 +170,11 @@ public class PersoGrande : MonoBehaviour
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }
+
+        for (int o = 0; o < quads.Count; o++)
+        {
+            quads[o].transform.SetParent(jogar.transform);
+        }
     }
 
 
@@ -224,6 +237,32 @@ public class PersoGrande : MonoBehaviour
             {
                 corPersonagem.color = new Color32(90, 78, 53, 255);
             }
+        }
+    }
+
+    public void First()
+    {
+        jogar.SetActive(true);
+        lore.SetActive(false);
+        oJogo = true;
+        textoBt.text = "Lore";
+    }
+
+    public void BtLoreCombate()
+    {
+        if(oJogo)
+        {
+            jogar.SetActive(false);
+            lore.SetActive(true);
+            oJogo = false;
+            textoBt.text = "Combate";
+        }
+        else
+        {
+            jogar.SetActive(true);
+            lore.SetActive(false);
+            oJogo = true;
+            textoBt.text = "Lore";
         }
     }
 }

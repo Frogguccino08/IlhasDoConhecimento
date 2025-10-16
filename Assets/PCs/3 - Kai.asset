@@ -19,6 +19,11 @@ MonoBehaviour:
   imgMenu: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
   imgCombate: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
   Cor: {fileID: 0}
+  lore: "Um bartenders da area de recria\xE7\xE3o da empresa, os funcion\xE1rios
+    n\xE3o v\xE3o muito l\xE1 pois sempre est\xE3o trabalhando sem parar mas os poucos
+    que v\xE3o est\xE3o destru\xEDdos, cansados, sem motiva\xE7\xE3o e sem vida.
+    Ele cansou de ver as pessoas dessa forma e decide ir contra a concha."
+  unlockable: 0
   maxHealth: 50
   maxCharge: 5
   pDamage: 1

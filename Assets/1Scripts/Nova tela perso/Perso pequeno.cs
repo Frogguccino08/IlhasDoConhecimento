@@ -30,9 +30,20 @@ public class Persopequeno : MonoBehaviour
         perso.perso = pc;
         if (perso.unlock[perso.perso.id] == true)
         {
-        canva.SetActive(false);
-        descCompleta.SetActive(true);
-        descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
+            canva.SetActive(false);
+            descCompleta.SetActive(true);
+            descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
+            descCompleta.GetComponent<PersoGrande>().First();
+
+            if (pc.lore != "")
+            {
+                descCompleta.GetComponent<PersoGrande>().historia.text = pc.lore;
+            }
+            else
+            {
+                descCompleta.GetComponent<PersoGrande>().historia.text = "Personagem sem lore até o momento";
+            }
+            
         }
     }
 }

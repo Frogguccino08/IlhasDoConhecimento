@@ -19,6 +19,12 @@ MonoBehaviour:
   imgMenu: {fileID: -4685546300340680123, guid: 75a8f35131feaa148be3d699d377127d, type: 3}
   imgCombate: {fileID: -3901075043145232935, guid: 834414869d0c2fc4c92af6831c59a362, type: 3}
   Cor: {fileID: -950934680416320257, guid: d95b5f0072bc916418da386cb6ed8113, type: 3}
+  lore: "A filha de um trabalhador da concha, ela tem um talento para arte e n\xE3o
+    \xE9 muito boa em trabalhos pesados, que faz ela ser dispensada como in\xFAtil
+    para a Concha. Ela manteve seu trabalho como artista em dia mesmo a Concha dispensando
+    ela e como papel na ilha tem propriedades m\xE1gicas ela consegue usar deles
+    para lutar."
+  unlockable: 0
   maxHealth: 50
   maxCharge: 5
   pDamage: 2

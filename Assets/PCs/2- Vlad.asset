@@ -19,6 +19,12 @@ MonoBehaviour:
   imgMenu: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
   imgCombate: {fileID: 4846502171467417176, guid: 49a90657471613e4486f81513df8c0d9, type: 3}
   Cor: {fileID: -5570935581769922947, guid: a9087cd9189079848a723182b0ef4146, type: 3}
+  lore: "Um ca\xE7ador que usava com uma arma de canudo que ca\xE7ava apenas para
+    alimentar sua fam\xEDlia, quando os animais que ele ca\xE7ava come\xE7aram mais
+    e mais a serem maior parte lixo e a sua fam\xEDlia come\xE7ou a passar fome ele
+    decidiu invadir a concha para acabar o lixo que estava corrompendo as criaturas
+    locais."
+  unlockable: 0
   maxHealth: 50
   maxCharge: 5
   pDamage: 3
