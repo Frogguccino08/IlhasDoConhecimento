@@ -19,10 +19,18 @@ MonoBehaviour:
   imgMenu: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
   imgCombate: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
   Cor: {fileID: 0}
-  lore: "Um bartenders da area de recria\xE7\xE3o da empresa, os funcion\xE1rios
-    n\xE3o v\xE3o muito l\xE1 pois sempre est\xE3o trabalhando sem parar mas os poucos
-    que v\xE3o est\xE3o destru\xEDdos, cansados, sem motiva\xE7\xE3o e sem vida.
-    Ele cansou de ver as pessoas dessa forma e decide ir contra a concha."
+  isTrans: 1
+  pronome: Ele/Dele
+  idade: 27 anos
+  lore: "Um bartender vindo de fora da Ilha de Lixo ele nunca foi preso por um contrato
+    com a concha. Ele se esbaleceu em um bar na Comunidade Abandonada.\\n\\nEle sempre
+    trabalhou com coqueleteria entrando bebidas que deixassem o povo feliz e ele
+    adorava ver a anima\xE7\xE3o do povo do bar. Mas na Ilha era diferente, o lugar
+    era vazio, as poucas pessoas que apareciam eram desoladas e deprimidas pelo trabalho.\\n\\nSeu
+    dom\xEDnio do material de vidro fazia com que ele pudesse usar garrafas e copos
+    como arma e suas bebidas tivessem efeitos especiais, ent\xE3o quando a oportunidade
+    surgiu ele decidiu usar suas habilidades para espalhar a alegria pela Ilha se
+    juntando aos Garis."
   unlockable: 0
   maxHealth: 50
   maxCharge: 5

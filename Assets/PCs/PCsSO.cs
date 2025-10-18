@@ -14,6 +14,9 @@ public class PCsSO : ScriptableObject
 
 
     //Parte de lore
+    public bool isTrans;
+    public string pronome;
+    public string idade;
     public string lore;
 
 

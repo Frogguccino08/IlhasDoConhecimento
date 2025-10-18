@@ -35,6 +35,9 @@ public class PersoGrande : MonoBehaviour
     public bool oJogo = true;
     public GameObject jogar;
     public GameObject lore;
+    public GameObject transPin;
+    public TMP_Text pronome;
+    public TMP_Text idade;
     public TMP_Text historia;
     public TMP_Text textoBt;
 
@@ -256,6 +259,10 @@ public class PersoGrande : MonoBehaviour
             lore.SetActive(true);
             oJogo = false;
             textoBt.text = "Combate";
+
+            if (pc.perso.isTrans)
+                transPin.transform.rotation = Quaternion.identity;
+                transPin.transform.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(-45, 45)));
         }
         else
         {

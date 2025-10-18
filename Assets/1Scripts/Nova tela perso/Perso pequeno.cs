@@ -35,6 +35,33 @@ public class Persopequeno : MonoBehaviour
             descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
             descCompleta.GetComponent<PersoGrande>().First();
 
+            if (pc.isTrans)
+            {
+                descCompleta.GetComponent<PersoGrande>().transPin.SetActive(true);
+            }
+            else
+            {
+                descCompleta.GetComponent<PersoGrande>().transPin.SetActive(false);
+            }
+
+            if (pc.pronome != "")
+            {
+                descCompleta.GetComponent<PersoGrande>().pronome.text = pc.pronome;
+            }
+            else
+            {
+                descCompleta.GetComponent<PersoGrande>().pronome.text = "???";
+            }
+
+            if (pc.idade != "")
+            {
+                descCompleta.GetComponent<PersoGrande>().idade.text = pc.idade;
+            }
+            else
+            {
+                descCompleta.GetComponent<PersoGrande>().idade.text = "???";
+            }
+
             if (pc.lore != "")
             {
                 descCompleta.GetComponent<PersoGrande>().historia.text = pc.lore;
@@ -43,7 +70,6 @@ public class Persopequeno : MonoBehaviour
             {
                 descCompleta.GetComponent<PersoGrande>().historia.text = "Personagem sem lore até o momento";
             }
-            
         }
     }
 }

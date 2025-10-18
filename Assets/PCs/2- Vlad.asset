@@ -19,11 +19,20 @@ MonoBehaviour:
   imgMenu: {fileID: 563147176470426371, guid: 390f9f470bd3c6345b57405ce369f17c, type: 3}
   imgCombate: {fileID: 4846502171467417176, guid: 49a90657471613e4486f81513df8c0d9, type: 3}
   Cor: {fileID: -5570935581769922947, guid: a9087cd9189079848a723182b0ef4146, type: 3}
-  lore: "Um ca\xE7ador que usava com uma arma de canudo que ca\xE7ava apenas para
-    alimentar sua fam\xEDlia, quando os animais que ele ca\xE7ava come\xE7aram mais
-    e mais a serem maior parte lixo e a sua fam\xEDlia come\xE7ou a passar fome ele
-    decidiu invadir a concha para acabar o lixo que estava corrompendo as criaturas
-    locais."
+  isTrans: 0
+  pronome: Ele/Dele
+  idade: 57 anos
+  lore: "Nascido na Ilha de Lixo ele conseguiu escapar das condi\xE7\xF5es de trabalho
+    da ilha vivendo separado da sociedade. Ele ca\xE7ava para se alimentar, constru\xEDa
+    suas pr\xF3prias coisas e n\xE3o usava nada da Concha para evitar qualquer coisa
+    que poderia levar ele a Concha.\\n\\nPortando uma r\xE9plica da escopeta de Canudo,
+    uma arma para guardas da Concha, ele conseguia se proteger das criaturas corrompidas
+    por lixo e limpar o suficiente delas para se alimentar, iniciando at\xE9 uma
+    fam\xEDlia com outra pessoa que escapou da Concha, tendo dois filhos.\\n\\nCom
+    o passar dos anos as criaturas corrompidas ficavam mais e mais perigosas e com
+    menos e menos carne comest\xEDvel para alimentar sua fam\xEDlia, e eles come\xE7aram
+    a passar fome.\\n\\nQuando a oportunidade surgiu ele decidiu parar o descarte
+    de lixo da Concha para purificar os animais entrando para os Garis."
   unlockable: 0
   maxHealth: 50
   maxCharge: 5

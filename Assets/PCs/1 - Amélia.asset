@@ -19,11 +19,19 @@ MonoBehaviour:
   imgMenu: {fileID: -4685546300340680123, guid: 75a8f35131feaa148be3d699d377127d, type: 3}
   imgCombate: {fileID: -3901075043145232935, guid: 834414869d0c2fc4c92af6831c59a362, type: 3}
   Cor: {fileID: -950934680416320257, guid: d95b5f0072bc916418da386cb6ed8113, type: 3}
-  lore: "A filha de um trabalhador da concha, ela tem um talento para arte e n\xE3o
-    \xE9 muito boa em trabalhos pesados, que faz ela ser dispensada como in\xFAtil
-    para a Concha. Ela manteve seu trabalho como artista em dia mesmo a Concha dispensando
-    ela e como papel na ilha tem propriedades m\xE1gicas ela consegue usar deles
-    para lutar."
+  isTrans: 0
+  pronome: Ela/dela
+  idade: 21 anos
+  lore: "Nascida na Ilha de Lixo de dois trabalhadores da forja do Cora\xE7\xE3o
+    da Ilha, ela nasceu j\xE1 fraca, pouco nutrida pela falta de cuidado de sua m\xE3e
+    com a pr\xF3pria sa\xFAde sendo for\xE7ada a trabalhar pela Concha.\\n\\nEla
+    cresceu mantendo a fraqueza e quando chegou na idade de trabalho ela n\xE3o conseguia
+    acompanhar os trabalhadores, seu corpo n\xE3o aguentaria modifica\xE7\xF5es ent\xE3o
+    a Concha excluiu ela de qualquer fun\xE7\xE3o, e ela foi jogada a ilha sem mais
+    cuidados.\\n\\nEla se abrigou nos Arquivos e l\xE1 ela descobriu a magia, literalmente,
+    dos livros e dos origamis. Ela aprendeu a usar a magia para se proteger e quando
+    a oportunidade surgiu dela lutar para acabar com o trabalho for\xE7ado e destrui\xE7\xE3o
+    da ilha ela come\xE7ou a usar a magia para ajudar tamb\xE9m."
   unlockable: 0
   maxHealth: 50
   maxCharge: 5

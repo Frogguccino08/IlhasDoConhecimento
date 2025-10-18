@@ -1,5 +1,5 @@
 Funções Adicionadas:
-- Na tela de seleção de personagem agora pode ver a lore dos personagens.
+- Opção de ver história do personagem adicionado na seleção de personagem.
 
 
 Dando inicio no modo história (Ainda não disponível para jogar):
