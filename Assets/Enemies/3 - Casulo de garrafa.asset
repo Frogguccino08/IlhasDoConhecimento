@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 3 - Espelho Assombrado
+  m_Name: 3 - Casulo de garrafa
   m_EditorClassIdentifier: 
-  nome: Espelho assombrado
+  nome: Casulo de Garrafa
   material: 3
-  imgPadrao: {fileID: 6808927616057490208, guid: 3c3190115b82aef4fa06bdeb41f90f3e, type: 3}
-  cor: {fileID: 5012532140566459663, guid: a8bee576393e41541bcd584cc4ec2f51, type: 3}
+  imgPadrao: {fileID: 3064649214656833444, guid: a1a8c126fd5233742bdf3cb50d0b4627, type: 3}
+  cor: {fileID: 4538053924206921872, guid: cca6992f525387a468973215ecaa7019, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
-  pDefense: 3
-  sDamage: 3
+  pDefense: 2
+  sDamage: 2
   sDefense: 3
   mainStatus: 4
-  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 420000000d00000045000000000000000000000000000000
+  listaAtaquesNvl1: 100000001a00000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000

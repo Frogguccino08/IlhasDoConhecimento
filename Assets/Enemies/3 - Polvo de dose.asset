@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Polvo de Dose
   material: 3
-  imgPadrao: {fileID: -7386115494194349172, guid: f76b59f1076866e4c9bf40f6fe433890, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -4595097130407526890, guid: 00eff0e6276f5844b9028042a80500fe, type: 3}
+  cor: {fileID: -6628154270181622776, guid: 79c7b505fb7895c4fbcca45e38cfb959, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
@@ -23,6 +23,6 @@ MonoBehaviour:
   sDamage: 3
   sDefense: 2
   mainStatus: 3
-  listaAtaquesNvl1: 340000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 0d0000000e00000010000000000000000000000000000000
+  listaAtaquesNvl1: 340000002100000000000000000000000000000000000000
+  listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl3: 000000000000000000000000000000000000000000000000

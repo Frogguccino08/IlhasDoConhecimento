@@ -17,8 +17,8 @@ MonoBehaviour:
   nickName: Kai
   material: 3
   imgMenu: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
-  imgCombate: {fileID: -3364227662708693553, guid: c9890a85c36e1c94bad4767a55af71ed, type: 3}
-  Cor: {fileID: 0}
+  imgCombate: {fileID: -4444810096762276335, guid: f01083f04179fd4438816042f12f7d04, type: 3}
+  Cor: {fileID: -3031086440758004275, guid: 43ea561fcfee75a4084d3f41169e6b6b, type: 3}
   isTrans: 1
   pronome: Ele/Dele
   idade: 27 anos

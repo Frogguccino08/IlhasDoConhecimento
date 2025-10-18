@@ -18,6 +18,8 @@ Dando inicio a tela do motor:
 
 
 Visual:
+- Rework visual de inimigos: Polvo de dose(Completo), Espelho Assombrado, Kraken de garrafa.
+- Rework visual Kai adicionado.
 
 
 Efeitos especiais além de ataques:
@@ -28,6 +30,8 @@ Efeitos especiais além de ataques:
 
 Balanceamento:
 - Kai não pode mais aprender "atacar ponto fraco"
+- polvo de dose apenas parece no nível baixo agora
+- Polvo de dose, Espelho assombrado, Kraken de garrafa tiveram atributos e ataques mudados.
 
 
 Correção de erros:
@@ -46,3 +50,9 @@ Novos Ataques:
 
 
 Novos Inimigos:
+- Casulo de garrafa.
+- Ácaro em fibra de vidro.
+- Garçom espectral.
+- Bicho de mosaico.
+- Pássaro seringa.
+- Draco de cristais.

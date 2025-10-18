@@ -11766,12 +11766,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costaDeCacosNL1:
   - {fileID: 11400000, guid: 18df12335b0752d4db911e80f3cf40bf, type: 2}
+  - {fileID: 11400000, guid: 3a18897f1738a8145b00a7923c7f9c91, type: 2}
+  - {fileID: 11400000, guid: abbbb16ae745d3c458849112f50f2d29, type: 2}
   costaDeCacosNL2:
-  - {fileID: 11400000, guid: 18df12335b0752d4db911e80f3cf40bf, type: 2}
   - {fileID: 11400000, guid: 861b9bde21b03b044a9f196c98e7dda7, type: 2}
+  - {fileID: 11400000, guid: 9c0ddfa16f547544085593d1aee8f517, type: 2}
+  - {fileID: 11400000, guid: 3054ba796e1c91a4fb6eec4853edb3a5, type: 2}
   costaDeCacosNL3:
-  - {fileID: 11400000, guid: 861b9bde21b03b044a9f196c98e7dda7, type: 2}
   - {fileID: 11400000, guid: 52d2ce8132e97cf419cf8bf697da668f, type: 2}
+  - {fileID: 11400000, guid: bd83cf62eccc2914ba557fd43a748753, type: 2}
+  - {fileID: 11400000, guid: f242fdb396fc38347aef2a7629ecb151, type: 2}
   coracaoDaIlhaNL1:
   - {fileID: 11400000, guid: 4b49cf0b0aba3f746b415d6f80aee7c9, type: 2}
   - {fileID: 11400000, guid: ba45487c2ac5d0b43aee3ea33f1dd6fc, type: 2}
