@@ -52,7 +52,7 @@ Novos Ataques:
 Novos Inimigos:
 - Casulo de garrafa.
 - Ácaro em fibra de vidro.
-- Garçom espectral.
-- Bicho de mosaico.
+- Garçom de álcool.
+- Bispo de mosaico.
 - Pássaro seringa.
 - Draco de cristais.
