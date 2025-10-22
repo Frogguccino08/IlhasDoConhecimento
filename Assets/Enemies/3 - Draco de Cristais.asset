@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Draco de Cristais
   material: 3
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -5556438686253219826, guid: 91f0979b5b779224c8acf18af353306b, type: 3}
+  cor: {fileID: -1091007784267443943, guid: 7ce9b20aca1d2ed41a6cf6b5f7527661, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

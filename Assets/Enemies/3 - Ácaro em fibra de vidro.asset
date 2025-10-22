@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "\xC1caro em fibra de vidro"
   material: 3
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -1455001833650852181, guid: ac4cf00ef7d34de479ee41f62b0a9384, type: 3}
+  cor: {fileID: -6976538098190137305, guid: dfb8f846cd845a34fa4182100de50a99, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

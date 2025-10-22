@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: "3 - Gar\xE7om espectral"
+  m_Name: "3 - Gar\xE7om de \xE1lcool"
   m_EditorClassIdentifier: 
-  nome: "Gar\xE7om espectral"
+  nome: "Gar\xE7om de \xE1lcool"
   material: 3
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -8374833621562020446, guid: 245881c1d168f654c86d39e80408ffd5, type: 3}
+  cor: {fileID: -6036955236281940153, guid: 57c39c8b055399e49ae7af82197c01bb, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

@@ -62,7 +62,7 @@ public class Controle : MonoBehaviour
         textoRegiao.SetActive(true);
         telaCompleta.SetActive(false);
         oPlayer[0].SetActive(false);
-        oEnemy[0].SetActive(false);
+        oEnemy[0].GetComponent<SpriteRenderer>().enabled = false;
         oPlayer[1].SetActive(false);
         oEnemy[1].SetActive(false);
 
@@ -87,10 +87,12 @@ public class Controle : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
+        Debug.Log("Chegou aqui man");
+
         textoRegiao.SetActive(false);
         telaCompleta.SetActive(true);
         oPlayer[0].SetActive(true);
-        oEnemy[0].SetActive(true);
+        oEnemy[0].GetComponent<SpriteRenderer>().enabled = true;
         oPlayer[1].SetActive(true);
         oEnemy[1].SetActive(true);
 

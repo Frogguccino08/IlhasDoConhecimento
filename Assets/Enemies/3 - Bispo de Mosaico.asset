@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 3 - Bicho de Mosaico
+  m_Name: 3 - Bispo de Mosaico
   m_EditorClassIdentifier: 
-  nome: Bicho de Mosaico
+  nome: Bispo de Mosaico
   material: 3
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 3357396586804956517, guid: f05f94de5a3d9dd44858c0b7b028303a, type: 3}
+  cor: {fileID: 3662615602545976743, guid: dcffedd83f9b1c447b507a41879637ec, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
