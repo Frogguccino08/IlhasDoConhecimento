@@ -126,46 +126,64 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //Botão que escolhe quais ataques vão aparecer na parte de ataques
     public void FazerAtaques()
     {
-        do
-        {
-            idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
-        } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
-        Attacks ataqueA = lista.CriarAtaques(idAtaque, false);
-        Debug.Log(idAtaque);
-        Debug.Log(ataqueA);
+        Attacks ataqueA;
 
-        texto.text = ataqueA.nome;
+        if (player.teveReroll == false)
+        {
+            do
+            {
+                idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
+            } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5]);
+            ataqueA = lista.CriarAtaques(idAtaque, false);
+            Debug.Log(idAtaque);
+            Debug.Log(ataqueA);
+
+            texto.text = ataqueA.nome;
+        }
+        else
+        {
+            do
+            {
+                idAtaque = player.pc.listaAtaquesAprendiveis[UnityEngine.Random.Range(0, player.pc.listaAtaquesAprendiveis.Length)];
+            } while (osDois[0].idAtaque == idAtaque || osDois[1].idAtaque == idAtaque || idAtaque == player.attackID[0] || idAtaque == player.attackID[1] || idAtaque == player.attackID[2] || idAtaque == player.attackID[3] || idAtaque == player.attackID[4] || idAtaque == player.attackID[5] || idAtaque == player.rerolados[0] || idAtaque == player.rerolados[1] || idAtaque == player.rerolados[2]);
+            ataqueA = lista.CriarAtaques(idAtaque, false);
+            Debug.Log(idAtaque);
+            Debug.Log(ataqueA);
+
+            texto.text = ataqueA.nome;
+        }
+
 
         if (ataqueA.material == 0)
-            {
-                //Sem material
-                fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
-            }
-            else if (ataqueA.material == 1)
-            {
-                //Papel
-                fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
-            }
-            else if (ataqueA.material == 2)
-            {
-                //Plastico
-                fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
-            }
-            else if (ataqueA.material == 3)
-            {
-                //Vidro
-                fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
-            }
-            else if (ataqueA.material == 4)
-            {
-                //Metal
-                fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
-            }
-            else if (ataqueA.material == 5)
-            {
-                //Organico
-                fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
-            }
+        {
+            //Sem material
+            fundo.GetComponent<Image>().color = new Color32(147, 115, 80, 255);
+        }
+        else if (ataqueA.material == 1)
+        {
+            //Papel
+            fundo.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
+        }
+        else if (ataqueA.material == 2)
+        {
+            //Plastico
+            fundo.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
+        }
+        else if (ataqueA.material == 3)
+        {
+            //Vidro
+            fundo.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
+        }
+        else if (ataqueA.material == 4)
+        {
+            //Metal
+            fundo.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
+        }
+        else if (ataqueA.material == 5)
+        {
+            //Organico
+            fundo.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
+        }
 
         ataque = idAtaque;
     }

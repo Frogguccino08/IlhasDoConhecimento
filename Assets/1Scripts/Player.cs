@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public int maxCharge;
     public int currentCharge;
     public int currentR;
+    public int reroll;
+    public bool teveReroll;
+    public int[] rerolados = new int[3];
 
     //Texto de dano
     public GameObject danoTxt;
@@ -161,6 +164,7 @@ public class Player : MonoBehaviour
         materialPlayer = pc.material;
 
         maxCharge = pc.maxCharge;
+        reroll = 1;
 
         GetComponent<SpriteRenderer>().sprite = pc.imgCombate;
 

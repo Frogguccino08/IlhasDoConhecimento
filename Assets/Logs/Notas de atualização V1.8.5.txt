@@ -1,0 +1,27 @@
+Funções Adicionadas:
+Agora pode se re-rolar os ataques que podem ser ganhos na tela de upgrade, você inicia com uma rolagem e ganha mais uma para cada boss derrotado.
+
+
+Dando inicio no modo história (Ainda não disponível para jogar):
+
+
+Dando inicio a tela do motor:
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+
+
+Balanceamento:
+- Rei dos ratos, Produtor, Dragão fornalha, Bico serrilhado, Troll de sacola, Pelucia abandonada, Livro vivo, Artilharia de papel. Tiveram alguns ataques removidos.
+
+
+Correção de erros:
+
+
+Novos Ataques:
+
+
+Novos Inimigos:

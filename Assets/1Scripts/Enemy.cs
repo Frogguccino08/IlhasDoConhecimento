@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -551,6 +552,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            enemy.reroll += 1;
             enemy.currentHealth = enemy.maxHealth;
             enemy.healthbar.MudarBarra(enemy.currentHealth);
             enemy.text.text = enemy.nickName + " " + enemy.currentHealth + "/" + enemy.maxHealth;
@@ -566,7 +568,7 @@ public class Enemy : MonoBehaviour
             }
 
             control.texto.enabled = true;
-            control.texto.text = "Seu personagem descansou. Sua vida foi recuperada e efeitos zerados";
+            control.texto.text = "Seu personagem descansou recuperando vida mas não Conhecimento. Efeitos também foram zerados";
 
             while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
             {
@@ -579,6 +581,7 @@ public class Enemy : MonoBehaviour
             enemy.telaUpgradeOn = true;
             control.texto.enabled = false;
             upgrade.SetActive(true);
+            
             for (i = 0; i < 3; i++)
             {
                 novosAtaques[i].FazerAtaques();
