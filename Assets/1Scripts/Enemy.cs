@@ -916,26 +916,62 @@ public class Enemy : MonoBehaviour
         int maiorCura = 0;
         int maiorCuraTemporario = 4;
 
-        //Zerando tudo
-        for (i = 0; i < 7; i++)
-        {
-            chance[i] = 0;
-        }
+        bool podeUsar(int i) => attackID[i] != 0 && !isPassive[i] && currentCharge >= carga[i];
+        bool tipoAtaque(Attacks.Tipo tipo, int i) => tipo1[i] == tipo || tipo2[i] == tipo;
+
+        chance[6] = 0;
         maximo = 0;
 
-        //Colocando chance nos ataques e regras para mudar a chance
-        for (i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0)
+            chance[i] = 0;
+            if (!podeUsar(i)) continue;
+            chance[i] += 25;
+
+            //Regra 1: Ataques de cura caso abaixo de 25% vida mais chance
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth <= (maxHealth / 4))
             {
                 chance[i] += 25;
+                Debug.Log(nome[i] + " chance aumentada por ser uma cura abaixo de 25% de vida");
             }
+
+            //Regra 2: ataques com efeito tem mais chance de usar nos primeiros 2 turnos
+            if (control.turno < 5 && temEfeito[i])
+            {
+                chance[i] += 25;
+                Debug.Log(nome[i] + " Chance aumentada por ser um dos dois primeiros turnos e ser um ataque de status");
+            }
+
+            //Regra 3: Ataques de cura são evitados com bastante vida
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth >= (maxHealth / 4))
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
+            }
+
+            //Regra 4: Ataques de cura são evitados após 40 turnos
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && control.turno >= 40)
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
+            }
+
+            //regra 5: Evitar usar escudo quando já estiver com bastante
+            if(efeitosAtivos[1] >= 5 && tipoAtaque(Attacks.Tipo.bloqueio, i))
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " chance diminuida por ser um escudo já com bastante escudo");
+            }
+
+            //Regra Final 1: chance negativa vira zero
+            if (chance[i] < 0) chance[i] = 0;
+
         }
 
-        //regra 1: Ataque com maior dano mais chance
+        //regra Principal 1: Ataque com maior dano mais chance
         for (i = 0; i < 6; i++)
         {
-            if (currentCharge >= carga[i] && (tipo1[i] != Attacks.Tipo.passiva || tipo2[i] != Attacks.Tipo.passiva) && attackID[i] != 0 && alvo[i] == true && dano[i] > 0)
+            if (podeUsar(i) && alvo[i] == true && dano[i] > 0)
             {
                 if (dano[i] * quantidade[i] > maiorDano)
                 {
@@ -950,12 +986,12 @@ public class Enemy : MonoBehaviour
             Debug.Log(nome[maiorDanoTemporario] + " chance aumentada por ser o maior dano");
         }
 
-        //regra 2: Ataque com maior cura mais chance
+        //regra Principal 2: Ataque com maior cura mais chance
         for (i = 0; i < 6; i++)
         {
             int subida = 0;
 
-            if (currentCharge >= carga[i] && (tipo1[i] != Attacks.Tipo.passiva || tipo2[i] != Attacks.Tipo.passiva) &&attackID[i] != 0 && alvo[i] == false && dano[i] < 0)
+            if (podeUsar(i) && alvo[i] == false && dano[i] < 0)
             {
                 if (tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura)
                 {
@@ -974,90 +1010,21 @@ public class Enemy : MonoBehaviour
             Debug.Log(nome[maiorCuraTemporario] + " chance aumentada por ser a maior cura");
         }
 
-        //regra 3: Ataques de cura caso abaixo de 25% vida mais chance
+        //Regra Pular Turno 1: Caso tenha algum ataque com mais carga do que tem atualmente chance de pular turno
         for (i = 0; i < 6; i++)
         {
-            if (currentCharge >= carga[i] && isPassive[i] == false && attackID[i] != 0 && alvo[i] == false && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && currentHealth <= (maxHealth / 4))
+            if (attackID[i] != 0 && carga[i] > currentCharge && carga[i] <= maxCharge)
             {
-                chance[i] += 25;
-                Debug.Log(nome[i] + " Chance aumentada por estar abaixo de 25% de vida e ser uma cura");
-            }
-        }
-
-        //regra 4: ataques com efeito tem mais chance de usar nos primeiros 2 turnos
-        for (i = 0; i < 6; i++)
-        {
-            if (currentCharge >= carga[i] && isPassive[i] == false && attackID[i] != 0 && control.turno < 5 && temEfeito[i] == true)
-            {
-                chance[i] += 25;
-                Debug.Log(nome[i] + " Chance aumentada por ser um dos dois primeiros turnos e ser um ataque de status");
-            }
-        }
-
-        //regra 5: Ataques de cura são evitados com bastante vida
-        for (i = 0; i < 6; i++)
-        {
-            if (currentCharge >= carga[i] && isPassive[i] == false && attackID[i] != 0 && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && currentHealth >= (maxHealth / 4))
-            {
-                Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
-                chance[i] -= 25;
-            }
-        }
-
-        //regra 6: Ataques de cura são evitados após 40 turnos
-        for (i = 0; i < 6; i++)
-        {
-            if (currentCharge >= carga[i] && isPassive[i] == false && attackID[i] != 0 && (dano[i] < 0 || tipo1[i] == Attacks.Tipo.cura || tipo2[i] == Attacks.Tipo.cura) && control.turno >= 40)
-            {
-                Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
-                chance[i] -= 25;
-            }
-        }
-
-        //regra final 1: Se é passiva não tem como escolher
-        for (i = 0; i < 6; i++)
-        {
-            if (attackID[i] != 0 && isPassive[i] == true)
-            {
-                Debug.Log(nome[i] + " Chance eliminada por ser passiva");
-                chance[i] = 0;
-            }
-        }
-
-        //regra final 2: Se carga maior que currentcharge não tem como escolher
-        for (i = 0; i < 6; i++)
-        {
-            if (attackID[i] != 0 && currentCharge < carga[i])
-            {
-                Debug.Log(nome[i] + " Chance eliminada por não ter carga o suficiente");
-                chance[i] = 0;
-            }
-        }
-
-        //Regra final 3: Ataques com chance negativa viram zero
-        for (i = 0; i < 6; i++)
-        {
-            if (attackID[i] != 0 && chance[i] < 0)
-            {
-                Debug.Log(nome[i] + " Chance zerada por estar negativa");
-                chance[i] = 0;
-            }
-        }
-
-        //Regra final 4: Caso tenha algum ataque tenha mais carga do que tem atualmente chance de pular turno
-        for (i = 0; i < 6; i++)
-        {
-            if (attackID[i] != 0 && carga[i] > currentCharge)
-            {
-                Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
                 chance[6] += 50;
+                Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
                 break;
             }
         }
 
+        //Debug apenas
         for (i = 0; i < 6; i++)
         {
-            Debug.Log("Chance do ataque " + i + ": " + chance[i]);
+            Debug.Log("Chance do ataque " + nome[i] + ": " + chance[i]);
         }
         Debug.Log("Chance de pular: " + chance[6]);
 

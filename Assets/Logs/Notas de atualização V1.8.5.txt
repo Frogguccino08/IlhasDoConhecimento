@@ -2,12 +2,6 @@ Funções Adicionadas:
 Agora pode se re-rolar os ataques que podem ser ganhos na tela de upgrade, você inicia com uma rolagem e ganha mais uma para cada boss derrotado.
 
 
-Dando inicio no modo história (Ainda não disponível para jogar):
-
-
-Dando inicio a tela do motor:
-
-
 Visual:
 
 
@@ -22,6 +16,11 @@ Correção de erros:
 
 
 Novos Ataques:
+- "Avião de papel" Trocado para "Empurrar", efeitos continuam iguais.
 
 
 Novos Inimigos:
+
+
+Organização de código:
+- Escolha de ataque inimigo otimizada.
