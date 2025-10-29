@@ -159,7 +159,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Kai (Vidro)
+            //Kai (Vidro) //Vidro de Cal-Soda
             case -12:
                 if (quando == 0)
                 {
@@ -170,18 +170,26 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Vlad (Plástico)
+            //Vlad (Plástico) //Camuflagem de lixo
             case -11:
-                if (quando == 1)
+                if (quando == 0)
                 {
-                    Debug.Log("Vlad Passiva Ativada");
+                    if(player.using3R && player.dano[player.idAtaqueUsado] == 0 && player.temEfeito[player.idAtaqueUsado] == true && player.efeitosAtivos[1] < 15)
+                    {
+                        player.efeitosAtivos[1] += 1;
+                        StartCoroutine(AparecerPassiva(0, "Camuflagem de Lixo", "Ataque de efeito aumentou seu escudo em +1"));
+                    }
                 }
                 break;
-            //Amélia (Papel)
+            //Amélia (Papel) //Conhecimento Amplo
             case -10:
                 if (quando == 0)
                 {
-                    Debug.Log("Amélia Passiva Ativada");
+                    if(player.using3R && !player.temEfeito[player.idAtaqueUsado])
+                    {
+                        player.efeitosAtivos[2] += 3;
+                        StartCoroutine(AparecerPassiva(0, "Conhecimento Amplo", "Ganhou defesa a distância por usar um ataque sem efeito"));
+                    }
                 }
                 break;
 

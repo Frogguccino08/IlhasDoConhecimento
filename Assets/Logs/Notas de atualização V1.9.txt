@@ -1,0 +1,27 @@
+Funções Adicionadas:
+
+
+Modo História:
+
+
+Motor do Barco:
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+- Habilidade Vlad, Camuflagem de lixo, Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo.
+- Habilidade Amélia, Conhecimento amplo, Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância
+
+
+Balanceamento:
+
+
+Correção de erros:
+
+
+Novos Ataques:
+
+
+Novos Inimigos:

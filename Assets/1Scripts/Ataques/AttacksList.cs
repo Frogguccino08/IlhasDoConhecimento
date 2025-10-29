@@ -88,15 +88,13 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(72, "Ponta infectada", "Ao usar ataques físicos tem uma chance pequena de diminuir algum atributo", Attacks.Tipo.negativo, Attacks.Tipo.passiva, 3, 0, true, true, 0, 0, true, true));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
-        //Vidro de Cal-Soda (Ao usar o 3R com um ataque de dano a distância causa 1 caco no alvo)
-        listaHabilidades.Add(new Attacks(0, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(1, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(1, "Camuflagem de lixo", "Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
 
-    //Piso Afiado (Chance pequena de aplicar cacos/receber dano de cacos no final do turno caso não seja de vidro)
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(1, "Calor de derreter", "Personagens não metal perder defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(2, "Comunidade Abandonada", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
