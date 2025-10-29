@@ -1,26 +1,11 @@
 Funções Adicionadas:
-Agora pode se re-rolar os ataques que podem ser ganhos na tela de upgrade, você inicia com uma rolagem e ganha mais uma para cada boss derrotado.
-
-
-Visual:
-
-
-Efeitos especiais além de ataques:
-
+- Agora pode se re-rolar os ataques que podem ser ganhos na tela de upgrade, você inicia com uma rolagem e ganha mais uma para cada boss derrotado.
 
 Balanceamento:
 - Rei dos ratos, Produtor, Dragão fornalha, Bico serrilhado, Troll de sacola, Pelucia abandonada, Livro vivo, Artilharia de papel. Tiveram alguns ataques removidos.
 
-
-Correção de erros:
-
-
 Novos Ataques:
 - "Avião de papel" Trocado para "Empurrar", efeitos continuam iguais.
-
-
-Novos Inimigos:
-
 
 Organização de código:
 - Escolha de ataque inimigo otimizada.
