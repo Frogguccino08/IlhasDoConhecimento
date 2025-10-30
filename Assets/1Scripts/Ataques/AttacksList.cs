@@ -86,6 +86,11 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(70, "Ataques frágeis", "Ataques a distância causam -1 de dano mas todos tem chance de causar cacos", Attacks.Tipo.negativo, Attacks.Tipo.passiva, 3, 0, false, false, 0, 0, true, true));
         listaAtaques.Add(new Attacks(71, "Espeto Perfurante", "Ataque físico que faz o alvo ficar exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 3, 1, true, true, 4, 4, true, false));
         listaAtaques.Add(new Attacks(72, "Ponta infectada", "Ao usar ataques físicos tem uma chance pequena de diminuir algum atributo", Attacks.Tipo.negativo, Attacks.Tipo.passiva, 3, 0, true, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(73, "Bater", "Golpe fraco de Plástico sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 2, 1, true, true, 1, 0, false, false));
+        listaAtaques.Add(new Attacks(74, "Mistura de Materiais", "Ataque médio que causa mais dano em alvos de Plástico", Attacks.Tipo.golpe, Attacks.Tipo.zero, 2, 3, true, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(75, "Apagar conteúdo", "Ataque médio que causa mais dano em alvos de Papel", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 3, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(76, "Gole de conhecimento", "Zera a quantidade de conhecimento do alvo, mantendo apenas o ganho inicial do turno", Attacks.Tipo.negativo, Attacks.Tipo.zero, 1, 0, false, true, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(77, "Avião de papel", "Ataque fraco que pórem ignora escudos", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 2, false, true, 1, 3, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
@@ -98,7 +103,7 @@ public class AttacksList : MonoBehaviour
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(1, "Calor de derreter", "Personagens não metal perder defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(2, "Comunidade Abandonada", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
-        listaRegiao.Add(new Attacks(3, "Os Arquivos", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(3, "Área de desinformação", "Personagens não papel ficam com -1 de conhecimento máximo", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(4, "Nutrientes do chão", "Chance de aumentar ou diminuir conhecimento, Orgânicos só são afetados pelo aumento", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
     }
 

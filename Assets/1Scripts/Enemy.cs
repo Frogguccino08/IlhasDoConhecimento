@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public int maxCharge;
+    public int ModCharge;
+    public bool emModPapel = false;
     public int currentCharge;
 
 
@@ -444,6 +446,14 @@ public class Enemy : MonoBehaviour
         //Efeitos iniciais número 9
         list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, enemy, this);
         list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, enemy, this);
+        if(escolha.regiao != 3)
+        {
+            enemy.ModCharge = 0;
+            enemy.emModPapel = false;
+            ModCharge = 0;
+            emModPapel = false;
+            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
+        }
 
         for (i = 0; i < 6; i++)
         {
@@ -547,8 +557,8 @@ public class Enemy : MonoBehaviour
 
         if (control.inimigoAtual != (forcaAtual * 5) + 1)
         {
-            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
-            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge, enemy.currentCharge);
+            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
+            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
         }
         else
         {
@@ -788,7 +798,7 @@ public class Enemy : MonoBehaviour
                         attackDamage = 1;
                     }
 
-                    if (enemy.efeitosAtivos[1] > 0)
+                    if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
                     {
                         bloqTurno = true;
                         EfeitoCausado(0, attackDamage, dano[id]);
@@ -1013,7 +1023,7 @@ public class Enemy : MonoBehaviour
         //Regra Pular Turno 1: Caso tenha algum ataque com mais carga do que tem atualmente chance de pular turno
         for (i = 0; i < 6; i++)
         {
-            if (attackID[i] != 0 && carga[i] > currentCharge && carga[i] <= maxCharge)
+            if (attackID[i] != 0 && carga[i] > currentCharge && carga[i] <= (maxCharge + ModCharge))
             {
                 chance[6] += 50;
                 Debug.Log("Tem chance de pular por ter ataque que custa mais carga do que tem");
@@ -1206,7 +1216,7 @@ public class Enemy : MonoBehaviour
 
         obj = Instantiate(danoTxt, transform.position, Quaternion.identity);
         obj.GetComponent<DanoTxt>().dano = danoAqui;
-        if (efeitosAtivos[1] > 0)
+        if (efeitosAtivos[1] > 0 && enemy.ataqueUsado != 77)
         {
             danoAqui = 0;
             obj.GetComponent<DanoTxt>().dano = danoAqui;

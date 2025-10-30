@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public int materialPlayer;  //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
-    public int maxCharge;
+    public int maxCharge = 0;
+    public bool emModPapel = false;
+    public int ModCharge;
     public int currentCharge;
     public int currentR;
     public int reroll;
@@ -199,7 +201,7 @@ public class Player : MonoBehaviour
         }
 
         AtaquesSelecionados();
-        controlConheci.SpawnConhecimento(maxCharge, currentCharge);
+        controlConheci.SpawnConhecimento(maxCharge + ModCharge, currentCharge);
 
         if (efeitosAtivos[7] > 0)
         {
@@ -320,7 +322,7 @@ public class Player : MonoBehaviour
         if (segundo3R == false)
         {
             currentCharge -= carga[id];
-            controlConheci.SpawnConhecimento(maxCharge, currentCharge);
+            controlConheci.SpawnConhecimento(maxCharge + ModCharge, currentCharge);
         }
 
         float attackDamage = 0;
@@ -479,7 +481,7 @@ public class Player : MonoBehaviour
                         attackDamage = 1;
                     }
 
-                    if (enemy.efeitosAtivos[1] > 0)
+                    if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
                     {
                         bloqTurno = true;
                         EfeitoCausado(0, attackDamage, dano[id]);
@@ -708,7 +710,7 @@ public class Player : MonoBehaviour
 
         obj = Instantiate(danoTxt, transform.position, Quaternion.identity);
         obj.GetComponent<DanoTxt>().dano = danoAqui;
-        if (efeitosAtivos[1] > 0)
+        if (efeitosAtivos[1] > 0 && enemy.ataqueUsado != 77)
         {
             danoAqui = 0;
             obj.GetComponent<DanoTxt>().dano = danoAqui;

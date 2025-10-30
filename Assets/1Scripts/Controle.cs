@@ -271,7 +271,7 @@ public class Controle : MonoBehaviour
         // Turno do inimigo
         if (turno != 2 && turno != 1)
         {
-            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge);
+            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
 
             if (enemy.efeitosAtivos[6] > 0)
             {
@@ -398,6 +398,13 @@ public class Controle : MonoBehaviour
         AtivarBotao();
 
         player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, player, enemy);
+        if(escolha.regiao != 3)
+        {
+            player.ModCharge = 0;
+            player.emModPapel = false;
+            enemy.ModCharge = 0;
+            enemy.emModPapel = false;
+        }
         player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 9, player, enemy);
 
         for (int i = 0; i < 6; i++)
@@ -414,7 +421,7 @@ public class Controle : MonoBehaviour
 
         enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 10, player, enemy);
 
-        player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge);
+        player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge + player.ModCharge);
         if (player.efeitosAtivos[6] > 0)
         {
             player.currentCharge += 1;
@@ -426,7 +433,7 @@ public class Controle : MonoBehaviour
             player.efeitosAtivos[12] -= 1;
         }
 
-        conhecimento.SpawnConhecimento(player.maxCharge, player.currentCharge);
+        conhecimento.SpawnConhecimento(player.maxCharge + player.ModCharge, player.currentCharge);
 
         AtualizarEstadoBotoes();
     }

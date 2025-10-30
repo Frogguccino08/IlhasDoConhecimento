@@ -194,7 +194,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
 
 
-            //Floresta Orgânica
+            //Floresta Orgânica //Nutrientes do chão
             case -5:
                 if (quando == 9)
                 {
@@ -228,17 +228,40 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Os Arquivos
+            //Os Arquivos //Área de desinformação
             case -4:
-                if (quando == 7)
+                if (quando == 9)
                 {
                     if (quem == true)
                     {
-                        Debug.Log("Os arquivos player");
-                    }
-                    else
-                    {
-                        Debug.Log("Os arquivos Inimigo");
+                        if((player.materialPlayer != 1 && !player.emModPapel) || (enemy.materialInimigo != 1 && !enemy.emModPapel)) StartCoroutine(AparecerPassiva(2, "Área de desinformação", "Conhecimento máximo de personagens não Plástico foi diminuído"));
+
+
+                        //Player
+                        if (player.materialPlayer != 1 && !player.emModPapel)
+                        {
+                            player.ModCharge = -1;
+                            player.emModPapel = true;
+                            player.controlConheci.SpawnConhecimento(player.maxCharge + player.ModCharge, player.currentCharge);
+                        }
+                        else if (player.materialPlayer == 1)
+                        {
+                            player.ModCharge = 0;
+                            player.emModPapel = false;
+                        }
+
+                        //Inimigo
+                        if (enemy.materialInimigo != 1 && !enemy.emModPapel)
+                        {
+                            enemy.ModCharge = -1;
+                            enemy.emModPapel = true;
+                        }
+                        else if (enemy.materialInimigo == 1)
+                        {
+                            enemy.ModCharge = 0;
+                            enemy.emModPapel = false;
+                        }
+                        
                     }
                 }
                 break;
@@ -256,7 +279,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Coração da Ilha
+            //Coração da Ilha //Calor de derreter
             case -2:
                 if (quando == 9)
                 {
@@ -280,7 +303,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            //Costa de cacos
+            //Costa de cacos //Piso afiado
             case -1:
                 if (quando == 9)
                 {
@@ -1789,6 +1812,107 @@ public class AttacksEfeitos : MonoBehaviour
                                         break;
                                 }
                             }
+                        }
+                    }
+                }
+                break;
+            case 74: //Mistura de materiais
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 2)
+                        {
+                            player.modPhiDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 2)
+                        {
+                            enemy.modPhiDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                }
+                break;
+            case 75: //Apagar conteúdo
+                if (quando == 7)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.materialInimigo == 1)
+                        {
+                            player.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                    else
+                    {
+                        if (player.materialPlayer == 1)
+                        {
+                            enemy.modSpeDamage += 1;
+                            control.efeitoAtq = "Ataque teve o dano aumentado";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "Ataque teve o dano normal";
+                        }
+                    }
+                }
+                break;
+            case 76: //Gole de conhecimento
+                if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        enemy.currentCharge = 0;
+                        control.efeitoAtq = enemy.nomeinimigo + " Teve o conhecimento absorvido";
+                    }
+                    else
+                    {
+                        player.currentCharge = 0;
+                        player.controlConheci.SpawnConhecimento(player.maxCharge + player.ModCharge, player.currentCharge);
+                        control.efeitoAtq = player.nickName + " Teve o conhecimento absorvido";
+                    }
+                }
+                break;
+            case 77: //Avião de papel
+            if (quando == 0)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.efeitosAtivos[1] > 0)
+                        {
+                            control.efeitoAtq = player.nickName + " Ignorou o escudo do alvo";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "O ataque não teve nenhum efeito adicional";
+                        }
+                    }
+                    else
+                    {
+                        if(player.efeitosAtivos[1] > 0)
+                        {
+                            control.efeitoAtq = enemy.nomeinimigo + " Ignorou o seu escudo";
+                        }
+                        else
+                        {
+                            control.efeitoAtq = "O ataque não teve nenhum efeito adicional";
                         }
                     }
                 }

@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
-  regiao: 0
+  regiao: 2
   pontos: 0
   material:
   - 0
@@ -2254,7 +2254,7 @@ MonoBehaviour:
   maxRush: 0
   maxHistoria: 0
   unlock: 010101010100
-  modoHistoria: 1
+  modoHistoria: 0
   persos:
   - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
   - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
@@ -2712,6 +2712,8 @@ MonoBehaviour:
   currentHealth: 0
   materialPlayer: 0
   maxCharge: 0
+  emModPapel: 0
+  ModCharge: 0
   currentCharge: 0
   currentR: 0
   reroll: 0
@@ -3720,6 +3722,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   maxCharge: 0
+  ModCharge: 0
+  emModPapel: 0
   currentCharge: 0
   materialInimigo: 0
   telaRecompensa: {fileID: 1800203451}

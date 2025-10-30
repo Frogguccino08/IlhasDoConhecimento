@@ -12,7 +12,8 @@ Visual:
 
 Efeitos especiais além de ataques:
 - Habilidade Vlad, Camuflagem de lixo, Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo.
-- Habilidade Amélia, Conhecimento amplo, Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância
+- Habilidade Amélia, Conhecimento amplo, Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância.
+- Efeito Os arquivos, Área de desinformação, Personagens não Papel ficam com -1 de conhecimento máximo.
 
 
 Balanceamento:
@@ -22,6 +23,11 @@ Correção de erros:
 
 
 Novos Ataques:
+- Bater, Plástico, 1x1 físico, sem carga, Sem efeitos adicionais.
+- Mistura de materiais, Plástico, 1x3 físico, 3 carga, Causa mais dano em alvos de plástico.
+- Apagar conteúdo, Papel, 1x3 a distância, 3 carga, Causa mais dano em alvos de papel.
+- Gole de conhecimento, Papel, sem dano, 3 carga, Deixa o alvo com 0 de conhecimento fazendo ele ficar apenas com o de inicio de turno.
+- Avião de Papel, Papel, 1x2 a distância, 3 carga, Ignora o escudo do alvo caso ele tenha.
 
 
 Novos Inimigos:
