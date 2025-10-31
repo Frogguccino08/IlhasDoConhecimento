@@ -46,6 +46,8 @@ public class Controle : MonoBehaviour
     public GameObject[] oPlayer = new GameObject[2];
     public GameObject[] oEnemy = new GameObject[2];
 
+    public bool escreverEfeito = false;
+
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
@@ -187,7 +189,7 @@ public class Controle : MonoBehaviour
         }
 
         //Escrever o efeito na tela
-        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false)
+        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false && escreverEfeito)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
@@ -312,7 +314,7 @@ public class Controle : MonoBehaviour
         yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
-        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false)
+        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false && escreverEfeito)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();

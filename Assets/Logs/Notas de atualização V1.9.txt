@@ -1,6 +1,9 @@
 Funções Adicionadas:
 
 
+Organização de código:
+- Textos de efeitos de ataques agora só aparecem caso o ataque tenha efeito e o efeito funcione. sem mais "Esse ataque deu dano normal" ou "O ataque não teve efeito"
+
 Modo História:
 
 

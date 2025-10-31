@@ -305,6 +305,8 @@ public class Player : MonoBehaviour
     public IEnumerator UsarAtaque(int id)
     {
         pulouTurno = false;
+
+        if (temEfeito[id]) control.escreverEfeito = false;
         
         int materialSemNome;
         if (material[id] == 0)
