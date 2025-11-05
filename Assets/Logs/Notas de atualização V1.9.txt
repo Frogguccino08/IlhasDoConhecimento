@@ -1,4 +1,5 @@
 Funções Adicionadas:
+(Fazendo agora) Possibilidade de errar o ataque
 
 
 Organização de código:
