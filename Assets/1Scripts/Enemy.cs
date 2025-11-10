@@ -65,6 +65,8 @@ public class Enemy : MonoBehaviour
     public bool pulouTurno = true;
     public bool bloqTurno = false;
 
+    public bool errouAtq = false;
+
     int cont;
     public int forcaAtual = 0;
     public bool isBoss = false;
@@ -680,218 +682,26 @@ public class Enemy : MonoBehaviour
         {
             quantBlock = efeitosAtivos[1];
         }
-
-        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
-
-        list.AtaquesComEfeitos(false, attackID[id], 0, enemy, this);
-        for (i = 0; i < 6; i++)
+        if (!errouAtq)
         {
-            if (isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-            }
-        }
+            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
 
-        list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-        for (i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-            }
-        }
-
-        if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
-        {
-            int num = efeitosAtivos[1] - quantBlock;
-            efeitosAtivos[1] = quantBlock;
-
-            for (int i = 0; i < num; i++)
-            {
-                if (efeitosAtivos[7] > 0)
-                {
-                    efeitosAtivos[7] -= 1;
-                }
-                else
-                {
-                    efeitosAtivos[1] += 1;
-                }
-            }
-        }
-
-
-        Debug.Log("Ataque usado: " + nome[id]);
-
-        //Caso cause dano
-        for (int quant = 0; quant < quantidade[id]; quant++)
-        {
-            //Efeito número 7 e 8 do player
-            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 7, enemy, this);
-            list.AtaquesComEfeitos(false, attackID[id], 7, enemy, this);
-
+            list.AtaquesComEfeitos(false, attackID[id], 0, enemy, this);
             for (i = 0; i < 6; i++)
             {
                 if (isPassive[i] == true)
                 {
-                    list.AtaquesComEfeitos(false, attackID[i], 7, enemy, this);
+                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
                 }
             }
 
-            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 8, enemy, this);
+            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
 
             for (i = 0; i < 6; i++)
             {
                 if (enemy.isPassive[i] == true)
                 {
-                    list.AtaquesComEfeitos(true, enemy.attackID[i], 8, enemy, this);
-                }
-            }
-
-            //Modificadores facilitados
-            float danoAtual = 0;
-            float defesaAtual = 0;
-
-            if (dano[id] != 0)
-            {
-                if (phispe[id] == true)
-                {
-                    danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
-                    if (alvo[id] == true)
-                        defesaAtual = enemy.modPhiDamage + enemy.phiDefense;
-                    else
-                        defesaAtual = modPhiDamage + phiDefense;
-                }
-                else
-                {
-                    danoAtual = Mathf.Round(speDamage * (modSpeDamage + Mathf.Abs(dano[id])));
-                    if (alvo[id] == true)
-                        defesaAtual = enemy.modSpeDamage + enemy.speDefense;
-                    else
-                        defesaAtual = modSpeDamage + speDefense;
-                }
-
-                if (material[id] == materialInimigo)
-                {
-                    danoAtual += 1;
-                }
-
-                if (material[id] == enemy.materialPlayer || (material[id] == 0 && materialInimigo == enemy.materialPlayer))
-                {
-                    danoAtual -= 1;
-                }
-
-                if (dano[id] < 0)
-                {
-                    danoAtual *= -1;
-                    defesaAtual = 0;
-                }
-            }
-
-            if (alvo[id] == true)
-            {
-                bloqTurno = false;
-                
-                if (dano[id] != 0)
-                {
-                    attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
-
-                    if (attackDamage <= 0 && dano[id] > 0)
-                    {
-                        attackDamage = 1;
-                    }
-
-                    if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
-                    {
-                        bloqTurno = true;
-                        EfeitoCausado(0, attackDamage, dano[id]);
-                        if (enemy.materialPlayer == 2 && (material[idAtaqueUsado] == 3 || (material[idAtaqueUsado] == 0 && materialInimigo == 3)))
-                        {
-                            attackDamage = Mathf.Round(attackDamage / 4);
-                            enemy.CausarDano(attackDamage);
-                            Debug.Log("Ataque não foi bloqueado completamente");
-                        }
-                        else
-                        {
-                            attackDamage = 0;
-                            Debug.Log("Ataque bloqueado");
-                        }
-                        enemy.efeitosAtivos[1] -= 1;
-                    }
-                    else
-                    {
-                        Debug.Log("Dano causado ou curado: " + attackDamage);
-                        enemy.CausarDano(attackDamage);
-                    }
-
-                    yield return StartCoroutine(enemy.CorDano(id, attackDamage));
-
-                    if (enemy.currentHealth <= 0)
-                    {
-                        enemy.cor.enabled = false;
-                        enemy.GetComponent<SpriteRenderer>().enabled = false;
-                        textoAtaque.text = nomeinimigo + " usou: " + nome[id];
-                        StartCoroutine(control.Turno(false));
-                        yield break;
-                    }
-
-                }
-                else
-                {
-                    Debug.Log("Esse ataque não causa dano");
-                }
-            }
-            else if (alvo[id] == false)
-            {
-                if (dano[id] != 0)
-                {
-                    attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
-
-                    if (attackDamage <= 0 && dano[id] > 0)
-                    {
-                        attackDamage = 1;
-                    }
-
-                    yield return StartCoroutine(CorDanoSelf(id, attackDamage));
-
-                    Debug.Log("Dano causado ou curado: " + attackDamage);
-                    CausarDano(attackDamage);
-                }
-                else
-                {
-                    Debug.Log("Esse ataque não causa dano");
-                }
-            }
-
-            danoPublic = attackDamage;
-
-
-            if (efeitosAtivos[7] > 0)
-            {
-                quantBlock = efeitosAtivos[1];
-            }
-
-            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 2, enemy, this);
-
-            if (temEfeito[id] == true)
-            {
-                list.AtaquesComEfeitos(false, attackID[id], 2, enemy, this);
-            }
-            for (i = 0; i < 6; i++)
-            {
-                if (isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(false, attackID[i], 2, enemy, this);
-                }
-            }
-
-
-            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 3, enemy, this);
-            for (i = 0; i < 6; i++)
-            {
-                if (enemy.isPassive[i] == true)
-                {
-                    enemy.list.AtaquesComEfeitos(true, enemy.attackID[i], 3, enemy, this);
+                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
                 }
             }
 
@@ -912,11 +722,212 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
+
+
+            Debug.Log("Ataque usado: " + nome[id]);
+
+            //Caso cause dano
+            for (int quant = 0; quant < quantidade[id]; quant++)
+            {
+                //Efeito número 7 e 8 do player
+                list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 7, enemy, this);
+                list.AtaquesComEfeitos(false, attackID[id], 7, enemy, this);
+
+                for (i = 0; i < 6; i++)
+                {
+                    if (isPassive[i] == true)
+                    {
+                        list.AtaquesComEfeitos(false, attackID[i], 7, enemy, this);
+                    }
+                }
+
+                list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 8, enemy, this);
+
+                for (i = 0; i < 6; i++)
+                {
+                    if (enemy.isPassive[i] == true)
+                    {
+                        list.AtaquesComEfeitos(true, enemy.attackID[i], 8, enemy, this);
+                    }
+                }
+
+                //Modificadores facilitados
+                float danoAtual = 0;
+                float defesaAtual = 0;
+
+                if (dano[id] != 0)
+                {
+                    if (phispe[id] == true)
+                    {
+                        danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
+                        if (alvo[id] == true)
+                            defesaAtual = enemy.modPhiDamage + enemy.phiDefense;
+                        else
+                            defesaAtual = modPhiDamage + phiDefense;
+                    }
+                    else
+                    {
+                        danoAtual = Mathf.Round(speDamage * (modSpeDamage + Mathf.Abs(dano[id])));
+                        if (alvo[id] == true)
+                            defesaAtual = enemy.modSpeDamage + enemy.speDefense;
+                        else
+                            defesaAtual = modSpeDamage + speDefense;
+                    }
+
+                    if (material[id] == materialInimigo)
+                    {
+                        danoAtual += 1;
+                    }
+
+                    if (material[id] == enemy.materialPlayer || (material[id] == 0 && materialInimigo == enemy.materialPlayer))
+                    {
+                        danoAtual -= 1;
+                    }
+
+                    if (dano[id] < 0)
+                    {
+                        danoAtual *= -1;
+                        defesaAtual = 0;
+                    }
+                }
+
+                if (alvo[id] == true)
+                {
+                    bloqTurno = false;
+
+                    if (dano[id] != 0)
+                    {
+                        attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
+
+                        if (attackDamage <= 0 && dano[id] > 0)
+                        {
+                            attackDamage = 1;
+                        }
+
+                        if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
+                        {
+                            bloqTurno = true;
+                            EfeitoCausado(0, attackDamage, dano[id]);
+                            if (enemy.materialPlayer == 2 && (material[idAtaqueUsado] == 3 || (material[idAtaqueUsado] == 0 && materialInimigo == 3)))
+                            {
+                                attackDamage = Mathf.Round(attackDamage / 4);
+                                enemy.CausarDano(attackDamage);
+                                Debug.Log("Ataque não foi bloqueado completamente");
+                            }
+                            else
+                            {
+                                attackDamage = 0;
+                                Debug.Log("Ataque bloqueado");
+                            }
+                            enemy.efeitosAtivos[1] -= 1;
+                        }
+                        else
+                        {
+                            Debug.Log("Dano causado ou curado: " + attackDamage);
+                            enemy.CausarDano(attackDamage);
+                        }
+
+                        yield return StartCoroutine(enemy.CorDano(id, attackDamage));
+
+                        if (enemy.currentHealth <= 0)
+                        {
+                            enemy.cor.enabled = false;
+                            enemy.GetComponent<SpriteRenderer>().enabled = false;
+                            textoAtaque.text = nomeinimigo + " usou: " + nome[id];
+                            StartCoroutine(control.Turno(false));
+                            yield break;
+                        }
+
+                    }
+                    else
+                    {
+                        Debug.Log("Esse ataque não causa dano");
+                    }
+                }
+                else if (alvo[id] == false)
+                {
+                    if (dano[id] != 0)
+                    {
+                        attackDamage = Mathf.Round(danoAtual * UnityEngine.Random.Range(0.8f, 1.2f)) - defesaAtual;
+
+                        if (attackDamage <= 0 && dano[id] > 0)
+                        {
+                            attackDamage = 1;
+                        }
+
+                        yield return StartCoroutine(CorDanoSelf(id, attackDamage));
+
+                        Debug.Log("Dano causado ou curado: " + attackDamage);
+                        CausarDano(attackDamage);
+                    }
+                    else
+                    {
+                        Debug.Log("Esse ataque não causa dano");
+                    }
+                }
+
+                danoPublic = attackDamage;
+
+
+                if (efeitosAtivos[7] > 0)
+                {
+                    quantBlock = efeitosAtivos[1];
+                }
+
+                list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 2, enemy, this);
+
+                if (temEfeito[id] == true)
+                {
+                    list.AtaquesComEfeitos(false, attackID[id], 2, enemy, this);
+                }
+                for (i = 0; i < 6; i++)
+                {
+                    if (isPassive[i] == true)
+                    {
+                        list.AtaquesComEfeitos(false, attackID[i], 2, enemy, this);
+                    }
+                }
+
+
+                list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 3, enemy, this);
+                for (i = 0; i < 6; i++)
+                {
+                    if (enemy.isPassive[i] == true)
+                    {
+                        enemy.list.AtaquesComEfeitos(true, enemy.attackID[i], 3, enemy, this);
+                    }
+                }
+
+                if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
+                {
+                    int num = efeitosAtivos[1] - quantBlock;
+                    efeitosAtivos[1] = quantBlock;
+
+                    for (int i = 0; i < num; i++)
+                    {
+                        if (efeitosAtivos[7] > 0)
+                        {
+                            efeitosAtivos[7] -= 1;
+                        }
+                        else
+                        {
+                            efeitosAtivos[1] += 1;
+                        }
+                    }
+                }
+            }
+
+            Fraquezas(id);
+
+            textoAtaque.text = nomeinimigo + " usou: " + nome[id];
         }
+        else
+        {
+            errouAtq = false;
 
-        Fraquezas(id);
-
-        textoAtaque.text = nomeinimigo + " usou: " + nome[id];
+            textoAtaque.text = nomeinimigo + " Errou o Ataque";
+            yield return StartCoroutine(control.EsperarTeclaEspaco());
+        }
 
     }
 

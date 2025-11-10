@@ -567,4 +567,45 @@ public class Controle : MonoBehaviour
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
+
+    public void EfeitosAcontecendo(bool primeiro, int primeiroN, int segundoN)
+    {
+        if (primeiro)
+        {
+            player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, primeiroN, player, enemy);
+            player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, primeiroN, player, enemy);
+
+            enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], segundoN, player, enemy);
+            player.list.AtaquesComEfeitos(true, player.ataqueUsado, primeiroN, player, enemy);
+
+            for (int i = 0; i < 6; i++)
+            {
+                if (player.isPassive[i])
+                    player.list.AtaquesComEfeitos(true, player.attackID[i], primeiroN, player, enemy);
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                if (enemy.isPassive[i])
+                    enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], segundoN, player, enemy);
+            }
+        }
+        else
+        {
+            player.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], segundoN, player, enemy);
+            enemy.list.AtaquesComEfeitos(true, player.ataqueUsado, primeiroN, player, enemy);
+
+            for (int i = 0; i < 6; i++)
+            {
+                if (enemy.isPassive[i])
+                    enemy.list.AtaquesComEfeitos(true, player.attackID[i], primeiroN, player, enemy);
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                if (player.isPassive[i])
+                    player.list.AtaquesComEfeitos(false, enemy.attackID[i], segundoN, player, enemy);
+            }
+        }
+    }
 }

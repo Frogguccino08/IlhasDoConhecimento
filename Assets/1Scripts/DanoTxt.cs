@@ -5,6 +5,7 @@ public class DanoTxt : MonoBehaviour
 {
     //Variavel que precisa
     public float dano;
+    public bool isErro;
 
     //Função start que chama a parte de trocar o texto
     void Start()
@@ -16,6 +17,7 @@ public class DanoTxt : MonoBehaviour
     public void TrocarTexto(float dano)
     {
         GetComponent<TMP_Text>().text = dano.ToString();
+        if(isErro) GetComponent<TMP_Text>().text = "Errou";
     }
 
     //Função adicionada no fim da animação que destroi o objeto
