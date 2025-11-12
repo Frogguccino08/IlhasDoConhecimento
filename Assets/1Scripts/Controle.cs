@@ -528,6 +528,15 @@ public class Controle : MonoBehaviour
         }
         else
         {
+            player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, segundoN, player, enemy);
+            if (escolha.regiao != 3)
+            {
+                player.ModCharge = 0;
+                player.emModPapel = false;
+                enemy.ModCharge = 0;
+                enemy.emModPapel = false;
+            }
+            
             enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], primeiroN, player, enemy);
             player.list.AtaquesComEfeitos(true, player.ataqueUsado, segundoN, player, enemy);
 

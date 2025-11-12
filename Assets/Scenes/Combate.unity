@@ -16344,6 +16344,8 @@ MonoBehaviour:
   player: {fileID: 221998462}
   descHabilidade: {fileID: 1496816264}
   regis: {fileID: 0}
+  regiaoTopo: {fileID: 1139930233}
+  extra: 
 --- !u!1 &1425138674
 GameObject:
   m_ObjectHideFlags: 0

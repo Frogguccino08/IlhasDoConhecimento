@@ -1,5 +1,6 @@
 Funções Adicionadas:
-- Possibilidade de errar o ataque
+- Possibilidade de errar o ataque.
+- Ao passar o mouse sobre seu nome a pontuação máxima mostra o nome da região que você está.
 
 
 Organização de código:
@@ -19,6 +20,7 @@ Efeitos especiais além de ataques:
 - Habilidade Vlad, Camuflagem de lixo, Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo.
 - Habilidade Amélia, Conhecimento amplo, Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância.
 - Efeito Os arquivos, Área de desinformação, Personagens não Papel ficam com -1 de conhecimento máximo.
+- Efeito Comunidade abandonada, Névoa de Microplásticos, Personagens não Plástico tem uma chance pequena de errar o ataque (3 em 20)
 
 
 Balanceamento:

@@ -55,6 +55,14 @@ public class AttacksEfeitos : MonoBehaviour
             }
 
             obj.GetComponent<Passiva>().nomeChar.text = regis;
+            if(regis.Length > 16)
+            {
+                obj.GetComponent<Passiva>().nomeChar.fontSize = 0.15f;
+            }
+            else
+            {
+                obj.GetComponent<Passiva>().nomeChar.fontSize = 0.22f;
+            }
         }
         else
         {
@@ -269,11 +277,27 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Comunidade Abandonada
             case -3:
-                if (quando == 6)
+                if (quem == true)
                 {
-                    if (quem == true)
+                    if (quando == 2 && player.materialPlayer != 2)
                     {
-                        Debug.Log("Comunidade Abandonada player");
+                        int random = UnityEngine.Random.Range(1, 21);
+
+                        if(random > 17)
+                        {
+                            player.errouAtq = true;
+                            StartCoroutine(AparecerPassiva(2, "Névoa de Microplástico", "Você errou o ataque através da névoa"));
+                        }
+                    }
+                    else if(quando == 8 && enemy.materialInimigo != 2)
+                    {
+                        int random = UnityEngine.Random.Range(1, 21);
+
+                        if(random > 17)
+                        {
+                            enemy.errouAtq = true;
+                            StartCoroutine(AparecerPassiva(2, "Névoa de Microplástico", "O inimigo errou o ataque através da névoa"));
+                        }
                     }
                 }
                 break;

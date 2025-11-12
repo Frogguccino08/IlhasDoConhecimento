@@ -102,7 +102,7 @@ public class AttacksList : MonoBehaviour
 
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(1, "Calor de derreter", "Personagens não metal perder defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
-        listaRegiao.Add(new Attacks(2, "Comunidade Abandonada", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
+        listaRegiao.Add(new Attacks(2, "Névoa de microplásticos", "Personagens que não são de plástico tem uma chance bem pequena de errar ataques", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(3, "Área de desinformação", "Personagens não papel ficam com -1 de conhecimento máximo", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(4, "Nutrientes do chão", "Chance de aumentar ou diminuir conhecimento, Orgânicos só são afetados pelo aumento", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
     }

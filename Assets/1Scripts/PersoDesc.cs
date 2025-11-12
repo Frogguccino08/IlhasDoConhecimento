@@ -12,6 +12,9 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public GameObject descHabilidade;
     public DescRegiao regis;
 
+    public TMP_Text regiaoTopo;
+    public string extra;
+
     void Start()
     {
         regis = descRegiao.GetComponent<DescRegiao>();
@@ -25,6 +28,8 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         descHabilidade.SetActive(true);
         descHabilidade.GetComponent<Descricao>().BotandoDescricao(player.perso.perso.id, true);
 
+        extra = regiaoTopo.text;
+
         descRegiao.SetActive(true);
         regis.nome.text = regis.lista.listaRegiao[PersonagemSelecionado.instance.regiao].nome;
         regis.descri.text = regis.lista.listaRegiao[PersonagemSelecionado.instance.regiao].desc;
@@ -33,18 +38,23 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             case 1:
                 regis.material.text = "Papel";
+                regiaoTopo.text = "Os Arquivos";
                 break;
             case 2:
                 regis.material.text = "Plástico";
+                regiaoTopo.text = "Comunidade Abandonada";
                 break;
             case 3:
                 regis.material.text = "Vidro";
+                regiaoTopo.text = "Costa de Cacos";
                 break;
             case 4:
                 regis.material.text = "Metal";
+                regiaoTopo.text = "Coração da Ilha";
                 break;
             case 5:
                 regis.material.text = "Orgânico";
+                regiaoTopo.text = "Floresta Orgânica";
                 break;
         }
     }
@@ -54,5 +64,6 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         telaDesc.SetActive(false);
         descHabilidade.SetActive(false);
         descRegiao.SetActive(false);
+        regiaoTopo.text = extra;
     }
 }
