@@ -2755,6 +2755,7 @@ MonoBehaviour:
   butaoClicado: 0
   bloqTurno: 0
   pulouTurno: 0
+  errouAtq: 0
   attackID: 000000000000000000000000000000000000000000000000
   nome:
   - 
@@ -3766,6 +3767,7 @@ MonoBehaviour:
   idAtaqueUsado: 0
   pulouTurno: 0
   bloqTurno: 0
+  errouAtq: 0
   forcaAtual: 0
   isBoss: 0
   inimigoEscolhido: {fileID: 0}
@@ -7197,6 +7199,7 @@ MonoBehaviour:
   oEnemy:
   - {fileID: 265112123}
   - {fileID: 2023866710}
+  escreverEfeito: 0
 --- !u!4 &618230585
 Transform:
   m_ObjectHideFlags: 0

@@ -389,25 +389,7 @@ public class Enemy : MonoBehaviour
             quantBlock = efeitosAtivos[1];
         }
 
-        list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 6, enemy, this);
-        list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 6, enemy, this);
-        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 6, enemy, this);
-
-        for (i = 0; i < 6; i++)
-        {
-            if (isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(false, attackID[i], 6, enemy, this);
-            }
-
-            if (enemy.isPassive[i] == true && control.turno != 0 && control.turno != 1)
-            {
-                if (control.inimigoAtual > 1)
-                {
-                    enemy.list.AtaquesComEfeitos(true, attackID[i], 6, enemy, this);
-                }
-            }
-        }
+        control.EfeitosAcontecendo(true, 0, 0);
 
         if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
         {
@@ -678,32 +660,16 @@ public class Enemy : MonoBehaviour
         idAtaqueUsado = id;
         ataqueUsado = attackID[id];
 
+        control.EfeitosAcontecendo(false, 2, 8);
+
         if (efeitosAtivos[7] > 0)
         {
             quantBlock = efeitosAtivos[1];
         }
+
         if (!errouAtq)
         {
-            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
-
-            list.AtaquesComEfeitos(false, attackID[id], 0, enemy, this);
-            for (i = 0; i < 6; i++)
-            {
-                if (isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-                }
-            }
-
-            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-            for (i = 0; i < 6; i++)
-            {
-                if (enemy.isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-                }
-            }
+            control.EfeitosAcontecendo(false, 3, 9);
 
             if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
             {
@@ -729,27 +695,7 @@ public class Enemy : MonoBehaviour
             //Caso cause dano
             for (int quant = 0; quant < quantidade[id]; quant++)
             {
-                //Efeito número 7 e 8 do player
-                list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 7, enemy, this);
-                list.AtaquesComEfeitos(false, attackID[id], 7, enemy, this);
-
-                for (i = 0; i < 6; i++)
-                {
-                    if (isPassive[i] == true)
-                    {
-                        list.AtaquesComEfeitos(false, attackID[i], 7, enemy, this);
-                    }
-                }
-
-                list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 8, enemy, this);
-
-                for (i = 0; i < 6; i++)
-                {
-                    if (enemy.isPassive[i] == true)
-                    {
-                        list.AtaquesComEfeitos(true, enemy.attackID[i], 8, enemy, this);
-                    }
-                }
+                control.EfeitosAcontecendo(false, 4, 10);
 
                 //Modificadores facilitados
                 float danoAtual = 0;
@@ -874,29 +820,7 @@ public class Enemy : MonoBehaviour
                     quantBlock = efeitosAtivos[1];
                 }
 
-                list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 2, enemy, this);
-
-                if (temEfeito[id] == true)
-                {
-                    list.AtaquesComEfeitos(false, attackID[id], 2, enemy, this);
-                }
-                for (i = 0; i < 6; i++)
-                {
-                    if (isPassive[i] == true)
-                    {
-                        list.AtaquesComEfeitos(false, attackID[i], 2, enemy, this);
-                    }
-                }
-
-
-                list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 3, enemy, this);
-                for (i = 0; i < 6; i++)
-                {
-                    if (enemy.isPassive[i] == true)
-                    {
-                        enemy.list.AtaquesComEfeitos(true, enemy.attackID[i], 3, enemy, this);
-                    }
-                }
+                control.EfeitosAcontecendo(false, 5, 11);
 
                 if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
                 {
@@ -923,8 +847,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            errouAtq = false;
-
             textoAtaque.text = nomeinimigo + " Errou o Ataque";
             yield return StartCoroutine(control.EsperarTeclaEspaco());
         }

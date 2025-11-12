@@ -1,9 +1,10 @@
 Funções Adicionadas:
-(Fazendo agora) Possibilidade de errar o ataque
+- Possibilidade de errar o ataque
 
 
 Organização de código:
 - Textos de efeitos de ataques agora só aparecem caso o ataque tenha efeito e o efeito funcione. sem mais "Esse ataque deu dano normal" ou "O ataque não teve efeito"
+- Mudado a forma ativa efeitos de ataques e passivas.
 
 Modo História:
 
@@ -27,11 +28,15 @@ Correção de erros:
 
 
 Novos Ataques:
-- Bater, Plástico, 1x1 físico, sem carga, Sem efeitos adicionais.
-- Mistura de materiais, Plástico, 1x3 físico, 3 carga, Causa mais dano em alvos de plástico.
+(Papel)
 - Apagar conteúdo, Papel, 1x3 a distância, 3 carga, Causa mais dano em alvos de papel.
 - Gole de conhecimento, Papel, sem dano, 3 carga, Deixa o alvo com 0 de conhecimento fazendo ele ficar apenas com o de inicio de turno.
 - Avião de Papel, Papel, 1x2 a distância, 3 carga, Ignora o escudo do alvo caso ele tenha.
+(Plástico)
+- Bater, Plástico, 1x1 físico, sem carga, Sem efeitos adicionais.
+- Mistura de materiais, Plástico, 1x3 físico, 3 carga, Causa mais dano em alvos de plástico.
 
 
 Novos Inimigos:
+(Papel)
+(Plástico)

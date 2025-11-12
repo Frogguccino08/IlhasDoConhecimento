@@ -198,27 +198,8 @@ public class Controle : MonoBehaviour
         if (player.efeitosAtivos[7] > 0)
             player.quantBlock = player.efeitosAtivos[1];
 
-        player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 4, player, enemy);
-        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 4, player, enemy);
-        if (enemy.pulouTurno == false)
-            enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 5, player, enemy);
-
-        if (pulouTurno == false)
-        {
-            player.list.AtaquesComEfeitos(true, player.ataqueUsado, 4, player, enemy);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (player.isPassive[i])
-                player.list.AtaquesComEfeitos(true, player.attackID[i], 4, player, enemy);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i])
-                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 5, player, enemy);
-        }
+        EfeitosAcontecendo(true, 6, 12);
+        if (enemy.errouAtq) enemy.errouAtq = false;
 
         if (player.efeitosAtivos[7] > 0 && player.quantBlock < player.efeitosAtivos[1])
         {
@@ -289,22 +270,7 @@ public class Controle : MonoBehaviour
 
 
         // Efeito inicio do turno inimigo
-        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, player, enemy);
-        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 10, player, enemy);
-        enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 9, player, enemy);
-        for (int i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i])
-                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 9, player, enemy);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (player.isPassive[i])
-                player.list.AtaquesComEfeitos(true, player.attackID[i], 10, player, enemy);
-        }
-
-        player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 10, player, enemy);
+        EfeitosAcontecendo(false, 1, 7);
 
         //Após escolher o ataque
         enemy.EscolherAtaque();
@@ -323,23 +289,8 @@ public class Controle : MonoBehaviour
         if (enemy.efeitosAtivos[7] > 0)
             enemy.quantBlock = enemy.efeitosAtivos[1];
 
-        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 4, player, enemy);
-        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 5, player, enemy);
-        enemy.list.AtaquesComEfeitos(false, enemy.ataqueUsado, 4, player, enemy);
-        if (player.pulouTurno == false)
-            player.list.AtaquesComEfeitos(true, player.attackID[player.idAtaqueUsado], 5, player, enemy);
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i])
-                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 4, player, enemy);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (player.isPassive[i])
-                player.list.AtaquesComEfeitos(true, player.attackID[i], 5, player, enemy);
-        }
+        EfeitosAcontecendo(false, 6, 12);
+        if (player.errouAtq) player.errouAtq = false;
 
         if (enemy.efeitosAtivos[7] > 0 && enemy.quantBlock < enemy.efeitosAtivos[1])
         {
@@ -399,29 +350,7 @@ public class Controle : MonoBehaviour
         texto.enabled = false;
         AtivarBotao();
 
-        player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, player, enemy);
-        if(escolha.regiao != 3)
-        {
-            player.ModCharge = 0;
-            player.emModPapel = false;
-            enemy.ModCharge = 0;
-            enemy.emModPapel = false;
-        }
-        player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 9, player, enemy);
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (player.isPassive[i])
-                player.list.AtaquesComEfeitos(true, player.attackID[i], 9, player, enemy);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i])
-                enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 10, player, enemy);
-        }
-
-        enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], 10, player, enemy);
+        EfeitosAcontecendo(true, 1, 7);
 
         player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge + player.ModCharge);
         if (player.efeitosAtivos[6] > 0)
@@ -573,6 +502,13 @@ public class Controle : MonoBehaviour
         if (primeiro)
         {
             player.list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, primeiroN, player, enemy);
+            if(escolha.regiao != 3)
+            {
+            player.ModCharge = 0;
+            player.emModPapel = false;
+            enemy.ModCharge = 0;
+            enemy.emModPapel = false;
+            }
             player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, primeiroN, player, enemy);
 
             enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], segundoN, player, enemy);
@@ -592,19 +528,19 @@ public class Controle : MonoBehaviour
         }
         else
         {
-            player.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], segundoN, player, enemy);
-            enemy.list.AtaquesComEfeitos(true, player.ataqueUsado, primeiroN, player, enemy);
+            enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], primeiroN, player, enemy);
+            player.list.AtaquesComEfeitos(true, player.ataqueUsado, segundoN, player, enemy);
 
             for (int i = 0; i < 6; i++)
             {
                 if (enemy.isPassive[i])
-                    enemy.list.AtaquesComEfeitos(true, player.attackID[i], primeiroN, player, enemy);
+                    enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], primeiroN, player, enemy);
             }
 
             for (int i = 0; i < 6; i++)
             {
                 if (player.isPassive[i])
-                    player.list.AtaquesComEfeitos(false, enemy.attackID[i], segundoN, player, enemy);
+                    player.list.AtaquesComEfeitos(true, player.attackID[i], segundoN, player, enemy);
             }
         }
     }

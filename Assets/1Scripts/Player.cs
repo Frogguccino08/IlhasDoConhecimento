@@ -210,6 +210,7 @@ public class Player : MonoBehaviour
             quantBlock = efeitosAtivos[1];
         }
 
+/*
         for (i = 0; i < 6; i++)
         {
             if (isPassive[i] == true)
@@ -217,6 +218,7 @@ public class Player : MonoBehaviour
                 list.AtaquesComEfeitos(true, attackID[i], 6, this, enemy);
             }
         }
+*/
 
         if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
         {
@@ -355,6 +357,8 @@ public class Player : MonoBehaviour
             controlConheci.SpawnRs();
         }
 
+        control.EfeitosAcontecendo(true, 2, 8);
+
         if (efeitosAtivos[7] > 0)
         {
             quantBlock = efeitosAtivos[1];
@@ -362,26 +366,7 @@ public class Player : MonoBehaviour
 
         if (!errouAtq)
         {
-            list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 0, this, enemy);
-            list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 0, this, enemy);
-
-            list.AtaquesComEfeitos(true, attackID[id], 0, this, enemy);
-
-            for (i = 0; i < 6; i++)
-            {
-                if (isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(true, attackID[i], 0, this, enemy);
-                }
-            }
-
-            for (i = 0; i < 6; i++)
-            {
-                if (enemy.isPassive[i] == true)
-                {
-                    enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 1, this, enemy);
-                }
-            }
+            control.EfeitosAcontecendo(true, 3, 9);
 
             if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
             {
@@ -408,26 +393,7 @@ public class Player : MonoBehaviour
                 bloqTurno = false;
 
                 //Efeito número 7 e 8 pra inimigo
-                list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 7, this, enemy);
-                list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 7, this, enemy);
-
-                list.AtaquesComEfeitos(true, attackID[id], 7, this, enemy);
-
-                for (i = 0; i < 6; i++)
-                {
-                    if (isPassive[i] == true)
-                    {
-                        list.AtaquesComEfeitos(true, attackID[i], 7, this, enemy);
-                    }
-                }
-
-                for (i = 0; i < 6; i++)
-                {
-                    if (enemy.isPassive[i] == true)
-                    {
-                        enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 8, this, enemy);
-                    }
-                }
+                control.EfeitosAcontecendo(true, 4, 10);
 
                 //Modificadores facilitados
                 float danoAtual = 0;
@@ -581,28 +547,7 @@ public class Player : MonoBehaviour
                     quantBlock = efeitosAtivos[1];
                 }
 
-                list.AtaquesComEfeitos(true, (perso.regiao + 1) * -1, 2, this, enemy);
-                list.AtaquesComEfeitos(true, (pc.id + 10) * -1, 2, this, enemy);
-
-                if (temEfeito[id] == true)
-                {
-                    list.AtaquesComEfeitos(true, attackID[id], 2, this, enemy);
-                }
-                for (i = 0; i < 6; i++)
-                {
-                    if (isPassive[i] == true)
-                    {
-                        list.AtaquesComEfeitos(true, attackID[i], 2, this, enemy);
-                    }
-                }
-
-                for (i = 0; i < 6; i++)
-                {
-                    if (enemy.isPassive[i] == true)
-                    {
-                        enemy.list.AtaquesComEfeitos(false, enemy.attackID[i], 3, this, enemy);
-                    }
-                }
+                control.EfeitosAcontecendo(true, 5, 11);
 
                 if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
                 {
@@ -628,7 +573,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-            errouAtq = false;
             if (using3R) currentR = 0;
             if (usingR) currentR = -1;
             if (using3R) using3R = false;

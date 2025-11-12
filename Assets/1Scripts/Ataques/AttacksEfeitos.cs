@@ -110,28 +110,30 @@ public class AttacksEfeitos : MonoBehaviour
     public void AtaquesComEfeitos(bool quem, int o, int quando, Player player, Enemy enemy)
     {
         //'quem' true == player, false == enemy.
-        //'o' Numero do ataque na função de cima.
-        //'quando' 0==Antes do ataque, 1==Antes do ataque inimigo, 2==Após calcular o dano, 3==Após calcular o dano inimigo, 4==final do turno, 5==final do turno inimigo,
-        // 6==Ao inicializar qualquer um dos dois.
-        //'quando' 7==Antes de cada golpe do ataque, 8==Antes de cada golpe do ataque inimigo, 9==Assim que inicia o turno, 10==Assim que inicia o turno inimigo
-        // Se temEfeito == true Colocar o que acontece quando usar uma carga de R (if(usingR == true)) aqui no quem == true, e também terminar com o codigo abaixo:
+
         /*
-                    player.currentR -= 1;
-                    player.controlConheci.SpawnRs();
-                    player.usingR = false;
+        Novos tempos de efeito
+        0 == Ao inicializar qualquer um dos dois 
+        1 == Assim que inicia o turno               7 == (Inimigo) Assim que inicia o turno
+        2 == Antes do ataque mesmo se errou         8 == (Inimigo) Antes do ataque mesmo se errou 
+        3 == Antes do ataque só se acertar          9 == (Inimigo) Antes do ataque só se acertar
+        4 == Antes de cada golpe do ataque          10 == (Inimigo) Antes de cada golpe do ataque
+        5 == após calcular o dano                   11 == (Inimigo) após calcular o dano
+        6 == No final do turno                      12 == (Inimigo) No final do turno
+
         */
         switch (o)
         {
             //Yoko (Metal/Papel)
             case -15:
-                if (quando == 6)
+                if (quando == 0)
                 {
                     Debug.Log("Yoko Passiva Ativada");
                 }
                 break;
             //Jayden (Orgânico)
             case -14:
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (player.using3R == true && player.dano[player.idAtaqueUsado] == 0)
                     {
@@ -143,7 +145,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Renan (Metal) //Sobreaquecer
             case -13:
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if ((player.using3R == true || player.segundo3R == true) && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
                     {
@@ -151,7 +153,7 @@ public class AttacksEfeitos : MonoBehaviour
                         Debug.Log("Sobreaquecer Ativado");
                     }
                 }
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (player.using3R == true && player.phispe[player.idAtaqueUsado] == true && player.dano[player.idAtaqueUsado] > 0)
                     {
@@ -161,7 +163,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Kai (Vidro) //Vidro de Cal-Soda
             case -12:
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (player.using3R == true && player.phispe[player.idAtaqueUsado] == false && player.dano[player.idAtaqueUsado] > 0)
                     {
@@ -172,9 +174,9 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Vlad (Plástico) //Camuflagem de lixo
             case -11:
-                if (quando == 0)
+                if (quando == 2)
                 {
-                    if(player.using3R && player.dano[player.idAtaqueUsado] == 0 && player.temEfeito[player.idAtaqueUsado] == true && player.efeitosAtivos[1] < 15)
+                    if (player.using3R && player.dano[player.idAtaqueUsado] == 0 && player.temEfeito[player.idAtaqueUsado] == true && player.efeitosAtivos[1] < 15)
                     {
                         player.efeitosAtivos[1] += 1;
                         StartCoroutine(AparecerPassiva(0, "Camuflagem de Lixo", "Ataque de efeito aumentou seu escudo em +1"));
@@ -183,9 +185,9 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Amélia (Papel) //Conhecimento Amplo
             case -10:
-                if (quando == 0)
+                if (quando == 2)
                 {
-                    if(player.using3R && !player.temEfeito[player.idAtaqueUsado])
+                    if (player.using3R && !player.temEfeito[player.idAtaqueUsado])
                     {
                         player.efeitosAtivos[2] += 3;
                         StartCoroutine(AparecerPassiva(0, "Conhecimento Amplo", "Ganhou defesa a distância por usar um ataque sem efeito"));
@@ -196,7 +198,7 @@ public class AttacksEfeitos : MonoBehaviour
 
             //Floresta Orgânica //Nutrientes do chão
             case -5:
-                if (quando == 9)
+                if (quando == 1)
                 {
                     if (quem == true && control.turno > 1)
                     {
@@ -230,11 +232,11 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Os Arquivos //Área de desinformação
             case -4:
-                if (quando == 9)
+                if (quando == 1)
                 {
                     if (quem == true)
                     {
-                        if((player.materialPlayer != 1 && !player.emModPapel) || (enemy.materialInimigo != 1 && !enemy.emModPapel)) StartCoroutine(AparecerPassiva(2, "Área de desinformação", "Conhecimento máximo de personagens não Plástico foi diminuído"));
+                        if ((player.materialPlayer != 1 && !player.emModPapel) || (enemy.materialInimigo != 1 && !enemy.emModPapel)) StartCoroutine(AparecerPassiva(2, "Área de desinformação", "Conhecimento máximo de personagens não Plástico foi diminuído"));
 
 
                         //Player
@@ -261,27 +263,23 @@ public class AttacksEfeitos : MonoBehaviour
                             enemy.ModCharge = 0;
                             enemy.emModPapel = false;
                         }
-                        
+
                     }
                 }
                 break;
             //Comunidade Abandonada
             case -3:
-                if (quando == 4)
+                if (quando == 6)
                 {
                     if (quem == true)
                     {
                         Debug.Log("Comunidade Abandonada player");
                     }
-                    else
-                    {
-                        Debug.Log("Comunidade Abandonada Inimigo");
-                    }
                 }
                 break;
             //Coração da Ilha //Calor de derreter
             case -2:
-                if (quando == 9)
+                if (quando == 1)
                 {
                     if (quem == true)
                     {
@@ -305,7 +303,7 @@ public class AttacksEfeitos : MonoBehaviour
                 break;
             //Costa de cacos //Piso afiado
             case -1:
-                if (quando == 9)
+                if (quando == 1)
                 {
                     if (quem == true)
                     {
@@ -343,7 +341,7 @@ public class AttacksEfeitos : MonoBehaviour
 
 
             case 3: //Bloquear
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -365,7 +363,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 4: //Expor inimigo
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -387,7 +385,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 5: //Leitura
-                if (quando == 3)
+                if (quando == 11)
                 {
                     int rand;
 
@@ -418,7 +416,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 6: //Corte de Papel
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -440,7 +438,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 8: //Capa grossa
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -465,7 +463,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 9: //Material resistênte
-                if (quando == 3)
+                if (quando == 11)
                 {
                     int rand;
 
@@ -496,7 +494,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 10: //Arremesso de material
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -518,7 +516,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 12: //Barreira de montar
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -543,7 +541,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 13: //Quebrar espelho
-                if (quando == 2)
+                if (quando == 5)
                 {
                     int rand;
 
@@ -576,7 +574,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 14: //Atirar agulhas
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -598,7 +596,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 16: //Barreira refletora
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -623,7 +621,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 17: //Pontas afiadas
-                if (quando == 2)
+                if (quando == 5)
                 {
                     int rand;
 
@@ -656,7 +654,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 18: //Lâmina afiada
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -678,7 +676,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 20: //Casca de metal
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -703,7 +701,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 21: //Absorção
-                if (quando == 2)
+                if (quando == 5)
                 {
                     int rand;
 
@@ -736,7 +734,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 22: //Golpe de restos
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -758,7 +756,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 24: //Bloqueio vivo
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -783,7 +781,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 25: //Aumentar Marcha
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -807,7 +805,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 26: //Espalhar cacos
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -829,7 +827,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 27: //Reciclar vida
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -851,7 +849,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 28: //Estilhaços
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -873,7 +871,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 29: //Suco ácido
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -898,7 +896,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 31: //Desinformação
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -920,7 +918,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 32: //Estagnado
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -942,7 +940,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 33: //Tenderizar
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -964,7 +962,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 34: //Derreter
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -986,7 +984,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 35: //Desperdício
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1008,7 +1006,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 36: //Arremesso de garrafa
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1030,7 +1028,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 37: //Martelo de brinquedo
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1052,7 +1050,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 38: //Tiro de canudo
-                if (quando == 3)
+                if (quando == 5)
                 {
                     if (quem == true)
                     {
@@ -1083,7 +1081,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 39: //Aprendendo
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1105,7 +1103,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 41: //Barreira perfeita
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1127,7 +1125,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 42: //Troca de postura
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1157,7 +1155,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
 
-                if (quando == 4)
+                if (quando == 6)
                 {
                     if (quem == true)
                     {
@@ -1199,7 +1197,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 43: //Katana de alma
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1216,7 +1214,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 46: //Roubar nutriente
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1241,7 +1239,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 47: //Atacar ponto fraco
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1264,7 +1262,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 48: //Armadura de Espinhos
-                if (quando == 3)
+                if (quando == 11)
                 {
                     if (quem == true)
                     {
@@ -1295,7 +1293,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 50: //Batida energizada
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1318,7 +1316,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 53: //Passar óleo
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1340,7 +1338,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 54: //Campo magnético
-                if (quando == 9)
+                if (quando == 1)
                 {
                     if (quem == true)
                     {
@@ -1363,7 +1361,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 55: //Entortar
-                if (quando == 2)
+                if (quando == 5)
                 {
                     if (quem == true)
                     {
@@ -1384,7 +1382,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 57: //Criar fungos
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1407,7 +1405,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 58: //Ataque de chorume
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1429,11 +1427,11 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 59: //Solo ruim
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
-                        if(enemy.efeitosAtivos[18] > 0)
+                        if (enemy.efeitosAtivos[18] > 0)
                         {
                             enemy.efeitosAtivos[18] = 0;
                             control.escreverEfeito = true;
@@ -1442,7 +1440,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                     else
                     {
-                        if(player.efeitosAtivos[18] > 0)
+                        if (player.efeitosAtivos[18] > 0)
                         {
                             player.efeitosAtivos[18] = 0;
                             control.escreverEfeito = true;
@@ -1452,7 +1450,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 60: //Enxame de pragas
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1474,7 +1472,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 61: //Limpar terreno
-                if (quando == 0)
+                if (quando == 3)
                 {
                     for (int i = 0; i < 19; i++)
                     {
@@ -1486,7 +1484,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 62: //Corpo quente
-                if (quando == 3)
+                if (quando == 11)
                 {
                     if (quem == true)
                     {
@@ -1519,7 +1517,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 63: //Estômago forte
-                if (quando == 2)
+                if (quando == 5)
                 {
                     if (quem == true)
                     {
@@ -1552,7 +1550,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 64: //Guia
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1569,7 +1567,7 @@ public class AttacksEfeitos : MonoBehaviour
                         }
                     }
                 }
-                if (quando == 2)
+                if (quando == 5)
                 {
                     if (quem == true)
                     {
@@ -1621,7 +1619,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 66: //Superfície com tensão
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1644,7 +1642,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 67: //Tiro fragmentado
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1663,7 +1661,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 68: //molotov
-                if (quando == 0)
+                if (quando == 2)
                 {
                     if (quem == true)
                     {
@@ -1676,7 +1674,7 @@ public class AttacksEfeitos : MonoBehaviour
                         control.efeitoAtq = "Fogo será espalhado no final do turno do seu turno";
                     }
                 }
-                if (quando == 5)
+                if (quando == 12)
                 {
                     if (quem == true)
                     {
@@ -1701,7 +1699,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 69: //Refletir
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1734,7 +1732,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 70: //Ataques frágeis
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1751,7 +1749,7 @@ public class AttacksEfeitos : MonoBehaviour
                         }
                     }
                 }
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true && player.dano[player.idAtaqueUsado] > 1 && player.phispe[player.idAtaqueUsado] == false)
                     {
@@ -1778,7 +1776,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 71: //Espeto perfurante
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1800,7 +1798,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 72: //Ponta infectada
-                if (quando == 2)
+                if (quando == 5)
                 {
                     if (quem == true)
                     {
@@ -1879,7 +1877,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 74: //Mistura de materiais
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1902,7 +1900,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 75: //Apagar conteúdo
-                if (quando == 7)
+                if (quando == 4)
                 {
                     if (quem == true)
                     {
@@ -1925,7 +1923,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 76: //Gole de conhecimento
-                if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1943,7 +1941,7 @@ public class AttacksEfeitos : MonoBehaviour
                 }
                 break;
             case 77: //Avião de papel
-            if (quando == 0)
+                if (quando == 3)
                 {
                     if (quem == true)
                     {
@@ -1955,7 +1953,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                     else
                     {
-                        if(player.efeitosAtivos[1] > 0)
+                        if (player.efeitosAtivos[1] > 0)
                         {
                             control.escreverEfeito = true;
                             control.efeitoAtq = enemy.nomeinimigo + " Ignorou o seu escudo";
