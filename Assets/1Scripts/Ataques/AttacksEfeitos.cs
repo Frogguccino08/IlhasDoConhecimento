@@ -82,12 +82,23 @@ public class AttacksEfeitos : MonoBehaviour
                     weak = "Vidro -> Plástico";
                     break;
                 case 6:
+                    weak = "Plástico -> Orgânico";
                     break;
                 case 7:
+                    weak = "papel -> Vidro";
                     break;
             }
 
             obj.GetComponent<Passiva>().nomeChar.text = weak;
+
+            if(weak.Length > 16)
+            {
+                obj.GetComponent<Passiva>().nomeChar.fontSize = 0.15f;
+            }
+            else
+            {
+                obj.GetComponent<Passiva>().nomeChar.fontSize = 0.22f;
+            }
         }
         
 

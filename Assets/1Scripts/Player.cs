@@ -782,6 +782,39 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(list.AparecerPassiva(5, "Risco de arranhão", "Escudo não bloqueou ataque completamente"));
         }
+        //Plástico -> Orgânico (6 no efeito)
+        if (dano[id] > 0 && enemy.materialInimigo == 5 && (material[id] == 2 || material[id] == 0 && materialPlayer == 2))
+        {
+            if (enemy.currentCharge > 0)
+            {
+                enemy.currentCharge -= 1;
+                StartCoroutine(list.AparecerPassiva(6, "Não degradável", "Inimigo perdeu um de carga"));
+            }
+            else
+            {
+                float dano;
+
+                dano = Mathf.Round((float)phiDamage * 0.5f * UnityEngine.Random.Range(0.8f, 1.2f));
+
+                if (dano < 1) dano = 1;
+
+                Debug.Log("Dano causado pelo efeito: " + dano);
+
+                enemy.CausarDano(dano);
+                Debug.Log("Fraqueza Plástico -> Orgânico Ativada");
+
+                StartCoroutine(list.AparecerPassiva(6, "Não degradável", "Inimigo não tinha carga pra perder então recebeu dano"));
+            }
+        }
+        //Papel -> Vidro (7 no efeito)
+        if(dano[id] > 0 && enemy.materialInimigo == 3 && (material[id] == 1 || material[id] == 0 && materialPlayer == 1))
+        {
+            if(enemy.efeitosAtivos[1] > 0)
+            {
+                enemy.efeitosAtivos[1] -= 1;
+                StartCoroutine(list.AparecerPassiva(7, "Cobrir Reflexo", "Inimigo perdeu um escudo a mais"));
+            }
+        }
     }
 
     public void CorDetalhes()

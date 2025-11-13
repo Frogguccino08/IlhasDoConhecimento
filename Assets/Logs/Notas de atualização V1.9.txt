@@ -21,6 +21,8 @@ Efeitos especiais além de ataques:
 - Habilidade Amélia, Conhecimento amplo, Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância.
 - Efeito Os arquivos, Área de desinformação, Personagens não Papel ficam com -1 de conhecimento máximo.
 - Efeito Comunidade abandonada, Névoa de Microplásticos, Personagens não Plástico tem uma chance pequena de errar o ataque (3 em 20)
+- Efeito Plástico -> Orgânico, Não degradável, Ao atingir um Orgânico com ataque de plástico faz ele perder um conhecimento, caso ele já esteja com zero ele recebe uma pequena quantidade de dano.
+- Efeito Papel -> Vidro, Cobrir reflexo, Ao atingir um vidro com um ataque de papel faz ele perder, apenas uma vez no final do ataque, mais um escudo.
 
 
 Balanceamento:
