@@ -2001,14 +2001,14 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if(quem == true)
                     {
-                        player.efeitosAtivos[3] += 2;
+                        player.efeitosAtivos[2] += 2;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Aumentou sua defesa física";
-                        if(player.rAgora) player.efeitosAtivos[3] += 1;
+                        if(player.rAgora) player.efeitosAtivos[2] += 1;
                     }
                     else
                     {
-                        enemy.efeitosAtivos[3] += 2;
+                        enemy.efeitosAtivos[2] += 2;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Aumentou sua defesa física";
                     }
