@@ -40,6 +40,12 @@ Novos Ataques:
 (Plástico)
 - Bater, Plástico, 1x1 físico, sem carga, Sem efeitos adicionais.
 - Mistura de materiais, Plástico, 1x3 físico, 3 carga, Causa mais dano em alvos de plástico.
+- Saco Plástico, Plástico, 3 carga, faz o alvo perder o próximo turno.
+- Reutilizar escudo, Plástico, 5 carga, remove o escudo do inimigo e coloca em seu personagem.
+- Fusão pet, Plástico, 3 carga, Aumenta seu dano e defesa física.
+- Chuva de canudos, Plástico, 5x1 a ditância, 3 carga, sem efeito.
+- Bastão de filme, Plástico, 2x2 físico, 4 carga, ataque com uma chance pequena de fazer o inimigo errar o próximo ataque.
+- Projétil de tampa, Plástico, 1x2, 3 carga, ataque de deixa o alvo exposto e com menos defesa a distância.
 
 
 Novos Inimigos:

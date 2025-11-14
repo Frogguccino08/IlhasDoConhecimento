@@ -92,6 +92,13 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(76, "Gole de conhecimento", "Zera a quantidade de conhecimento do alvo, mantendo apenas o ganho inicial do turno", Attacks.Tipo.negativo, Attacks.Tipo.zero, 1, 0, false, true, 0, 3, true, false));
         listaAtaques.Add(new Attacks(77, "Avião de papel", "Ataque fraco que pórem ignora escudos", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 2, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(78, "Remendar", "Cura pequena que também aumenta defesa física", Attacks.Tipo.cura, Attacks.Tipo.suporte, 1, -3, false, false, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(79, "Saco Plástico", "Prende o inimigo fazendo ele perder o próximo ataque", Attacks.Tipo.negativo, Attacks.Tipo.zero, 2, 0, false, true, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(80, "Infectar material", "Ataque bem fraco que diminue o dano físico do alvo por bastante tempo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 2, true, true, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(81, "Reutilizar escudo", "Remove o escudo do alvo e adiciona a você", Attacks.Tipo.negativo, Attacks.Tipo.bloqueio, 2, 0, false, true, 0, 5, true, false));
+        listaAtaques.Add(new Attacks(82, "Fusão pet", "Aumenta seu dano físico e sua defesa física", Attacks.Tipo.suporte, Attacks.Tipo.zero, 2, 0, false, false, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(83, "Chuva de canudos", "Ataque fraco que ataca várias vezes", Attacks.Tipo.golpe, Attacks.Tipo.zero, 2, 1, false, true, 5, 3, false, false));
+        listaAtaques.Add(new Attacks(84, "Bastão de filme", "Ataque médio que tem uma chance pequena de fazer o inimigo errar o próximo ataque", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 2, true, true, 2, 4, true, false));
+        listaAtaques.Add(new Attacks(85, "projétil de tampa", "Ataque fraco que deixa o alvo exposto e com menos defesa a distância", Attacks.Tipo.negativo, Attacks.Tipo.exposto, 2, 2, false, true, 1, 3, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));

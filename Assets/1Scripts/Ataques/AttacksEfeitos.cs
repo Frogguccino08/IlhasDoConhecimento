@@ -2001,19 +2001,175 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if(quem == true)
                     {
-                        player.efeitosAtivos[2] += 2;
+                        player.efeitosAtivos[2] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Aumentou sua defesa física";
                         if(player.rAgora) player.efeitosAtivos[2] += 1;
                     }
                     else
                     {
-                        enemy.efeitosAtivos[2] += 2;
+                        enemy.efeitosAtivos[2] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Aumentou sua defesa física";
                     }
                 }
-            break; 
+            break;
+            case 79: //Saco Plástico
+                if(quando == 3)
+                {
+                    if(quem == true)
+                    {
+                        enemy.errouAtq = true;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " perderá o próximo ataque";
+                    }
+                    else
+                    {
+                        player.errouAtq = true;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = player.nickName + " perderá o próximo ataque";
+                    }
+                }
+                break;
+            case 80: //Infectar material
+                if(quando == 3)
+                {
+                    if (quem == true)
+                    {
+                        enemy.efeitosAtivos[9] += 4;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " Ficou com o ataque físico diminuido";
+
+                        if(player.rAgora) enemy.efeitosAtivos[9] += 2;
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[9] += 4;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = player.nickName + " Ficou com o ataque físico diminuido";
+                    }
+                }
+                break;
+            case 81: //Reutilizar escudo
+                if(quando == 3)
+                {
+                    if(quem == true)
+                    {
+                        if(enemy.efeitosAtivos[1] > 0)
+                        {
+                            int tempEscudo;
+
+                            tempEscudo = enemy.efeitosAtivos[1];
+                            player.efeitosAtivos[1] += tempEscudo;
+                            enemy.efeitosAtivos[1] = 0;
+
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = player.nickName + " pegou o escudo de " + enemy.nomeinimigo;
+                        }
+                        else
+                        {
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = "Não tinha escudo para ser roubado";
+                        }
+                    }
+                    else
+                    {
+                        if(player.efeitosAtivos[1] > 0)
+                        {
+                            int tempEscudo;
+
+                            tempEscudo = player.efeitosAtivos[1];
+                            enemy.efeitosAtivos[1] += tempEscudo;
+                            player.efeitosAtivos[1] = 0;
+
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = enemy.nomeinimigo + " pegou o escudo de " + player.nickName;
+                        }
+                        else
+                        {
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = "Não tinha escudo para ser roubado";
+                        }
+                    }
+                }
+                break;
+            case 82: //Fusão pet
+                if(quando == 3)
+                {
+                    if(quem == true)
+                    {
+                        player.efeitosAtivos[3] += 3;
+                        player.efeitosAtivos[5] += 3;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = player.nickName + " Aumentou sua defesa e ataque físico";
+
+                        if(player.rAgora)
+                        {
+                            player.efeitosAtivos[3] += 1;
+                            player.efeitosAtivos[5] += 1;
+                        }
+                    }
+                    else
+                    {
+                        enemy.efeitosAtivos[3] += 3;
+                        enemy.efeitosAtivos[5] += 3;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " Aumentou sua defesa e ataque físico";
+                    }
+                }
+                break;
+            case 84: //Bastão de filme
+                if(quando == 3)
+                {
+                    if(quem == true)
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        if(rand > 17)
+                        {
+                            enemy.errouAtq = true;
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = "O inimigo perderá o próximo turno";
+                        }
+                    }
+                    else
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        if(rand > 17)
+                        {
+                            player.errouAtq = true;
+                        }
+                    }
+                }
+                break;
+            case 85: //Projétil de tampa
+                if(quando == 3)
+                {
+                    if(quem == true)
+                    {
+                        enemy.efeitosAtivos[7] += 2;
+                        enemy.efeitosAtivos[10] += 3;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " ficou exposto e com menos defesa a distância";
+
+                        if(player.rAgora)
+                        {
+                            enemy.efeitosAtivos[7] += 1;
+                            enemy.efeitosAtivos[10] += 1;
+                        }
+                    }
+                    else
+                    {
+                        player.efeitosAtivos[7] += 2;
+                        player.efeitosAtivos[10] += 3;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = player.nickName + " ficou exposto e com menos defesa a distância";
+                    }
+                }
+                break;
         }
     }
 }

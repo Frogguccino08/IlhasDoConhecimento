@@ -189,7 +189,7 @@ public class Controle : MonoBehaviour
         }
 
         //Escrever o efeito na tela
-        if (player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false && escreverEfeito)
+        if (player.errouAtq == false && player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false && escreverEfeito)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
@@ -199,7 +199,6 @@ public class Controle : MonoBehaviour
             player.quantBlock = player.efeitosAtivos[1];
 
         EfeitosAcontecendo(true, 6, 12);
-        if (enemy.errouAtq) enemy.errouAtq = false;
 
         if (player.efeitosAtivos[7] > 0 && player.quantBlock < player.efeitosAtivos[1])
         {
@@ -271,6 +270,7 @@ public class Controle : MonoBehaviour
 
         // Efeito inicio do turno inimigo
         EfeitosAcontecendo(false, 1, 7);
+        if (player.errouAtq) player.errouAtq = false;
 
         //Após escolher o ataque
         enemy.EscolherAtaque();
@@ -280,7 +280,7 @@ public class Controle : MonoBehaviour
         yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
-        if (enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false && escreverEfeito)
+        if (enemy.errouAtq == false && enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false && escreverEfeito)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
@@ -290,7 +290,6 @@ public class Controle : MonoBehaviour
             enemy.quantBlock = enemy.efeitosAtivos[1];
 
         EfeitosAcontecendo(false, 6, 12);
-        if (player.errouAtq) player.errouAtq = false;
 
         if (enemy.efeitosAtivos[7] > 0 && enemy.quantBlock < enemy.efeitosAtivos[1])
         {
@@ -351,6 +350,7 @@ public class Controle : MonoBehaviour
         AtivarBotao();
 
         EfeitosAcontecendo(true, 1, 7);
+        if (enemy.errouAtq) enemy.errouAtq = false;
 
         player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge + player.ModCharge);
         if (player.efeitosAtivos[6] > 0)
