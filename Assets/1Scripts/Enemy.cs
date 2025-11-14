@@ -427,33 +427,8 @@ public class Enemy : MonoBehaviour
             cor.enabled = false;
         }
 
-        //Efeitos iniciais número 9
-        list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 9, enemy, this);
-        list.AtaquesComEfeitos(true, (escolha.regiao + 1) * -1, 9, enemy, this);
-        if(escolha.regiao != 3)
-        {
-            enemy.ModCharge = 0;
-            enemy.emModPapel = false;
-            ModCharge = 0;
-            emModPapel = false;
-            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
-        }
-
-        for (i = 0; i < 6; i++)
-        {
-            if (isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(false, attackID[i], 9, enemy, this);
-            }
-        }
-        
-        for (i = 0; i < 6; i++)
-        {
-            if (enemy.isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(true, attackID[i], 10, enemy, this);
-            }
-        }
+        control.EfeitosAcontecendo(true, 1, 12);
+        control.EfeitosAcontecendo(false, 1, 12);
     }
 
 

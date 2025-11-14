@@ -45,7 +45,9 @@ Novos Ataques:
 - Fusão pet, Plástico, 3 carga, Aumenta seu dano e defesa física.
 - Chuva de canudos, Plástico, 5x1 a ditância, 3 carga, sem efeito.
 - Bastão de filme, Plástico, 2x2 físico, 4 carga, ataque com uma chance pequena de fazer o inimigo errar o próximo ataque.
-- Projétil de tampa, Plástico, 1x2, 3 carga, ataque de deixa o alvo exposto e com menos defesa a distância.
+- Projétil de tampa, Plástico, 1x2 a distância, 3 carga, ataque de deixa o alvo exposto e com menos defesa a distância.
+- Explosão de pressão, Sem material 2x5 físico, 5 carga, Ataque muito forte porém que causa dano em si mesmo tmambém.
+- Material Reforçado, Passiva, sem material, Aumenta seu dano físico e a distância porém tem uma chance pequena de errar o ataque.
 
 
 Novos Inimigos:

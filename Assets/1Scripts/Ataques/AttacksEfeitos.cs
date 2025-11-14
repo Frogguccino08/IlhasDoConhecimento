@@ -2170,6 +2170,60 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            case 86: //Explosão de pressão
+                if(quando == 2)
+                {
+                    if(quem == true)
+                    {
+                        float dano;
+
+                        dano = Mathf.Round(player.maxHealth / 5);
+
+                        player.CausarDano(dano);
+                        StartCoroutine(player.CorDano(player.idAtaqueUsado, dano));
+                    }
+                    else
+                    {
+                        float dano;
+
+                        dano = Mathf.Round(enemy.maxHealth / 6);
+
+                        enemy.CausarDano(dano);
+                        StartCoroutine(enemy.CorDano(enemy.idAtaqueUsado, dano));
+                    }
+                }
+                break;
+            case 87: //Material Reforçado
+                if(quando == 1)
+                {
+                    if(quem)
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        
+                        player.efeitosAtivos[4] += 1;
+                        player.efeitosAtivos[5] += 1;
+                        if(rand >= 18) player.errouAtq = true;
+
+                        if(control.turno == 0)
+                        {
+                            StartCoroutine(AparecerPassiva(0, "Material Reforçado", "Dano físico e a distância aumentado a preço de poder errar"));
+                        }
+                    }
+                    else
+                    {
+                        int rand = UnityEngine.Random.Range(1, 21);
+                        
+                        enemy.efeitosAtivos[4] += 1;
+                        enemy.efeitosAtivos[5] += 1;
+                        if(rand >= 18) enemy.errouAtq = true;
+                        
+                        if(control.turno == 0)
+                        {
+                            StartCoroutine(AparecerPassiva(1, "Material Reforçado", "Dano físico e a distância aumentado a preço de poder errar"));
+                        }
+                    }
+                }
+                break;
         }
     }
 }

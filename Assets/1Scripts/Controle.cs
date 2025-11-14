@@ -512,7 +512,7 @@ public class Controle : MonoBehaviour
             player.list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, primeiroN, player, enemy);
 
             enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], segundoN, player, enemy);
-            player.list.AtaquesComEfeitos(true, player.ataqueUsado, primeiroN, player, enemy);
+            if (!player.pulouTurno) player.list.AtaquesComEfeitos(true, player.ataqueUsado, primeiroN, player, enemy);
 
             for (int i = 0; i < 6; i++)
             {
@@ -537,7 +537,7 @@ public class Controle : MonoBehaviour
                 enemy.emModPapel = false;
             }
             
-            enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], primeiroN, player, enemy);
+            if (!enemy.pulouTurno) enemy.list.AtaquesComEfeitos(false, enemy.attackID[enemy.idAtaqueUsado], primeiroN, player, enemy);
             player.list.AtaquesComEfeitos(true, player.ataqueUsado, segundoN, player, enemy);
 
             for (int i = 0; i < 6; i++)

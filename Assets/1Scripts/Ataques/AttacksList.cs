@@ -99,6 +99,8 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(83, "Chuva de canudos", "Ataque fraco que ataca várias vezes", Attacks.Tipo.golpe, Attacks.Tipo.zero, 2, 1, false, true, 5, 3, false, false));
         listaAtaques.Add(new Attacks(84, "Bastão de filme", "Ataque médio que tem uma chance pequena de fazer o inimigo errar o próximo ataque", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 2, true, true, 2, 4, true, false));
         listaAtaques.Add(new Attacks(85, "projétil de tampa", "Ataque fraco que deixa o alvo exposto e com menos defesa a distância", Attacks.Tipo.negativo, Attacks.Tipo.exposto, 2, 2, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(86, "Explosão de pressão", "Um ataque muito forte que causa um pouco de dano em você também", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 5, true, true, 2, 5, true, false));
+        listaAtaques.Add(new Attacks(87, "Material reforçado", "Aumenta seu dano físico e a distância, porém coloca uma chance de errar ataques", Attacks.Tipo.passiva, Attacks.Tipo.suporte, 0, 0, false, false, 0, 0, true, true));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
