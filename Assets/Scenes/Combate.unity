@@ -2241,8 +2241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perso: {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
-  regiao: 0
+  perso: {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
+  regiao: 2
   pontos: 0
   material:
   - 0

@@ -91,6 +91,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(75, "Apagar conteúdo", "Ataque médio que causa mais dano em alvos de Papel", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 3, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(76, "Gole de conhecimento", "Zera a quantidade de conhecimento do alvo, mantendo apenas o ganho inicial do turno", Attacks.Tipo.negativo, Attacks.Tipo.zero, 1, 0, false, true, 0, 3, true, false));
         listaAtaques.Add(new Attacks(77, "Avião de papel", "Ataque fraco que pórem ignora escudos", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 2, false, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(78, "Remendar", "Cura pequena que também aumenta defesa física", Attacks.Tipo.cura, Attacks.Tipo.suporte, 1, -3, false, false, 1, 4, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
