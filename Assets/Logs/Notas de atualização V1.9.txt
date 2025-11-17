@@ -1,11 +1,11 @@
 Funções Adicionadas:
-- Possibilidade de errar o ataque.
+- Possibilidade de errar o ataque seguindo condições especificas (Alguns ataques e o efeito da região de plástico).
 - Ao passar o mouse sobre seu nome a pontuação máxima mostra o nome da região que você está.
 
 
 Organização de código:
 - Textos de efeitos de ataques agora só aparecem caso o ataque tenha efeito e o efeito funcione. sem mais "Esse ataque deu dano normal" ou "O ataque não teve efeito"
-- Mudado a forma ativa efeitos de ataques e passivas.
+- Mudado a forma que ativa efeitos de ataques e passivas para facilitar implementação.
 
 Modo História:
 
@@ -57,11 +57,6 @@ Novos Ataques:
 (Renan) - Explosão de pressão, Sem material 2x5 físico, 5 carga, Ataque muito forte porém que causa dano em si mesmo tmambém.
 (Renan, Kai) - Material Reforçado, Passiva, sem material, Aumenta seu dano físico e a distância porém tem uma chance pequena de errar o ataque.
 
-Amélia: 9
-Vlad: 8
-Kai: 4
-Renan: 5
-Jayden: 5
 
 Novos Inimigos:
 (Papel)
