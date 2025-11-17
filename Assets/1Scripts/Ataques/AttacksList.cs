@@ -101,6 +101,13 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(85, "projétil de tampa", "Ataque fraco que deixa o alvo exposto e com menos defesa a distância", Attacks.Tipo.negativo, Attacks.Tipo.exposto, 2, 2, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(86, "Explosão de pressão", "Um ataque muito forte que causa um pouco de dano em você também", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 5, true, true, 2, 5, true, false));
         listaAtaques.Add(new Attacks(87, "Material reforçado", "Aumenta seu dano físico e a distância, porém coloca uma chance de errar ataques", Attacks.Tipo.passiva, Attacks.Tipo.suporte, 0, 0, false, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(88, "Amassar", "Ataques contra Papel ou Metal removem um escudo a mais antes do ataque", Attacks.Tipo.passiva, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(89, "Torre de papel", "Ataques de bloqueio adicionam um bloqueio a mais, o ataque Avião de papel contra você também remove escudo não apenas ignora", Attacks.Tipo.passiva, Attacks.Tipo.zero, 1, 0, true, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(90, "Recolar", "Para cada ataque de papel cura 1/8 da vida, para cada ataque sem material que virou papel cura 1/10", Attacks.Tipo.cura, Attacks.Tipo.zero, 1, -1, false, false, 0, 4, true, false));
+        listaAtaques.Add(new Attacks(91, "Virar a página", "Efeitos negativos são removidos em 2 por turno, porém sua defesa, física e a distância, sempre estão baixas", Attacks.Tipo.passiva, Attacks.Tipo.zero, 1, 0, false, false, 0, 0, true, true));
+        listaAtaques.Add(new Attacks(92, "Pintura nova", "Cura uma pequena quantidade de vida e aumenta sua defesa a distância", Attacks.Tipo.cura, Attacks.Tipo.suporte, 1, -3, false, false, 1 , 4, true, false));
+        listaAtaques.Add(new Attacks(93, "Planilha aberta", "Ataque médio de papel que causa um efeito negativo aleátorio", Attacks.Tipo.negativo, Attacks.Tipo.golpe, 1, 2, false, true, 2, 3, true, false));
+        listaAtaques.Add(new Attacks(94, "Casca com farpas", "Coloca escudo em si mesmo e cacos no inimigo", Attacks.Tipo.negativo, Attacks.Tipo.bloqueio, 1, 0, false, true, 0, 3, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));

@@ -392,7 +392,6 @@ public class Player : MonoBehaviour
             {
                 bloqTurno = false;
 
-                //Efeito número 7 e 8 pra inimigo
                 control.EfeitosAcontecendo(true, 4, 10);
 
                 //Modificadores facilitados

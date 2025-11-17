@@ -1984,6 +1984,15 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             control.escreverEfeito = true;
                             control.efeitoAtq = player.nickName + " Ignorou o escudo do alvo";
+
+                            for(int i = 0; i < 6; i++)
+                            {
+                                if(enemy.attackID[i] == 89)
+                                {
+                                    enemy.efeitosAtivos[1] -= 1;
+                                    StartCoroutine(AparecerPassiva(1, "Torre de Papel", "Avião de papel removeu um escudo"));
+                                }
+                            }
                         }
                     }
                     else
@@ -1992,6 +2001,15 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             control.escreverEfeito = true;
                             control.efeitoAtq = enemy.nomeinimigo + " Ignorou o seu escudo";
+
+                            for(int i = 0; i < 6; i++)
+                            {
+                                if(player.attackID[i] == 89)
+                                {
+                                    player.efeitosAtivos[1] -= 1;
+                                    StartCoroutine(AparecerPassiva(0, "Torre de Papel", "Avião de papel removeu um escudo"));
+                                }
+                            }
                         }
                     }
                 }
@@ -2221,6 +2239,223 @@ public class AttacksEfeitos : MonoBehaviour
                         {
                             StartCoroutine(AparecerPassiva(1, "Material Reforçado", "Dano físico e a distância aumentado a preço de poder errar"));
                         }
+                    }
+                }
+                break;
+            case 88: //Amassar
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        if(enemy.efeitosAtivos[1] > 0 && player.dano[player.idAtaqueUsado] > 0 && (enemy.materialInimigo == 1 || enemy.materialInimigo == 4))
+                        {
+                            enemy.efeitosAtivos[1] -= 1;
+                            StartCoroutine(AparecerPassiva(0, "Amassar", "Ataque removeu um escudo a mais que o normal"));
+                        }
+                    }
+                    else
+                    {
+                        if(player.efeitosAtivos[1] > 0 && enemy.dano[enemy.idAtaqueUsado] > 0 && (player.materialPlayer == 1 || player.materialPlayer == 4))
+                        {
+                            player.efeitosAtivos[1] -= 1;
+                            StartCoroutine(AparecerPassiva(1, "Amassar", "Ataque removeu um escudo a mais que o normal"));
+                        }
+                    }
+                }
+                break;
+            case 89: //Torre de papel
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        if(player.tipo1[player.idAtaqueUsado] == Attacks.Tipo.bloqueio || player.tipo2[player.idAtaqueUsado] == Attacks.Tipo.bloqueio)
+                        {
+                            player.efeitosAtivos[1] += 1;
+                            StartCoroutine(AparecerPassiva(0, "Torre de Papel", "Ganhou mais um escudo com esse bloqueio"));
+                        }
+                    }
+                    else
+                    {
+                        if(enemy.tipo1[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio || enemy.tipo2[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio)
+                        {
+                            enemy.efeitosAtivos[1] += 1;
+                            StartCoroutine(AparecerPassiva(1, "Torre de Papel", "Ganhou mais um escudo com esse bloqueio"));
+                        }
+                    }
+                }
+                break;
+            case 90: //Recolar
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        float cura = 0;
+                        int quantPapel = 0;
+                        int quantQuasePapel = 0;
+
+                        for(int i = 0; i < 6; i++)
+                        {
+                            if(player.material[i] == 1)
+                            {
+                                cura += Mathf.Round(player.maxHealth / 8);
+                                quantPapel++;
+                            }else if(player.attackID[i] != 0 && player.material[i] == 0 && player.materialPlayer == 1)
+                            {
+                                cura += Mathf.Round(player.maxHealth / 10);
+                                quantQuasePapel++;
+                            }
+                        }
+                        cura *= -1;
+
+                        player.CausarDano(cura);
+                        StartCoroutine(player.CorDano(player.idAtaqueUsado, cura));
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = "Ataques de papel: " + quantPapel + " .\nAtaques sem material que se tornaram papel: " + quantQuasePapel;
+                    }
+                    else
+                    {
+                        float cura = 0;
+                        int quantPapel = 0;
+                        int quantQuasePapel = 0;
+
+                        for(int i = 0; i < 6; i++)
+                        {
+                            if(enemy.material[i] == 1)
+                            {
+                                cura += Mathf.Round(enemy.maxHealth / 8);
+                                quantPapel++;
+                            }else if(enemy.attackID[i] != 0 && enemy.material[i] == 0 && enemy.materialInimigo == 1)
+                            {
+                                cura += Mathf.Round(enemy.maxHealth / 10);
+                                quantQuasePapel++;
+                            }
+                        }
+                        cura *= -1;
+
+                        enemy.CausarDano(cura);
+                        StartCoroutine(enemy.CorDano(enemy.idAtaqueUsado, cura));
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = "Ataques de papel: " + quantPapel + " .\nAtaques sem material que se tornaram papel: " + quantQuasePapel;
+                    }
+                }
+                break;
+            case 91: //Virar a página
+                if(quando == 7)
+                {
+                    if(quem)
+                    {
+                        for(int i = 8; i < 13; i++)
+                        {
+                            if(player.efeitosAtivos[i] > 0)
+                            {
+                                player.efeitosAtivos[i] -= 1;
+                            }
+                        }
+
+                        player.efeitosAtivos[10] += 1;
+                        player.efeitosAtivos[11] += 1;
+
+                        StartCoroutine(AparecerPassiva(0, "Virar a página", "Defesas diminuidas e efeitos extras removidos"));
+                    }
+                    else
+                    {
+                        for(int i = 8; i < 13; i++)
+                        {
+                            if(enemy.efeitosAtivos[i] > 0)
+                            {
+                                enemy.efeitosAtivos[i] -= 1;
+                            }
+                        }
+
+                        enemy.efeitosAtivos[10] += 1;
+                        enemy.efeitosAtivos[11] += 1;
+
+                        StartCoroutine(AparecerPassiva(1, "Virar a página", "Defesas diminuidas e efeitos extras removidos"));
+                    }
+                }
+                break;
+            case 92: //Pintura nova
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        player.efeitosAtivos[2] += 3;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = "Defesa a distância de " + player.nickName + " Aumentada";
+
+                        if(player.rAgora) player.efeitosAtivos[2] += 1;
+                    }
+                    else
+                    {
+                        enemy.efeitosAtivos[2] += 3;
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = "Defesa a distância de " + enemy.nomeinimigo + " Aumentada";
+                    }
+                }
+                break;
+            case 93: //Planilha aberta
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        int rand = UnityEngine.Random.Range(8, 13);
+                        string efeito = "nenhum";
+
+                        if(rand == 8) efeito="Ataque a distância";
+                        if(rand == 9) efeito="Ataque físico";
+                        if(rand == 10) efeito="Defesa a distância";
+                        if(rand == 11) efeito="Defesa física";
+                        if(rand == 12) efeito="Conhecimento";
+
+                        enemy.efeitosAtivos[rand] += 3;
+
+                        if(player.rAgora) enemy.efeitosAtivos[rand] += 1;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " ficou com menos " + efeito + ".";
+                    }
+                    else
+                    {
+                        int rand = UnityEngine.Random.Range(8, 13);
+                        string efeito = "nenhum";
+
+                        if(rand == 8) efeito="Ataque a distância";
+                        if(rand == 9) efeito="Ataque físico";
+                        if(rand == 10) efeito="Defesa a distância";
+                        if(rand == 11) efeito="Defesa física";
+                        if(rand == 12) efeito="Conhecimento";
+
+                        player.efeitosAtivos[rand] += 3;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = player.nickName + " ficou com menos " + efeito + ".";
+                    }
+                }
+                break;
+            case 94: //Casca com farpas
+                if(quando == 3)
+                {
+                    if(quem)
+                    {
+                        player.efeitosAtivos[1] += 2;
+                        enemy.efeitosAtivos[16] += 2;
+
+                        if(player.rAgora)
+                        {
+                            player.efeitosAtivos[1] += 1;
+                            enemy.efeitosAtivos[16] += 1;
+                        }
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = "Você recebeu escudo e o inimigo recebeu cacos";
+                    }
+                    else
+                    {
+                        enemy.efeitosAtivos[1] += 2;
+                        player.efeitosAtivos[16] += 2;
+
+                        control.escreverEfeito = true;
+                        control.efeitoAtq = enemy.nomeinimigo + " recebeu escudo e você recebeu cacos";
                     }
                 }
                 break;
