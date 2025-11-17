@@ -12042,10 +12042,8 @@ MonoBehaviour:
   osArquivosNL1:
   - {fileID: 11400000, guid: 76d9a17d07d199d4083d6fe7e97a71ef, type: 2}
   osArquivosNL2:
-  - {fileID: 11400000, guid: 76d9a17d07d199d4083d6fe7e97a71ef, type: 2}
   - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
   osArquivosNL3:
-  - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
   - {fileID: 11400000, guid: 6df40f8d1aabf014280af86dbbfa70c4, type: 2}
   florestaCompostaNL1:
   - {fileID: 11400000, guid: 390a3e75f2c39ed408fc2457a4273491, type: 2}
