@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
-  m_Name: 2 - Troll de Sacola
+  m_Name: "1 - Apari\xE7\xE3o madeira"
   m_EditorClassIdentifier: 
-  nome: Troll de sacola
-  material: 2
-  imgPadrao: {fileID: -5522358789462119685, guid: 6fbff92342fd708458b5845ad9873785, type: 3}
+  nome: "Apari\xE7\xE3o de madeira"
+  material: 1
+  imgPadrao: {fileID: 0}
   cor: {fileID: 0}
   maxHealth: 25
   maxCharge: 3
-  pDamage: 5
-  pDefense: 4
+  pDamage: 2
+  pDefense: 5
   sDamage: 2
-  sDefense: 1
-  mainStatus: 2
+  sDefense: 3
+  mainStatus: 4
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 4f000000540000004a0000000a0000000000000000000000
+  listaAtaquesNvl3: 5e000000590000004b0000001e0000000000000000000000

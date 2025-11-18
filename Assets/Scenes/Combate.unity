@@ -12033,18 +12033,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e21e074833a963a4383749e6105133c6, type: 2}
   comunidadeAbandonadaNL1:
   - {fileID: 11400000, guid: 4a0849d6c0308d44a80769fea5fa9cc4, type: 2}
+  - {fileID: 11400000, guid: 8f4bc27797600a74a87c889553e9ffc1, type: 2}
+  - {fileID: 11400000, guid: 31ecd5d1f15131e43a0bbd244596b549, type: 2}
   comunidadeAbandonadaNL2:
-  - {fileID: 11400000, guid: 4a0849d6c0308d44a80769fea5fa9cc4, type: 2}
-  - {fileID: 11400000, guid: 93b8bc7d65eab4b4994fd4e9c7b1e389, type: 2}
+  - {fileID: 11400000, guid: 2503379da76f4c446a2e5f8e4adcd2e0, type: 2}
+  - {fileID: 11400000, guid: 8fb37cacf5dffe047bf27200f25324cb, type: 2}
+  - {fileID: 11400000, guid: 5f8f9ac81e257ad46bd500f2ecf71124, type: 2}
   comunidadeAbandonadaNL3:
-  - {fileID: 11400000, guid: 93b8bc7d65eab4b4994fd4e9c7b1e389, type: 2}
+  - {fileID: 11400000, guid: 4d585a387de3b874088dd5359ee1f881, type: 2}
   - {fileID: 11400000, guid: 6b2fdb2286862b94bbb23262b50deb1d, type: 2}
+  - {fileID: 11400000, guid: ac2c3b60d4f498d46a0b5113b6e04d40, type: 2}
   osArquivosNL1:
   - {fileID: 11400000, guid: 76d9a17d07d199d4083d6fe7e97a71ef, type: 2}
+  - {fileID: 11400000, guid: b7c303c5272aecb4183e6bfdca255ab7, type: 2}
+  - {fileID: 11400000, guid: 26752fda71d27024aa6d6b020342f849, type: 2}
   osArquivosNL2:
   - {fileID: 11400000, guid: d562f81ece30a03468b9855e7278eaa3, type: 2}
+  - {fileID: 11400000, guid: 0b5f3eb48d1aa574daae855d21b89e7e, type: 2}
+  - {fileID: 11400000, guid: a161c74976d6ccd4d824b72745bc8c03, type: 2}
   osArquivosNL3:
   - {fileID: 11400000, guid: 6df40f8d1aabf014280af86dbbfa70c4, type: 2}
+  - {fileID: 11400000, guid: 3808ba8cd975952458c6aa05e685a19e, type: 2}
+  - {fileID: 11400000, guid: 90b7a27ac1f836c4795202b9873bafef, type: 2}
   florestaCompostaNL1:
   - {fileID: 11400000, guid: 390a3e75f2c39ed408fc2457a4273491, type: 2}
   - {fileID: 11400000, guid: 4a9fde45b3c23344ca9362fd07d79ecf, type: 2}

@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b914a51a704ad47ae4114e123dc64e, type: 3}
   m_Name: 1 - Louva-Palavras
   m_EditorClassIdentifier: 
-  nome: 
-  material: 0
+  nome: Louva-Palavras
+  material: 1
   imgPadrao: {fileID: 0}
   cor: {fileID: 0}
-  maxHealth: 0
-  maxCharge: 0
-  pDamage: 0
-  pDefense: 0
-  sDamage: 0
-  sDefense: 0
-  mainStatus: 0
+  maxHealth: 25
+  maxCharge: 3
+  pDamage: 5
+  pDefense: 2
+  sDamage: 2
+  sDefense: 3
+  mainStatus: 1
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 040000002f00000058000000570000000000000000000000
