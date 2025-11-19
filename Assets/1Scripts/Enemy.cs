@@ -823,7 +823,6 @@ public class Enemy : MonoBehaviour
         else
         {
             textoAtaque.text = nomeinimigo + " Errou o Ataque";
-            yield return StartCoroutine(control.EsperarTeclaEspaco());
         }
 
     }

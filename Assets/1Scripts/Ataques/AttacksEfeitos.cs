@@ -1608,18 +1608,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
                         {
-                            float phispe;
-
-                            if (player.phispe[player.idAtaqueUsado] == true)
-                            {
-                                phispe = player.modPhiDamage;
-                            }
-                            else
-                            {
-                                phispe = player.modSpeDamage;
-                            }
-
-                            float dano = Mathf.Ceil((player.dano[player.idAtaqueUsado] + phispe) / 4);
+                            float dano = Mathf.Ceil(((player.speDamage / 2 * player.dano[player.idAtaqueUsado]) + player.modSpeDamage) / 2);
                             if (dano <= 0)
                                 dano = 1;
 
@@ -1632,18 +1621,7 @@ public class AttacksEfeitos : MonoBehaviour
 
                         if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
                         {
-                            float phispe;
-
-                            if (enemy.phispe[enemy.idAtaqueUsado] == true)
-                            {
-                                phispe = enemy.modPhiDamage;
-                            }
-                            else
-                            {
-                                phispe = enemy.modSpeDamage;
-                            }
-
-                            float dano = Mathf.Ceil((enemy.dano[enemy.idAtaqueUsado] + phispe) / 4);
+                            float dano = Mathf.Ceil(((enemy.speDamage / 2 * enemy.dano[enemy.idAtaqueUsado]) + enemy.modSpeDamage) / 2);
                             if (dano <= 0)
                                 dano = 1;
 

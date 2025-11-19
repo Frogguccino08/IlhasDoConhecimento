@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +7,9 @@ public class Sair : MonoBehaviour
 {
     public GameObject tela;
     public Controle control;
+    public TMP_Text motivacao;
+
+    public List<string> frases = new List<string>();
 
     void Update()
     {
@@ -13,9 +18,13 @@ public class Sair : MonoBehaviour
             control.telaSair = true;
             control.descricao.SetActive(false);
             tela.SetActive(true);
+
+            motivacao.text = frases[UnityEngine.Random.Range(0, frases.Count)];
+            control.DesativarBotao();
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == true)
         {
+            control.AtivarBotao();
             control.telaSair = false;
             tela.SetActive(false);
         }

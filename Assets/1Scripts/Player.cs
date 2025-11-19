@@ -576,11 +576,10 @@ public class Player : MonoBehaviour
             if (usingR) currentR = -1;
             if (using3R) using3R = false;
             if (usingR) usingR = false;
-            if (dano[id] > 0) currentR -= 1;
+            if (dano[id] > 0 && usingR) currentR -= 1;
             controlConheci.SpawnRs();
 
             textoAtaque.text = nickName + " Errou o Ataque";
-            yield return StartCoroutine(control.EsperarTeclaEspaco());
         }
 
         rAgora = false;

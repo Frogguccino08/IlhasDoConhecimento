@@ -1,6 +1,8 @@
 Funções Adicionadas:
 - Possibilidade de errar o ataque seguindo condições especificas (Alguns ataques e o efeito da região de plástico).
 - Ao passar o mouse sobre seu nome a pontuação máxima mostra o nome da região que você está.
+- Tela de produção/créditos adicionado.
+- Tela de pause alterada para mostrar efeitos efetivos contra outros.
 
 
 Organização de código:
@@ -26,6 +28,7 @@ Efeitos especiais além de ataques:
 
 
 Balanceamento:
+- Passiva "Guia", agora é completamente baseado em dano a distância.
 
 
 Correção de erros:
