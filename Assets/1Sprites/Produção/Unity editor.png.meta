@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Unity editor_0: 6644832754066100811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
