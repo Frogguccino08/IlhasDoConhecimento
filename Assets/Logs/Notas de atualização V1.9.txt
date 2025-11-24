@@ -16,6 +16,8 @@ Motor do Barco:
 
 
 Visual:
+- Eremita de Cone, Origami, Artilharia de papel e Livro vivo, foram adicionados as cores do material.
+- Imagem do material em descrições foi adicionado para facilitar visualização de material.
 
 
 Efeitos especiais além de ataques:
@@ -29,6 +31,7 @@ Efeitos especiais além de ataques:
 
 Balanceamento:
 - Passiva "Guia", agora é completamente baseado em dano a distância.
+- Eremita de Cone, Origami, Artilharia de papel e Livro vivo, Troll de sacola tiveram seus atributos e ataques alterados.
 
 
 Correção de erros:
@@ -63,4 +66,17 @@ Novos Ataques:
 
 Novos Inimigos:
 (Papel)
+- Rolo de Papel,
+- Caracol de caixa,
+- Abre e fecha,
+- Lula tinteiro,
+- Aparição de madeira,
+- Louva-Palavras.
+
 (Plástico)
+- Bicho-canudo,
+- Enxame derretido,
+- Tartaruga de canudos,
+- Boneco de pose,
+- Mascote de bebida,
+- Monstro de lego

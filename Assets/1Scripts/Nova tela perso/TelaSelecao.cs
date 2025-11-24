@@ -93,20 +93,26 @@ public class TelaSelecao : MonoBehaviour
         {
             case 1:
                 material = "Papel";
+                persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().material.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
                 break;
             case 2:
                 material = "Plástico";
+                persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().material.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
                 break;
             case 3:
                 material = "Vidro";
+                persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().material.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
                 break;
             case 4:
                 material = "Metal";
+                persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().material.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
                 break;
             case 5:
                 material = "Orgânico";
+                persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().material.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
                 break;
         }
+                
         persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().materialTxt.text = material;
 
         if (perso.IndexOf(boneco) == perso.Count - 1)

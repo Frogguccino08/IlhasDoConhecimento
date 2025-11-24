@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Monstro de lego
   material: 2
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -661253091099951765, guid: 331a2f46b50f97b499e49f83addc9441, type: 3}
+  cor: {fileID: 5801668647645040078, guid: eb847f11f56e76c439ce07d8c5f17651, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 3

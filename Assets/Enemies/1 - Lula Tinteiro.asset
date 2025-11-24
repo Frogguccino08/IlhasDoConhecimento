@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Lula tinteiro
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 8347244727571281129, guid: 02b244f0cf86f154fa8df560aaf56f33, type: 3}
+  cor: {fileID: 7920565404510952487, guid: 6e5c3f92b58f5414ab8fb5a7e2d987d7, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

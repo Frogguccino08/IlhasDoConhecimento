@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Artilharia de papel
   material: 1
-  imgPadrao: {fileID: -5147858445845741297, guid: e5f953350124ce44e81ea0f97d2a105b, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 8031998260765132468, guid: cc4bfce5c3f651e4eb839bb9325b558c, type: 3}
+  cor: {fileID: -71731695771176811, guid: db4d62618bf4f0147ae5fd4c1c691a3b, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: eb847f11f56e76c439ce07d8c5f17651
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5801668647645040078
+    second: 2.Monstro de lego Cor_0
+  - first:
+      213: 3133304011697256813
+    second: 2.Monstro de lego Cor_1
+  - first:
+      213: 1109715467069678547
+    second: 2.Monstro de lego Cor_2
+  - first:
+      213: 3094788807904416027
+    second: 2.Monstro de lego Cor_3
+  - first:
+      213: -2141401545640231869
+    second: 2.Monstro de lego Cor_4
+  - first:
+      213: 6802226306034243382
+    second: 2.Monstro de lego Cor_5
+  - first:
+      213: -911797459890153341
+    second: 2.Monstro de lego Cor_6
+  - first:
+      213: -1365836502834508846
+    second: 2.Monstro de lego Cor_7
+  - first:
+      213: 3493237943675714080
+    second: 2.Monstro de lego Cor_8
+  - first:
+      213: -2564423160628507588
+    second: 2.Monstro de lego Cor_9
+  - first:
+      213: 5116593038819012418
+    second: 2.Monstro de lego Cor_10
+  - first:
+      213: 8139792310357880651
+    second: 2.Monstro de lego Cor_11
+  - first:
+      213: -3889661824882653549
+    second: 2.Monstro de lego Cor_12
+  - first:
+      213: 7031029917570574173
+    second: 2.Monstro de lego Cor_13
+  - first:
+      213: 4606300525258975812
+    second: 2.Monstro de lego Cor_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_0
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 145
+        width: 671
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd476f75eaa38050800000000000000
+      internalID: 5801668647645040078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 606
+        width: 35
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69758ec56bbb7b20800000000000000
+      internalID: 3133304011697256813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_2
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 621
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3e1787650866f00800000000000000
+      internalID: 1109715467069678547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_3
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 595
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b115ffd1606e2fa20800000000000000
+      internalID: 3094788807904416027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_4
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 548
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c34aec3a63842e0800000000000000
+      internalID: -2141401545640231869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 551
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6371dfc19cc566e50800000000000000
+      internalID: 6802226306034243382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_6
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 549
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388d4288a05a853f0800000000000000
+      internalID: -911797459890153341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 486
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db894befe29b0de0800000000000000
+      internalID: -1365836502834508846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_8
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 358
+        width: 64
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02af4bcd6697a7030800000000000000
+      internalID: 3493237943675714080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_9
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 484
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c04f8e8b6596cd0800000000000000
+      internalID: -2564423160628507588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_10
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 374
+        width: 186
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f2b0b824ac10740800000000000000
+      internalID: 5116593038819012418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_11
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 282
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f6654daf956f070800000000000000
+      internalID: 8139792310357880651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_12
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 284
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396c877bd25250ac0800000000000000
+      internalID: -3889661824882653549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_13
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 272
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5720f1457c339160800000000000000
+      internalID: 7031029917570574173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2.Monstro de lego Cor_14
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 267
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44aa1c82ceddcef30800000000000000
+      internalID: 4606300525258975812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 675334a0d239f104b86997acdd867910
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      2.Monstro de lego Cor_0: 5801668647645040078
+      2.Monstro de lego Cor_1: 3133304011697256813
+      2.Monstro de lego Cor_10: 5116593038819012418
+      2.Monstro de lego Cor_11: 8139792310357880651
+      2.Monstro de lego Cor_12: -3889661824882653549
+      2.Monstro de lego Cor_13: 7031029917570574173
+      2.Monstro de lego Cor_14: 4606300525258975812
+      2.Monstro de lego Cor_2: 1109715467069678547
+      2.Monstro de lego Cor_3: 3094788807904416027
+      2.Monstro de lego Cor_4: -2141401545640231869
+      2.Monstro de lego Cor_5: 6802226306034243382
+      2.Monstro de lego Cor_6: -911797459890153341
+      2.Monstro de lego Cor_7: -1365836502834508846
+      2.Monstro de lego Cor_8: 3493237943675714080
+      2.Monstro de lego Cor_9: -2564423160628507588
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

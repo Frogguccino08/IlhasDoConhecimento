@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Bicho-Canudo
   material: 2
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 8067216256616529206, guid: de91b1b05e960794282f0769da1e77f2, type: 3}
+  cor: {fileID: -6701374350393027922, guid: 6f6c4519d2f0ccf41a941923718a008f, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

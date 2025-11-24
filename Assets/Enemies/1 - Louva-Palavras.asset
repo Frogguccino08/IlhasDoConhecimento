@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Louva-Palavras
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -7007670113460444656, guid: 1a9b1a8248a4ea44c9a9b7959d27cdc2, type: 3}
+  cor: {fileID: 8486425100577282256, guid: 96f4ba826c4e975409ac9694bfcfcc08, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 5

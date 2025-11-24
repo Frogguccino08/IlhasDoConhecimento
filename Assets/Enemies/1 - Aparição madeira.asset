@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "Apari\xE7\xE3o de madeira"
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 4676184260670714976, guid: 39b9decc4a41e3b4d997b4bd0a3530ac, type: 3}
+  cor: {fileID: -5230115628329015332, guid: d25e768d9a3d72b48a87bb500da263d7, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

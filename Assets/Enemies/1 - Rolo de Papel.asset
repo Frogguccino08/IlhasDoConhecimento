@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Rolo de papel
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -6562343002001921468, guid: 07239d0219f51ce4b8e07179e0d79a23, type: 3}
+  cor: {fileID: -7882421446856263014, guid: 407827821b965944298d0dff7142352e, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 3

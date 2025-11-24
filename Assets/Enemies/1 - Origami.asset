@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Origami
   material: 1
-  imgPadrao: {fileID: 925540064159583759, guid: 5d0b3dcb886899c45b49042140f592db, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -4141082449560582091, guid: 063f78cd1ee47374a9b2f83fce42306a, type: 3}
+  cor: {fileID: -6530550142195896146, guid: 791decbefb91b01469b4e825df54e1af, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

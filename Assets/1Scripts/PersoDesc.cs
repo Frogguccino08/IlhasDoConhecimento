@@ -2,6 +2,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -39,22 +40,27 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             case 1:
                 regis.material.text = "Papel";
                 regiaoTopo.text = "Os Arquivos";
+                regis.imgMaterial.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
                 break;
             case 2:
                 regis.material.text = "Plástico";
                 regiaoTopo.text = "Comunidade Abandonada";
+                regis.imgMaterial.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
                 break;
             case 3:
                 regis.material.text = "Vidro";
                 regiaoTopo.text = "Costa de Cacos";
+                regis.imgMaterial.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
                 break;
             case 4:
                 regis.material.text = "Metal";
                 regiaoTopo.text = "Coração da Ilha";
+                regis.imgMaterial.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
                 break;
             case 5:
                 regis.material.text = "Orgânico";
                 regiaoTopo.text = "Floresta Orgânica";
+                regis.imgMaterial.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
                 break;
         }
     }

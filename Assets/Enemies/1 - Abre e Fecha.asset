@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Abre e fecha
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 4629906332946833233, guid: e6224c08ab42eda4ea77bbd9db3b8cc2, type: 3}
+  cor: {fileID: -7082878893537938081, guid: a7e3eae4e1ac23147a94df1cddc63e46, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1

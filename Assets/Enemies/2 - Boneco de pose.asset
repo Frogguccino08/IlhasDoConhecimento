@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Boneco de pose
   material: 2
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 7908676474406935268, guid: b69de9c4d647a994abfb2f669fddc3be, type: 3}
+  cor: {fileID: -8324226646244745224, guid: 3a6500b3890f57a488a614d2bda54906, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

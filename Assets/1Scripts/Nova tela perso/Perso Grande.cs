@@ -72,18 +72,23 @@ public class PersoGrande : MonoBehaviour
         {
             case 1:
                 material.text = "Papel";
+                imgMaterial.GetComponent<Image>().color = new Color32(65, 105, 225, 255);
                 break;
             case 2:
                 material.text = "Plástico";
+                imgMaterial.GetComponent<Image>().color = new Color32(155, 17, 30, 255);
                 break;
             case 3:
                 material.text = "Vidro";
+                imgMaterial.GetComponent<Image>().color = new Color32(0, 100, 0, 255);
                 break;
             case 4:
                 material.text = "Metal";
+                imgMaterial.GetComponent<Image>().color = new Color32(238, 173, 45, 255);
                 break;
             case 5:
                 material.text = "Orgânico";
+                imgMaterial.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
                 break;
         }
 

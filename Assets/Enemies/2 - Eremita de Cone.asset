@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Eremita de Cone
   material: 2
-  imgPadrao: {fileID: -4656711305438085947, guid: 773490631f3ba914dab07b188ef7cc0f, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -458621690587373078, guid: bb5925ddc1cf16e4faed18e9503f8846, type: 3}
+  cor: {fileID: -6717152987721100805, guid: a3870f761c9b7f04ea523a9a16123f0c, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

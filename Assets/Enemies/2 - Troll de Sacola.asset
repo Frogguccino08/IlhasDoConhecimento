@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Troll de sacola
   material: 2
-  imgPadrao: {fileID: -5522358789462119685, guid: 6fbff92342fd708458b5845ad9873785, type: 3}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: 6948226851852995994, guid: 15dd0320c90776648b9fa8aff4694632, type: 3}
+  cor: {fileID: -3926592881055120264, guid: 003ecb8d16c94cb4c9c7cafcdc32408a, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 5

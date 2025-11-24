@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Enxame derretido
   material: 2
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -1564088819487095502, guid: 9d9675ce7fdd44041b79d57b8fabd34d, type: 3}
+  cor: {fileID: -4289691502557300546, guid: aa3f1a0816923094ca0d1f445549b942, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 2

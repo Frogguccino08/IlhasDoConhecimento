@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Caracol de  caixa
   material: 1
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -5136343133572397611, guid: e62b2dde61f28234aa1226a877f072f8, type: 3}
+  cor: {fileID: 7400540201819829624, guid: 01a9391ca7e52ef4baacb11522b65342, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
