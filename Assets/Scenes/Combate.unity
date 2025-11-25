@@ -13460,8 +13460,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e21e074833a963a4383749e6105133c6, type: 2}
   comunidadeAbandonadaNL1:
   - {fileID: 11400000, guid: 8f4bc27797600a74a87c889553e9ffc1, type: 2}
-  - {fileID: 11400000, guid: 31ecd5d1f15131e43a0bbd244596b549, type: 2}
   - {fileID: 11400000, guid: 4a0849d6c0308d44a80769fea5fa9cc4, type: 2}
+  - {fileID: 11400000, guid: 31ecd5d1f15131e43a0bbd244596b549, type: 2}
   comunidadeAbandonadaNL2:
   - {fileID: 11400000, guid: 2503379da76f4c446a2e5f8e4adcd2e0, type: 2}
   - {fileID: 11400000, guid: 8fb37cacf5dffe047bf27200f25324cb, type: 2}

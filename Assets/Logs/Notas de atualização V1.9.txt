@@ -9,11 +9,6 @@ Organização de código:
 - Textos de efeitos de ataques agora só aparecem caso o ataque tenha efeito e o efeito funcione. sem mais "Esse ataque deu dano normal" ou "O ataque não teve efeito"
 - Mudado a forma que ativa efeitos de ataques e passivas para facilitar implementação.
 
-Modo História:
-
-
-Motor do Barco:
-
 
 Visual:
 - Eremita de Cone, Origami, Artilharia de papel e Livro vivo, foram adicionados as cores do material.
@@ -32,9 +27,6 @@ Efeitos especiais além de ataques:
 Balanceamento:
 - Passiva "Guia", agora é completamente baseado em dano a distância.
 - Eremita de Cone, Origami, Artilharia de papel e Livro vivo, Troll de sacola tiveram seus atributos e ataques alterados.
-
-
-Correção de erros:
 
 
 Novos Ataques:
@@ -79,4 +71,5 @@ Novos Inimigos:
 - Tartaruga de canudos,
 - Boneco de pose,
 - Mascote de bebida,
-- Monstro de lego
+- Monstro de lego,
+- Cobra de garrafas.

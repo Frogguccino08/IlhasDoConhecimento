@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Cobra de Garrafas
   material: 2
-  imgPadrao: {fileID: 0}
-  cor: {fileID: 0}
+  imgPadrao: {fileID: -2829647610512560280, guid: ba907478296a112469bf4aa0cb35995f, type: 3}
+  cor: {fileID: -4687568578623773857, guid: 5e9d7f862db720a429d9e77dcce55b31, type: 3}
   maxHealth: 25
   maxCharge: 3
   pDamage: 1
@@ -25,4 +25,4 @@ MonoBehaviour:
   mainStatus: 3
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl3: 550000005700000058000000530000000000000000000000
