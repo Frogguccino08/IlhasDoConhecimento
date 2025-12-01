@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Bico serrilhado
   material: 4
-  imgPadrao: {fileID: -4837738273097338814, guid: b3e018e870bd1cf4ea32d8995b1e9d61, type: 3}
+  imgPadrao: {fileID: -4837738273097338814, guid: e0813624abeb13a40af7c263f8b16ce9, type: 3}
   cor: {fileID: 2002253923190281622, guid: c9eb23878f388d44f95d342d7efc30f3, type: 3}
   maxHealth: 25
   maxCharge: 3
