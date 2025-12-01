@@ -580,6 +580,8 @@ public class Player : MonoBehaviour
             controlConheci.SpawnRs();
 
             textoAtaque.text = nickName + " Errou o Ataque";
+            if(dano[idAtaqueUsado] != 0)
+                yield return StartCoroutine(control.EsperarTeclaEspaco());
         }
 
         rAgora = false;
