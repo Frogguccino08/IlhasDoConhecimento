@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Sair : MonoBehaviour
 {
@@ -11,10 +12,21 @@ public class Sair : MonoBehaviour
 
     public List<string> frases = new List<string>();
 
+    public bool btOn;
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == false && control.vitoriaOn == false)
         {
+            if(control.butao[0].GetComponent<Button>().enabled)
+            {
+                btOn = true;
+            }
+            else
+            {
+                btOn = false;
+            }
+
             control.telaSair = true;
             control.descricao.SetActive(false);
             tela.SetActive(true);
@@ -24,7 +36,11 @@ public class Sair : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == true)
         {
-            control.AtivarBotao();
+            if(btOn)
+            {
+                control.AtivarBotao();
+            }
+
             control.telaSair = false;
             tela.SetActive(false);
         }

@@ -50,11 +50,11 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(34, "Derreter", "Diminue a defesa física do inimigo por 3 turnos", Attacks.Tipo.negativo, Attacks.Tipo.zero, 4, 0, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(35, "Desperdício", "Diminue o ganho de conhecimento do inimigo por 3 turnos", Attacks.Tipo.negativo, Attacks.Tipo.zero, 5, 0, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(36, "Arremesso de garrafa", "Ataque mediano de Vidro que causa cacos", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 3, 3, false, true, 3, 5, true, false));
-        listaAtaques.Add(new Attacks(37, "Martelo de brinquedo", "Ataque com bastante dano que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 2, 5, true, true, 1, 4, true, false));
+        listaAtaques.Add(new Attacks(37, "Martelo de brinquedo", "Ataque forte que coloca 2 exposto antes de atacar", Attacks.Tipo.golpe, Attacks.Tipo.exposto, 2, 5, true, true, 1, 4, true, false));
         listaAtaques.Add(new Attacks(38, "Tiro de canudo", "Ataque com dano razoável porém que remove 2 bloqueio ao invés de 1 (3 com carga R)", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 2, 3, false, true, 1, 4, true, false));
         listaAtaques.Add(new Attacks(39, "Aprendendo", "Ataque fraco de papel que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 1, 3, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(40, "Tapa leve", "Ataque muito fraco sem elemento sem custo e sem efeito", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 1, true, true, 1, 0, false, false));
-        listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 5 bloqueio em si mesmo", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 1, 5, true, false));
+        listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 4 bloqueio em si mesmo", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 1, 5, true, false));
         listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", Attacks.Tipo.troca, Attacks.Tipo.suporte, 0, 0, false, false, 0, 3, true, false));
         listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 2, true, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -4, false, false, 1, 3, false, false));
@@ -115,6 +115,7 @@ public class AttacksList : MonoBehaviour
         listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
 
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));

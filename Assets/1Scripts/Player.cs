@@ -204,39 +204,6 @@ public class Player : MonoBehaviour
 
         AtaquesSelecionados();
         controlConheci.SpawnConhecimento(maxCharge + ModCharge, currentCharge);
-
-        if (efeitosAtivos[7] > 0)
-        {
-            quantBlock = efeitosAtivos[1];
-        }
-
-/*
-        for (i = 0; i < 6; i++)
-        {
-            if (isPassive[i] == true)
-            {
-                list.AtaquesComEfeitos(true, attackID[i], 6, this, enemy);
-            }
-        }
-*/
-
-        if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
-        {
-            int num = efeitosAtivos[1] - quantBlock;
-            efeitosAtivos[1] = quantBlock;
-
-            for (int i = 0; i < num; i++)
-            {
-                if (efeitosAtivos[7] > 0)
-                {
-                    efeitosAtivos[7] -= 1;
-                }
-                else
-                {
-                    efeitosAtivos[1] += 1;
-                }
-            }
-        }
     }
 
 
@@ -359,32 +326,9 @@ public class Player : MonoBehaviour
 
         control.EfeitosAcontecendo(true, 2, 8);
 
-        if (efeitosAtivos[7] > 0)
-        {
-            quantBlock = efeitosAtivos[1];
-        }
-
         if (!errouAtq)
         {
             control.EfeitosAcontecendo(true, 3, 9);
-
-            if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
-            {
-                int num = efeitosAtivos[1] - quantBlock;
-                efeitosAtivos[1] = quantBlock;
-
-                for (int i = 0; i < num; i++)
-                {
-                    if (efeitosAtivos[7] > 0)
-                    {
-                        efeitosAtivos[7] -= 1;
-                    }
-                    else
-                    {
-                        efeitosAtivos[1] += 1;
-                    }
-                }
-            }
 
 
             //Caso cause dano
@@ -538,33 +482,6 @@ public class Player : MonoBehaviour
                 }
 
                 danoPublic = attackDamage;
-
-
-
-                if (efeitosAtivos[7] > 0)
-                {
-                    quantBlock = efeitosAtivos[1];
-                }
-
-                control.EfeitosAcontecendo(true, 5, 11);
-
-                if (efeitosAtivos[7] > 0 && quantBlock < efeitosAtivos[1])
-                {
-                    int num = efeitosAtivos[1] - quantBlock;
-                    efeitosAtivos[1] = quantBlock;
-
-                    for (int i = 0; i < num; i++)
-                    {
-                        if (efeitosAtivos[7] > 0)
-                        {
-                            efeitosAtivos[7] -= 1;
-                        }
-                        else
-                        {
-                            efeitosAtivos[1] += 1;
-                        }
-                    }
-                }
             }
 
             Fraquezas(id);
@@ -837,5 +754,48 @@ public class Player : MonoBehaviour
             cor.color = new Color32(90, 78, 53, 255);
         }
         
+    }
+
+    public void EscudoExposto(int quantShield, int quantExposto)
+    {
+        int shield = efeitosAtivos[1];
+        int exposto = efeitosAtivos[7];
+
+        if(quantShield > 0)
+        {
+            if(exposto > 0)
+            {
+                for(int i = quantShield; i > 0; i--)
+                {
+                    if(exposto > 0)
+                    {
+                        exposto--;
+                    }
+                    else
+                    {
+                        shield++;
+                    }
+                }
+            }
+            else
+            {
+                shield += quantShield;
+            }
+        }
+
+        if(quantExposto > 0)
+        {
+            exposto += quantExposto;
+            shield -= exposto;
+        }
+
+        if(shield < 0)
+            shield = 0;
+
+        if(exposto < 0)
+            exposto = 0;
+
+        efeitosAtivos[1] = shield;
+        efeitosAtivos[7] = exposto;
     }
 }

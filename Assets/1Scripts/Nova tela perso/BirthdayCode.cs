@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BirthdayCode : MonoBehaviour
 {
+    //Códigos
+    //0714 Yoko
+    //
+
     public TMP_Text text;
     public bool codigoZerado = true;
     public PCsSO pc;
@@ -12,48 +16,116 @@ public class BirthdayCode : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha0) && codigoZerado == true)
-        {
-            codigoZerado = false;
-            StartCoroutine(Codigo());
-        }
+        StartCoroutine(Codigo());
     }
 
     IEnumerator Codigo()
     {
-        text.GetComponent<TMP_Text>().enabled = true;
-        text.text += "0";
-
-        while (!Input.GetKeyUp(KeyCode.Alpha7) && codigoZerado == false)
+        if(Input.GetKeyUp(KeyCode.Alpha0))
         {
-            yield return null;
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "0";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "1";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "2";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "3";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha4))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "4";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha5))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "5";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha6))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "6";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha7))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "7";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha8))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "8";
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha9))
+        {
+            text.GetComponent<TMP_Text>().enabled = true;
+            text.text += "9";
         }
 
-        text.GetComponent<TMP_Text>().enabled = true;
-        text.text += "7";
-
-        while (!Input.GetKeyUp(KeyCode.Alpha1) && codigoZerado == false)
+        if(text.text.Length == 4)
         {
-            yield return null;
+            text.color = Color.red;
+            yield return new WaitForSeconds(1);
+            ChecarCodigo();
+            text.text = "";
         }
+    }
 
-        text.GetComponent<TMP_Text>().enabled = true;
-        text.text += "1";
+    void ChecarCodigo()
+    {
+        string codigo = text.text;
 
-        while (!Input.GetKeyUp(KeyCode.Alpha4) && codigoZerado == false)
+        if(codigo == "0714" || codigo == "0402")
         {
-            yield return null;
+            text.color = Color.red;
+            StartCoroutine(CodigoCerto());
         }
-
-        text.GetComponent<TMP_Text>().enabled = true;
-        text.text += "4";
-
-        StartCoroutine(CodigoCerto());
-        yield break;
-
+        else
+        {
+            text.text = "";
+        }
     }
 
     IEnumerator CodigoCerto()
+    {
+        string codigo = text.text;
+
+        yield return StartCoroutine(Comemoracao());
+
+        if(codigo == "0714")
+        {
+            PersonagemSelecionado.instance.unlock[5] = true;
+        }
+        if(codigo == "0402")
+        {
+            PersonagemSelecionado.instance.unlock[6] = true;
+        }
+        
+        foreach (GameObject obj in tela.persosDesc)
+        {
+            Destroy(obj);
+        }
+        tela.persosDesc.Clear();
+        foreach (PCsSO boneco in tela.perso)
+        {
+            tela.ColocarPersonagem(boneco);
+        }
+
+        text.text = "";
+        text.color = Color.black;
+    }
+
+    IEnumerator Comemoracao()
     {
         text.color = Color.red;
         yield return new WaitForSeconds(1);
@@ -74,15 +146,5 @@ public class BirthdayCode : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.3f);
-        PersonagemSelecionado.instance.unlock[5] = true;
-        foreach (GameObject obj in tela.persosDesc)
-        {
-            Destroy(obj);
-        }
-        tela.persosDesc.Clear();
-        foreach (PCsSO boneco in tela.perso)
-        {
-            tela.ColocarPersonagem(boneco);
-        }
     }
 }

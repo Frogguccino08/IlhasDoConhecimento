@@ -16,7 +16,6 @@ public class TelaSelecao : MonoBehaviour
 
     public TMP_Text maxPoint;
 
-    int down = 0;
     string material = "???";
 
     void Start()
@@ -44,32 +43,16 @@ public class TelaSelecao : MonoBehaviour
 
     public void ColocarPersonagem(PCsSO boneco)
     {
-        int o = 0;
-        int index = 0;
+        int index = perso.IndexOf(boneco);
 
-        while (o <= perso.IndexOf(boneco))
-        {
-            index++;
-            o++;
-
-            if (index > 3)
-            {
-                index = 1;
-            }
-        }
-
-        for (int i = 0; i <= perso.IndexOf(boneco) - 1; i++)
-        {
-            if ((index - 1) % 3 == 0 && index != 0)
-            {
-                down++;
-            }
-        }
+        int coluna = index % 3;
+        int linha  = index / 3;
 
         persosDesc.Add(Instantiate(pequeno, transform.position, Quaternion.identity));
 
-        persosDesc[perso.IndexOf(boneco)].transform.SetParent(canva.transform);
-        persosDesc[perso.IndexOf(boneco)].transform.localPosition = new Vector3(-9.2f + ((index - 1) * 7), 3.9f - (down * 1), 0);
+        persosDesc[index].transform.SetParent(canva.transform);
+
+        persosDesc[index].transform.localPosition =new Vector3(-9.2f + (coluna * 7f), 3.9f - (linha * 2.5f), 0);
 
         if (pc.unlock[perso.IndexOf(boneco)] == true)
         {
@@ -114,11 +97,6 @@ public class TelaSelecao : MonoBehaviour
         }
                 
         persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().materialTxt.text = material;
-
-        if (perso.IndexOf(boneco) == perso.Count - 1)
-        {
-            down = 0;
-        }
 
         persosDesc[perso.IndexOf(boneco)].GetComponent<Persopequeno>().pc = boneco;
 

@@ -195,34 +195,9 @@ public class Controle : MonoBehaviour
             yield return EsperarTeclaEspaco();
         }
 
-        if (player.efeitosAtivos[7] > 0)
-            player.quantBlock = player.efeitosAtivos[1];
-
         EfeitosAcontecendo(true, 6, 12);
 
-        if (player.efeitosAtivos[7] > 0 && player.quantBlock < player.efeitosAtivos[1])
-        {
-            int num = player.efeitosAtivos[1] - player.quantBlock;
-            player.efeitosAtivos[1] = player.quantBlock;
-
-            for (int i = 0; i < num; i++)
-            {
-                if (player.efeitosAtivos[7] > 0)
-                {
-                    player.efeitosAtivos[7] -= 1;
-                }
-                else
-                {
-                    player.efeitosAtivos[1] += 1;
-                }
-            }
-        }
-
         player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
-        if (turno > 1)
-        {
-            enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
-        }
 
         if (player.efeitosUsados[16]) yield return EsperarTeclaEspaco();
 
@@ -275,6 +250,10 @@ public class Controle : MonoBehaviour
         //Após escolher o ataque
         enemy.EscolherAtaque();
         enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
+        if (turno > 1)
+        {
+            enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
+        }
 
         texto.enabled = true;
         yield return EsperarTeclaEspaco();
@@ -286,31 +265,9 @@ public class Controle : MonoBehaviour
             yield return EsperarTeclaEspaco();
         }
 
-        if (enemy.efeitosAtivos[7] > 0)
-            enemy.quantBlock = enemy.efeitosAtivos[1];
-
         EfeitosAcontecendo(false, 6, 12);
 
-        if (enemy.efeitosAtivos[7] > 0 && enemy.quantBlock < enemy.efeitosAtivos[1])
-        {
-            int num = enemy.efeitosAtivos[1] - enemy.quantBlock;
-            enemy.efeitosAtivos[1] = enemy.quantBlock;
-
-            for (int i = 0; i < num; i++)
-            {
-                if (enemy.efeitosAtivos[7] > 0)
-                {
-                    enemy.efeitosAtivos[7] -= 1;
-                }
-                else
-                {
-                    enemy.efeitosAtivos[1] += 1;
-                }
-            }
-        }
-
         enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
-        //player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
         if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
 
         if (enemy.currentHealth <= 0)

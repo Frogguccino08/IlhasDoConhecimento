@@ -1,0 +1,33 @@
+Funções Adicionadas:
+
+
+Organização de código:
+- Organizado como os códigos na tela de personagem eram adicionados.
+- Jeito que o escudo e exposto interagem no código foi alterado para facilitar utilização.
+
+
+Erros arrumados:
+- Torre de papel adicionava 1 escudo mesmo se estivesse exposto.
+- Barreira perfeita teve a sua descrição arrumada.
+- Menu de pausa ativava os botões novamente ao sair mesmo se não estivesse antes.
+
+
+Visual:
+
+
+Efeitos especiais além de ataques:
+
+
+Balanceamento:
+- Exposto agora além do efeito comum também remove quantidade de escudo = ao número de exposto adicionado.
+- Martelo de brinquedo agora causa exposto antes do ataque causar dano.
+
+
+Novos Ataques:
+
+
+Novos Inimigos:
+
+
+Novo Personagem:
+- Segredo ksksksksk

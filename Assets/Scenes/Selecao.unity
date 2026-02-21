@@ -4035,7 +4035,7 @@ MonoBehaviour:
   - 0
   maxRush: 0
   maxHistoria: 0
-  unlock: 010101010100
+  unlock: 01010101010000
   modoHistoria: 0
   persos:
   - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
@@ -4044,6 +4044,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
+  - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
 --- !u!4 &1245900992
 Transform:
   m_ObjectHideFlags: 0
@@ -8033,6 +8034,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
+  - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
   pequeno: {fileID: 5548241101861490766, guid: 4f798b352ca3fbb43b5dd601afcc8888, type: 3}
   canva: {fileID: 2005335195}
   descCompleta: {fileID: 1654444109}

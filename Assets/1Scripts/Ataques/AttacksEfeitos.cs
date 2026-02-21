@@ -197,7 +197,7 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (player.using3R && player.dano[player.idAtaqueUsado] == 0 && player.temEfeito[player.idAtaqueUsado] == true && player.efeitosAtivos[1] < 15)
                     {
-                        player.efeitosAtivos[1] += 1;
+                        player.EscudoExposto(1, 0);
                         StartCoroutine(AparecerPassiva(0, "Camuflagem de Lixo", "Ataque de efeito aumentou seu escudo em +1"));
                     }
                 }
@@ -380,18 +380,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou Escudo";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou Escudo";
                     }
@@ -402,18 +402,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 3;
+                        enemy.EscudoExposto(0, 3);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ficou exposto";
 
                         if (player.rAgora == true)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 1);
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 3;
+                        player.EscudoExposto(0, 3);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
@@ -477,20 +477,20 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         player.efeitosAtivos[2] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e defesa a distância";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             player.efeitosAtivos[2] += 1;
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[2] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa a distância";
@@ -555,20 +555,20 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         player.efeitosAtivos[3] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e defesa física";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             player.efeitosAtivos[3] += 1;
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[3] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
@@ -635,20 +635,20 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         player.efeitosAtivos[4] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e ataque a distância";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             player.efeitosAtivos[4] += 1;
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[4] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e defesa física";
@@ -715,20 +715,20 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         player.efeitosAtivos[5] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e ataque físico";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             player.efeitosAtivos[5] += 1;
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[5] += 3;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e ataque físico";
@@ -795,20 +795,20 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         player.efeitosAtivos[6] += 2;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo e mais conhecimento";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             player.efeitosAtivos[6] += 1;
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[6] += 2;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo e mais conhecimento";
@@ -1067,18 +1067,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 2;
+                        enemy.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ficou exposto";
 
                         if (player.rAgora == true)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 1);
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 2;
+                        player.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
@@ -1120,18 +1120,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 2;
+                        enemy.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ficou exposto";
 
                         if (player.rAgora == true)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 1);
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 2;
+                        player.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ficou exposto";
                     }
@@ -1142,18 +1142,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        player.efeitosAtivos[1] += 4;
+                        player.EscudoExposto(4, 0);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " Ganhou escudo";
 
                         if (player.rAgora == true)
                         {
-                            player.efeitosAtivos[1] += 2;
+                            player.EscudoExposto(2, 0);
                         }
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 4;
+                        enemy.EscudoExposto(4, 0);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " Ganhou escudo";
                     }
@@ -1444,18 +1444,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 2;
+                        enemy.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " ficou com exposto";
 
                         if (player.rAgora == true)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 1);
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 2;
+                        player.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + "Alvo ficou com exposto";
                     }
@@ -1793,18 +1793,18 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 2;
+                        enemy.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = "Inimigo ficou exposto";
 
                         if (player.rAgora == true)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 1);
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 2;
+                        player.EscudoExposto(0, 2);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " ficou exposto";
                     }
@@ -2056,7 +2056,7 @@ public class AttacksEfeitos : MonoBehaviour
                             int tempEscudo;
 
                             tempEscudo = enemy.efeitosAtivos[1];
-                            player.efeitosAtivos[1] += tempEscudo;
+                            player.EscudoExposto(tempEscudo, 0);
                             enemy.efeitosAtivos[1] = 0;
 
                             control.escreverEfeito = true;
@@ -2075,7 +2075,7 @@ public class AttacksEfeitos : MonoBehaviour
                             int tempEscudo;
 
                             tempEscudo = player.efeitosAtivos[1];
-                            enemy.efeitosAtivos[1] += tempEscudo;
+                            enemy.EscudoExposto(tempEscudo, 0);
                             player.efeitosAtivos[1] = 0;
 
                             control.escreverEfeito = true;
@@ -2144,7 +2144,7 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if(quem == true)
                     {
-                        enemy.efeitosAtivos[7] += 2;
+                        enemy.EscudoExposto(0, 2);
                         enemy.efeitosAtivos[10] += 3;
 
                         control.escreverEfeito = true;
@@ -2152,13 +2152,13 @@ public class AttacksEfeitos : MonoBehaviour
 
                         if(player.rAgora)
                         {
-                            enemy.efeitosAtivos[7] += 1;
+                            enemy.EscudoExposto(0, 2);
                             enemy.efeitosAtivos[10] += 1;
                         }
                     }
                     else
                     {
-                        player.efeitosAtivos[7] += 2;
+                        player.EscudoExposto(0, 2);
                         player.efeitosAtivos[10] += 3;
 
                         control.escreverEfeito = true;
@@ -2246,17 +2246,17 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if(quem)
                     {
-                        if(player.tipo1[player.idAtaqueUsado] == Attacks.Tipo.bloqueio || player.tipo2[player.idAtaqueUsado] == Attacks.Tipo.bloqueio)
+                        if(player.tipo1[player.idAtaqueUsado] == Attacks.Tipo.bloqueio || player.tipo2[player.idAtaqueUsado] == Attacks.Tipo.bloqueio && player.efeitosAtivos[7] < 1)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             StartCoroutine(AparecerPassiva(0, "Torre de Papel", "Ganhou mais um escudo com esse bloqueio"));
                         }
                     }
                     else
                     {
-                        if(enemy.tipo1[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio || enemy.tipo2[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio)
+                        if(enemy.tipo1[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio || enemy.tipo2[enemy.idAtaqueUsado] == Attacks.Tipo.bloqueio && enemy.efeitosAtivos[7] < 1)
                         {
-                            enemy.efeitosAtivos[1] += 1;
+                            enemy.EscudoExposto(1, 0);
                             StartCoroutine(AparecerPassiva(1, "Torre de Papel", "Ganhou mais um escudo com esse bloqueio"));
                         }
                     }
@@ -2415,12 +2415,12 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if(quem)
                     {
-                        player.efeitosAtivos[1] += 2;
+                        player.EscudoExposto(2, 0);
                         enemy.efeitosAtivos[16] += 2;
 
                         if(player.rAgora)
                         {
-                            player.efeitosAtivos[1] += 1;
+                            player.EscudoExposto(1, 0);
                             enemy.efeitosAtivos[16] += 1;
                         }
 
@@ -2429,7 +2429,7 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                     else
                     {
-                        enemy.efeitosAtivos[1] += 2;
+                        enemy.EscudoExposto(2, 0);
                         player.efeitosAtivos[16] += 2;
 
                         control.escreverEfeito = true;
