@@ -118,11 +118,11 @@ public class PersoGrande : MonoBehaviour
         {
             if (i <= pc.perso.maxCharge)
             {
-                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 3.94f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 4.6f, 0), quaternion.identity));
             }
             else
             {
-                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 3.94f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 4.6f, 0), quaternion.identity));
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }
@@ -131,11 +131,11 @@ public class PersoGrande : MonoBehaviour
         {
             if (i <= pc.perso.pDamage)
             {
-                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 3.34f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 4f, 0), quaternion.identity));
             }
             else
             {
-                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 3.34f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 4f, 0), quaternion.identity));
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }
@@ -144,11 +144,11 @@ public class PersoGrande : MonoBehaviour
         {
             if (i <= pc.perso.pDefense)
             {
-                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.74f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 3.4f, 0), quaternion.identity));
             }
             else
             {
-                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.74f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 3.4f, 0), quaternion.identity));
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }
@@ -157,11 +157,11 @@ public class PersoGrande : MonoBehaviour
         {
             if (i <= pc.perso.sDamage)
             {
-                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.14f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.8f, 0), quaternion.identity));
             }
             else
             {
-                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.14f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.8f, 0), quaternion.identity));
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }
@@ -170,11 +170,24 @@ public class PersoGrande : MonoBehaviour
         {
             if (i <= pc.perso.sDefense)
             {
-                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 1.54f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 2.2f, 0), quaternion.identity));
             }
             else
             {
-                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 1.54f, 0), quaternion.identity));
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 2.2f, 0), quaternion.identity));
+            }
+            quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
+        }
+        //Velocidade
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i <= pc.perso.speed)
+            {
+                quads.Add(Instantiate(quadCheio, new Vector3(3 + ((i - 1) * 0.4f), 1.6f, 0), quaternion.identity));
+            }
+            else
+            {
+                quads.Add(Instantiate(quadVazio, new Vector3(3 + ((i - 1) * 0.4f), 1.6f, 0), quaternion.identity));
             }
             quads[quads.Count - 1].transform.SetParent(esseCanva.transform);
         }

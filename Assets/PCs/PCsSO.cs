@@ -31,6 +31,7 @@ public class PCsSO : ScriptableObject
     public int pDefense;
     public int sDamage;
     public int sDefense;
+    public int speed;
 
 
     //Parte de ataques

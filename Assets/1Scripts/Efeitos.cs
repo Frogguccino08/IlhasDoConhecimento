@@ -68,6 +68,12 @@ public class Efeitos : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                         case 12:
                             txt = "- Conhec";
                             break;
+                        case 13:
+                            txt = "+ Veloci";
+                            break;
+                        case 14:
+                            txt = "- Veloci";
+                            break;
                         case 16:
                             txt = "Cacos";
                             break;

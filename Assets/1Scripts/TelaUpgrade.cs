@@ -120,6 +120,12 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 control.processguir = true;
                 oProprio.SetActive(false);
                 break;
+            case 6:
+                player.speed += 1;
+
+                control.processguir = true;
+                oProprio.SetActive(false);
+                break;
         }
     }
 

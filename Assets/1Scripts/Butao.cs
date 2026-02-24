@@ -121,7 +121,9 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
         if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
         {
             player.butaoClicado = true;
-            StartCoroutine(player.UsarAtaque(id));
+            player.idAtaqueUsado = id;
+            control.esperandoEscolha = false;
+            //StartCoroutine(player.UsarAtaque(id));
             ataqueUtilizado = true;
         }
     }

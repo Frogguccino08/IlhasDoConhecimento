@@ -1,4 +1,5 @@
 Funções Adicionadas:
+- O turno do jogo agora é baseado em velocidade do personagem.
 
 
 Organização de código:
@@ -21,6 +22,7 @@ Efeitos especiais além de ataques:
 Balanceamento:
 - Exposto agora além do efeito comum também remove quantidade de escudo = ao número de exposto adicionado.
 - Martelo de brinquedo agora causa exposto antes do ataque causar dano.
+- Aumentar marcha agora aumenta sua velocidade e ataque físico.
 
 
 Novos Ataques:

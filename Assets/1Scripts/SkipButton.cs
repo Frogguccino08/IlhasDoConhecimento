@@ -35,8 +35,7 @@ public class SkipButton : MonoBehaviour
 
         control.pulouTurno = true;
         text.text = "Player pulou turno";
-        StartCoroutine(control.Turno(false));
-        control.turno++;
+        text.enabled = true;
 
         control.pontosRodada += 5;
         control.textoArea.text = "Pontuação:\n " + control.pontosRodada;
@@ -45,5 +44,8 @@ public class SkipButton : MonoBehaviour
         {
             control.pontMax.text = "Pontuação Máxima: " + control.pontosRodada;
         }
+
+        control.esperandoEscolha = false;
+        return;
     }
 }

@@ -31,11 +31,14 @@ public class Enemy : MonoBehaviour
     public int speDamage;
     //[HideInInspector]
     public int speDefense;
+    //[HideInInspector]
+    public int speed = 5;
 
     public float modPhiDamage = 0;
     public float modPhiDefense = 0;
     public float modSpeDamage = 0;
     public float modSpeDefense = 0;
+    public float modSpeed = 0;
 
     public int[] efeitosAtivos = new int[19];
     public bool[] efeitosUsados = new bool[19];
@@ -62,7 +65,7 @@ public class Enemy : MonoBehaviour
     public int ataqueUsado;
     public int quantBlock;
     public int idAtaqueUsado;
-    public bool pulouTurno = true;
+    public bool pulouTurno = false;
     public bool bloqTurno = false;
 
     public bool errouAtq = false;
@@ -116,6 +119,7 @@ public class Enemy : MonoBehaviour
         enemy.modPhiDefense = 0;
         modSpeDamage = 0;
         enemy.modSpeDefense = 0;
+        modSpeed = 0;
 
         if (efeitosAtivos[2] > 0) //Aumentar defesa a distancia
         {
@@ -149,13 +153,21 @@ public class Enemy : MonoBehaviour
         {
             modPhiDefense -= 2;
         }
+        if(efeitosAtivos[13] > 0) //Aumentar velocidade
+        {
+            modSpeed += 2;
+        }
+        if(efeitosAtivos[14] > 0) //Diminuir velocidade
+        {
+            modSpeed -= 2;
+        }
     }
 
     public void InicializarInimigo()
     {
         escolha = PersonagemSelecionado.instance;
 
-        pulouTurno = true;
+        pulouTurno = false;
         
         if (control.inimigoAtual == 1)
         {
@@ -296,6 +308,7 @@ public class Enemy : MonoBehaviour
         phiDefense = inimigoEscolhido.pDefense + forcaAtual;
         speDamage = inimigoEscolhido.sDamage + forcaAtual;
         speDefense = inimigoEscolhido.sDefense + forcaAtual;
+        speed = inimigoEscolhido.speed + forcaAtual;
 
         switch (inimigoEscolhido.mainStatus)
         {
@@ -337,6 +350,13 @@ public class Enemy : MonoBehaviour
                     speDefense += 1;
                 }
                 break;
+            case 5:
+                speed += forcaAtual;
+                if (isBoss)
+                {
+                    speed += 1;
+                }
+                break;
         }
 
         //Coisa de boss
@@ -348,6 +368,7 @@ public class Enemy : MonoBehaviour
             phiDefense += 1 + forcaAtual;
             speDamage += 1 + forcaAtual;
             speDefense += 1 + forcaAtual;
+            speed += forcaAtual;
         }
 
         cont = 0;
@@ -402,8 +423,7 @@ public class Enemy : MonoBehaviour
             cor.enabled = false;
         }
 
-        control.EfeitosAcontecendo(true, 1, 12);
-        control.EfeitosAcontecendo(false, 1, 12);
+        control.EfeitosAcontecendo(true, 0, 0);
     }
 
 
@@ -564,6 +584,7 @@ public class Enemy : MonoBehaviour
 
         control.AtivarBotao();
         control.texto.enabled = false;
+        StartCoroutine(control.TurnoJogo());
     }
 
     void AtaquesSelecionados()
@@ -700,6 +721,8 @@ public class Enemy : MonoBehaviour
                             enemy.CausarDano(attackDamage);
                         }
 
+                        control.EfeitosAcontecendo(false, 5, 11);
+
                         yield return StartCoroutine(enemy.CorDano(id, attackDamage));
 
                         if (enemy.currentHealth <= 0)
@@ -707,7 +730,7 @@ public class Enemy : MonoBehaviour
                             enemy.cor.enabled = false;
                             enemy.GetComponent<SpriteRenderer>().enabled = false;
                             textoAtaque.text = nomeinimigo + " usou: " + nome[id];
-                            StartCoroutine(control.Turno(false));
+                            textoAtaque.enabled = true;
                             yield break;
                         }
 
@@ -745,10 +768,12 @@ public class Enemy : MonoBehaviour
             Fraquezas(id);
 
             textoAtaque.text = nomeinimigo + " usou: " + nome[id];
+            textoAtaque.enabled = true;
         }
         else
         {
             textoAtaque.text = nomeinimigo + " Errou o Ataque";
+            textoAtaque.enabled = true;
         }
 
     }
@@ -881,78 +906,31 @@ public class Enemy : MonoBehaviour
             maximo += chance[i];
         }
 
-        if (maximo == 0)
+        ataqueEscolhido = UnityEngine.Random.Range(1, maximo + 1);
+        Debug.Log("Numero escolhido: " + ataqueEscolhido);
+
+        int acumulado = 0;
+
+        for (i = 0; i < 7; i++)
         {
-            Debug.Log("Inimigo pulou o proprio turno");
-            textoAtaque.text = "Inimigo pulou o proprio turno";
-            
-            list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
-                    
-            for (i = 0; i < 6; i++)
-            {
-                if (isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-                }
-            }
+            acumulado += chance[i];
 
-            list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-            for (i = 0; i < 6; i++)
-            {
-                if (enemy.isPassive[i] == true)
-                {
-                    list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-                }
-            }
-
-            StartCoroutine(control.Turno(true));
-            pulouTurno = true;
-            return;
-        }
-        else
-        {
-            ataqueEscolhido = UnityEngine.Random.Range(1, maximo + 1);
-            Debug.Log("Numero escolhido: " + ataqueEscolhido);
-            for (i = 0; i < 7; i++)
+            if (ataqueEscolhido <= acumulado)
             {
                 if (i == 6)
                 {
                     Debug.Log("Inimigo pulou o proprio turno");
                     textoAtaque.text = "Inimigo pulou o proprio turno";
-                    list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, enemy, this);
+                    if (!control.segundoTurno) textoAtaque.enabled = true;
 
-                    for (i = 0; i < 6; i++)
-                    {
-                        if (isPassive[i] == true)
-                        {
-                            list.AtaquesComEfeitos(false, attackID[i], 0, enemy, this);
-                        }
-                    }
-
-                    list.AtaquesComEfeitos(true, (escolha.perso.id + 10) * -1, 1, enemy, this);
-
-                    for (i = 0; i < 6; i++)
-                    {
-                        if (enemy.isPassive[i] == true)
-                        {
-                            list.AtaquesComEfeitos(true, enemy.attackID[i], 1, enemy, this);
-                        }
-                    }
-
-                    StartCoroutine(control.Turno(true));
                     pulouTurno = true;
-                    return;
-                }else if (ataqueEscolhido > chance[i])
-                {
-                    ataqueEscolhido -= chance[i];
                 }
                 else
                 {
-                    StartCoroutine(UsarAtaque(i));
-                    StartCoroutine(control.Turno(true));
-                    return;
+                    idAtaqueUsado = i;
                 }
+
+                return;
             }
         }
 
@@ -976,6 +954,7 @@ public class Enemy : MonoBehaviour
                 Debug.Log(attackDamage + " Dano causado pelos cacos");
                 efeitosAtivos[16] -= 1;
                 textoAtaque.text = "Dano recebido por cacos";
+                textoAtaque.enabled = true;
                 efeitosUsados[16] = true;
 
                 if (currentHealth <= 0)
@@ -997,6 +976,7 @@ public class Enemy : MonoBehaviour
                 Debug.Log(attackDamage + "Vida Recuperada pelo nutrindo");
                 efeitosAtivos[18] -= 1;
                 textoAtaque.text = "Vida Recuperada pelo nutrindo";
+                textoAtaque.enabled = true;
                 efeitosUsados[18] = true;
                 //Arrumar essa bosta
                 //healthbar.MudarBarra(currentHealth);
@@ -1006,7 +986,7 @@ public class Enemy : MonoBehaviour
         if (i == 3)
         {
             //entre 2 e 12 (Todos os efeitos que passam no final do turno)
-            for (int fo = 2; fo <= 12; fo++)
+            for (int fo = 2; fo <= 14; fo++)
             {
                 if (efeitosAtivos[fo] > 0)
                 {

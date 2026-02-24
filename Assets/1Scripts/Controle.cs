@@ -48,6 +48,10 @@ public class Controle : MonoBehaviour
 
     public bool escreverEfeito = false;
 
+    //Temporarios
+    public bool esperandoEscolha = false;
+    public bool segundoTurno = false;
+
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
@@ -101,7 +105,7 @@ public class Controle : MonoBehaviour
         texto.enabled = false;
         enemy.InicializarInimigo();
         AtualizarEstadoBotoes();
-        StartCoroutine(Turno(true));
+        StartCoroutine(TurnoJogo());
         Debug.Log("Combate iniciou");
 
         if (inimigoAtual == 1)
@@ -113,75 +117,133 @@ public class Controle : MonoBehaviour
         textoArea.text = "Pontuação:\n " + pontosRodada;
     }
 
-    //Função responsável por trocar de turno
-    public IEnumerator Turno(bool isTurnoAliado)
+    public IEnumerator TurnoJogo()
     {
-        if (turno != 0)
-        {
-            if (isTurnoAliado)
-            {
-                AtualizarEstadoBotoes();
-                texto.enabled = false;
-            }
-            else
-            {
-                yield return StartCoroutine(ExecutarTurnoInimigo());
-            }
-        }
-
+        //Troca o turno
         turno++;
         inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-    }
 
-    //O nome é turno inimigo porém essa função lida também com o final do turno aliado além do turno inimigo
-    IEnumerator ExecutarTurnoInimigo()
-    {
-        DesativarBotao();
-
-        if (enemy.currentHealth <= 0)
+        //Adiciona o conhecimento para os dois
+        if(turno > 1)
         {
-            player.butaoClicado = false;
-            DesativarBotao();
-
-            texto.enabled = true;
-            yield return EsperarTeclaEspaco();
-
-            player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
-            if (player.currentHealth <= 0)
+            player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge + player.ModCharge);
+            if (player.efeitosAtivos[6] > 0)
             {
-                player.cor.enabled = false;
-                player.GetComponent<SpriteRenderer>().enabled = false;
-                yield return StartCoroutine(player.Morto());
-                inimigoAtual = 1;
-                inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-                yield return EsperarTeclaEspaco();
-                PersonagemSelecionado.instance.Resetar();
-                SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
-                yield break;
+                player.currentCharge = Mathf.Min(player.currentCharge + 1, player.maxCharge + player.ModCharge);
+                player.efeitosAtivos[6] -= 1;
             }
-
-            if (player.efeitosUsados[16]) yield return EsperarTeclaEspaco();
-
-            if (player.currentHealth > 0)
+            if (player.efeitosAtivos[12] > 0)
             {
-                player.EfeitoCausado(2, player.attackPublic, (int)player.danoPublic);
-                if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
+                player.currentCharge -= 1;
+                player.efeitosAtivos[12] -= 1;
             }
+            conhecimento.SpawnConhecimento(player.maxCharge + player.ModCharge, player.currentCharge);
 
-            player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
+            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
 
-            enemy.GetComponent<SpriteRenderer>().enabled = false;
-            enemy.cor.enabled = false;
-            StartCoroutine(enemy.Morto());
-            AtualizarEstadoBotoes();
-            inimigoAtual++;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-            yield break;
+            if (enemy.efeitosAtivos[6] > 0)
+            {
+                enemy.currentCharge = Mathf.Min(enemy.currentCharge + 1, enemy.maxCharge + enemy.ModCharge);
+                enemy.efeitosAtivos[6] -= 1;
+            }
+            if (enemy.efeitosAtivos[12] > 0)
+            {
+                enemy.currentCharge -= 1;
+                enemy.efeitosAtivos[12] -= 1;
+            }
         }
 
-        // Início da lógica de ataque do jogador
-        texto.enabled = true;
-        yield return EsperarTeclaEspaco();
+        //Espera o jogador escolher o ataque e faz o inimigo escolher também
+        esperandoEscolha = true;
+        segundoTurno = false;
+        
+        AtivarBotao();
+        AtualizarEstadoBotoes();
+        texto.enabled = false;
+
+        EfeitosAcontecendo(true, 1, 7);
+        EfeitosAcontecendo(false, 1, 7);
+
+        while(esperandoEscolha)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.01f);
+
+        player.butaoClicado = false;
+        DesativarBotao();
+
+        enemy.EscolherAtaque();
+
+        //Faz os turnos na ordem de velocidade
+        if(player.speed + player.modSpeed >= enemy.speed + enemy.modSpeed)
+        {
+            if(!pulouTurno) yield return TurnoAliado();
+            yield return ChecarMorte();
+            if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+            yield return new WaitForSeconds(0.01f);
+            if(pulouTurno) yield return EsperarTeclaEspaco();
+
+            segundoTurno = true;
+            yield return TurnoInimigo();
+            yield return ChecarMorte();
+            if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+            yield return new WaitForSeconds(0.01f);
+            if(enemy.pulouTurno)
+                yield return EsperarTeclaEspaco();
+        }
+        else if(player.speed + player.modSpeed < enemy.speed + enemy.modSpeed)
+        {
+            yield return TurnoInimigo();
+            yield return ChecarMorte();
+            if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+            yield return new WaitForSeconds(0.01f);
+            if(enemy.pulouTurno)
+                yield return EsperarTeclaEspaco();
+
+            segundoTurno = true;
+            if(!pulouTurno) yield return TurnoAliado();
+            yield return ChecarMorte();
+            if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+            yield return new WaitForSeconds(0.01f);
+            if(pulouTurno) yield return EsperarTeclaEspaco();
+        }
+
+        if (pulouTurno == true)
+        {
+            pulouTurno = false;
+        }
+
+        EfeitosAcontecendo(true, 6, 12);
+        EfeitosAcontecendo(false, 6, 12);
+
+        player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
+        if (player.efeitosUsados[16] && player.currentHealth > 0) yield return EsperarTeclaEspaco();
+        yield return ChecarMorte();
+        if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+        player.EfeitoCausado(2, player.attackPublic, (int)player.danoPublic);
+        if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
+
+        enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
+        if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
+        yield return ChecarMorte();
+            if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
+        enemy.EfeitoCausado(2, enemy.attackPublic, (int)enemy.danoPublic);
+        if (enemy.efeitosUsados[18]) yield return EsperarTeclaEspaco();
+
+        enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
+        player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
+
+        StartCoroutine(TurnoJogo());
+    }
+
+    IEnumerator TurnoAliado()
+    {
+        yield return player.UsarAtaque(player.idAtaqueUsado);
+        yield return new WaitForSeconds(0.01f);
+        if (player.errouAtq) player.errouAtq = false;
+
+        if(!player.temEfeito[player.idAtaqueUsado]) yield return EsperarTeclaEspaco();
 
         if (pulouTurno == true)
         {
@@ -194,68 +256,23 @@ public class Controle : MonoBehaviour
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
         }
+    }
 
-        EfeitosAcontecendo(true, 6, 12);
-
-        player.EfeitoCausado(1, player.attackPublic, (int)player.danoPublic);
-
-        if (player.efeitosUsados[16]) yield return EsperarTeclaEspaco();
-
-        if (player.currentHealth <= 0)
+    IEnumerator TurnoInimigo()
+    {
+        if(!enemy.pulouTurno)
         {
-            player.cor.enabled = false;
-            player.GetComponent<SpriteRenderer>().enabled = false;
-            yield return StartCoroutine(player.Morto());
-            inimigoAtual = 1;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-            yield return EsperarTeclaEspaco();
-            PersonagemSelecionado.instance.Resetar();
-            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
-            yield break;
+            yield return enemy.UsarAtaque(enemy.idAtaqueUsado);
         }
-
-        player.EfeitoCausado(2, player.attackPublic, (int)player.danoPublic);
-        if (player.efeitosUsados[18]) yield return EsperarTeclaEspaco();
-
-        player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
-
-        if (pulouTurno == true)
+        else
         {
-            pulouTurno = false;
+            texto.text = "Inimigo pulou o proprio turno";
+            enemy.pulouTurno = false;
         }
+        
+        yield return new WaitForSeconds(0.01f);
+        if (enemy.errouAtq) enemy.errouAtq = false;
 
-
-        // Turno do inimigo
-        if (turno != 2 && turno != 1)
-        {
-            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
-
-            if (enemy.efeitosAtivos[6] > 0)
-            {
-                enemy.currentCharge += 1;
-                enemy.efeitosAtivos[6] -= 1;
-            }
-            if (enemy.efeitosAtivos[12] > 0)
-            {
-                enemy.currentCharge -= 1;
-                enemy.efeitosAtivos[12] -= 1;
-            }
-        }
-
-
-        // Efeito inicio do turno inimigo
-        EfeitosAcontecendo(false, 1, 7);
-        if (player.errouAtq) player.errouAtq = false;
-
-        //Após escolher o ataque
-        enemy.EscolherAtaque();
-        enemy.list.AtaquesComEfeitos(false, (escolha.regiao + 1) * -1, 0, player, enemy);
-        if (turno > 1)
-        {
-            enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
-        }
-
-        texto.enabled = true;
         yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
@@ -264,13 +281,20 @@ public class Controle : MonoBehaviour
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();
         }
+    }
 
-        EfeitosAcontecendo(false, 6, 12);
-
-        enemy.EfeitoCausado(1, enemy.attackPublic, (int)enemy.danoPublic);
-        if (enemy.efeitosUsados[16] && enemy.currentHealth > 0) yield return EsperarTeclaEspaco();
-
-        if (enemy.currentHealth <= 0)
+    //Checar se um dos dois morreram
+    IEnumerator ChecarMorte()
+    {
+        if(player.currentHealth <= 0)
+        {
+            player.cor.enabled = false;
+            player.GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(player.Morto());
+            yield return EsperarTeclaEspaco();
+            PersonagemSelecionado.instance.Resetar();
+            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+        }else if(enemy.currentHealth <= 0)
         {
             enemy.cor.enabled = false;
             enemy.GetComponent<SpriteRenderer>().enabled = false;
@@ -278,54 +302,10 @@ public class Controle : MonoBehaviour
             inimigoAtual++;
             StartCoroutine(enemy.Morto());
             AtualizarEstadoBotoes();
-            StartCoroutine(Turno(false));
             turno = 0;
             inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-            yield break;
         }
-
-        enemy.EfeitoCausado(2, enemy.attackPublic, (int)enemy.danoPublic);
-        if (enemy.efeitosUsados[18]) yield return EsperarTeclaEspaco();
-
-        // Verifica se o jogador morreu
-        if (player.currentHealth <= 0)
-        {
-            player.cor.enabled = false;
-            player.GetComponent<SpriteRenderer>().enabled = false;
-            texto.enabled = true;
-            yield return StartCoroutine(player.Morto());
-            inimigoAtual = 1;
-            inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-            yield return EsperarTeclaEspaco();
-            PersonagemSelecionado.instance.Resetar();
-            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
-            yield break;
-        }
-
-        // Se o jogador sobreviveu, volta o turno
-        texto.enabled = false;
-        AtivarBotao();
-
-        EfeitosAcontecendo(true, 1, 7);
-        if (enemy.errouAtq) enemy.errouAtq = false;
-
-        player.currentCharge = Mathf.Min(player.currentCharge + 2, player.maxCharge + player.ModCharge);
-        if (player.efeitosAtivos[6] > 0)
-        {
-            player.currentCharge += 1;
-            player.efeitosAtivos[6] -= 1;
-        }
-        if (player.efeitosAtivos[12] > 0)
-        {
-            player.currentCharge -= 1;
-            player.efeitosAtivos[12] -= 1;
-        }
-
-        conhecimento.SpawnConhecimento(player.maxCharge + player.ModCharge, player.currentCharge);
-
-        AtualizarEstadoBotoes();
     }
-
 
     //Função que espera o jogador selecionar algo na tela de upgrade antes de processeguir
     public IEnumerator TelaUpgrade()
@@ -380,7 +360,6 @@ public class Controle : MonoBehaviour
             imgButao[i].SetActive(true);
             butao[i].GetComponent<Button>().enabled = true;
             butao[i].ColocandoAtaque(i);
-            AtualizarEstadoBotoes();
         }
 
         skipButton.SetActive(true);
@@ -389,6 +368,7 @@ public class Controle : MonoBehaviour
     //Função responsável por fazer o jogo esperar o botão ser clicado para continuar quando tem um texto na tela
     public IEnumerator EsperarTeclaEspaco()
     {
+        yield return new WaitForSeconds(0.01f);
         paraEsperar = true;
 
         while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))

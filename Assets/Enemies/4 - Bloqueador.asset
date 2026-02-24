@@ -22,6 +22,7 @@ MonoBehaviour:
   pDefense: 2
   sDamage: 1
   sDefense: 4
+  speed: 3
   mainStatus: 2
   listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
   listaAtaquesNvl2: 300000003100000003000000140000000000000000000000

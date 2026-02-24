@@ -922,7 +922,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 537008348a32b554aa1fdf193a33fd18, type: 2}
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
-  - {fileID: 11400000, guid: 72b7d9937d8dbb9499325ca2c26780af, type: 2}
+  - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
 --- !u!4 &244199876
 Transform:
   m_ObjectHideFlags: 0
@@ -5602,7 +5602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vers\xE3o 6\xB0 Semestre"
+  m_text: "Vers\xE3o 7\xB0 Semestre (em desenvolvimento)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

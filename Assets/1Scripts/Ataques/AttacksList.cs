@@ -38,7 +38,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(22, "Golpe de restos", "Ataque mais forte Orgânico que diminue o ganho de conhecimento do inimigo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 5, 2, true, true, 3, 3, true, false));
         listaAtaques.Add(new Attacks(23, "Batida de sujeira", "Um ataque poderoso Orgânico sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 5, 4, true, true, 3, 4, false, false));
         listaAtaques.Add(new Attacks(24, "Bloqueio vivo", "Recebe duas cargas de bloqueio e aumenta o ganho de conhecimento por 2 turnos", Attacks.Tipo.bloqueio, Attacks.Tipo.suporte, 5, 0, false, false, 0, 3, true, false));
-        listaAtaques.Add(new Attacks(25, "Aumentar Marcha", "Aumenta seu dano físico por 2 turnos mas diminue a defesa física pelo mesmo tempo", Attacks.Tipo.suporte, Attacks.Tipo.zero, 4, 0, false, false, 0, 2, true, false));
+        listaAtaques.Add(new Attacks(25, "Aumentar Marcha", "Aumenta sua velocidade e ataque físico por 2 turnos", Attacks.Tipo.suporte, Attacks.Tipo.zero, 4, 0, false, false, 0, 2, true, false));
         listaAtaques.Add(new Attacks(26, "Espalhar cacos", "Ataque extremamente fraco de vidro que coloca cacos no inimigo (causa dano no final do turno)", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 3, 1, false, true, 1, 2, true, false));
         listaAtaques.Add(new Attacks(27, "Reciclar vida", "Cura parte da própria vida e continua curando por mais 2 turnos", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -3, false, false, 1, 4, true, false));
         listaAtaques.Add(new Attacks(28, "Estilhaços", "Ataque fraco de metal que causa cacos no inimigo", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 4, 1, false, true, 1, 3, true, false));
@@ -115,7 +115,6 @@ public class AttacksList : MonoBehaviour
         listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
         listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
 
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));

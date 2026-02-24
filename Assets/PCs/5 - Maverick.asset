@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
-  m_Name: 5 - New
+  m_Name: 5 - Maverick
   m_EditorClassIdentifier: 
-  id: 6
+  id: 5
   nome: Sla "Wtf" Idk
   nickName: Sla
   material: 5
@@ -30,8 +30,9 @@ MonoBehaviour:
   pDefense: 5
   sDamage: 5
   sDefense: 5
+  speed: 3
   listaAtaquesIniciais: 01000000020000000300000000000000
-  listaAtaquesAprendiveis: 
+  listaAtaquesAprendiveis: 0100000002000000030000000400000005000000
   regioes: 00000000000000000000000000000000
   inimigos:
   - {fileID: 0}

@@ -25,7 +25,7 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         telaDesc.SetActive(true);
         telaDesc.transform.SetSiblingIndex(20);
-        texto.text = "Dano físico: " + player.phiDamage + "\nDano a dist: " + player.speDamage + "\nDefesa física: " + player.phiDefense + "\nDefesa a dist: " + player.speDefense;
+        texto.text = "Dano físico: " + player.phiDamage + "\nDano a dist: " + player.speDamage + "\nDefesa física: " + player.phiDefense + "\nDefesa a dist: " + player.speDefense + "\nVelocidade: " + player.speed;
         descHabilidade.SetActive(true);
         descHabilidade.GetComponent<Descricao>().BotandoDescricao(player.perso.perso.id, true);
 

@@ -14,6 +14,7 @@ public class EnemiesSO : ScriptableObject
     public int pDefense;
     public int sDamage;
     public int sDefense;
+    public int speed;
 
     public int mainStatus;
 

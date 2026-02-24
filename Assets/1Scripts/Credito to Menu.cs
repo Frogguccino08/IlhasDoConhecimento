@@ -22,4 +22,14 @@ public class CreditotoMenu : MonoBehaviour
             actProducao = true;
         }
     }
+
+    void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            canvaMenu.SetActive(true);
+            canvaCreditos.SetActive(false);
+            actProducao = false;
+        }
+    }
 }

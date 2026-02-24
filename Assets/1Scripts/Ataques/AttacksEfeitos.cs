@@ -123,7 +123,7 @@ public class AttacksEfeitos : MonoBehaviour
     //Especiais:               //Papel:                     //Plastico:                 //Vidro:                        //Metal:                    //Organico
     //1.Bloquear(Added)        //2.Informado(+defDis)       //3.Duradouro(+defFis)      //4.perfurante(+AtqDis)         //5.Afiado(+atqFis)         //6.Adubando(+Conhec)
     //7.Exposto                //8.Desisformado(-AtqDis)    //9.Estagnado(-atqFis)      //10.tenderizado(-defDis)       //11.Derretido(-defFis)     //12.Desperdiçando(-Conhec)
-    //13.                      //14.                        //15.                       //16.Cacos(-Vida)               //17.                       //18.nutrindo(+Vida)
+    //13.(+Velocidade)         //14.(-Velocidade)           //15.                       //16.Cacos(-Vida)               //17.                       //18.nutrindo(+Vida)
 
     //Função que usa efeitos caso o ataque tenha
     public void AtaquesComEfeitos(bool quem, int o, int quando, Player player, Enemy enemy)
@@ -139,8 +139,8 @@ public class AttacksEfeitos : MonoBehaviour
         4 == Antes de cada golpe do ataque          10 == (Inimigo) Antes de cada golpe do ataque
         5 == após calcular o dano                   11 == (Inimigo) após calcular o dano
         6 == No final do turno                      12 == (Inimigo) No final do turno
-
         */
+
         switch (o)
         {
             //Yoko (Metal/Papel)
@@ -820,22 +820,23 @@ public class AttacksEfeitos : MonoBehaviour
                 {
                     if (quem == true)
                     {
+                        player.efeitosAtivos[13] += 3;
                         player.efeitosAtivos[5] += 3;
-                        player.efeitosAtivos[11] += 3;
                         control.escreverEfeito = true;
-                        control.efeitoAtq = player.nickName + " Aumentou o dano físico porém diminuiu defesa física";
+                        control.efeitoAtq = player.nickName + " Aumentou sua velocidade porém diminuiu defesa física";
 
                         if (player.rAgora == true)
                         {
+                            player.efeitosAtivos[13] += 1;
                             player.efeitosAtivos[5] += 1;
                         }
                     }
                     else
                     {
+                        enemy.efeitosAtivos[13] += 3;
                         enemy.efeitosAtivos[5] += 3;
-                        enemy.efeitosAtivos[11] += 3;
                         control.escreverEfeito = true;
-                        control.efeitoAtq = enemy.nomeinimigo + " Aumentou o dano físico porém diminuiu defesa física";
+                        control.efeitoAtq = enemy.nomeinimigo + " Aumentou sua velocidade porém diminuiu defesa física";
                     }
                 }
                 break;

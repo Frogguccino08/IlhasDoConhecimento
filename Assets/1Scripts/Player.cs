@@ -35,11 +35,14 @@ public class Player : MonoBehaviour
     public int speDamage;
     //[HideInInspector]
     public int speDefense;
+    //[HideInInspector]
+    public int speed = 4;
 
     public float modPhiDamage = 0;
     public float modPhiDefense = 0;
     public float modSpeDamage = 0;
     public float modSpeDefense = 0;
+    public float modSpeed = 0;
 
     public int[] efeitosAtivos = new int[19];
     public bool[] efeitosUsados = new bool[19];
@@ -113,6 +116,7 @@ public class Player : MonoBehaviour
         enemy.modPhiDefense = 0;
         modSpeDamage = 0;
         enemy.modSpeDefense = 0;
+        modSpeed = 0;
 
         if (rAgora == true)
         {
@@ -153,6 +157,14 @@ public class Player : MonoBehaviour
         {
             modPhiDefense -= 2;
         }
+        if(efeitosAtivos[13] > 0) //Aumentar velocidade
+        {
+            modSpeed += 2;
+        }
+        if(efeitosAtivos[14] > 0) //Diminuir velocidade
+        {
+            modSpeed -= 2;
+        }
     }
 
     public void InicializarPlayer()
@@ -183,6 +195,7 @@ public class Player : MonoBehaviour
         phiDefense = pc.pDefense;
         speDamage = pc.sDamage;
         speDefense = pc.sDefense;
+        speed = pc.speed;
 
         for (i = 1; i < 19; i++)
         {
@@ -421,6 +434,8 @@ public class Player : MonoBehaviour
 
                         yield return StartCoroutine(enemy.CorDano(id, attackDamage));
 
+                        control.EfeitosAcontecendo(true, 5, 11);
+
                         if (enemy.currentHealth <= 0)
                         {
                             rAgora = false;
@@ -432,6 +447,7 @@ public class Player : MonoBehaviour
                                 currentR = 0;
                                 controlConheci.SpawnRs();
                                 textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
+                                textoAtaque.enabled = true;
                             }
                             else
                             {
@@ -444,12 +460,12 @@ public class Player : MonoBehaviour
                                 using3R = false;
                                 segundo3R = false;
                                 textoAtaque.text = nickName + " usou: " + nome[id];
+                                textoAtaque.enabled = true;
                             }
 
                             enemy.cor.enabled = false;
                             enemy.GetComponent<SpriteRenderer>().enabled = false;
                             enemy.cor.enabled = false;
-                            StartCoroutine(control.Turno(false));
                             yield break;
                         }
 
@@ -486,6 +502,7 @@ public class Player : MonoBehaviour
 
             Fraquezas(id);
             textoAtaque.text = nickName + " usou: " + nome[id];
+            textoAtaque.enabled = true;
         }
         else
         {
@@ -497,8 +514,9 @@ public class Player : MonoBehaviour
             controlConheci.SpawnRs();
 
             textoAtaque.text = nickName + " Errou o Ataque";
-            if(dano[idAtaqueUsado] != 0)
-                yield return StartCoroutine(control.EsperarTeclaEspaco());
+            textoAtaque.enabled = true;
+            //if(dano[idAtaqueUsado] != 0)
+            //    yield return StartCoroutine(control.EsperarTeclaEspaco());
         }
 
         rAgora = false;
@@ -509,7 +527,7 @@ public class Player : MonoBehaviour
             {
                 yield return StartCoroutine(control.EsperarTeclaEspaco());
             }
-            StartCoroutine(control.Turno(false));
+            yield break;
         }
         else if (using3R && !errouAtq)
         {
@@ -533,6 +551,7 @@ public class Player : MonoBehaviour
         if (segundo3R && !errouAtq)
         {
             textoAtaque.text = nickName + " usou: " + nome[id] + " DUAS VEZES!!!";
+            textoAtaque.enabled = true;
         }
         segundo3R = false;
     }
@@ -554,6 +573,7 @@ public class Player : MonoBehaviour
                 Debug.Log(attackDamage + " Dano causado pelos cacos");
                 efeitosAtivos[16] -= 1;
                 textoAtaque.text = "Dano recebido por cacos";
+                textoAtaque.enabled = true;
                 efeitosUsados[16] = true;
             }
         }
@@ -567,6 +587,7 @@ public class Player : MonoBehaviour
                 Debug.Log(attackDamage + "Vida Recuperada pelo nutrindo");
                 efeitosAtivos[18] -= 1;
                 textoAtaque.text = "Vida Recuperada pelo nutrindo";
+                textoAtaque.enabled = true;
                 efeitosUsados[18] = true;
             }
         }
@@ -574,7 +595,7 @@ public class Player : MonoBehaviour
         if (i == 3) //No final do turno de todos
         {
             //entre 2 e 12 (Todos os efeitos que passam no final do turno)
-            for (int fo = 2; fo <= 12; fo++)
+            for (int fo = 2; fo <= 14; fo++)
             {
                 if (efeitosAtivos[fo] > 0)
                 {
