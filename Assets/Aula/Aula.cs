@@ -18,6 +18,7 @@ Objetos:
 
 Especificos:
     Canva, e TMP_text
+    Scene
 
 Objetivo final:
     Criar um texto na tela com um numero
