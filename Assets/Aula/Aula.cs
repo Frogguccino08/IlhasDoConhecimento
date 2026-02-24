@@ -19,10 +19,12 @@ Objetos:
 Especificos:
     Canva, e TMP_text
     Scene
+    Objeto permanente (Personagem Selecionado)
+    Scriptable object (PCsSO)
 
 Objetivo final:
     Criar um texto na tela com um numero
-    Cada um criar um botão para fazer uma operação nesse número    
+    Cada um criar um botão para fazer uma operação nesse número
 */
 
 using UnityEngine;
