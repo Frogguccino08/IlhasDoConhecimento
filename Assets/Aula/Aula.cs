@@ -19,8 +19,10 @@ Objetos:
 Especificos:
     Canva, e TMP_text
     Scene
+    Prefab
     Objeto permanente (Personagem Selecionado)
     Scriptable object (PCsSO)
+    Criar build
 
 Objetivo final:
     Criar um texto na tela com um numero
