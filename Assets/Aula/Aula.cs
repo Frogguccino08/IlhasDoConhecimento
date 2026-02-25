@@ -7,9 +7,9 @@ Pre-game:
 Basicos:
     váriaveis e os tipos (public, private)
     comentários
-    Funções Start Update, função e Ienumerator
     Debug.Log
-
+    Funções Start Update, função e Ienumerator
+    
 Objetos:
     Adicionar demoninadores [hide e serialize]
     Criar objeto em jogo
