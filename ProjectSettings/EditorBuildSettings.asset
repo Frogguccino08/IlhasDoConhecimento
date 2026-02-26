@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Motor.unity
     guid: 398b06ca40e0f044b9540cb30ea091cd
+  - enabled: 0
+    path: Assets/Aula/Sala de aula.unity
+    guid: a28a81d37a548434b9f6678e5b5ab8ae
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

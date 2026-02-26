@@ -6,7 +6,7 @@ Pre-game:
 
 Basicos:
     váriaveis e os tipos (public, private)
-    comentários
+    comentários // ou /*
     Debug.Log
     Funções Start Update, função e Ienumerator
     
@@ -17,8 +17,7 @@ Objetos:
     chamar outros objetos em código e GetComponent
 
 Especificos:
-    Canva, e TMP_text
-    Scene
+    Canvas, e TMP_text
     Prefab
     Objeto permanente (Personagem Selecionado)
     Scriptable object (PCsSO)
@@ -29,19 +28,10 @@ Objetivo final:
     Cada um criar um botão para fazer uma operação nesse número
 */
 
+using TMPro;
 using UnityEngine;
 
 public class Aula : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
