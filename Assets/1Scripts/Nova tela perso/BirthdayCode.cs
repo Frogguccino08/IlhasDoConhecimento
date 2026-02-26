@@ -85,7 +85,7 @@ public class BirthdayCode : MonoBehaviour
     {
         string codigo = text.text;
 
-        if(codigo == "0402") //Adicionar código aqui com um ||
+        if(codigo == "0302") //Adicionar código aqui com um ||
         {
             text.color = Color.red;
             StartCoroutine(CodigoCerto());
@@ -102,7 +102,7 @@ public class BirthdayCode : MonoBehaviour
 
         yield return StartCoroutine(Comemoracao());
 
-        if(codigo == "0402")
+        if(codigo == "0302")
         {
             PersonagemSelecionado.instance.unlock[5] = true;
         }
