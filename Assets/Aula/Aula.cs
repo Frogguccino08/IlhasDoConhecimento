@@ -18,41 +18,25 @@ Objetos:
 
 Especificos:
     Canva, e TMP_text
-    Scene
-    Prefab
-    Objeto permanente (Personagem Selecionado)
-    Scriptable object (PCsSO)
-    Criar build
 
 Objetivo final:
-    Criar um texto na tela com um numero - feito
-    Cada um criar um botão para fazer uma operação nesse número
+    Criar um texto na tela com um numero
+    Cada um criar um botão para fazer uma operação nesse número    
 */
 
-using System.Globalization;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Aula : MonoBehaviour
 {
-    public int num = 0;
-    public TMP_Text texto;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        texto.text = "5";
+        
     }
-    void Adicionar()
-    {
-        num += 1;
-    }
+
+    // Update is called once per frame
     void Update()
     {
-        Adicionar();
-    }
-    
-    public void Click()
-    {s
-
+        
     }
 }
