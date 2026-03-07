@@ -55,8 +55,8 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(39, "Aprendendo", "Ataque fraco de papel que deixa o inimigo com 2 exposto", Attacks.Tipo.golpe, Attacks.Tipo.negativo, 1, 3, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(40, "Tapa leve", "Ataque muito fraco sem elemento sem custo e sem efeito", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 1, true, true, 1, 0, false, false));
         listaAtaques.Add(new Attacks(41, "Barreira Perfeita", "Uma barreira poderosa, coloca 4 bloqueio em si mesmo", Attacks.Tipo.bloqueio, Attacks.Tipo.zero, 0, 0, false, false, 1, 5, true, false));
-        listaAtaques.Add(new Attacks(42, "Troca de postura", "O personagem troca de postura de combate, trocando entre metal/Ataque físico e Papel/Defesa a Distância", Attacks.Tipo.troca, Attacks.Tipo.suporte, 0, 0, false, false, 0, 3, true, false));
-        listaAtaques.Add(new Attacks(43, "Katana de alma", "O personagem corta com a katana ignorando defesa física", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 2, true, true, 1, 3, true, false));
+        listaAtaques.Add(new Attacks(42, "Trocar parceiro", "Troca o parceiro utilizado, mudando o material para o dele e ganhando ataque a distância", Attacks.Tipo.troca, Attacks.Tipo.suporte, 0, 0, false, false, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(43, "Golpe devastador", "O personagem ataca ignorando defesa a distância do alvo com esse ataque", Attacks.Tipo.golpe, Attacks.Tipo.zero, 4, 2, false, true, 1, 3, true, false));
         listaAtaques.Add(new Attacks(44, "Composto", "Se cura uma pequena quantidade usando matéria orgânica", Attacks.Tipo.cura, Attacks.Tipo.zero, 5, -4, false, false, 1, 3, false, false));
         listaAtaques.Add(new Attacks(45, "Empurrar", "Ataque fraco de papel sem efeito extra", Attacks.Tipo.golpe, Attacks.Tipo.zero, 1, 1, false, true, 1, 0, false, false));
         listaAtaques.Add(new Attacks(46, "Roubar Nutrientes", "Coloca cacos no inimigo e nutrindo em si mesmo", Attacks.Tipo.cura, Attacks.Tipo.negativo, 5, 0, false, true, 0, 4, true, false));
@@ -110,12 +110,12 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(94, "Casca com farpas", "Coloca escudo em si mesmo e cacos no inimigo", Attacks.Tipo.negativo, Attacks.Tipo.bloqueio, 1, 0, false, true, 0, 3, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
-        listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(1, "Camuflagem de lixo", "Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
-        listaHabilidades.Add(new Attacks(5, "- -", "Esse habilidade não existe", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância.", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(1, "Camuflagem de lixo", "Ao usar o 3R em um ataque apenas de efeito ganha +1 escudo.", Attacks.Tipo.zero, Attacks.Tipo.zero, 2, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(2, "Vidro de Cal-Soda", "Ao usar o 3R em um ataque a distância causa 1 ponto de cacos no alvo.", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(3, "Sobreaquecer", "Ao usar o 3R com um ataque físico aumenta o dano em +1.", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(4, "Mistura energética", "Ao usar o 3R com um ataque apenas de efeito recupera uma parcela de vida.", Attacks.Tipo.zero, Attacks.Tipo.zero, 5, 0, true, true, 0, 0, true, true));
+        listaHabilidades.Add(new Attacks(5, "Companheiro treinado", "Ao usar o 3R com um ataque do material do companheiro ganha bloqueio com a água-viva e causa cacos com o peixe. Troca o companheiro", Attacks.Tipo.zero, Attacks.Tipo.zero, 0, 0, true, true, 0, 0, true, true));
 
         listaRegiao.Add(new Attacks(0, "Piso Afiado", "Chance pequena de causar cacos no personagem, não afeta personagens de vidro", Attacks.Tipo.zero, Attacks.Tipo.zero, 3, 0, true, true, 0, 0, true, true));
         listaRegiao.Add(new Attacks(1, "Calor de derreter", "Personagens não metal perder defesa física", Attacks.Tipo.zero, Attacks.Tipo.zero, 4, 0, true, true, 0, 0, true, true));

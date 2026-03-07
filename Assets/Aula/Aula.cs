@@ -16,6 +16,8 @@ Testes:
 Funções:
     public void Nome(int i){ }
     primeiro se é publico ou privado, depois o tipo da função normalmente void ou Ienumerator, depois o nome, dentro do () váriaveis da funções se tiver, { } Código
+    StartCoroutine(FunçãoIenumerator()); Inicia uma função Ienumerator
+    yield return FunçãoIenumerator(); Dentro de outro Ienumerator espera a função chamada para continuar a função maior
 
     void Start(){ } função que acontece ao iniciar
     void Updae() { } função que acontece todo frame (60fps)

@@ -12,6 +12,9 @@ public class AttacksEfeitos : MonoBehaviour
     public GameObject pas;
     public List<GameObject> pasList = new List<GameObject>();
 
+    //Para a personagem Ana
+    public GameObject[] prefabs = new GameObject[3];
+
     public IEnumerator AparecerPassiva(int quem, string nomePas, string desc)
     {
         GameObject obj;
@@ -143,11 +146,42 @@ public class AttacksEfeitos : MonoBehaviour
 
         switch (o)
         {
-            //Yoko (Metal/Papel)
+            //Ana (Vidro/Papel)
             case -15:
-                if (quando == 0)
+                if (quando == 0 && control.turno == 0 && control.inimigoAtual == 1)
                 {
-                    Debug.Log("Yoko Passiva Ativada");
+                    GameObject obj1;
+                    GameObject obj2;
+
+                    obj1 = Instantiate(prefabs[1], new Vector3(0, 0, 0), quaternion.identity);
+                    obj2 = Instantiate(prefabs[2], new Vector3(0, 0, 0), quaternion.identity);
+
+                    obj1.transform.SetParent(prefabs[0].transform);
+                    obj2.transform.SetParent(prefabs[0].transform);
+
+                    obj1.transform.localPosition = new Vector3(-1.69f, 0.62f, 0);
+                    obj2.transform.localPosition = new Vector3(1.69f, 0.62f, 0);
+                }
+
+                if(quando == 3 && player.using3R == true)
+                {
+                    if(player.material[player.idAtaqueUsado] == player.materialPlayer || player.material[player.idAtaqueUsado] == 0)
+                    {
+                        if(player.materialPlayer == 1)
+                        {
+                            player.EscudoExposto(2, 0);
+                            StartCoroutine(AparecerPassiva(0, "Companheiro treinado", "Água-viva te deu escudo. Trocará para o peixe"));
+                            player.materialPlayer = 3;
+                            player.CorDetalhes();
+                        }
+                        else if(player.materialPlayer == 3)
+                        {
+                            enemy.efeitosAtivos[16] += 2;
+                            StartCoroutine(AparecerPassiva(0, "Companheiro treinado", "Peixe causou cacos no inimigo. Trocará para a água-viva"));
+                            player.materialPlayer = 1;
+                            player.CorDetalhes();
+                        }
+                    }
                 }
                 break;
             //Jayden (Orgânico)
@@ -1160,53 +1194,32 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 42: //Troca de postura
+            case 42: //Trocar parceiro
                 if (quando == 3)
                 {
                     if (quem == true)
                     {
                         if (player.materialPlayer == 1)
                         {
-                            control.escreverEfeito = true;
-                            control.efeitoAtq = player.nickName + " trocou de material para Metal";
-                        }
-                        else if (player.materialPlayer == 4)
-                        {
-                            control.escreverEfeito = true;
-                            control.efeitoAtq = player.nickName + " trocou de material para Papel";
-                        }
-                    }
-                    else
-                    {
-                        if (enemy.materialInimigo == 1)
-                        {
-                            control.escreverEfeito = true;
-                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Metal";
-                        }
-                        else if (player.materialPlayer == 4)
-                        {
-                            control.escreverEfeito = true;
-                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Papel";
-                        }
-                    }
-                }
-
-                if (quando == 6)
-                {
-                    if (quem == true)
-                    {
-                        if (player.materialPlayer == 1)
-                        {
-                            player.materialPlayer = 4;
-                            player.efeitosAtivos[5] += 3;
+                            player.materialPlayer = 3;
+                            player.efeitosAtivos[4] += 2;
                             player.CorDetalhes();
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = player.nickName + " trocou de material para Vidro";
 
+                            if (player.rAgora == true)
+                                player.efeitosAtivos[4] += 1;
                         }
-                        else if (player.materialPlayer == 4)
+                        else if (player.materialPlayer == 3)
                         {
                             player.materialPlayer = 1;
-                            player.efeitosAtivos[2] += 3;
+                            player.efeitosAtivos[4] += 2;
                             player.CorDetalhes();
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = player.nickName + " trocou de material para Papel";
+
+                            if (player.rAgora == true)
+                                player.efeitosAtivos[4] += 1;
                         }
 
                         for (int i = 0; i < 6; i++)
@@ -1222,28 +1235,32 @@ public class AttacksEfeitos : MonoBehaviour
                             enemy.materialInimigo = 4;
                             enemy.efeitosAtivos[5] += 3;
                             enemy.CorDetalhes();
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Vidro";
                         }
                         else if (player.materialPlayer == 4)
                         {
                             enemy.materialInimigo = 1;
                             enemy.efeitosAtivos[2] += 3;
                             enemy.CorDetalhes();
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Papel";
                         }
                     }
                 }
                 break;
-            case 43: //Katana de alma
+            case 43: //Golpe devastador
                 if (quando == 4)
                 {
                     if (quem == true)
                     {
-                        player.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
+                        player.modPhiDamage += (enemy.speDefense + enemy.modSpeDefense);
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " ignorou a defesa de " + enemy.nomeinimigo;
                     }
                     else
                     {
-                        enemy.modPhiDamage += (enemy.phiDefense + enemy.modPhiDefense);
+                        enemy.modPhiDamage += (player.speDefense + player.modSpeDefense);
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " ignorou a defesa de " + player.nickName;
                     }

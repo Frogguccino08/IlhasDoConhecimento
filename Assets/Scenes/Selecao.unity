@@ -182,6 +182,10 @@ MonoBehaviour:
   control: {fileID: 0}
   pas: {fileID: 0}
   pasList: []
+  prefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &11650851
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,8 +1170,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.38
+  m_fontSizeBase: 0.38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

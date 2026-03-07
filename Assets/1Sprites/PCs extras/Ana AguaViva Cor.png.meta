@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 13f2b7df483e9f84284f1bdda38d6659
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 493160017259188619
+    second: Ana AguaViva Cor_0
+  - first:
+      213: 3129155802698236885
+    second: Ana AguaViva Cor_1
+  - first:
+      213: -1521593386248612481
+    second: Ana AguaViva Cor_2
+  - first:
+      213: -5934527295071991951
+    second: Ana AguaViva Cor_3
+  - first:
+      213: 4598003122141476112
+    second: Ana AguaViva Cor_4
+  - first:
+      213: 6422695479999672622
+    second: Ana AguaViva Cor_5
+  - first:
+      213: 3342075344470464601
+    second: Ana AguaViva Cor_6
+  - first:
+      213: -6722983060792724910
+    second: Ana AguaViva Cor_7
+  - first:
+      213: 4772513018733791576
+    second: Ana AguaViva Cor_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_0
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 156
+        width: 211
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81d82e3c6e08d600800000000000000
+      internalID: 493160017259188619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_1
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 403
+        width: 36
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d34ea2af9efc6b20800000000000000
+      internalID: 3129155802698236885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_2
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 389
+        width: 37
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75511080e632eae0800000000000000
+      internalID: -1521593386248612481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 309
+        width: 52
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177cf5b1ed254ada0800000000000000
+      internalID: -5934527295071991951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 265
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01531637a736fcf30800000000000000
+      internalID: 4598003122141476112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_5
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 255
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2133e9928ff12950800000000000000
+      internalID: 6422695479999672622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_6
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 197
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958d0c791df616e20800000000000000
+      internalID: 3342075344470464601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_7
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 235
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2523b7ea68a23b2a0800000000000000
+      internalID: -6722983060792724910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ana AguaViva Cor_8
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 158
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8590e8ffd4f5b3240800000000000000
+      internalID: 4772513018733791576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a346a7082cbc8944c853b4d6f7a1e8a1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ana AguaViva Cor_0: 493160017259188619
+      Ana AguaViva Cor_1: 3129155802698236885
+      Ana AguaViva Cor_2: -1521593386248612481
+      Ana AguaViva Cor_3: -5934527295071991951
+      Ana AguaViva Cor_4: 4598003122141476112
+      Ana AguaViva Cor_5: 6422695479999672622
+      Ana AguaViva Cor_6: 3342075344470464601
+      Ana AguaViva Cor_7: -6722983060792724910
+      Ana AguaViva Cor_8: 4772513018733791576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

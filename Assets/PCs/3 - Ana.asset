@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b21ae508685964a8e114d00a887ec6, type: 3}
+  m_Name: 3 - Ana
+  m_EditorClassIdentifier: 
+  id: 5
+  nome: Ana "A Domadora"
+  nickName: Ana
+  material: 3
+  imgMenu: {fileID: -3904619821288543624, guid: a9241b00d21c8d2468b61927a974ff27, type: 3}
+  imgCombate: {fileID: -8792776842961747170, guid: 8efbc0b2a3a612e4bb8a1b2c4ff3afb6, type: 3}
+  Cor: {fileID: 6860782289162264934, guid: 379d63847e1628f4fb756283985d879f, type: 3}
+  isTrans: 0
+  pronome: Ela/Dela
+  idade: 19
+  lore: "Ana j\xE1 fazia parte dos Garis desde pequena, fazendo parte de uma equipe
+    que cuidava de animais resgatados, durante seu tempo de trabalho era comum a
+    regra que se uma criatura era corrompida n\xE3o tinha mais volta ent\xE3o apenas
+    resgatavam animais n\xE3o corrompidos.\\n\\nUm momento de seu trabalho ela se
+    deparou com uma criatura corrompida que se recusava a atac\xE1-la estando focado
+    em outra coisa, ela aproveitou da oportunidade e decidiu estudar o comportamento
+    do corrompido. Ela percebeu que eles ainda tinham o funcionamento de uma criatura
+    normal escondida atr\xE1s da agressividade normal deles.\\n\\nEla treinou a criatura
+    e usou o seu conhecimento para treinar outras, elas tratavam ela como um igual
+    e defendiam ela. No futuro ela descobriu da Ilha de Lixo do atl\xE2ntico, a maior
+    \xE1rea de criaturas corrompidas do mundo e decidiu explor\xE1-la para ver a
+    mudan\xE7a de comportamento das criaturas do ambiente e parar o desenvolvimento
+    de mais corrompidas."
+  unlockable: 0
+  maxHealth: 50
+  maxCharge: 5
+  pDamage: 1
+  pDefense: 3
+  sDamage: 4
+  sDefense: 2
+  speed: 3
+  listaAtaquesIniciais: 020000002a0000000300000000000000
+  listaAtaquesAprendiveis: 2a000000030000000400000005000000060000000d0000000f0000001a0000001b0000001e000000210000002700000028000000290000002b0000002c0000002f0000003d0000004000000043000000460000004c0000004e000000570000005a000000
+  regioes: 00000000000000000000000000000000
+  inimigos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

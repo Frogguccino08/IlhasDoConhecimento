@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public bool usingR = false;
     public bool using3R = false;
     public bool segundo3R = false;
+    public bool gastou3R = false;
 
     //[HideInInspector]
     public int phiDamage;

@@ -121,6 +121,7 @@ public class Controle : MonoBehaviour
     {
         //Troca o turno
         turno++;
+        player.gastou3R = false;
         inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
 
         //Adiciona o conhecimento para os dois
@@ -174,6 +175,8 @@ public class Controle : MonoBehaviour
         DesativarBotao();
 
         enemy.EscolherAtaque();
+
+        if(player.using3R) player.gastou3R = true;
 
         //Faz os turnos na ordem de velocidade
         if(player.speed + player.modSpeed >= enemy.speed + enemy.modSpeed)
