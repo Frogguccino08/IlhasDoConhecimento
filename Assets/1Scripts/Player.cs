@@ -583,7 +583,7 @@ public class Player : MonoBehaviour
             //18.Nutrindo
             if (efeitosAtivos[18] > 0)
             {
-                attackDamage = Mathf.Round((maxHealth * 0.125f) * -1);
+                attackDamage = Mathf.Round(maxHealth * 0.125f * -1);
                 CausarDano(attackDamage);
                 Debug.Log(attackDamage + "Vida Recuperada pelo nutrindo");
                 efeitosAtivos[18] -= 1;

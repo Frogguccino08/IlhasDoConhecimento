@@ -21,52 +21,52 @@ public class BirthdayCode : MonoBehaviour
 
     IEnumerator Codigo()
     {
-        if(Input.GetKeyUp(KeyCode.Alpha0))
+        if(Input.GetKeyUp(KeyCode.Alpha0) || Input.GetKeyUp(KeyCode.Keypad0))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "0";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha1))
+        else if(Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(KeyCode.Keypad1))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "1";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha2))
+        else if(Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Keypad2))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "2";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha3))
+        else if(Input.GetKeyUp(KeyCode.Alpha3) || Input.GetKeyUp(KeyCode.Keypad3))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "3";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha4))
+        else if(Input.GetKeyUp(KeyCode.Alpha4) || Input.GetKeyUp(KeyCode.Keypad4))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "4";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha5))
+        else if(Input.GetKeyUp(KeyCode.Alpha5) || Input.GetKeyUp(KeyCode.Keypad5))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "5";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha6))
+        else if(Input.GetKeyUp(KeyCode.Alpha6) || Input.GetKeyUp(KeyCode.Keypad6))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "6";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha7))
+        else if(Input.GetKeyUp(KeyCode.Alpha7) || Input.GetKeyUp(KeyCode.Keypad7))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "7";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha8))
+        else if(Input.GetKeyUp(KeyCode.Alpha8) || Input.GetKeyUp(KeyCode.Keypad8))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "8";
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha9))
+        else if(Input.GetKeyUp(KeyCode.Alpha9) || Input.GetKeyUp(KeyCode.Keypad9))
         {
             text.GetComponent<TMP_Text>().enabled = true;
             text.text += "9";

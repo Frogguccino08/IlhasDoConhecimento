@@ -203,78 +203,80 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            int ciclo = ((control.inimigoAtual - 1) % 15) + 1;
+
             switch (escolha.regiao)
             {
                 case 0: //costa
-                    if (control.inimigoAtual < 5)
+                    if (ciclo >= 1 && ciclo <= 4)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL1[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL1.Count)];
                     }
-                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    else if (ciclo >= 5 && ciclo <= 9)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL2[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL2.Count)];
                     }
-                    else if (control.inimigoAtual >= 10)
+                    else
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.costaDeCacosNL3[UnityEngine.Random.Range(0, enemyList.costaDeCacosNL3.Count)];
                     }
                     break;
 
                 case 1: //coração
-                    if (control.inimigoAtual < 5)
+                    if (ciclo >= 1 && ciclo <= 4)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL1[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL1.Count)];
                     }
-                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    else if (ciclo >= 5 && ciclo <= 9)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL2[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL2.Count)];
                     }
-                    else if (control.inimigoAtual >= 10)
+                    else
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.coracaoDaIlhaNL3[UnityEngine.Random.Range(0, enemyList.coracaoDaIlhaNL3.Count)];
                     }
                     break;
 
                 case 2: //comunidade
-                    if (control.inimigoAtual < 5)
+                    if (ciclo >= 1 && ciclo <= 4)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL1[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL1.Count)];
                     }
-                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    else if (ciclo >= 5 && ciclo <= 9)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL2[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL2.Count)];
                     }
-                    else if (control.inimigoAtual >= 10)
+                    else
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.comunidadeAbandonadaNL3[UnityEngine.Random.Range(0, enemyList.comunidadeAbandonadaNL3.Count)];
                     }
                     break;
 
                 case 3: //arquivos
-                    if (control.inimigoAtual < 5)
+                    if (ciclo >= 1 && ciclo <= 4)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL1[UnityEngine.Random.Range(0, enemyList.osArquivosNL1.Count)];
                     }
-                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    else if (ciclo >= 5 && ciclo <= 9)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL2[UnityEngine.Random.Range(0, enemyList.osArquivosNL2.Count)];
                     }
-                    else if (control.inimigoAtual >= 10)
+                    else
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.osArquivosNL3[UnityEngine.Random.Range(0, enemyList.osArquivosNL3.Count)];
                     }
                     break;
 
                 case 4: //floresta
-                    if (control.inimigoAtual < 5)
+                    if (ciclo >= 1 && ciclo <= 4)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL1[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL1.Count)];
                     }
-                    else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+                    else if (ciclo >= 5 && ciclo <= 9)
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL2[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL2.Count)];
                     }
-                    else if (control.inimigoAtual >= 10)
+                    else
                     {
                         inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL3[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL3.Count)];
                     }
@@ -374,17 +376,13 @@ public class Enemy : MonoBehaviour
         cont = 0;
         for (cont = 0; cont < 6; cont++)
         {
-            if (control.inimigoAtual < 5)
+            if (control.inimigoAtual <= 15)
             {
                 attackID[cont] = inimigoEscolhido.listaAtaquesNvl1[cont];
             }
-            else if (control.inimigoAtual >= 5 && control.inimigoAtual < 10)
+            else if (control.inimigoAtual > 15)
             {
                 attackID[cont] = inimigoEscolhido.listaAtaquesNvl2[cont];
-            }
-            else if (control.inimigoAtual >= 10)
-            {
-                attackID[cont] = inimigoEscolhido.listaAtaquesNvl3[cont];
             }
 
             Debug.Log(attackID[cont]);
@@ -447,7 +445,7 @@ public class Enemy : MonoBehaviour
     {
         control.ColocarPontosInimigoDerrotado();
 
-        if (control.inimigoAtual % 5 == 0)
+        if (control.inimigoAtual % 15 == 0)
         {
             forcaAtual += 1;
         }
@@ -509,7 +507,7 @@ public class Enemy : MonoBehaviour
             yield break;
         }
 
-        if (control.inimigoAtual != (forcaAtual * 5) + 1)
+        if (control.inimigoAtual % 5 != 1 && control.inimigoAtual != 1)
         {
             enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
             enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
@@ -540,7 +538,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (control.inimigoAtual == ((forcaAtual * 5) + 2) || control.inimigoAtual == ((forcaAtual * 5) + 4) || control.inimigoAtual == ((forcaAtual * 5) + 1))
+        if (control.inimigoAtual % 5 == 1 || control.inimigoAtual % 5 == 2 || control.inimigoAtual % 5 == 4)
         {
             enemy.telaUpgradeOn = true;
             control.texto.enabled = false;
@@ -956,13 +954,6 @@ public class Enemy : MonoBehaviour
                 textoAtaque.text = "Dano recebido por cacos";
                 textoAtaque.enabled = true;
                 efeitosUsados[16] = true;
-
-                if (currentHealth <= 0)
-                {
-                    GetComponent<SpriteRenderer>().enabled = false;
-                    cor.enabled = false;
-                    StartCoroutine(Morto());
-                }
             }
         }
 
@@ -971,15 +962,13 @@ public class Enemy : MonoBehaviour
             //18.Cacos
             if (efeitosAtivos[18] > 0)
             {
-                attackDamage = Mathf.Round((maxHealth * 0.125f) * -1);
+                attackDamage = Mathf.Round(maxHealth * 0.125f * -1);
                 CausarDano(attackDamage);
                 Debug.Log(attackDamage + "Vida Recuperada pelo nutrindo");
                 efeitosAtivos[18] -= 1;
                 textoAtaque.text = "Vida Recuperada pelo nutrindo";
                 textoAtaque.enabled = true;
                 efeitosUsados[18] = true;
-                //Arrumar essa bosta
-                //healthbar.MudarBarra(currentHealth);
             }
         }
 

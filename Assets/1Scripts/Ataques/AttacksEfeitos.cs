@@ -1202,7 +1202,7 @@ public class AttacksEfeitos : MonoBehaviour
                         if (player.materialPlayer == 1)
                         {
                             player.materialPlayer = 3;
-                            player.efeitosAtivos[4] += 2;
+                            player.efeitosAtivos[4] += 3;
                             player.CorDetalhes();
                             control.escreverEfeito = true;
                             control.efeitoAtq = player.nickName + " trocou de material para Vidro";
@@ -1213,7 +1213,7 @@ public class AttacksEfeitos : MonoBehaviour
                         else if (player.materialPlayer == 3)
                         {
                             player.materialPlayer = 1;
-                            player.efeitosAtivos[4] += 2;
+                            player.efeitosAtivos[4] += 3;
                             player.CorDetalhes();
                             control.escreverEfeito = true;
                             control.efeitoAtq = player.nickName + " trocou de material para Papel";
@@ -1232,16 +1232,16 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.materialInimigo == 1)
                         {
-                            enemy.materialInimigo = 4;
-                            enemy.efeitosAtivos[5] += 3;
+                            enemy.materialInimigo = 3;
+                            enemy.efeitosAtivos[4] += 3;
                             enemy.CorDetalhes();
                             control.escreverEfeito = true;
                             control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Vidro";
                         }
-                        else if (player.materialPlayer == 4)
+                        else if (player.materialPlayer == 3)
                         {
                             enemy.materialInimigo = 1;
-                            enemy.efeitosAtivos[2] += 3;
+                            enemy.efeitosAtivos[4] += 3;
                             enemy.CorDetalhes();
                             control.escreverEfeito = true;
                             control.efeitoAtq = enemy.nomeinimigo + " trocou de material para Papel";
@@ -1256,13 +1256,13 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         player.modPhiDamage += (enemy.speDefense + enemy.modSpeDefense);
                         control.escreverEfeito = true;
-                        control.efeitoAtq = player.nickName + " ignorou a defesa de " + enemy.nomeinimigo;
+                        control.efeitoAtq = player.nickName + " ignorou a defesa a distância de " + enemy.nomeinimigo;
                     }
                     else
                     {
                         enemy.modPhiDamage += (player.speDefense + player.modSpeDefense);
                         control.escreverEfeito = true;
-                        control.efeitoAtq = enemy.nomeinimigo + " ignorou a defesa de " + player.nickName;
+                        control.efeitoAtq = enemy.nomeinimigo + " ignorou a defesa a distância de " + player.nickName;
                     }
                 }
                 break;

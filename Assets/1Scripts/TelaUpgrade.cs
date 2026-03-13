@@ -37,6 +37,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         player.telaUpgradeOn = false;
         control.pontosRodada += 250;
+        player.reroll++;
         control.textoArea.text = "Pontuação:\n" + control.pontosRodada;
 
         control.processguir = true;
@@ -83,7 +84,7 @@ public class TelaUpgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 player.maxHealth += 25;
                 player.currentHealth = player.maxHealth;
                 player.healthbar.MaximoVida(player.maxHealth);
-                player.text.text = player.currentHealth + "/" + player.maxHealth;
+                player.text.text = player.nickName + " " + player.currentHealth + "/" + player.maxHealth;
                 player.healthbar.MudarBarra(player.currentHealth);
 
                 control.processguir = true;

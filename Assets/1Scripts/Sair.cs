@@ -48,8 +48,13 @@ public class Sair : MonoBehaviour
 
     public void Voltar()
     {
-        control.telaSair = false;
-        tela.SetActive(false);
+        if(btOn)
+            {
+                control.AtivarBotao();
+            }
+
+            control.telaSair = false;
+            tela.SetActive(false);
     }
 
     public void Quitar()

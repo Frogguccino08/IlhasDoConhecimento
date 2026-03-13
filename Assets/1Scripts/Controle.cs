@@ -246,7 +246,7 @@ public class Controle : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         if (player.errouAtq) player.errouAtq = false;
 
-        if(!player.temEfeito[player.idAtaqueUsado]) yield return EsperarTeclaEspaco();
+        if(!player.temEfeito[player.idAtaqueUsado] || (player.temEfeito[player.idAtaqueUsado] && player.dano[player.idAtaqueUsado] != 0)) yield return EsperarTeclaEspaco();
 
         if (pulouTurno == true)
         {
@@ -254,7 +254,7 @@ public class Controle : MonoBehaviour
         }
 
         //Escrever o efeito na tela
-        if (player.errouAtq == false && player.temEfeito[player.idAtaqueUsado] == true && pulouTurno == false && escreverEfeito)
+        if (player.errouAtq == false && player.temEfeito[player.idAtaqueUsado] && pulouTurno == false && escreverEfeito)
         {
             texto.text = efeitoAtq;
             yield return EsperarTeclaEspaco();

@@ -16,14 +16,13 @@ MonoBehaviour:
   material: 3
   imgPadrao: {fileID: 3357396586804956517, guid: f05f94de5a3d9dd44858c0b7b028303a, type: 3}
   cor: {fileID: 3662615602545976743, guid: dcffedd83f9b1c447b507a41879637ec, type: 3}
-  maxHealth: 25
-  maxCharge: 3
+  maxHealth: 50
+  maxCharge: 5
   pDamage: 1
-  pDefense: 2
+  pDefense: 3
   sDamage: 4
-  sDefense: 3
+  sDefense: 4
   speed: 3
   mainStatus: 3
-  listaAtaquesNvl1: 000000000000000000000000000000000000000000000000
-  listaAtaquesNvl2: 41000000100000000f000000000000000000000000000000
-  listaAtaquesNvl3: 000000000000000000000000000000000000000000000000
+  listaAtaquesNvl1: 41000000100000001a000000000000000000000000000000
+  listaAtaquesNvl2: 41000000100000001a000000460000000000000000000000

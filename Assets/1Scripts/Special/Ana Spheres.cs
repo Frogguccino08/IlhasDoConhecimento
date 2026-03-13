@@ -35,22 +35,16 @@ public class AnaSpheres : MonoBehaviour
             if(!esquerda)
             {
                 transform.Translate(0, velocidade * Time.deltaTime, 0);
-                transform.eulerAngles += Vector3.forward * (velocidade / 25);
             }
                 
             if(esquerda)
             {
                 transform.Translate(0, -1 * velocidade * Time.deltaTime, 0);
-                transform.eulerAngles -= Vector3.forward * (-1 * velocidade / 25);
             }
         }
         else
         {
             transform.Translate(0, velocidade * Time.deltaTime * direcao, 0);
-            if(!esquerda)
-                transform.eulerAngles += Vector3.forward * (velocidade / 25) * direcao;
-            if(esquerda)
-                transform.eulerAngles -= Vector3.forward * (velocidade / 25) * direcao;
         }
 
         if(player.materialPlayer != mainColor)

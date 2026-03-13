@@ -20,5 +20,4 @@ public class EnemiesSO : ScriptableObject
 
     public int[] listaAtaquesNvl1 = new int[6];
     public int[] listaAtaquesNvl2 = new int[6];
-    public int[] listaAtaquesNvl3 = new int[6];
 }
