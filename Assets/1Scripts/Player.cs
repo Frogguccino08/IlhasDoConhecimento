@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
     public float modSpeDamage = 0;
     public float modSpeDefense = 0;
     public float modSpeed = 0;
+    public bool[] confirmMods = new bool[10];
+    public bool confirmModR;
 
     public int[] efeitosAtivos = new int[19];
     public bool[] efeitosUsados = new bool[19];
@@ -113,59 +115,7 @@ public class Player : MonoBehaviour
             efeitosAtivos[1] = 15;
         }
 
-        modPhiDamage = 0;
-        enemy.modPhiDefense = 0;
-        modSpeDamage = 0;
-        enemy.modSpeDefense = 0;
-        modSpeed = 0;
-
-        if (rAgora == true)
-        {
-            modPhiDamage = 1;
-            modSpeDamage = 1;
-        }
-
-
-        if (efeitosAtivos[2] > 0) //Aumentar defesa a distancia
-        {
-            modSpeDefense += 2;
-        }
-        if (efeitosAtivos[3] > 0) //Aumentar defesa fisica
-        {
-            modPhiDefense += 2;
-        }
-        if (efeitosAtivos[4] > 0) //Aumentar ataque a distancia
-        {
-            modSpeDamage += 1;
-        }
-        if (efeitosAtivos[5] > 0) //Aumentar ataque fisico
-        {
-            modPhiDamage += 1;
-        }
-        if (efeitosAtivos[8] > 0) //Diminuir dano a distancia
-        {
-            modSpeDamage -= 1;
-        }
-        if (efeitosAtivos[9] > 0) //Diminuir dano fisico
-        {
-            modPhiDamage -= 1;
-        }
-        if (efeitosAtivos[10] > 0) //Diminuir defesa a distancia
-        {
-            modSpeDefense -= 2;
-        }
-        if (efeitosAtivos[11] > 0) //Diminuir defesa física
-        {
-            modPhiDefense -= 2;
-        }
-        if(efeitosAtivos[13] > 0) //Aumentar velocidade
-        {
-            modSpeed += 2;
-        }
-        if(efeitosAtivos[14] > 0) //Diminuir velocidade
-        {
-            modSpeed -= 2;
-        }
+        Modificadores();
     }
 
     public void InicializarPlayer()
@@ -358,12 +308,6 @@ public class Player : MonoBehaviour
 
                 if (dano[id] != 0)
                 {
-                    if (rAgora == true)
-                    {
-                        modPhiDamage += 1;
-                        modSpeDamage += 1;
-                    }
-
                     if (phispe[id] == true)
                     {
                         danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
@@ -498,6 +442,7 @@ public class Player : MonoBehaviour
                     }
                 }
 
+                ResetarModificadores();
                 danoPublic = attackDamage;
             }
 
@@ -683,6 +628,7 @@ public class Player : MonoBehaviour
             int rand = UnityEngine.Random.Range(1, 21);
 
             enemy.efeitosAtivos[9] += 1;
+            if(enemy.efeitosAtivos[9] == 1) enemy.efeitosAtivos[9] += 1;
             if (rand >= 15)
             {
                 enemy.efeitosAtivos[12] += 1;
@@ -819,5 +765,141 @@ public class Player : MonoBehaviour
 
         efeitosAtivos[1] = shield;
         efeitosAtivos[7] = exposto;
+    }
+
+    public void Modificadores()
+    {
+        if (efeitosAtivos[2] > 0 && !confirmMods[0]) //Aumentar defesa a distancia
+        {
+            modSpeDefense += 2;
+            confirmMods[0] = true;
+        }else if(efeitosAtivos[2] == 0 && confirmMods[0])
+        {
+            modSpeDefense -= 2;
+            confirmMods[0] = false;
+        }
+
+        if (efeitosAtivos[3] > 0 && !confirmMods[1]) //Aumentar defesa física
+        {
+            modPhiDefense += 2;
+            confirmMods[1] = true;
+        }else if(efeitosAtivos[3] == 0 && confirmMods[1])
+        {
+            modPhiDefense -= 2;
+            confirmMods[1] = false;
+        }
+
+        if (efeitosAtivos[4] > 0 && !confirmMods[2]) //Aumentar ataque a distância
+        {
+            modSpeDamage += 1;
+            confirmMods[2] = true;
+        }else if(efeitosAtivos[4] == 0 && confirmMods[2])
+        {
+            modSpeDamage -= 1;
+            confirmMods[2] = false;
+        }
+
+        if (efeitosAtivos[5] > 0 && !confirmMods[3]) //Aumentar ataque físico
+        {
+            modPhiDamage += 1;
+            confirmMods[3] = true;
+        }else if(efeitosAtivos[5] == 0 && confirmMods[3])
+        {
+            modPhiDamage -= 1;
+            confirmMods[3] = false;
+        }
+
+        if (efeitosAtivos[8] > 0 && !confirmMods[4]) //Diminuir dano a distância
+        {
+            modSpeDamage -= 1;
+            confirmMods[4] = true;
+        }else if(efeitosAtivos[8] == 0 && confirmMods[4])
+        {
+            modSpeDamage += 1;
+            confirmMods[4] = false;
+        }
+
+        if (efeitosAtivos[9] > 0 && !confirmMods[5]) //Diminuir dano físico
+        {
+            modPhiDamage -= 1;
+            confirmMods[5] = true;
+        }else if(efeitosAtivos[9] == 0 && confirmMods[5])
+        {
+            modPhiDamage += 1;
+            confirmMods[5] = false;
+        }
+
+        if (efeitosAtivos[10] > 0 && !confirmMods[6]) //Diminuir defesa a distância
+        {
+            modSpeDefense -= 2;
+            confirmMods[6] = true;
+        }else if(efeitosAtivos[10] == 0 && confirmMods[6])
+        {
+            modSpeDefense += 2;
+            confirmMods[6] = false;
+        }
+
+        if (efeitosAtivos[11] > 0 && !confirmMods[7]) //Diminuir defesa física
+        {
+            modPhiDefense -= 2;
+            confirmMods[7] = true;
+        }else if(efeitosAtivos[11] == 0 && confirmMods[7])
+        {
+            modPhiDefense += 2;
+            confirmMods[7] = false;
+        }
+
+        if (efeitosAtivos[13] > 0 && !confirmMods[8]) //Aumentar Velocidade
+        {
+            modSpeed += 2;
+            confirmMods[8] = true;
+        }else if(efeitosAtivos[13] == 0 && confirmMods[8])
+        {
+            modSpeed -= 2;
+            confirmMods[8] = false;
+        }
+
+        if (efeitosAtivos[14] > 0 && !confirmMods[9]) //Aumentar Velocidade
+        {
+            modSpeed -= 2;
+            confirmMods[9] = true;
+        }else if(efeitosAtivos[14] == 0 && confirmMods[9])
+        {
+            modSpeed += 2;
+            confirmMods[9] = false;
+        }
+
+        if(rAgora && !confirmModR)
+        {
+            modSpeDamage += 1;
+            modPhiDamage += 1;
+            confirmModR = true;
+        }else if(!rAgora && confirmModR)
+        {
+            modSpeDamage -= 1;
+            modPhiDamage -= 1;
+            confirmModR = false;
+        }
+    }
+
+    public void ResetarModificadores()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            confirmMods[i] = false;
+        }
+
+        modPhiDamage = 0;
+        modSpeDamage = 0;
+        modPhiDefense = 0;
+        modSpeDefense = 0;
+        modSpeed = 0;
+
+        confirmModR = false;
+        if (rAgora)
+        {
+            modSpeDamage -= 1;
+            modPhiDamage -= 1;
+        }
     }
 }

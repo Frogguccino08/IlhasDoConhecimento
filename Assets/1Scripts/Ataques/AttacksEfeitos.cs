@@ -2462,7 +2462,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.efeitosAtivos[7] > 0)
                         {
-                            player.modSpeDamage += 2;
+                            player.modSpeDamage += 1;
                             control.escreverEfeito = true;
                             control.efeitoAtq = "Ataque causou mais dano por estar exposto";
                         }
@@ -2471,7 +2471,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.efeitosAtivos[7] > 0)
                         {
-                            enemy.modSpeDamage += 2;
+                            enemy.modSpeDamage += 1;
                             control.escreverEfeito = true;
                             control.efeitoAtq = "Ataque causou mais dano por estar exposto";
                         }
