@@ -108,6 +108,7 @@ public class AttacksList : MonoBehaviour
         listaAtaques.Add(new Attacks(92, "Pintura nova", "Cura uma pequena quantidade de vida e aumenta sua defesa a distância", Attacks.Tipo.cura, Attacks.Tipo.suporte, 1, -3, false, false, 1 , 4, true, false));
         listaAtaques.Add(new Attacks(93, "Planilha aberta", "Ataque médio de papel que causa um efeito negativo aleátorio", Attacks.Tipo.negativo, Attacks.Tipo.golpe, 1, 2, false, true, 2, 3, true, false));
         listaAtaques.Add(new Attacks(94, "Casca com farpas", "Coloca escudo em si mesmo e cacos no inimigo", Attacks.Tipo.negativo, Attacks.Tipo.bloqueio, 1, 0, false, true, 0, 3, true, false));
+        listaAtaques.Add(new Attacks(95, "Tiro preciso", "Esse ataque causa mais dano caso o inimigo esteja exposto", Attacks.Tipo.golpe, Attacks.Tipo.zero, 0, 2, false, true, 1, 3, true, false));
         //int Id, string Nome, string Desc, tipo1, tipo2, int Material, int Dano, bool Phispe, bool Alvo, int Quantidade, int Carga, bool TemEfeito, bool IsPassiva
 
         listaHabilidades.Add(new Attacks(0, "Conhecimento amplo", "Ao usar o 3R em um ataque sem nenhum efeito ganha +3 de defesa a distância.", Attacks.Tipo.zero, Attacks.Tipo.zero, 1, 0, true, true, 0, 0, true, true));

@@ -2455,6 +2455,29 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
+            case 95: //Tiro preciso
+                if (quando == 4)
+                {
+                    if (quem == true)
+                    {
+                        if (enemy.efeitosAtivos[7] > 0)
+                        {
+                            player.modSpeDamage += 2;
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = "Ataque causou mais dano por estar exposto";
+                        }
+                    }
+                    else
+                    {
+                        if (player.efeitosAtivos[7] > 0)
+                        {
+                            enemy.modSpeDamage += 2;
+                            control.escreverEfeito = true;
+                            control.efeitoAtq = "Ataque causou mais dano por estar exposto";
+                        }
+                    }
+                }
+                break;
         }
     }
 }
