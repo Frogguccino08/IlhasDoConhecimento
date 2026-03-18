@@ -2841,9 +2841,9 @@ MonoBehaviour:
   speDamage: 5
   speDefense: 5
   speed: 5
-  modPhiDamage: 0
+  modPhiDamage: 1
   modPhiDefense: 0
-  modSpeDamage: 0
+  modSpeDamage: 1
   modSpeDefense: 0
   modSpeed: 0
   confirmMods: 00000000000000000000
@@ -3851,9 +3851,9 @@ MonoBehaviour:
   speDamage: 5
   speDefense: 5
   speed: 6
-  modPhiDamage: 0
+  modPhiDamage: 1
   modPhiDefense: 0
-  modSpeDamage: 0
+  modSpeDamage: 1
   modSpeDefense: 0
   modSpeed: 0
   confirmMods: 00000000000000000000

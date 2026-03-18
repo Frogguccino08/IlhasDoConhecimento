@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
     //[HideInInspector]
     public int speed = 4;
 
-    public float modPhiDamage = 0;
+    public float modPhiDamage = 1;
     public float modPhiDefense = 0;
-    public float modSpeDamage = 0;
+    public float modSpeDamage = 1;
     public float modSpeDefense = 0;
     public float modSpeed = 0;
     public bool[] confirmMods = new bool[10];
@@ -330,7 +330,7 @@ public class Player : MonoBehaviour
                         danoAtual += 1;
                     }
 
-                    if (material[id] == enemy.materialInimigo || (material[id] == 0 && materialPlayer == enemy.materialInimigo))
+                    if (material[id] == enemy.materialInimigo)
                     {
                         danoAtual -= 1;
                     }

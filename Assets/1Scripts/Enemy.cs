@@ -34,9 +34,9 @@ public class Enemy : MonoBehaviour
     //[HideInInspector]
     public int speed = 5;
 
-    public float modPhiDamage = 0;
+    public float modPhiDamage = 1;
     public float modPhiDefense = 0;
-    public float modSpeDamage = 0;
+    public float modSpeDamage = 1;
     public float modSpeDefense = 0;
     public float modSpeed = 0;
     public bool[] confirmMods = new bool[10];
@@ -242,9 +242,9 @@ public class Enemy : MonoBehaviour
         
 
         //Funcionalidade para todo o inimigo
-        modPhiDamage = 0;
+        modPhiDamage = 1;
         modPhiDefense = 0;
-        modSpeDamage = 0;
+        modSpeDamage = 1;
         modSpeDefense = 0;
 
         nomeinimigo = inimigoEscolhido.nome;
@@ -627,7 +627,7 @@ public class Enemy : MonoBehaviour
                         danoAtual += 1;
                     }
 
-                    if (material[id] == enemy.materialPlayer || (material[id] == 0 && materialInimigo == enemy.materialPlayer))
+                    if (material[id] == enemy.materialPlayer)
                     {
                         danoAtual -= 1;
                     }
