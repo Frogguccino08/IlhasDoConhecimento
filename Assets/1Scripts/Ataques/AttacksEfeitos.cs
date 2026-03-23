@@ -23,6 +23,18 @@ public class AttacksEfeitos : MonoBehaviour
         obj.transform.SetSiblingIndex(7);
         pasList.Add(obj);
 
+        if(pasList.Count > 3)
+        {
+            Destroy(pasList[0]);
+            pasList.RemoveAt(0);
+            
+            foreach (GameObject kct in pasList)
+            {
+                kct.transform.position = new Vector3(0, -0.04f, 0);
+                kct.transform.position = kct.transform.position + new Vector3(0, (0.8f * pasList.IndexOf(kct)), 0);
+            }
+        }
+
         obj.GetComponent<Passiva>().titulo.text = nomePas;
         obj.GetComponent<Passiva>().desc.text = desc;
 
@@ -113,13 +125,16 @@ public class AttacksEfeitos : MonoBehaviour
 
         yield return new WaitForSeconds(3.5f);
 
-        Destroy(pasList[0]);
-        pasList.RemoveAt(0);
-        
-        foreach (GameObject kct in pasList)
+        if(pasList.Count > 0)
         {
-            kct.transform.position = new Vector3(0, -0.04f, 0);
-            kct.transform.position = kct.transform.position + new Vector3(0, (0.8f * pasList.IndexOf(kct)), 0);
+            Destroy(pasList[0]);
+            pasList.RemoveAt(0);
+            
+            foreach (GameObject kct in pasList)
+            {
+                kct.transform.position = new Vector3(0, -0.04f, 0);
+                kct.transform.position = kct.transform.position + new Vector3(0, (0.8f * pasList.IndexOf(kct)), 0);
+            }
         }
     }
     
