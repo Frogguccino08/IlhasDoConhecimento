@@ -4037,6 +4037,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  persoMax: {fileID: 0}
   maxRush: 0
   maxHistoria: 0
   unlock: 010101010100
@@ -5168,8 +5169,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.8
-  m_fontSizeBase: 0.8
+  m_fontSize: 0.7
+  m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

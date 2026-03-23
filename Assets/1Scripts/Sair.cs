@@ -30,6 +30,7 @@ public class Sair : MonoBehaviour
             control.telaSair = true;
             control.descricao.SetActive(false);
             tela.SetActive(true);
+            control.DesvisuTela();
 
             motivacao.text = frases[UnityEngine.Random.Range(0, frases.Count)];
             control.DesativarBotao();
@@ -43,6 +44,7 @@ public class Sair : MonoBehaviour
 
             control.telaSair = false;
             tela.SetActive(false);
+            control.VisuTela();
         }
     }
 
@@ -55,10 +57,18 @@ public class Sair : MonoBehaviour
 
             control.telaSair = false;
             tela.SetActive(false);
+            control.VisuTela();
     }
 
     public void Quitar()
     {
+        if(PersonagemSelecionado.instance.maxRush < control.pontosRodada)
+        {
+            PersonagemSelecionado.instance.maxRush = control.pontosRodada;
+            PersonagemSelecionado.instance.pontos = PersonagemSelecionado.instance.maxRush;
+            PersonagemSelecionado.instance.persoMax = PersonagemSelecionado.instance.perso;
+        }
+
         PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }

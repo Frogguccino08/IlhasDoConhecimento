@@ -10,6 +10,7 @@ public class PersonagemSelecionado : MonoBehaviour
     public int pontos;
     public float[] material = new float[6];
 
+    public PCsSO persoMax;
     public int maxRush;
     public int maxHistoria;
     

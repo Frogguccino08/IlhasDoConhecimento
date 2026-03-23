@@ -66,11 +66,7 @@ public class Controle : MonoBehaviour
     public IEnumerator LigarTela()
     {
         textoRegiao.SetActive(true);
-        telaCompleta.SetActive(false);
-        oPlayer[0].SetActive(false);
-        oEnemy[0].GetComponent<SpriteRenderer>().enabled = false;
-        oPlayer[1].SetActive(false);
-        oEnemy[1].SetActive(false);
+        DesvisuTela();
 
         switch (escolha.regiao)
         {
@@ -93,14 +89,8 @@ public class Controle : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        Debug.Log("Chegou aqui man");
-
         textoRegiao.SetActive(false);
-        telaCompleta.SetActive(true);
-        oPlayer[0].SetActive(true);
-        oEnemy[0].GetComponent<SpriteRenderer>().enabled = true;
-        oPlayer[1].SetActive(true);
-        oEnemy[1].SetActive(true);
+        VisuTela();
 
         texto.enabled = false;
         enemy.InicializarInimigo();
@@ -374,7 +364,7 @@ public class Controle : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         paraEsperar = true;
 
-        while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
+        while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0) || telaSair)
             yield return null;
 
         yield return new WaitForSeconds(0.01f);
@@ -491,6 +481,32 @@ public class Controle : MonoBehaviour
                 if (player.isPassive[i])
                     player.list.AtaquesComEfeitos(true, player.attackID[i], segundoN, player, enemy);
             }
+        }
+    }
+
+    public void VisuTela()
+    {
+        telaCompleta.SetActive(true);
+        oPlayer[0].SetActive(true);
+        oPlayer[1].SetActive(true);
+
+        if(enemy.currentHealth > 0)
+        {
+            oEnemy[1].SetActive(true);
+            oEnemy[0].GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+
+    public void DesvisuTela()
+    {
+        
+        telaCompleta.SetActive(false);
+        oPlayer[0].SetActive(false);
+        oPlayer[1].SetActive(false);
+        if(enemy.currentHealth > 0)
+        {
+            oEnemy[1].SetActive(false);
+            oEnemy[0].GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }
