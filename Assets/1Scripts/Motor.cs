@@ -14,7 +14,6 @@ public class Motor : MonoBehaviour
 
     public void ColocarPontos()
     {
-        pontos[0].text = "Recorde do Modo História: " + PersonagemSelecionado.instance.maxHistoria;
         pontos[1].text = "Recorde do Modo Rush: " + PersonagemSelecionado.instance.maxRush;
     }
 

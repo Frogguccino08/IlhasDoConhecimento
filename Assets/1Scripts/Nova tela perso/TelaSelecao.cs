@@ -22,17 +22,6 @@ public class TelaSelecao : MonoBehaviour
     {
         pc = PersonagemSelecionado.instance;
 
-
-        if (pc.modoHistoria == false)
-        {
-            Debug.Log("Modo Rush");
-        }
-        else
-        {
-            Debug.Log("Modo história");
-        }
-
-
         foreach (PCsSO boneco in perso)
         {
             ColocarPersonagem(boneco);
@@ -114,14 +103,7 @@ public class TelaSelecao : MonoBehaviour
 
     public void PontoMaximo()
     {
-        if (pc.modoHistoria == true)
-        {
-            maxPoint.text = "Recorde modo História: " + pc.maxHistoria;
-        }
-        else
-        {
             maxPoint.text = "Recorde modo Rush: " + pc.maxRush;
             if(pc.persoMax != null) maxPoint.text = "Recorde modo Rush: " + pc.maxRush + " (" + pc.persoMax.nome + ")";
-        }
     }
 }

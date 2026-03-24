@@ -12,10 +12,8 @@ public class PersonagemSelecionado : MonoBehaviour
 
     public PCsSO persoMax;
     public int maxRush;
-    public int maxHistoria;
     
     public List<bool> unlock = new List<bool>();
-    public bool modoHistoria = false;
 
     public List<PCsSO> persos = new List<PCsSO>();
 

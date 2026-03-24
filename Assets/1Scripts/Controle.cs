@@ -398,29 +398,6 @@ public class Controle : MonoBehaviour
         }
     }
 
-    //Função para aparecer uma tela de vitória
-    public void TelaVitoria()
-    {
-        escolha.pontos = pontosRodada;
-        CanvaVitoria.SetActive(true);
-
-        telaCompleta.SetActive(false);
-        textoRegiao.SetActive(true);
-        oPlayer[0].SetActive(false);
-        oEnemy[0].SetActive(false);
-        oPlayer[1].SetActive(false);
-        oEnemy[1].SetActive(false);
-
-        CanvaVitoria.GetComponent<TelaVitoria>().ColocarNome();
-    }
-
-    public void TelaPerso()
-    {
-        CanvaVitoria.SetActive(false);
-        CanvaTelaPerso.SetActive(true);
-        CanvaTelaPerso.GetComponent<TelaVitoria>().ColocarPerso();
-    }
-
     public void VoltarMenu()
     {
         PersonagemSelecionado.instance.Resetar();

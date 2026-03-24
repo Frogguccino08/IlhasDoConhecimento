@@ -20,10 +20,6 @@ public class PCsSO : ScriptableObject
     public string lore;
 
 
-    //Personagem para ser liberado
-    public int unlockable;
-
-
     //Atributos para combate
     public float maxHealth;
     public int maxCharge;
@@ -37,9 +33,4 @@ public class PCsSO : ScriptableObject
     //Parte de ataques
     public int[] listaAtaquesIniciais = new int[4];
     public int[] listaAtaquesAprendiveis;
-
-
-    //Modo história
-    public int[] regioes = new int[4];
-    public EnemiesSO[] inimigos = new EnemiesSO[20];
 }

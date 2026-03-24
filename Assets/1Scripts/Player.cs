@@ -195,17 +195,9 @@ public class Player : MonoBehaviour
         control.DesativarBotao();
         control.texto.text = "Você foi derrotado\nEsperando input para voltar ao menu";
         
-        if (perso.modoHistoria == true && control.pontosRodada >= perso.maxHistoria)
-        {
-            perso.maxHistoria = control.pontosRodada;
-            perso.pontos = perso.maxHistoria;
-        }
-        else if (perso.modoHistoria == false && control.pontosRodada >= perso.maxRush)
-        {
             perso.maxRush = control.pontosRodada;
             perso.pontos = perso.maxRush;
             perso.persoMax = perso.perso;
-        }
 
         while (!Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Space))
         {

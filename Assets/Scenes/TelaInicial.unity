@@ -640,10 +640,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  persoMax: {fileID: 0}
   maxRush: 0
-  maxHistoria: 0
   unlock: 010101010100
-  modoHistoria: 0
   persos:
   - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
   - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
@@ -5172,7 +5171,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1058368912}
         m_TargetAssemblyTypeName: StarMenu, Assembly-CSharp
         m_MethodName: Selecao
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

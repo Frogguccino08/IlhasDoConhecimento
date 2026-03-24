@@ -3,17 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class StarMenu : MonoBehaviour
 {
-    public void Selecao(bool modoHistoria)
+    public void Selecao()
     {
-        if (modoHistoria == false)
-        {
-            PersonagemSelecionado.instance.modoHistoria = false;
-        }
-        else
-        {
-            PersonagemSelecionado.instance.modoHistoria = true;
-        }
-
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
 
