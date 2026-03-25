@@ -153,9 +153,9 @@ public class AttacksEfeitos : MonoBehaviour
         0 == Ao inicializar qualquer um dos dois 
         1 == Assim que inicia o turno               7 == (Inimigo) Assim que inicia o turno
         2 == Antes do ataque mesmo se errou         8 == (Inimigo) Antes do ataque mesmo se errou 
-        3 == Antes do ataque só se acertar          9 == (Inimigo) Antes do ataque só se acertar
+        3 == Antes do ataque só se acertar         9 == (Inimigo) Antes do ataque só se acertar
         4 == Antes de cada golpe do ataque          10 == (Inimigo) Antes de cada golpe do ataque
-        5 == após calcular o dano                   11 == (Inimigo) após calcular o dano
+        5 == após causar o danoa                   11 == (Inimigo) após causar o dano
         6 == No final do turno                      12 == (Inimigo) No final do turno
         */
 
@@ -1264,18 +1264,18 @@ public class AttacksEfeitos : MonoBehaviour
                     }
                 }
                 break;
-            case 43: //Golpe devastador
+            case 43: //Disparo devastador
                 if (quando == 4)
                 {
                     if (quem == true)
                     {
-                        player.modPhiDamage += (enemy.speDefense + enemy.modSpeDefense);
+                        player.danoExtra += enemy.modSpeDefense;
                         control.escreverEfeito = true;
                         control.efeitoAtq = player.nickName + " ignorou a defesa a distância de " + enemy.nomeinimigo;
                     }
                     else
                     {
-                        enemy.modPhiDamage += (player.speDefense + player.modSpeDefense);
+                        enemy.modSpeDamage += player.modSpeDefense;
                         control.escreverEfeito = true;
                         control.efeitoAtq = enemy.nomeinimigo + " ignorou a defesa a distância de " + player.nickName;
                     }
@@ -1313,7 +1313,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (enemy.efeitosAtivos[7] > 0)
                         {
-                            player.modPhiDamage += 2;
+                            player.modPhiDamage += 1;
                             control.escreverEfeito = true;
                             control.efeitoAtq = "Ataque causou mais dano por estar exposto";
                         }
@@ -1322,7 +1322,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.efeitosAtivos[7] > 0)
                         {
-                            enemy.modPhiDamage += 2;
+                            enemy.modPhiDamage += 1;
                             control.escreverEfeito = true;
                             control.efeitoAtq = "Ataque causou mais dano por estar exposto";
                         }
@@ -1641,7 +1641,7 @@ public class AttacksEfeitos : MonoBehaviour
                     {
                         if (player.dano[player.idAtaqueUsado] > 0 && player.alvo[player.idAtaqueUsado] == true)
                         {
-                            float dano = Mathf.Ceil(((player.speDamage / 2 * player.dano[player.idAtaqueUsado]) + player.modSpeDamage) / 2);
+                            float dano = Mathf.Ceil(player.speDamage / 2 * (player.dano[player.idAtaqueUsado] + player.modSpeDamage));
                             if (dano <= 0)
                                 dano = 1;
 
@@ -1654,7 +1654,7 @@ public class AttacksEfeitos : MonoBehaviour
 
                         if (enemy.dano[enemy.idAtaqueUsado] > 0 && enemy.alvo[enemy.idAtaqueUsado] == true)
                         {
-                            float dano = Mathf.Ceil(((enemy.speDamage / 2 * enemy.dano[enemy.idAtaqueUsado]) + enemy.modSpeDamage) / 2);
+                            float dano = Mathf.Ceil(player.speDamage / 2 * (player.dano[player.idAtaqueUsado] + player.modSpeDamage));
                             if (dano <= 0)
                                 dano = 1;
 

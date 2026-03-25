@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
     public float modSpeDamage = 1;
     public float modSpeDefense = 0;
     public float modSpeed = 0;
+    public float danoExtra = 0;
     public bool[] confirmMods = new bool[10];
 
     public int[] efeitosAtivos = new int[19];
@@ -369,6 +370,8 @@ public class Enemy : MonoBehaviour
             cor.enabled = false;
         }
 
+        ResetarModificadores();
+        enemy.ResetarModificadores();
         control.EfeitosAcontecendo(true, 0, 0);
     }
 
@@ -563,7 +566,7 @@ public class Enemy : MonoBehaviour
                 {
                     if (phispe[id] == true)
                     {
-                        danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])));
+                        danoAtual = Mathf.Round(phiDamage * (modPhiDamage + Mathf.Abs(dano[id])) + danoExtra);
                         if (alvo[id] == true)
                             defesaAtual = enemy.modPhiDamage + enemy.phiDefense;
                         else
@@ -571,7 +574,7 @@ public class Enemy : MonoBehaviour
                     }
                     else
                     {
-                        danoAtual = Mathf.Round(speDamage * (modSpeDamage + Mathf.Abs(dano[id])));
+                        danoAtual = Mathf.Round(speDamage * (modSpeDamage + Mathf.Abs(dano[id])) + danoExtra);
                         if (alvo[id] == true)
                             defesaAtual = enemy.modSpeDamage + enemy.speDefense;
                         else
@@ -1221,10 +1224,11 @@ public class Enemy : MonoBehaviour
             confirmMods[i] = false;
         }
 
-        modPhiDamage = 0;
-        modSpeDamage = 0;
+        modPhiDamage = 1;
+        modSpeDamage = 1;
         modPhiDefense = 0;
         modSpeDefense = 0;
         modSpeed = 0;
+        danoExtra = 0;
     }
 }

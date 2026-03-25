@@ -170,25 +170,25 @@ public class Descricao : MonoBehaviour
                     if (ataque.phispe == true)
                     {
                         if (ataque.dano > 0)
-                            dano.text = ataque.quantidade + " x " + (ataque.dano + player.modPhiDamage + rEmConta);
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modPhiDamage - 1) + rEmConta);
                         else
-                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modPhiDamage * -1) + rEmConta);
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + ((player.modPhiDamage - 1) * -1) + rEmConta);
 
 
 
-                        if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
+                        if (ataque.dano > ataque.dano + (player.modPhiDamage - 1) + rEmConta && ataque.dano > 0)
                         {
                             dano.color = Color.red;
                         }
-                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano > 0)
+                        else if (ataque.dano < ataque.dano + (player.modPhiDamage - 1) + rEmConta && ataque.dano > 0)
                         {
                             dano.color = Color.green;
                         }
-                        else if (ataque.dano > ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                        else if (ataque.dano > ataque.dano + ((player.modPhiDamage -1) * -1) + rEmConta && ataque.dano < 0)
                         {
                             dano.color = Color.green;
                         }
-                        else if (ataque.dano < ataque.dano + player.modPhiDamage + rEmConta && ataque.dano < 0)
+                        else if (ataque.dano < ataque.dano + ((player.modPhiDamage -1) * -1) + rEmConta && ataque.dano < 0)
                         {
                             dano.color = Color.red;
                         }
@@ -200,23 +200,23 @@ public class Descricao : MonoBehaviour
                     else
                     {
                         if (ataque.dano > 0)
-                            dano.text = ataque.quantidade + " x " + (ataque.dano + player.modSpeDamage + rEmConta);
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modSpeDamage - 1) + rEmConta);
                         else
-                            dano.text = ataque.quantidade + " x " + (ataque.dano + (player.modSpeDamage * -1) + rEmConta);
+                            dano.text = ataque.quantidade + " x " + (ataque.dano + ((player.modSpeDamage - 1) * -1) + rEmConta);
 
-                        if (ataque.dano > ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        if (ataque.dano > ataque.dano + (player.modSpeDamage - 1) + rEmConta && ataque.dano > 0)
                         {
                             dano.color = Color.red;
                         }
-                        else if (ataque.dano > ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
+                        else if (ataque.dano < ataque.dano + (player.modSpeDamage - 1) + rEmConta && ataque.dano > 0)
                         {
                             dano.color = Color.green;
                         }
-                        else if (ataque.dano < ataque.dano + player.modSpeDamage + rEmConta && ataque.dano > 0)
+                        else if (ataque.dano > ataque.dano + ((player.modSpeDamage -1) * -1) + rEmConta && ataque.dano < 0)
                         {
                             dano.color = Color.green;
                         }
-                        else if (ataque.dano < ataque.dano + (player.modSpeDamage * -1) + rEmConta && ataque.dano < 0)
+                        else if (ataque.dano < ataque.dano + ((player.modSpeDamage - 1) * -1) + rEmConta && ataque.dano < 0)
                         {
                             dano.color = Color.red;
                         }

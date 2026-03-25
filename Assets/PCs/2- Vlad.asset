@@ -33,7 +33,6 @@ MonoBehaviour:
     menos e menos carne comest\xEDvel para alimentar sua fam\xEDlia, e eles come\xE7aram
     a passar fome.\\n\\nQuando a oportunidade surgiu ele decidiu parar o descarte
     de lixo da Concha para purificar os animais entrando para os Garis."
-  unlockable: 0
   maxHealth: 50
   maxCharge: 5
   pDamage: 3
@@ -43,25 +42,3 @@ MonoBehaviour:
   speed: 3
   listaAtaquesIniciais: 01000000030000000900000000000000
   listaAtaquesAprendiveis: 010000000300000009000000040000000a0000000b0000000c0000001c00000020000000250000002600000028000000290000002c00000030000000370000003b0000003d0000003f0000004300000045000000590000005e000000490000004a0000004f000000500000005100000052000000530000005400000055000000
-  regioes: 00000000000000000000000000000000
-  inimigos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}

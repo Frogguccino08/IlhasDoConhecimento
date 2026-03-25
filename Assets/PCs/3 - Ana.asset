@@ -35,7 +35,6 @@ MonoBehaviour:
     \xE1rea de criaturas corrompidas do mundo e decidiu explor\xE1-la para ver a
     mudan\xE7a de comportamento das criaturas do ambiente e parar o desenvolvimento
     de mais corrompidas."
-  unlockable: 0
   maxHealth: 50
   maxCharge: 5
   pDamage: 1
@@ -45,25 +44,3 @@ MonoBehaviour:
   speed: 3
   listaAtaquesIniciais: 020000002a0000000300000000000000
   listaAtaquesAprendiveis: 020000002a000000030000000400000005000000060000000d0000000f0000001a0000001b0000001e000000210000002700000028000000290000002b0000002c0000003d0000004000000043000000460000004c0000004e000000570000005a0000005f000000
-  regioes: 00000000000000000000000000000000
-  inimigos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
