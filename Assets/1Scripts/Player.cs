@@ -198,7 +198,9 @@ public class Player : MonoBehaviour
         
             perso.maxRush = control.pontosRodada;
             perso.pontos = perso.maxRush;
-            perso.persoMax = perso.perso;
+            perso.persoMax = perso.perso.nome;
+
+            perso.SalvarInfo();
 
         while (!Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Space))
         {

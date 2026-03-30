@@ -66,7 +66,9 @@ public class Sair : MonoBehaviour
         {
             PersonagemSelecionado.instance.maxRush = control.pontosRodada;
             PersonagemSelecionado.instance.pontos = PersonagemSelecionado.instance.maxRush;
-            PersonagemSelecionado.instance.persoMax = PersonagemSelecionado.instance.perso;
+            PersonagemSelecionado.instance.persoMax = PersonagemSelecionado.instance.perso.nome;
+
+            PersonagemSelecionado.instance.SalvarInfo();
         }
 
         PersonagemSelecionado.instance.Resetar();

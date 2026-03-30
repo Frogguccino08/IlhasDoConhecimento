@@ -85,7 +85,7 @@ public class BirthdayCode : MonoBehaviour
     {
         string codigo = text.text;
 
-        if(codigo == "0302") //Adicionar código aqui com um ||
+        if(codigo == "0302" || codigo == "6942") //Adicionar código aqui com um ||
         {
             text.color = Color.red;
             StartCoroutine(CodigoCerto());
@@ -102,6 +102,10 @@ public class BirthdayCode : MonoBehaviour
 
         yield return StartCoroutine(Comemoracao());
 
+        if(codigo == "6942")
+        {
+            PersonagemSelecionado.instance.HardReset();
+        }
         if(codigo == "0302")
         {
             PersonagemSelecionado.instance.unlock[5] = true;
@@ -120,6 +124,7 @@ public class BirthdayCode : MonoBehaviour
 
         text.text = "";
         text.color = Color.black;
+        PersonagemSelecionado.instance.SalvarInfo();
     }
 
     IEnumerator Comemoracao()

@@ -10,7 +10,7 @@ public class PersonagemSelecionado : MonoBehaviour
     public int pontos;
     public float[] material = new float[6];
 
-    public PCsSO persoMax;
+    public string persoMax;
     public int maxRush;
     
     public List<bool> unlock = new List<bool>();
@@ -38,6 +38,48 @@ public class PersonagemSelecionado : MonoBehaviour
         {
             perso = null;
             regiao = 0;
+        }
+    }
+
+    //Exclui toda informação
+    public void HardReset()
+    {
+            perso = null;
+            regiao = 0;
+            pontos = 0;
+            persoMax = "";
+            maxRush = 0;
+
+            for(int i = 0; i < 6; i++)
+            {
+                material[i] = 0;
+            }
+
+            unlock[5] = false;
+
+            SalvarInfo();
+    }
+
+    public void SalvarInfo()
+    {
+        SaveSystem.Save(this);
+    }
+
+    public void CarregarInfo()
+    {
+        Info data = SaveSystem.Load();
+
+        for(int i = 0; i < 6; i++)
+        {
+            material[i] = data.material[i];
+        }
+
+        persoMax = data.nomeMax;
+        maxRush = data.pontoMax;
+
+        for(int i = 0; i < 6; i++)
+        {
+            unlock[i] = data.bloqueados[i];
         }
     }
 }

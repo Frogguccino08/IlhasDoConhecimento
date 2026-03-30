@@ -104,6 +104,6 @@ public class TelaSelecao : MonoBehaviour
     public void PontoMaximo()
     {
             maxPoint.text = "Recorde modo Rush: " + pc.maxRush;
-            if(pc.persoMax != null) maxPoint.text = "Recorde modo Rush: " + pc.maxRush + " (" + pc.persoMax.nome + ")";
+            if(pc.persoMax != null) maxPoint.text = "Recorde modo Rush: " + pc.maxRush + " (" + pc.persoMax + ")";
     }
 }
