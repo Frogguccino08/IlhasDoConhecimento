@@ -7,6 +7,8 @@ using System.Collections;
 public class Controle : MonoBehaviour
 {
     //Variaveis
+    //Test for the Git
+    
     public int turno = 0;
     public int inimigoAtual = 1;
     public bool paraEsperar = false;
