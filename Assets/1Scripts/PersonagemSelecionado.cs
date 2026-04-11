@@ -17,6 +17,12 @@ public class PersonagemSelecionado : MonoBehaviour
 
     public List<PCsSO> persos = new List<PCsSO>();
 
+    //Modo historia
+    public bool isHistoria;
+    public Inimigos[] inimigos = new Inimigos[6];
+    public int anyBoss;
+    public int[] fasesBloqueio = new int[30];
+
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()
     {
@@ -41,7 +47,7 @@ public class PersonagemSelecionado : MonoBehaviour
         }
     }
 
-    //Exclui toda informa��o
+    //Exclui toda informa��o
     public void HardReset()
     {
             perso = null;

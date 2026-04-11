@@ -8,8 +8,16 @@ public class StarMenu : MonoBehaviour
     {
         StartCoroutine(AcharSave());
     }
+
+    public void historia()
+    {
+        PersonagemSelecionado.instance.isHistoria = true;
+        SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
+    }
+
     public void Selecao()
     {
+        PersonagemSelecionado.instance.isHistoria = false;
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
     }
 

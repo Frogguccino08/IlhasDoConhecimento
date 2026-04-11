@@ -640,7 +640,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  persoMax: {fileID: 0}
+  persoMax: 
   maxRush: 0
   unlock: 010101010100
   persos:
@@ -650,6 +650,58 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
+  isHistoria: 0
+  inimigos:
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+  anyBoss: 0
+  fasesBloqueio: 000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &244199876
 Transform:
   m_ObjectHideFlags: 0
@@ -3523,15 +3575,15 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1576309617}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1058368912}
         m_TargetAssemblyTypeName: StarMenu, Assembly-CSharp
-        m_MethodName: Selecao
-        m_Mode: 6
+        m_MethodName: historia
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
