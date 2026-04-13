@@ -71,8 +71,8 @@ public class Sair : MonoBehaviour
             PersonagemSelecionado.instance.SalvarInfo();
         }
 
-        PersonagemSelecionado.instance.Resetar();
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+        
     }
 
     public void VitoriaSair()

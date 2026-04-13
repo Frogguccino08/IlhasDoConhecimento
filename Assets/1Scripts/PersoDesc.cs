@@ -24,12 +24,13 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerEnter(PointerEventData eventData)
     {
         telaDesc.SetActive(true);
+        if(PersonagemSelecionado.instance.isHistoria) regiaoTopo.enabled = true;
         telaDesc.transform.SetSiblingIndex(20);
         texto.text = "Dano físico: " + player.phiDamage + "\nDano a dist: " + player.speDamage + "\nDefesa física: " + player.phiDefense + "\nDefesa a dist: " + player.speDefense + "\nVelocidade: " + player.speed;
         descHabilidade.SetActive(true);
         descHabilidade.GetComponent<Descricao>().BotandoDescricao(player.perso.perso.id, true);
 
-        extra = regiaoTopo.text;
+        if(!PersonagemSelecionado.instance.isHistoria) extra = regiaoTopo.text;
 
         descRegiao.SetActive(true);
         regis.nome.text = regis.lista.listaRegiao[PersonagemSelecionado.instance.regiao].nome;
@@ -70,6 +71,7 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         telaDesc.SetActive(false);
         descHabilidade.SetActive(false);
         descRegiao.SetActive(false);
-        regiaoTopo.text = extra;
+        if(!PersonagemSelecionado.instance.isHistoria) regiaoTopo.text = extra;
+        if(PersonagemSelecionado.instance.isHistoria) regiaoTopo.enabled = false;
     }
 }

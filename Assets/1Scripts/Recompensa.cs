@@ -27,8 +27,9 @@ public class Recompensa : MonoBehaviour
         }
 
         materiais[enemy.materialInimigo] = Mathf.Round((enemy.forcaAtual + 1 + bonus) * 3 * UnityEngine.Random.Range(0.7f, 1.3f));
-        Debug.Log("Material especifoc ganho: " + materiais[enemy.materialInimigo]);
+        Debug.Log("Material especifico ganho: " + materiais[enemy.materialInimigo]);
         perso.material[enemy.materialInimigo] += materiais[enemy.materialInimigo];
+        
 
         for (int i = 0; i < 6; i++)
         {

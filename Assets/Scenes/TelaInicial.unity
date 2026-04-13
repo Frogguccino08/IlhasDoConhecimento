@@ -660,6 +660,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   - id: 0
     vida: 0
     conhecimento: 0
@@ -668,6 +669,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   - id: 0
     vida: 0
     conhecimento: 0
@@ -676,6 +678,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   - id: 0
     vida: 0
     conhecimento: 0
@@ -684,6 +687,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   - id: 0
     vida: 0
     conhecimento: 0
@@ -692,6 +696,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   - id: 0
     vida: 0
     conhecimento: 0
@@ -700,8 +705,9 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
+    atq: 
   anyBoss: 0
-  fasesBloqueio: 000000000000000000000000000000000000000000000000000000000000
+  fasesBloqueio: 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &244199876
 Transform:
   m_ObjectHideFlags: 0

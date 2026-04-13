@@ -14,6 +14,11 @@ public class Inimigos
 
     public int[] atq = new int[6];
 
+    public Inimigos()
+    {
+        atq = new int[6];
+    }
+
     public Inimigos(int id, int vida, int conhecimento, int atqFisico, int atqDistancia, int defFisica, int defDistancia, int velocidade, int[] atq)
     {
         this.id = id;

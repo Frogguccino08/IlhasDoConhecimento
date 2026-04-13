@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        inicial = PersonagemSelecionado.instance.faseAtual;
+        
         foreach(GameObject obj in fases)
         {
             if(obj)

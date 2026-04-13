@@ -261,7 +261,12 @@ MonoBehaviour:
     defDistancia: 0
     velocidade: 0
     atq: 
+  hasBoss: 0
   anyBoss: 0
+  highLevel: 0
+  recompensaMaterial: 000000000000000000000000000000000000000000000000
+  recompensaPersonagem: 0
+  recompensaFase: 000000000000000000000000000000000000000000000000
 --- !u!212 &428703977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -328,6 +333,134 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.35, y: -0.1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &591967891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591967893}
+  - component: {fileID: 591967892}
+  m_Layer: 0
+  m_Name: Personagem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &591967892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591967891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f8ca306cebbdc4d821f0f6c84664fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perso: {fileID: 0}
+  regiao: 0
+  pontos: 0
+  material:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  persoMax: 
+  maxRush: 0
+  unlock: 010101010100
+  persos:
+  - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
+  - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
+  - {fileID: 11400000, guid: 537008348a32b554aa1fdf193a33fd18, type: 2}
+  - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
+  - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
+  - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
+  isHistoria: 1
+  faseAtual: 1
+  inimigos:
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  hasBoss: 0
+  anyBoss: 0
+  highLevel: 0
+  fasesBloqueio: 010000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  recompensaMaterial: 000000000000000000000000000000000000000000000000
+  recompensaPersonagem: 0
+  recompensaFase: 000000000000000000000000000000000000000000000000
+--- !u!4 &591967893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591967891}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.7890406, y: 0.7548716, z: -0.04005545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -687,8 +820,35 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  regiao: 0
+  regiao: 2
   inimigos:
+  - id: 2
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 2
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 2
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
   - id: 0
     vida: 0
     conhecimento: 0
@@ -697,7 +857,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
+    atq: 000000000000000000000000000000000000000000000000
   - id: 0
     vida: 0
     conhecimento: 0
@@ -706,7 +866,7 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
+    atq: 000000000000000000000000000000000000000000000000
   - id: 0
     vida: 0
     conhecimento: 0
@@ -715,35 +875,13 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
-    vida: 0
-    conhecimento: 0
-    atqFisico: 0
-    atqDistancia: 0
-    defFisica: 0
-    defDistancia: 0
-    velocidade: 0
-    atq: 
-  - id: 0
-    vida: 0
-    conhecimento: 0
-    atqFisico: 0
-    atqDistancia: 0
-    defFisica: 0
-    defDistancia: 0
-    velocidade: 0
-    atq: 
-  - id: 0
-    vida: 0
-    conhecimento: 0
-    atqFisico: 0
-    atqDistancia: 0
-    defFisica: 0
-    defDistancia: 0
-    velocidade: 0
-    atq: 
+    atq: 000000000000000000000000000000000000000000000000
+  hasBoss: 0
   anyBoss: 0
+  highLevel: 0
+  recompensaMaterial: 000000000000000000000000000000000000000000000000
+  recompensaPersonagem: 0
+  recompensaFase: 000000000000000000000000000000000000000000000000
 --- !u!212 &1527261757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -827,7 +965,7 @@ GameObject:
   - component: {fileID: 1553320189}
   - component: {fileID: 1553320190}
   m_Layer: 0
-  m_Name: "Miss\xE3o teste"
+  m_Name: "Miss\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,7 +1064,7 @@ MonoBehaviour:
   - {fileID: 0}
   regiao: 0
   inimigos:
-  - id: 0
+  - id: 1
     vida: 0
     conhecimento: 0
     atqFisico: 0
@@ -934,8 +1072,17 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 2
+    vida: 0
+    conhecimento: 2
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 3
     vida: 0
     conhecimento: 0
     atqFisico: 0
@@ -943,8 +1090,8 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 4
     vida: 0
     conhecimento: 0
     atqFisico: 0
@@ -952,8 +1099,8 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 5
     vida: 0
     conhecimento: 0
     atqFisico: 0
@@ -961,8 +1108,8 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 6
     vida: 0
     conhecimento: 0
     atqFisico: 0
@@ -970,17 +1117,13 @@ MonoBehaviour:
     defFisica: 0
     defDistancia: 0
     velocidade: 0
-    atq: 
-  - id: 0
-    vida: 0
-    conhecimento: 0
-    atqFisico: 0
-    atqDistancia: 0
-    defFisica: 0
-    defDistancia: 0
-    velocidade: 0
-    atq: 
-  anyBoss: 0
+    atq: 000000000000000000000000000000000000000000000000
+  hasBoss: 1
+  anyBoss: 2
+  highLevel: 0
+  recompensaMaterial: 000000000000000000000000000000000000000000000000
+  recompensaPersonagem: 0
+  recompensaFase: 000000000000000000000000000000000000000000000000
 --- !u!61 &1553320190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1036,3 +1179,4 @@ SceneRoots:
   - {fileID: 1527261758}
   - {fileID: 428703978}
   - {fileID: 1399601345}
+  - {fileID: 591967893}
