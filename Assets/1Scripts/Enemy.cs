@@ -530,6 +530,19 @@ public class Enemy : MonoBehaviour
 
         if(control.inimigoAtual > 6 || escolha.inimigos[control.inimigoAtual - 1].id == 0)
         {
+            control.texto.text = "Você completou a fase!!!";
+
+            yield return new WaitForSeconds(0.01f);
+            while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(0.01f);
+
+            telaRecompensa.SetActive(true);
+            control.DesvisuTela();
+            yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().RecebaMaterial());
+
             escolha.Resetar();
             if(escolha.fasesBloqueio[escolha.faseAtual - 1] == 1) escolha.fasesBloqueio[escolha.faseAtual - 1] = 2;
             SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
@@ -570,19 +583,6 @@ public class Enemy : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.01f);
-
-        //Parte das recompensas
-        telaRecompensa.SetActive(true);
-        telaRecompensa.GetComponent<Recompensa>().Receba();
-
-        while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            yield return null;
-        }
-
-        telaRecompensa.SetActive(false);
-
-        yield return new WaitForSeconds(0.1f);
 
         if (control.inimigoAtual % 5 != 1 && control.inimigoAtual != 1)
         {

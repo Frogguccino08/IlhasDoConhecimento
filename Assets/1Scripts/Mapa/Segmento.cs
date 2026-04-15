@@ -40,6 +40,6 @@ public class Segmento : MonoBehaviour
     {
         Controle control = GameObject.Find("Controlador").GetComponent<Controle>();
 
-        if(control.inimigoAtual <= 6) objPlayer.transform.position = obj[control.inimigoAtual - 1].transform.position + new Vector3(0, -0.5f, 0);
+        if(control.inimigoAtual <= 6 && obj[control.inimigoAtual - 1] != null) objPlayer.transform.position = obj[control.inimigoAtual - 1].transform.position + new Vector3(0, -0.5f, 0);
     }
 }

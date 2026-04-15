@@ -1,39 +1,39 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Recompensa : MonoBehaviour
 {
-    public float[] materiais = new float[6];
+    //Lembrar de salvar no final de todas as recompensas
+    
+    //Conexões
     public GameObject[] avisos = new GameObject[6];
     public Enemy enemy;
-    public bool teste = true;
     public PersonagemSelecionado perso;
+    public Controle control;
+
+    //Telas
+    public GameObject telaMaterial;
+
+    //Recompensas de Material
+    public float[] materiais = new float[6];
 
     void Awake()
     {
         perso = PersonagemSelecionado.instance;
     }
 
-    public void Receba()
+    public IEnumerator RecebaMaterial()
     {
-        int bonus = 0;
-        if (enemy.isBoss)
-        {
-            bonus = 2;
-        }
-
-        for (int o = 0; o < 6; o++)
-        {
-            materiais[o] = 0;
-        }
-
-        materiais[enemy.materialInimigo] = Mathf.Round((enemy.forcaAtual + 1 + bonus) * 3 * UnityEngine.Random.Range(0.7f, 1.3f));
-        Debug.Log("Material especifico ganho: " + materiais[enemy.materialInimigo]);
-        perso.material[enemy.materialInimigo] += materiais[enemy.materialInimigo];
-        
+        telaMaterial.SetActive(true);
 
         for (int i = 0; i < 6; i++)
         {
-            avisos[i].GetComponent<MaterialGanho>().Ajustes(i, materiais[i]);
+            float variacao = UnityEngine.Random.Range(0.8f, 1.2f);
+            avisos[i].GetComponent<MaterialGanho>().Ajustes(i, MathF.Round(perso.recompensaMaterial[i] * variacao));
         }
+
+        yield return StartCoroutine(control.EsperarTeclaEspaco());
+        yield return new WaitForSeconds(0.1f);
     }
 }

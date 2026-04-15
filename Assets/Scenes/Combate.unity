@@ -7802,12 +7802,12 @@ GameObject:
   - component: {fileID: 639001248}
   - component: {fileID: 639001247}
   m_Layer: 5
-  m_Name: BackGround
+  m_Name: Material
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639001246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21482,13 +21482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419ed5d78e0f4b4e9a56db046a2a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materiais:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   avisos:
   - {fileID: 1695407828}
   - {fileID: 54219796}
@@ -21497,8 +21490,16 @@ MonoBehaviour:
   - {fileID: 1531425535}
   - {fileID: 1117761611}
   enemy: {fileID: 265112125}
-  teste: 1
   perso: {fileID: 0}
+  control: {fileID: 618230584}
+  telaMaterial: {fileID: 639001245}
+  materiais:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &1800203453
 MonoBehaviour:
   m_ObjectHideFlags: 0
