@@ -542,6 +542,8 @@ public class Enemy : MonoBehaviour
             telaRecompensa.SetActive(true);
             control.DesvisuTela();
             yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().RecebaMaterial());
+            if(escolha.recompensaPersonagem[0] != 0 && escolha.fasesBloqueio[escolha.faseAtual - 1] == 1) yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().ReceberPersonagem());
+            telaRecompensa.GetComponent<Recompensa>().LiberarFases();
 
             escolha.Resetar();
             if(escolha.fasesBloqueio[escolha.faseAtual - 1] == 1) escolha.fasesBloqueio[escolha.faseAtual - 1] = 2;

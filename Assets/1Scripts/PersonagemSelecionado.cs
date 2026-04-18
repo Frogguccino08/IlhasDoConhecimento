@@ -28,7 +28,7 @@ public class PersonagemSelecionado : MonoBehaviour
 
     //Recompensas história
     public int[] recompensaMaterial = new int[6];
-    public int recompensaPersonagem;
+    public int[] recompensaPersonagem = new int[6];
     public int[] recompensaFase = new int[6]; 
 
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
@@ -87,8 +87,9 @@ public class PersonagemSelecionado : MonoBehaviour
                 inimigos[i] = null;
                 recompensaMaterial[i] = 0;
                 recompensaFase[i] = 0;
+                recompensaPersonagem[i] = 0;
             }
-            recompensaPersonagem = 0;
+            
 
             hasBoss = false;
             anyBoss = 0;

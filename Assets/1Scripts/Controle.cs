@@ -497,6 +497,7 @@ public class Controle : MonoBehaviour
         telaCompleta.SetActive(false);
         oPlayer[0].SetActive(false);
         oPlayer[1].SetActive(false);
+        if(escolha.isHistoria) segmento.SetActive(false);
         if(enemy.currentHealth > 0)
         {
             oEnemy[1].SetActive(false);

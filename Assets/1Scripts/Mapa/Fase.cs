@@ -23,7 +23,7 @@ public class Fase : MonoBehaviour
 
     //Recompensas
     public int[] recompensaMaterial = new int[6];
-    public int recompensaPersonagem;
+    public int[] recompensaPersonagem = new int[6];
     public int[] recompensaFase = new int[6]; 
 
     void OnMouseUp()

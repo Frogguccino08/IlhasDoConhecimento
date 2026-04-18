@@ -110,14 +110,14 @@ public class BirthdayCode : MonoBehaviour
         {
             PersonagemSelecionado.instance.unlock[5] = true;
         }
-        //Adicionar aqui personagem novo
+        //Adicionar aqui personagem novo que seja por código
         
         foreach (GameObject obj in tela.persosDesc)
         {
             Destroy(obj);
         }
         tela.persosDesc.Clear();
-        foreach (PCsSO boneco in tela.perso)
+        foreach (PCsSO boneco in PersonagemSelecionado.instance.persos)
         {
             tela.ColocarPersonagem(boneco);
         }
