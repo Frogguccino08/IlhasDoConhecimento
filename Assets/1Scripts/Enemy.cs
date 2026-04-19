@@ -78,6 +78,7 @@ public class Enemy : MonoBehaviour
     public bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
+    InfoPlayer info;
     public SpriteRenderer cor;
 
     public int[] attackID = new int[6];
@@ -125,6 +126,7 @@ public class Enemy : MonoBehaviour
     {
         //Coisas necessárias
         escolha = PersonagemSelecionado.instance;
+        info = InfoPlayer.instance;
         escolha.GarantirInimigos();
         pulouTurno = false;
 
@@ -542,11 +544,11 @@ public class Enemy : MonoBehaviour
             telaRecompensa.SetActive(true);
             control.DesvisuTela();
             yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().RecebaMaterial());
-            if(escolha.recompensaPersonagem[0] != 0 && escolha.fasesBloqueio[escolha.faseAtual - 1] == 1) yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().ReceberPersonagem());
+            if(escolha.recompensaPersonagem[0] != 0 && info.fasesBloqueio[escolha.faseAtual - 1] == 1) yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().ReceberPersonagem());
             telaRecompensa.GetComponent<Recompensa>().LiberarFases();
 
             escolha.Resetar();
-            if(escolha.fasesBloqueio[escolha.faseAtual - 1] == 1) escolha.fasesBloqueio[escolha.faseAtual - 1] = 2;
+            if(info.fasesBloqueio[escolha.faseAtual - 1] == 1) info.fasesBloqueio[escolha.faseAtual - 1] = 2;
             SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
         }
         else

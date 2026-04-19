@@ -686,6 +686,61 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &149198303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149198305}
+  - component: {fileID: 149198304}
+  m_Layer: 0
+  m_Name: InfoJogador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &149198304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149198303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57eb14c5b23f5094897a835ad6cd1328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  persoMax: 
+  maxRush: 0
+  unlock: 000000000000
+  fasesBloqueio: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!4 &149198305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149198303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170693121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,18 +4085,6 @@ MonoBehaviour:
   perso: {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   regiao: 2
   pontos: 0
-  material:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  persoMax: {fileID: 0}
-  maxRush: 0
-  maxHistoria: 0
-  unlock: 010101010100
-  modoHistoria: 0
   persos:
   - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
   - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
@@ -4049,6 +4092,69 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
+  isHistoria: 0
+  faseAtual: 0
+  inimigos:
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  - id: 0
+    vida: 0
+    conhecimento: 0
+    atqFisico: 0
+    atqDistancia: 0
+    defFisica: 0
+    defDistancia: 0
+    velocidade: 0
+    atq: 000000000000000000000000000000000000000000000000
+  hasBoss: 0
+  anyBoss: 0
+  highLevel: 0
+  recompensaMaterial: 000000000000000000000000000000000000000000000000
+  recompensaPersonagem: 000000000000000000000000000000000000000000000000
+  recompensaFase: 000000000000000000000000000000000000000000000000
 --- !u!4 &1245900992
 Transform:
   m_ObjectHideFlags: 0
@@ -8168,13 +8274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persosDesc: []
-  perso:
-  - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
-  - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
-  - {fileID: 11400000, guid: 537008348a32b554aa1fdf193a33fd18, type: 2}
-  - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
-  - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
-  - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
   pequeno: {fileID: 5548241101861490766, guid: 4f798b352ca3fbb43b5dd601afcc8888, type: 3}
   canva: {fileID: 2005335195}
   descCompleta: {fileID: 1654444109}
@@ -8624,3 +8723,4 @@ SceneRoots:
   - {fileID: 11650851}
   - {fileID: 1966948901}
   - {fileID: 1245900992}
+  - {fileID: 149198305}

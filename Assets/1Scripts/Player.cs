@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     public AttacksList lista;
 
     public PersonagemSelecionado perso;
+    InfoPlayer info;
     public PCsSO pc;
     public SpriteRenderer cor;
 
@@ -122,6 +123,7 @@ public class Player : MonoBehaviour
     public void InicializarPlayer()
     {
         perso = PersonagemSelecionado.instance;
+        info = InfoPlayer.instance;
         pc = perso.perso;
 
         control.pontMax.text = "Pontuação Máxima: " + perso.pontos;
@@ -201,11 +203,11 @@ public class Player : MonoBehaviour
         }
         else
         {
-            perso.maxRush = control.pontosRodada;
-            perso.pontos = perso.maxRush;
-            perso.persoMax = perso.perso.nome;
+            info.maxRush = control.pontosRodada;
+            perso.pontos = info.maxRush;
+            info.persoMax = perso.perso.nome;
 
-            perso.SalvarInfo();
+            info.SalvarInfo();
         }
             
         while (!Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Space))

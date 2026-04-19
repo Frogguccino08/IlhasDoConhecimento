@@ -8,7 +8,7 @@ public class Info
     public int pontoMax;
     public bool[] bloqueados;
 
-    public Info (PersonagemSelecionado perso)
+    public Info (InfoPlayer perso)
     {
         material = new float[6];
         material[0] = perso.material[0];

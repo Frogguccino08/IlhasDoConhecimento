@@ -12,11 +12,13 @@ public class Persopequeno : MonoBehaviour
 
     GameObject canva;
     PersonagemSelecionado perso;
+    InfoPlayer info;
     public GameObject descCompleta;
 
     void Awake()
     {
         perso = PersonagemSelecionado.instance;
+        info = InfoPlayer.instance;
     }
 
     void Start()
@@ -28,7 +30,7 @@ public class Persopequeno : MonoBehaviour
     public void OnClickPequeno()
     {
         perso.perso = pc;
-        if (perso.unlock[perso.perso.id] == true)
+        if (info.unlock[perso.perso.id] == true)
         {
             canva.SetActive(false);
             descCompleta.SetActive(true);

@@ -62,13 +62,13 @@ public class Sair : MonoBehaviour
 
     public void Quitar()
     {
-        if(PersonagemSelecionado.instance.maxRush < control.pontosRodada)
+        if(InfoPlayer.instance.maxRush < control.pontosRodada)
         {
-            PersonagemSelecionado.instance.maxRush = control.pontosRodada;
-            PersonagemSelecionado.instance.pontos = PersonagemSelecionado.instance.maxRush;
-            PersonagemSelecionado.instance.persoMax = PersonagemSelecionado.instance.perso.nome;
+            InfoPlayer.instance.maxRush = control.pontosRodada;
+            PersonagemSelecionado.instance.pontos = InfoPlayer.instance.maxRush;
+            InfoPlayer.instance.persoMax = PersonagemSelecionado.instance.perso.nome;
 
-            PersonagemSelecionado.instance.SalvarInfo();
+            InfoPlayer.instance.SalvarInfo();
         }
 
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);

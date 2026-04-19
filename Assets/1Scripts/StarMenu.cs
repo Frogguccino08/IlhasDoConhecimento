@@ -29,6 +29,6 @@ public class StarMenu : MonoBehaviour
     IEnumerator AcharSave()
     {
         yield return new WaitForSeconds(0.2f);
-        PersonagemSelecionado.instance.CarregarInfo();
+        InfoPlayer.instance.CarregarInfo();
     }
 }

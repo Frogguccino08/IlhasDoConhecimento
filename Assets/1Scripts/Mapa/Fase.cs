@@ -45,7 +45,7 @@ public class Fase : MonoBehaviour
             SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
         }
 
-        if(PersonagemSelecionado.instance.fasesBloqueio[numFase - 1] != 0)
+        if(InfoPlayer.instance.fasesBloqueio[numFase - 1] != 0)
         {
             player.inicial = numFase;
             player.Andar();
@@ -54,10 +54,10 @@ public class Fase : MonoBehaviour
 
     public void MudarStatus()
     {
-        if(PersonagemSelecionado.instance.fasesBloqueio[numFase - 1] == 0) GetComponent<SpriteRenderer>().sprite = sprites[0];
+        if(InfoPlayer.instance.fasesBloqueio[numFase - 1] == 0) GetComponent<SpriteRenderer>().sprite = sprites[0];
 
-        if(PersonagemSelecionado.instance.fasesBloqueio[numFase - 1] == 1) GetComponent<SpriteRenderer>().sprite = sprites[1];
+        if(InfoPlayer.instance.fasesBloqueio[numFase - 1] == 1) GetComponent<SpriteRenderer>().sprite = sprites[1];
 
-        if(PersonagemSelecionado.instance.fasesBloqueio[numFase - 1] == 2) GetComponent<SpriteRenderer>().sprite = sprites[2];
+        if(InfoPlayer.instance.fasesBloqueio[numFase - 1] == 2) GetComponent<SpriteRenderer>().sprite = sprites[2];
     }
 }

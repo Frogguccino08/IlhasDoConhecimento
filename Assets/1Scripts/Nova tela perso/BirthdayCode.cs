@@ -104,11 +104,11 @@ public class BirthdayCode : MonoBehaviour
 
         if(codigo == "6942")
         {
-            PersonagemSelecionado.instance.HardReset();
+            InfoPlayer.instance.HardReset();
         }
         if(codigo == "0302")
         {
-            PersonagemSelecionado.instance.unlock[5] = true;
+            InfoPlayer.instance.unlock[5] = true;
         }
         //Adicionar aqui personagem novo que seja por código
         
@@ -124,7 +124,7 @@ public class BirthdayCode : MonoBehaviour
 
         text.text = "";
         text.color = Color.black;
-        PersonagemSelecionado.instance.SalvarInfo();
+        InfoPlayer.instance.SalvarInfo();
     }
 
     IEnumerator Comemoracao()

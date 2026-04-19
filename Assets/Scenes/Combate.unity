@@ -23561,16 +23561,6 @@ MonoBehaviour:
   perso: {fileID: 0}
   regiao: 0
   pontos: 0
-  material:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  persoMax: 
-  maxRush: 0
-  unlock: 010101010100
   persos:
   - {fileID: 11400000, guid: 9e127863d83e5a549bea2e21ba9899ff, type: 2}
   - {fileID: 11400000, guid: 54b8d5a4091e77d4eb9af8d4da62caa9, type: 2}
@@ -23638,7 +23628,6 @@ MonoBehaviour:
   hasBoss: 0
   anyBoss: 0
   highLevel: 0
-  fasesBloqueio: 010000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   recompensaMaterial: 000000000000000000000000000000000000000000000000
   recompensaPersonagem: 
   recompensaFase: 000000000000000000000000000000000000000000000000
@@ -24334,6 +24323,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1971017774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971017776}
+  - component: {fileID: 1971017775}
+  m_Layer: 0
+  m_Name: InfoJogador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971017775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971017774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57eb14c5b23f5094897a835ad6cd1328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  persoMax: 
+  maxRush: 0
+  unlock: 000000000000
+  fasesBloqueio: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!4 &1971017776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971017774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1980381182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28053,5 +28097,6 @@ SceneRoots:
   - {fileID: 1327823491}
   - {fileID: 265112124}
   - {fileID: 2023866713}
-  - {fileID: 1906887727}
   - {fileID: 311341798}
+  - {fileID: 1906887727}
+  - {fileID: 1971017776}

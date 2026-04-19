@@ -14,14 +14,14 @@ public class Motor : MonoBehaviour
 
     public void ColocarPontos()
     {
-        pontos[1].text = "Recorde do Modo Rush: " + PersonagemSelecionado.instance.maxRush;
+        pontos[1].text = "Recorde do Modo Rush: " + InfoPlayer.instance.maxRush;
     }
 
     public void Materiais()
     {
         for (int i = 0; i < 6; i++)
         {
-            materiais[i].GetComponent<MaterialGanho>().Ajustes(i, PersonagemSelecionado.instance.material[i]);
+            materiais[i].GetComponent<MaterialGanho>().Ajustes(i, InfoPlayer.instance.material[i]);
         }
     }
 }

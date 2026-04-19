@@ -12,6 +12,7 @@ public class TelaSelecao : MonoBehaviour
     public GameObject canva;
     public GameObject descCompleta;
     public PersonagemSelecionado pc;
+    InfoPlayer info;
 
     public TMP_Text maxPoint;
 
@@ -20,7 +21,8 @@ public class TelaSelecao : MonoBehaviour
     void Start()
     {
         pc = PersonagemSelecionado.instance;
-        pc.CarregarInfo();
+        info = InfoPlayer.instance;
+        info.CarregarInfo();
 
         foreach (PCsSO boneco in pc.persos)
         {
@@ -43,7 +45,7 @@ public class TelaSelecao : MonoBehaviour
 
         persosDesc[index].transform.localPosition =new Vector3(-9.2f + (coluna * 7f), 3.9f - (linha * 2.5f), 0);
 
-        if (pc.unlock[pc.persos.IndexOf(boneco)] == true)
+        if (info.unlock[pc.persos.IndexOf(boneco)] == true)
         {
             persosDesc[pc.persos.IndexOf(boneco)].GetComponent<Persopequeno>().nome.text = pc.persos[pc.persos.IndexOf(boneco)].nome;
         }
@@ -91,7 +93,7 @@ public class TelaSelecao : MonoBehaviour
 
         persosDesc[pc.persos.IndexOf(boneco)].GetComponent<Persopequeno>().personagem.GetComponent<Image>().sprite = pc.persos[pc.persos.IndexOf(boneco)].imgMenu;
 
-        if (pc.unlock[pc.persos.IndexOf(boneco)] == false)
+        if (info.unlock[pc.persos.IndexOf(boneco)] == false)
         {
             persosDesc[pc.persos.IndexOf(boneco)].GetComponent<Persopequeno>().personagem.GetComponent<Image>().color = Color.black;
         }
@@ -103,7 +105,7 @@ public class TelaSelecao : MonoBehaviour
 
     public void PontoMaximo()
     {
-            maxPoint.text = "Recorde modo Rush: " + pc.maxRush;
-            if(pc.persoMax != null) maxPoint.text = "Recorde modo Rush: " + pc.maxRush + " (" + pc.persoMax + ")";
+            maxPoint.text = "Recorde modo Rush: " + info.maxRush;
+            if(info.persoMax != null) maxPoint.text = "Recorde modo Rush: " + info.maxRush + " (" + info.persoMax + ")";
     }
 }

@@ -13,27 +13,27 @@ public class MaterialGanho : MonoBehaviour
         switch (mat)
         {
             case 0:
-                PersonagemSelecionado.instance.material[0] = quant;
+                InfoPlayer.instance.material[0] = quant;
                 break;
             case 1:
                 GetComponent<SpriteRenderer>().color = new Color32(65, 105, 225, 255);
-                PersonagemSelecionado.instance.material[1] = quant;
+                InfoPlayer.instance.material[1] = quant;
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().color = new Color32(155, 17, 30, 255);
-                PersonagemSelecionado.instance.material[2] = quant;
+                InfoPlayer.instance.material[2] = quant;
                 break;
             case 3:
                 GetComponent<SpriteRenderer>().color = new Color32(0, 100, 0, 255);
-                PersonagemSelecionado.instance.material[3] = quant;
+                InfoPlayer.instance.material[3] = quant;
                 break;
             case 4:
                 GetComponent<SpriteRenderer>().color = new Color32(238, 173, 45, 255);
-                PersonagemSelecionado.instance.material[4] = quant;
+                InfoPlayer.instance.material[4] = quant;
                 break;
             case 5:
                 GetComponent<SpriteRenderer>().color = new Color32(120, 64, 8, 255);
-                PersonagemSelecionado.instance.material[5] = quant;
+                InfoPlayer.instance.material[5] = quant;
                 break;
         }
     }

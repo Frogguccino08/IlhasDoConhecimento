@@ -8,13 +8,7 @@ public class PersonagemSelecionado : MonoBehaviour
     public PCsSO perso;
     public int regiao;
     public int pontos;
-    public float[] material = new float[6];
-
-    public string persoMax;
-    public int maxRush;
     
-    public List<bool> unlock = new List<bool>();
-
     public List<PCsSO> persos = new List<PCsSO>();
 
     //Modo historia
@@ -24,7 +18,6 @@ public class PersonagemSelecionado : MonoBehaviour
     public bool hasBoss;
     public int anyBoss;
     public bool highLevel;
-    public int[] fasesBloqueio = new int[30];
 
     //Recompensas história
     public int[] recompensaMaterial = new int[6];
@@ -94,48 +87,6 @@ public class PersonagemSelecionado : MonoBehaviour
             hasBoss = false;
             anyBoss = 0;
             highLevel = false;
-        }
-    }
-
-    //Exclui toda informa��o
-    public void HardReset()
-    {
-            perso = null;
-            regiao = 0;
-            pontos = 0;
-            persoMax = "";
-            maxRush = 0;
-
-            for(int i = 0; i < 6; i++)
-            {
-                material[i] = 0;
-            }
-
-            unlock[5] = false;
-
-            SalvarInfo();
-    }
-
-    public void SalvarInfo()
-    {
-        SaveSystem.Save(this);
-    }
-
-    public void CarregarInfo()
-    {
-        Info data = SaveSystem.Load();
-
-        for(int i = 0; i < 6; i++)
-        {
-            material[i] = data.material[i];
-        }
-
-        persoMax = data.nomeMax;
-        maxRush = data.pontoMax;
-
-        for(int i = 0; i < 6; i++)
-        {
-            unlock[i] = data.bloqueados[i];
         }
     }
 }

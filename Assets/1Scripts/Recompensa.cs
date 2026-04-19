@@ -12,6 +12,7 @@ public class Recompensa : MonoBehaviour
     public GameObject[] avisos = new GameObject[6];
     public Enemy enemy;
     public PersonagemSelecionado perso;
+    InfoPlayer info;
     public Controle control;
 
     //Telas
@@ -30,6 +31,8 @@ public class Recompensa : MonoBehaviour
     void Awake()
     {
         perso = PersonagemSelecionado.instance;
+        info = InfoPlayer.instance;
+
     }
 
     public IEnumerator RecebaMaterial()
@@ -42,7 +45,7 @@ public class Recompensa : MonoBehaviour
             avisos[i].GetComponent<MaterialGanho>().Ajustes(i, MathF.Round(perso.recompensaMaterial[i] * variacao));
         }
 
-        perso.SalvarInfo();
+        info.SalvarInfo();
 
         yield return StartCoroutine(control.EsperarTeclaEspaco());
         yield return new WaitForSeconds(0.1f);
@@ -57,12 +60,12 @@ public class Recompensa : MonoBehaviour
 
         for(int i = 0; i < perso.recompensaPersonagem.Length; i++)
         {
-            if(perso.recompensaPersonagem[i] != 0 && perso.unlock[perso.recompensaPersonagem[i]] == false)
+            if(perso.recompensaPersonagem[i] != 0 && info.unlock[perso.recompensaPersonagem[i]] == false)
             {
                 personagens[i] = Instantiate(boneco, salvamento.transform);
                 personagens[i].GetComponent<RecompensaPerso>().NumBoneco = perso.recompensaPersonagem[i];
                 personagens[i].GetComponent<RecompensaPerso>().ArrumarBoneco();
-                perso.unlock[perso.recompensaPersonagem[i]] = true;
+                info.unlock[perso.recompensaPersonagem[i]] = true;
                 quantBoneco++;
             }
         }
@@ -77,7 +80,7 @@ public class Recompensa : MonoBehaviour
             }
         }
 
-        perso.SalvarInfo();
+        info.SalvarInfo();
 
         if(quantBoneco != 0)
         {
@@ -91,7 +94,7 @@ public class Recompensa : MonoBehaviour
     {
         for(int i = 0; i < 6; i++)
         {
-            if(perso.recompensaFase[i] != 0 && perso.fasesBloqueio[perso.recompensaFase[i] - 1] == 0) perso.fasesBloqueio[perso.recompensaFase[i] - 1] = 1;
+            if(perso.recompensaFase[i] != 0 && info.fasesBloqueio[perso.recompensaFase[i] - 1] == 0) info.fasesBloqueio[perso.recompensaFase[i] - 1] = 1;
         }
     }
 }
