@@ -52,17 +52,20 @@ public class InfoPlayer : MonoBehaviour
     {
         Info data = SaveSystem.Load();
 
-        for(int i = 0; i < 6; i++)
+        if(data != null)
         {
-            material[i] = data.material[i];
-        }
+            for(int i = 0; i < 6; i++)
+            {
+                material[i] = data.material[i];
+            }
 
-        persoMax = data.nomeMax;
-        maxRush = data.pontoMax;
+            persoMax = data.nomeMax;
+            maxRush = data.pontoMax;
 
-        for(int i = 0; i < 6; i++)
-        {
-            unlock[i] = data.bloqueados[i];
+            for(int i = 0; i < 6; i++)
+            {
+                unlock[i] = data.bloqueados[i];
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ public static class SaveSystem
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/Save.save";
+        Debug.Log(path);
         FileStream stream = new FileStream(path, FileMode.Create);
 
         Info data = new Info(InfoPlayer.instance);
