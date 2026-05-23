@@ -5,6 +5,7 @@ public class InfoPlayer : MonoBehaviour
 {
     //Variaveis necessarias para o objeto não destrutivo
     public static InfoPlayer instance;
+    public string username;
     public float[] material = new float[6];
 
     public string persoMax;
@@ -30,17 +31,18 @@ public class InfoPlayer : MonoBehaviour
     //Exclui toda informa��o
     public void HardReset()
     {
-            persoMax = "";
-            maxRush = 0;
+        username = "";
+        persoMax = "";
+        maxRush = 0;
 
-            for(int i = 0; i < 6; i++)
-            {
-                material[i] = 0;
-            }
+        for(int i = 0; i < 6; i++)
+        {
+            material[i] = 0;
+        }
 
-            unlock[5] = false;
+        unlock[5] = false;
 
-            SalvarInfo();
+        SalvarInfo();
     }
 
     public void SalvarInfo()
@@ -49,8 +51,10 @@ public class InfoPlayer : MonoBehaviour
     }
 
     public void CarregarInfo()
+{
+    SaveSystem.Load((data) =>
     {
-        Info data = SaveSystem.Load();
+        username = data.username;
 
         if(data != null)
         {
@@ -66,6 +70,9 @@ public class InfoPlayer : MonoBehaviour
             {
                 unlock[i] = data.bloqueados[i];
             }
+
+            Debug.Log("Dados carregados!");
         }
-    }
+    });
+}
 }

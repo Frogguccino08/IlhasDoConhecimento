@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "151878888329",
+    "project_id": "ilhas-do-conhecimento",
+    "storage_bucket": "ilhas-do-conhecimento.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151878888329:android:7f09fe619c3bbbc8938f58",
+        "android_client_info": {
+          "package_name": "com.rocketz.ilhasdoconhecimento"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfKQfx2RCKIZSzhPIfqxDucI_eG0vpmVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

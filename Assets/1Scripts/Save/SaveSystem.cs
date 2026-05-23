@@ -1,39 +1,84 @@
 using UnityEngine;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Extensions;
 
 public static class SaveSystem
 {
+    private static DatabaseReference DBreference =
+        FirebaseDatabase.GetInstance(
+            "https://ilhas-do-conhecimento-default-rtdb.firebaseio.com/"
+        ).RootReference;
+
+    // SALVAR
     public static void Save(InfoPlayer perso)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Save.save";
-        Debug.Log(path);
-        FileStream stream = new FileStream(path, FileMode.Create);
+        string uid = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
 
-        Info data = new Info(InfoPlayer.instance);
+        Info data = new Info(perso);
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+        string json = JsonUtility.ToJson(data);
+
+        DBreference.Child("saves")
+                   .Child(uid)
+                   .SetRawJsonValueAsync(json);
+
+        Debug.Log("Save enviado para Firebase!");
     }
 
-    public static Info Load()
+    // CARREGAR
+    public static void Load(System.Action<Info> callback)
     {
-        string path = Application.persistentDataPath + "/Save.save";
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+        string uid = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
 
-            Info data = formatter.Deserialize(stream) as Info;
-            stream.Close();
-
-            return data;
-        }
-        else
+        DBreference.Child("saves")
+                   .Child(uid)
+                   .GetValueAsync()
+                   .ContinueWithOnMainThread(task =>
         {
-            Debug.LogError("Save file not found in" + path);
-            return null;
-        }
+            if(task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+
+                if(snapshot.Exists)
+                {
+                    string json = snapshot.GetRawJsonValue();
+
+                    Info data = JsonUtility.FromJson<Info>(json);
+
+                    Debug.Log("Save carregado!");
+
+                    callback?.Invoke(data);
+                }
+                else
+                {
+                    Debug.Log("Nenhum save encontrado.");
+                    callback?.Invoke(null);
+                }
+            }
+        });
     }
+
+    public static void CriarSaveInicial()
+{
+    FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+
+    if(user == null)
+    {
+        Debug.LogError("Usuário não logado.");
+        return;
+    }
+
+    string uid = user.UserId;
+
+    Info data = new Info(user.DisplayName);
+
+    string json = JsonUtility.ToJson(data);
+
+    DBreference.Child("saves")
+               .Child(uid)
+               .SetRawJsonValueAsync(json);
+
+    Debug.Log("Save inicial criado!");
+}
 }
