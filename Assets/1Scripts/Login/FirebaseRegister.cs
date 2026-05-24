@@ -98,7 +98,7 @@ public class FirebaseRegister : MonoBehaviour
                     Debug.Log("Save inicial criado!");
 
                     Debug.Log("Usuário criado com sucesso!");
-                    textoCadastro.text = "Login feito com sucesso";
+                    textoCadastro.text = "Cadastro feito com sucesso";
                     inputNome.text = "";
                     inputEmail.text = "";
                     inputSenha.text = "";
