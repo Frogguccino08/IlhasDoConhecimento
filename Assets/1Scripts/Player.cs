@@ -203,11 +203,14 @@ public class Player : MonoBehaviour
         }
         else
         {
-            info.maxRush = control.pontosRodada;
-            perso.pontos = info.maxRush;
-            info.persoMax = perso.perso.nome;
+            if(control.pontosRodada > info.maxRush)
+            {
+                info.maxRush = control.pontosRodada;
+                perso.pontos = info.maxRush;
+                info.persoMax = perso.perso.nome;
 
-            info.SalvarInfo();
+                info.SalvarInfo();
+            }
         }
             
         while (!Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Space))

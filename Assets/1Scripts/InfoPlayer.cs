@@ -45,6 +45,20 @@ public class InfoPlayer : MonoBehaviour
         SalvarInfo();
     }
 
+    public void CleanReset()
+    {
+        username = "";
+        persoMax = "";
+        maxRush = 0;
+
+        for(int i = 0; i < 6; i++)
+        {
+            material[i] = 0;
+        }
+
+        unlock[5] = false;
+    }
+
     public void SalvarInfo()
     {
         SaveSystem.Save(this);

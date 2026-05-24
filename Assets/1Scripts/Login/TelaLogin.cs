@@ -22,7 +22,7 @@ public class TelaLogin : MonoBehaviour
 
     public void AbrirTela()
     {
-        InfoPlayer.instance.HardReset();
+        InfoPlayer.instance.CleanReset();
         FBRegister.LogOut();
         btLogin.SetActive(false);
         scLogin.SetActive(true);
