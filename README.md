@@ -12,3 +12,6 @@ Projeto foi feito para práticar:
 - Balanceamento
 
 O projeto ainda está em desenvolvimento como TCC para graduação em Engenharia da Computação.
+
+Para facilitar acesso ao jogo segue o link para download da build jogável do projeto:
+https://drive.google.com/drive/folders/1fq1ma2hPmr9Pz5JrWIT_CWRut1O6lZNr
