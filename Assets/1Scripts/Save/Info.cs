@@ -15,14 +15,6 @@ public class Info
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         username = user != null ? user.DisplayName : "Jogador";
 
-        material = new float[6];
-        material[0] = perso.material[0];
-        material[1] = perso.material[1];
-        material[2] = perso.material[2];
-        material[3] = perso.material[3];
-        material[4] = perso.material[4];
-        material[5] = perso.material[5];
-
         nomeMax = perso.persoMax;
         pontoMax = perso.maxRush;
 

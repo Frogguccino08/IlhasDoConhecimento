@@ -17,13 +17,6 @@ public class Controle : MonoBehaviour
 
     public int pontosRodada;
 
-    //Para a tela de vitória
-    public GameObject CanvaVitoria;
-    public TMP_Text textoComemorativo;
-    public bool vitoriaOn = false;
-    public GameObject CanvaTelaPerso;
-    public bool TelaPersoOn = false;
-
     //Chamados de outros Objetos
     public Player player;
     public Butao[] butao = new Butao[6];
@@ -35,7 +28,6 @@ public class Controle : MonoBehaviour
     public TMP_Text pontMax;
     public TMP_Text inimigoTurno;
     public bool telaSair = false;
-    public GameObject segmento;
 
     public GameObject descricao;
     public GameObject descricaoGrande;
@@ -97,8 +89,7 @@ public class Controle : MonoBehaviour
 
         texto.enabled = false;
 
-        if(escolha.isHistoria) enemy.InicializarInimigoHistoria();
-        if(!escolha.isHistoria) enemy.InicializarInimigo();
+        enemy.InicializarInimigo();
         AtualizarEstadoBotoes();
         StartCoroutine(TurnoJogo());
         Debug.Log("Combate iniciou");
@@ -109,8 +100,7 @@ public class Controle : MonoBehaviour
         }
 
         inimigoTurno.text = "Inimigo: " + inimigoAtual + "       Turno: " + turno;
-        if(!escolha.isHistoria) textoArea.text = "Pontuação:\n " + pontosRodada;
-        if(escolha.isHistoria) textoArea.enabled = false;
+        textoArea.text = "Pontuação:\n " + pontosRodada;
     }
 
     public IEnumerator TurnoJogo()
@@ -293,8 +283,7 @@ public class Controle : MonoBehaviour
             yield return EsperarTeclaEspaco();
             escolha.Resetar();
 
-            if(escolha.isHistoria) SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
-            if(!escolha.isHistoria) SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
         }else if(enemy.currentHealth <= 0)
         {
             enemy.cor.enabled = false;
@@ -303,8 +292,7 @@ public class Controle : MonoBehaviour
             inimigoAtual++;
 
             
-            if(escolha.isHistoria) StartCoroutine(enemy.MortoHistoria());
-            if(!escolha.isHistoria) StartCoroutine(enemy.Morto());
+            StartCoroutine(enemy.Morto());
 
             AtualizarEstadoBotoes();
             turno = 0;
@@ -395,8 +383,6 @@ public class Controle : MonoBehaviour
     //Função que coloca a quantidade de pontos quando você derrota um inimigo
     public void ColocarPontosInimigoDerrotado()
     {
-        if(!escolha.isHistoria)
-        {
             if (player.currentHealth == player.maxHealth)
             {
                 pontosRodada += 200;
@@ -404,13 +390,12 @@ public class Controle : MonoBehaviour
             pontosRodada += 100;
             pontosRodada += 500 / ((turno / 2) + 1);
 
-            if(!escolha.isHistoria) textoArea.text = "Pontuação:\n " + pontosRodada;
+            textoArea.text = "Pontuação:\n " + pontosRodada;
 
             if (pontosRodada > escolha.pontos)
             {
                 pontMax.text = "Pontuação Máxima: " + pontosRodada;
             }
-        }
     }
 
     public void VoltarMenu()
@@ -481,8 +466,6 @@ public class Controle : MonoBehaviour
         telaCompleta.SetActive(true);
         oPlayer[0].SetActive(true);
         oPlayer[1].SetActive(true);
-        if(escolha.isHistoria) segmento.SetActive(true);
-        if(escolha.isHistoria) pontMax.enabled = false;
 
         if(enemy.currentHealth > 0)
         {
@@ -497,7 +480,6 @@ public class Controle : MonoBehaviour
         telaCompleta.SetActive(false);
         oPlayer[0].SetActive(false);
         oPlayer[1].SetActive(false);
-        if(escolha.isHistoria) segmento.SetActive(false);
         if(enemy.currentHealth > 0)
         {
             oEnemy[1].SetActive(false);

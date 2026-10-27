@@ -37,15 +37,12 @@ public class SkipButton : MonoBehaviour
         text.text = "Player pulou turno";
         text.enabled = true;
 
-        if(!PersonagemSelecionado.instance.isHistoria)
-        {
-            control.pontosRodada += 5;
-            control.textoArea.text = "Pontuação:\n " + control.pontosRodada;
+        control.pontosRodada += 5;
+        control.textoArea.text = "Pontuação:\n " + control.pontosRodada;
 
-            if (control.pontosRodada > control.escolha.pontos)
-            {
-                control.pontMax.text = "Pontuação Máxima: " + control.pontosRodada;
-            }
+        if (control.pontosRodada > control.escolha.pontos)
+        {
+            control.pontMax.text = "Pontuação Máxima: " + control.pontosRodada;
         }
 
         control.esperandoEscolha = false;

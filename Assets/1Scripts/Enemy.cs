@@ -18,9 +18,6 @@ public class Enemy : MonoBehaviour
 
     public int materialInimigo;  //1==Papel, 2==Plastico, 3==Vidro, 4==Metal, 5==Organico
 
-    //Variaveis para recompensa
-    public GameObject telaRecompensa;
-
     //Efeito de dano
     public GameObject danoTxt;
 
@@ -120,124 +117,6 @@ public class Enemy : MonoBehaviour
         }
 
         Modificadores();
-    }
-
-    public void InicializarInimigoHistoria()
-    {
-        //Coisas necessárias
-        escolha = PersonagemSelecionado.instance;
-        info = InfoPlayer.instance;
-        escolha.GarantirInimigos();
-        pulouTurno = false;
-
-        //Verifica se é o boss e aparece o simbolo de boss
-        if(escolha.anyBoss == control.inimigoAtual && escolha.hasBoss)
-        {
-            simBoss.SetActive(true);
-        }
-        else
-        {
-            simBoss.SetActive(false);
-        }
-
-        //Reseta ataques e efeitos
-        for (i = 0; i < 6; i++)
-        {
-            attackID[i] = 0;
-        }
-        for (i = 1; i < 19; i++)
-        {
-            efeitosAtivos[i] = 0;
-        }
-
-        //Escolhe inimigo
-        if(escolha.inimigos[control.inimigoAtual - 1].id != 0)inimigoEscolhido = enemyList.todos[escolha.inimigos[control.inimigoAtual - 1].id];
-        materialInimigo = inimigoEscolhido.material;
-        nomeinimigo = inimigoEscolhido.nome;
-        nomeTela.text = nomeinimigo;
-        if (nomeinimigo.Length <= 15) nomeTela.fontSize = 0.6f;
-        if (nomeinimigo.Length > 15) nomeTela.fontSize = 0.5f;
-
-        //Atributos
-        if(escolha.inimigos[control.inimigoAtual - 1].vida != 0) maxHealth = escolha.inimigos[control.inimigoAtual - 1].vida;
-        if(escolha.inimigos[control.inimigoAtual - 1].vida == 0) maxHealth = inimigoEscolhido.maxHealth;
-
-        if(escolha.inimigos[control.inimigoAtual - 1].conhecimento != 0) maxCharge = escolha.inimigos[control.inimigoAtual - 1].conhecimento;
-        if(escolha.inimigos[control.inimigoAtual - 1].conhecimento == 0) maxCharge = inimigoEscolhido.maxCharge;
-
-        if(escolha.inimigos[control.inimigoAtual - 1].atqFisico != 0) phiDamage = escolha.inimigos[control.inimigoAtual - 1].atqFisico;
-        if(escolha.inimigos[control.inimigoAtual - 1].atqFisico == 0) phiDamage = inimigoEscolhido.pDamage;
-        if(escolha.inimigos[control.inimigoAtual - 1].atqDistancia != 0) speDamage = escolha.inimigos[control.inimigoAtual - 1].atqDistancia;
-        if(escolha.inimigos[control.inimigoAtual - 1].atqDistancia == 0) speDamage = inimigoEscolhido.sDamage;
-        if(escolha.inimigos[control.inimigoAtual - 1].defFisica != 0) phiDefense = escolha.inimigos[control.inimigoAtual - 1].defFisica;
-        if(escolha.inimigos[control.inimigoAtual - 1].defFisica == 0) phiDefense = inimigoEscolhido.pDefense;
-        if(escolha.inimigos[control.inimigoAtual - 1].defDistancia != 0) speDefense = escolha.inimigos[control.inimigoAtual - 1].defDistancia;
-        if(escolha.inimigos[control.inimigoAtual - 1].defDistancia == 0) speDefense = inimigoEscolhido.sDefense;
-        if(escolha.inimigos[control.inimigoAtual - 1].velocidade != 0) speed = escolha.inimigos[control.inimigoAtual - 1].velocidade;
-        if(escolha.inimigos[control.inimigoAtual - 1].velocidade == 0) speed = inimigoEscolhido.speed;
-
-        //Variados parte 1
-        currentHealth = maxHealth;
-        currentCharge = 1;
-        healthbar.MaximoVida(maxHealth);
-        healthbar.MudarBarra(currentHealth);
-
-        //Selecionar ataques
-        cont = 0;
-        for (cont = 0; cont < 6; cont++)
-        {
-            if(escolha.inimigos[control.inimigoAtual - 1].atq[cont] != 0)
-            {
-                attackID[cont] = escolha.inimigos[control.inimigoAtual - 1].atq[cont];
-            }
-            else
-            {
-                if (!escolha.highLevel)
-                {
-                    attackID[cont] = inimigoEscolhido.listaAtaquesNvl1[cont];
-                }
-                else if (escolha.highLevel)
-                {
-                    attackID[cont] = inimigoEscolhido.listaAtaquesNvl2[cont];
-                }
-            }
-
-            Debug.Log(attackID[cont]);
-
-            for (int sla = 0; sla < 6; sla++)
-            {
-                if (cont != sla && attackID[cont] == attackID[sla] && attackID[cont] != 0)
-                {
-                    attackID[sla] = 0;
-                    break;
-                }
-            }
-        }
-
-        AtaquesSelecionados();
-
-        //Variados parte 2
-        if (inimigoEscolhido.imgPadrao != null)
-        {
-            GetComponent<SpriteRenderer>().sprite = inimigoEscolhido.imgPadrao;
-        }
-
-        GetComponent<SpriteRenderer>().enabled = true;
-
-        if (inimigoEscolhido.cor != null)
-        {
-            cor.enabled = true;
-            cor.sprite = inimigoEscolhido.cor;
-            CorDetalhes();
-        }
-        else
-        {
-            cor.enabled = false;
-        }
-
-        ResetarModificadores();
-        enemy.ResetarModificadores();
-        control.EfeitosAcontecendo(true, 0, 0);
     }
 
 
@@ -510,58 +389,6 @@ public class Enemy : MonoBehaviour
             currentHealth = 0;
         }
         healthbar.MudarBarra(currentHealth);
-    }
-
-
-    public IEnumerator MortoHistoria()
-    {
-        control.segmento.transform.GetChild(control.inimigoAtual - 1).GetComponent<MiniSegmento>().Vitoria();
-        control.segmento.GetComponent<Segmento>().MexerPlayer();
-
-        control.turno = 0;
-        control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual + "       Turno: " + control.turno;
-        control.DesativarBotao();
-        control.texto.text = "INIMIGO PURIFICADO\nEsperando input";
-
-        yield return new WaitForSeconds(0.01f);
-        while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            yield return null;
-        }
-        yield return new WaitForSeconds(0.01f);
-
-        if(control.inimigoAtual > 6 || escolha.inimigos[control.inimigoAtual - 1].id == 0)
-        {
-            control.texto.text = "Você completou a fase!!!";
-
-            yield return new WaitForSeconds(0.01f);
-            while (!Input.GetKeyUp(KeyCode.Space) && !Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                yield return null;
-            }
-            yield return new WaitForSeconds(0.01f);
-
-            telaRecompensa.SetActive(true);
-            control.DesvisuTela();
-            yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().RecebaMaterial());
-            if(escolha.recompensaPersonagem[0] != 0 && info.fasesBloqueio[escolha.faseAtual - 1] == 1) yield return StartCoroutine(telaRecompensa.GetComponent<Recompensa>().ReceberPersonagem());
-            telaRecompensa.GetComponent<Recompensa>().LiberarFases();
-
-            escolha.Resetar();
-            if(info.fasesBloqueio[escolha.faseAtual - 1] == 1) info.fasesBloqueio[escolha.faseAtual - 1] = 2;
-            SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
-        }
-        else
-        {
-            InicializarInimigoHistoria();
-
-            enemy.currentCharge = Mathf.Min(enemy.currentCharge + 2, enemy.maxCharge + enemy.ModCharge);
-            enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
-
-            control.AtivarBotao();
-            control.texto.enabled = false;
-            StartCoroutine(control.TurnoJogo());
-        }
     }
 
 
