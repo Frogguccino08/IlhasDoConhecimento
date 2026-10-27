@@ -8,11 +8,15 @@ public class Sair : MonoBehaviour
 {
     public GameObject tela;
     public Controle control;
-    public TMP_Text motivacao;
-
-    public List<string> frases = new List<string>();
 
     public bool btOn;
+    public bool fraquezas = false;
+
+    //Botões
+    public GameObject btContinuar;
+    public GameObject btFraquezas;
+    public GameObject fraqs;
+    public GameObject btSair;
 
     void Update()
     {
@@ -32,8 +36,8 @@ public class Sair : MonoBehaviour
             tela.SetActive(true);
             control.DesvisuTela();
 
-            motivacao.text = frases[UnityEngine.Random.Range(0, frases.Count)];
             control.DesativarBotao();
+            AtivarMenu();
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && control.telaSair == true)
         {
@@ -41,10 +45,18 @@ public class Sair : MonoBehaviour
             {
                 control.AtivarBotao();
             }
-
-            control.telaSair = false;
-            tela.SetActive(false);
-            control.VisuTela();
+            
+            if(!fraquezas)
+            {
+                control.telaSair = false;
+                tela.SetActive(false);
+                control.VisuTela();
+            }
+            else
+            {
+                AtivarMenu();
+            }
+            
         }
     }
 
@@ -73,5 +85,23 @@ public class Sair : MonoBehaviour
 
         SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
         
+    }
+
+    public void AtivarMenu()
+    {
+        btContinuar.SetActive(true);
+        btFraquezas.SetActive(true);
+        btSair.SetActive(true);
+        fraqs.SetActive(false);
+        fraquezas = false;
+    }
+
+    public void AtivarFraquezas()
+    {
+        btContinuar.SetActive(false);
+        btFraquezas.SetActive(false);
+        btSair.SetActive(false);
+        fraqs.SetActive(true);
+        fraquezas = true;
     }
 }
