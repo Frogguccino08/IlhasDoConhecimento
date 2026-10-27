@@ -21,175 +21,178 @@ public class Efeitos : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     //Função responsável por quando passar o mouse no botão de efeitos colocar todos que estão ativos e abrir a caixa
     public void OnPointerEnter(PointerEventData eventData)
     {
-        quantos = 0;
-        efeitos.SetActive(true);
-        texto.text = "";
-
-        if (TuOuOutro == 0)
+        if(!Escrever.instance.emDialogo)
         {
-            for (int i = 2; i < 19; i++)
+            quantos = 0;
+            efeitos.SetActive(true);
+            texto.text = "";
+
+            if (TuOuOutro == 0)
             {
-                if (player.efeitosAtivos[i] > 0)
+                for (int i = 2; i < 19; i++)
                 {
-                    quantos += 1;
-
-                    switch (i)
+                    if (player.efeitosAtivos[i] > 0)
                     {
-                        case 2:
-                            txt = "+ DefDis";
-                            break;
-                        case 3:
-                            txt = "+ DefFis";
-                            break;
-                        case 4:
-                            txt = "+ AtqDis";
-                            break;
-                        case 5:
-                            txt = "+ AtqFis";
-                            break;
-                        case 6:
-                            txt = "+ Conhec";
-                            break;
-                        case 7:
-                            txt = "- Exposto";
-                            break;
-                        case 8:
-                            txt = "- AtqDis";
-                            break;
-                        case 9:
-                            txt = "- AtqFis";
-                            break;
-                        case 10:
-                            txt = "- DefDis";
-                            break;
-                        case 11:
-                            txt = "- DefFis";
-                            break;
-                        case 12:
-                            txt = "- Conhec";
-                            break;
-                        case 13:
-                            txt = "+ Veloci";
-                            break;
-                        case 14:
-                            txt = "- Veloci";
-                            break;
-                        case 16:
-                            txt = "Cacos";
-                            break;
-                        case 18:
-                            txt = "Nutrindo";
-                            break;
+                        quantos += 1;
+
+                        switch (i)
+                        {
+                            case 2:
+                                txt = "+ DefDis";
+                                break;
+                            case 3:
+                                txt = "+ DefFis";
+                                break;
+                            case 4:
+                                txt = "+ AtqDis";
+                                break;
+                            case 5:
+                                txt = "+ AtqFis";
+                                break;
+                            case 6:
+                                txt = "+ Conhec";
+                                break;
+                            case 7:
+                                txt = "- Exposto";
+                                break;
+                            case 8:
+                                txt = "- AtqDis";
+                                break;
+                            case 9:
+                                txt = "- AtqFis";
+                                break;
+                            case 10:
+                                txt = "- DefDis";
+                                break;
+                            case 11:
+                                txt = "- DefFis";
+                                break;
+                            case 12:
+                                txt = "- Conhec";
+                                break;
+                            case 13:
+                                txt = "+ Veloci";
+                                break;
+                            case 14:
+                                txt = "- Veloci";
+                                break;
+                            case 16:
+                                txt = "Cacos";
+                                break;
+                            case 18:
+                                txt = "Nutrindo";
+                                break;
+                        }
+
+                        texto.text += txt + " " + player.efeitosAtivos[i] + "\n";
+
                     }
-
-                    texto.text += txt + " " + player.efeitosAtivos[i] + "\n";
-
                 }
-            }
 
-            if (texto.text == "")
-            {
-                texto.text = "Sem efeito ativo";
-            }
-
-            quantosProPos = quantos;
-            quantosProTam = quantos;
-
-            if (quantos == 0)
-            {
-                quantosProTam = 1;
-            }
-            if (quantos == 1)
-            {
-                quantosProPos = 0;
-            }
-            else if (quantos > 1)
-            {
-                quantosProPos = quantos - 1;
-            }
-
-            efeitos.transform.position = new Vector3(efeitos.transform.position.x, efeitos.transform.position.y + (0.25f * quantosProPos), efeitos.transform.position.z);
-            efeitos.GetComponent<RectTransform>().sizeDelta = new Vector2(3.5f, 0.5f * quantosProTam);
-        }
-        else if (TuOuOutro == 1)
-        {
-            for (int i = 2; i < 19; i++)
-            {
-                if (enemy.efeitosAtivos[i] > 0)
+                if (texto.text == "")
                 {
-                    quantos += 1;
-
-                    switch (i)
-                    {
-                        case 2:
-                            txt = "+ DefDis";
-                            break;
-                        case 3:
-                            txt = "+ DefFis";
-                            break;
-                        case 4:
-                            txt = "+ AtqDis";
-                            break;
-                        case 5:
-                            txt = "+ AtqFis";
-                            break;
-                        case 6:
-                            txt = "+ Conhec";
-                            break;
-                        case 7:
-                            txt = "- Exposto";
-                            break;
-                        case 8:
-                            txt = "- AtqDis";
-                            break;
-                        case 9:
-                            txt = "- AtqFis";
-                            break;
-                        case 10:
-                            txt = "- DefDis";
-                            break;
-                        case 11:
-                            txt = "- DefFis";
-                            break;
-                        case 12:
-                            txt = "- Conhec";
-                            break;
-                        case 16:
-                            txt = "Cacos";
-                            break;
-                        case 18:
-                            txt = "Nutrindo";
-                            break;
-                    }
-
-                    texto.text += enemy.efeitosAtivos[i] + " " + txt + "\n";
-
+                    texto.text = "Sem efeito ativo";
                 }
-            }
 
-            if (texto.text == "")
-            {
-                texto.text = "Sem efeito ativo";
-            }
+                quantosProPos = quantos;
+                quantosProTam = quantos;
 
-            quantosProPos = quantos;
-            quantosProTam = quantos;
+                if (quantos == 0)
+                {
+                    quantosProTam = 1;
+                }
+                if (quantos == 1)
+                {
+                    quantosProPos = 0;
+                }
+                else if (quantos > 1)
+                {
+                    quantosProPos = quantos - 1;
+                }
 
-            if (quantos == 0)
-            {
-                quantosProTam = 1;
+                efeitos.transform.position = new Vector3(efeitos.transform.position.x, efeitos.transform.position.y + (0.25f * quantosProPos), efeitos.transform.position.z);
+                efeitos.GetComponent<RectTransform>().sizeDelta = new Vector2(3.5f, 0.5f * quantosProTam);
             }
-            if (quantos == 1)
+            else if (TuOuOutro == 1)
             {
-                quantosProPos = 0;
-            }
-            else if (quantos > 1)
-            {
-                quantosProPos = quantos - 1;
-            }
+                for (int i = 2; i < 19; i++)
+                {
+                    if (enemy.efeitosAtivos[i] > 0)
+                    {
+                        quantos += 1;
 
-            efeitos.transform.position = new Vector3(efeitos.transform.position.x, efeitos.transform.position.y + (0.25f * quantosProPos), efeitos.transform.position.z);
-            efeitos.GetComponent<RectTransform>().sizeDelta = new Vector2(3.5f, 0.5f * quantosProTam);
+                        switch (i)
+                        {
+                            case 2:
+                                txt = "+ DefDis";
+                                break;
+                            case 3:
+                                txt = "+ DefFis";
+                                break;
+                            case 4:
+                                txt = "+ AtqDis";
+                                break;
+                            case 5:
+                                txt = "+ AtqFis";
+                                break;
+                            case 6:
+                                txt = "+ Conhec";
+                                break;
+                            case 7:
+                                txt = "- Exposto";
+                                break;
+                            case 8:
+                                txt = "- AtqDis";
+                                break;
+                            case 9:
+                                txt = "- AtqFis";
+                                break;
+                            case 10:
+                                txt = "- DefDis";
+                                break;
+                            case 11:
+                                txt = "- DefFis";
+                                break;
+                            case 12:
+                                txt = "- Conhec";
+                                break;
+                            case 16:
+                                txt = "Cacos";
+                                break;
+                            case 18:
+                                txt = "Nutrindo";
+                                break;
+                        }
+
+                        texto.text += enemy.efeitosAtivos[i] + " " + txt + "\n";
+
+                    }
+                }
+
+                if (texto.text == "")
+                {
+                    texto.text = "Sem efeito ativo";
+                }
+
+                quantosProPos = quantos;
+                quantosProTam = quantos;
+
+                if (quantos == 0)
+                {
+                    quantosProTam = 1;
+                }
+                if (quantos == 1)
+                {
+                    quantosProPos = 0;
+                }
+                else if (quantos > 1)
+                {
+                    quantosProPos = quantos - 1;
+                }
+
+                efeitos.transform.position = new Vector3(efeitos.transform.position.x, efeitos.transform.position.y + (0.25f * quantosProPos), efeitos.transform.position.z);
+                efeitos.GetComponent<RectTransform>().sizeDelta = new Vector2(3.5f, 0.5f * quantosProTam);
+            }
         }
     }
 

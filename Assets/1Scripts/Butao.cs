@@ -118,13 +118,16 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função para quando clicar escolher o ataque
     public void Onclick()
     {
-        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
+        if(!Escrever.instance.emDialogo)
         {
-            player.butaoClicado = true;
-            player.idAtaqueUsado = id;
-            control.esperandoEscolha = false;
-            //StartCoroutine(player.UsarAtaque(id));
-            ataqueUtilizado = true;
+            if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
+            {
+                player.butaoClicado = true;
+                player.idAtaqueUsado = id;
+                control.esperandoEscolha = false;
+                //StartCoroutine(player.UsarAtaque(id));
+                ataqueUtilizado = true;
+            }
         }
     }
 
@@ -212,16 +215,19 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     //Função que faz segurar o botão começar a carga R
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
+        if(!Escrever.instance.emDialogo)
         {
-            StartCoroutine(EsperandoR());
+            if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
+            {
+                StartCoroutine(EsperandoR());
+            }
         }
     }
 
     //Função de aparecer a descrição quando passa o mouse por cima
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (desc != null && control.telaSair == false)
+        if (desc != null && control.telaSair == false && !Escrever.instance.emDialogo)
         {
             desc.GetComponent<Descricao>().BotandoDescricao(player.attackID[id], false);
             desc.SetActive(true);

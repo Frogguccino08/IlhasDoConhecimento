@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +16,22 @@ public class Escrever : MonoBehaviour
     [SerializeField] Image imagem;
 
     //Variaveis necessarias
-    float velocidade = 0.03f;
+    float velocidade = 0.02f;
     bool esperando = false;
-
-    public List<string> falas = new List<string>();
     int dialogoAtual = 0;
+    string nomeAtual = "";
+    public bool emDialogo = false;
+
+    //Listas que salvam os nomes e imagens
+    public List<Sprite> imgs = new List<Sprite>();
+    public List<string> nomes = new List<string>();
+
+    //Listas que serão utilizadas no dialogo
+    public List<string> falas = new List<string>();
+    public List<Sprite> imgsUtilizadas = new List<Sprite>();
+    public List<string> nomesUtilizados = new List<string>();
+
+    
 
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()
@@ -36,17 +49,26 @@ public class Escrever : MonoBehaviour
 
     void Start()
     {
-        IniciarDialogos();
-
+        //Resumo
+        // 1. gameObject.GetComponent<Canvas>().enabled = true;
+        // 2. NovoPersonagens(new int[]{numeros});
+        // 3. NovoDialogo(new string[]{textos});
+        //IniciarDialogos();
+        /* Exemplo:
+        gameObject.GetComponent<Canvas>().enabled = true;
+        NovoPersonagens(new int[]{1, 0, 2});
         NovoDialogo(new string[]
         {"Esse é um texto de exemplo e \"<color=green>Vidro</color>\" está escrito em verde\nE esse texto vai aparecer na linha de baixo",
         "Esse é mais um texto de tentativa",
         "Mds eu não sei o que escrever"});
+
+        IniciarDialogos();
+        */
     }
 
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
+        if((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0)) && emDialogo)
         {
             if(esperando)
             {
@@ -55,13 +77,21 @@ public class Escrever : MonoBehaviour
 
                 if(dialogoAtual < falas.Count())
                 {
-                    dialogo.text = falas[dialogoAtual];
+                    imagem.sprite = imgsUtilizadas[dialogoAtual];
+                    nomeAtual = nomesUtilizados[dialogoAtual];
+
+                    if(imagem.sprite == null) imagem.gameObject.SetActive(false);
+                    if(imagem.sprite != null) imagem.gameObject.SetActive(true);
+
+                    if(nomeAtual != "") dialogo.text = nomeAtual + ":\n" + falas[dialogoAtual];
+                    if(nomeAtual == "") dialogo.text = falas[dialogoAtual];
                     StartCoroutine(TypeWriter());
                 }
                 else
                 {
                     dialogo.text = "";
-                    gameObject.SetActive(false);
+                    emDialogo = false;
+                    gameObject.GetComponent<Canvas>().enabled = false;
                 }
                 
             }
@@ -77,6 +107,7 @@ public class Escrever : MonoBehaviour
     {
         int max = dialogo.text.Count();
         int charAtual = 0;
+        if(nomeAtual != "") charAtual = nomeAtual.Length + 1;
 
         do
         {
@@ -91,10 +122,15 @@ public class Escrever : MonoBehaviour
     void IniciarDialogos()
     {
         dialogoAtual = 0;
+        emDialogo = true;
 
         if(falas != null)
         {
-            dialogo.text = falas[dialogoAtual];
+            imagem.sprite = imgsUtilizadas[dialogoAtual];
+            nomeAtual = nomesUtilizados[dialogoAtual];
+
+            if(nomeAtual != "") dialogo.text = nomeAtual + ":\n" + falas[dialogoAtual];
+            if(nomeAtual == "") dialogo.text = falas[dialogoAtual];
         }
 
         StartCoroutine(TypeWriter());
@@ -109,5 +145,18 @@ public class Escrever : MonoBehaviour
         }
 
         IniciarDialogos();
+    }
+
+    public void NovoPersonagens(int[] n)
+    {
+        imgsUtilizadas.Clear();
+        nomesUtilizados.Clear();
+        nomeAtual = "";
+
+        foreach(int nu in n)
+        {
+            imgsUtilizadas.Add(imgs[nu]);
+            nomesUtilizados.Add(nomes[nu]);
+        }
     }
 }
