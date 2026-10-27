@@ -856,7 +856,7 @@ public class Enemy : MonoBehaviour
             //16. Cacos
             if (efeitosAtivos[16] > 0)
             {
-                attackDamage = Mathf.Round(maxHealth * 0.125f);
+                attackDamage = Mathf.Round(maxHealth * 0.1f);
                 CausarDano(attackDamage);
                 Debug.Log(attackDamage + " Dano causado pelos cacos");
                 efeitosAtivos[16] -= 1;
@@ -868,10 +868,10 @@ public class Enemy : MonoBehaviour
 
         if (i == 2) //No final do turno tbm só que separado pro nutrindo
         {
-            //18.Cacos
+            //18.Nutrindo
             if (efeitosAtivos[18] > 0)
             {
-                attackDamage = Mathf.Round(maxHealth * 0.125f * -1);
+                attackDamage = Mathf.Round(maxHealth * 0.1f * -1);
                 CausarDano(attackDamage);
                 Debug.Log(attackDamage + "Vida Recuperada pelo nutrindo");
                 efeitosAtivos[18] -= 1;
