@@ -29,48 +29,51 @@ public class Persopequeno : MonoBehaviour
 
     public void OnClickPequeno()
     {
-        perso.perso = pc;
-        if (info.unlock[perso.perso.id] == true)
+        if(!Escrever.instance.emDialogo)
         {
-            canva.SetActive(false);
-            descCompleta.SetActive(true);
-            descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
-            descCompleta.GetComponent<PersoGrande>().First();
+            perso.perso = pc;
+            if (info.unlock[perso.perso.id] == true)
+            {
+                canva.SetActive(false);
+                descCompleta.SetActive(true);
+                descCompleta.GetComponent<PersoGrande>().ColocarPersonagem();
+                descCompleta.GetComponent<PersoGrande>().First();
 
-            if (pc.isTrans)
-            {
-                descCompleta.GetComponent<PersoGrande>().transPin.SetActive(true);
-            }
-            else
-            {
-                descCompleta.GetComponent<PersoGrande>().transPin.SetActive(false);
-            }
+                if (pc.isTrans)
+                {
+                    descCompleta.GetComponent<PersoGrande>().transPin.SetActive(true);
+                }
+                else
+                {
+                    descCompleta.GetComponent<PersoGrande>().transPin.SetActive(false);
+                }
 
-            if (pc.pronome != "")
-            {
-                descCompleta.GetComponent<PersoGrande>().pronome.text = pc.pronome;
-            }
-            else
-            {
-                descCompleta.GetComponent<PersoGrande>().pronome.text = "???";
-            }
+                if (pc.pronome != "")
+                {
+                    descCompleta.GetComponent<PersoGrande>().pronome.text = pc.pronome;
+                }
+                else
+                {
+                    descCompleta.GetComponent<PersoGrande>().pronome.text = "???";
+                }
 
-            if (pc.idade != "")
-            {
-                descCompleta.GetComponent<PersoGrande>().idade.text = pc.idade;
-            }
-            else
-            {
-                descCompleta.GetComponent<PersoGrande>().idade.text = "???";
-            }
+                if (pc.idade != "")
+                {
+                    descCompleta.GetComponent<PersoGrande>().idade.text = pc.idade;
+                }
+                else
+                {
+                    descCompleta.GetComponent<PersoGrande>().idade.text = "???";
+                }
 
-            if (pc.lore != "")
-            {
-                descCompleta.GetComponent<PersoGrande>().historia.text = pc.lore;
-            }
-            else
-            {
-                descCompleta.GetComponent<PersoGrande>().historia.text = "Personagem sem lore até o momento";
+                if (pc.lore != "")
+                {
+                    descCompleta.GetComponent<PersoGrande>().historia.text = pc.lore;
+                }
+                else
+                {
+                    descCompleta.GetComponent<PersoGrande>().historia.text = "Personagem sem lore até o momento";
+                }
             }
         }
     }

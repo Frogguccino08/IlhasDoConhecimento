@@ -28,27 +28,30 @@ public class Fase : MonoBehaviour
 
     void OnMouseUp()
     {
-        if(player.inicial == numFase)
+        if(!Escrever.instance.emDialogo)
         {
-            PersonagemSelecionado pc = PersonagemSelecionado.instance;
+            if(player.inicial == numFase)
+            {
+                PersonagemSelecionado pc = PersonagemSelecionado.instance;
 
-            pc.faseAtual = numFase;
+                pc.faseAtual = numFase;
 
-            pc.regiao = regiao;
-            pc.hasBoss = hasBoss;
-            pc.anyBoss = anyBoss;
-            pc.highLevel = highLevel;
-            pc.inimigos = inimigos;
-            pc.recompensaMaterial = recompensaMaterial;
-            pc.recompensaPersonagem = recompensaPersonagem;
-            pc.recompensaFase = recompensaFase;
-            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
-        }
+                pc.regiao = regiao;
+                pc.hasBoss = hasBoss;
+                pc.anyBoss = anyBoss;
+                pc.highLevel = highLevel;
+                pc.inimigos = inimigos;
+                pc.recompensaMaterial = recompensaMaterial;
+                pc.recompensaPersonagem = recompensaPersonagem;
+                pc.recompensaFase = recompensaFase;
+                SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+            }
 
-        if(InfoPlayer.instance.fasesBloqueio[numFase - 1] != 0)
-        {
-            player.inicial = numFase;
-            player.Andar();
+            if(InfoPlayer.instance.fasesBloqueio[numFase - 1] != 0)
+            {
+                player.inicial = numFase;
+                player.Andar();
+            }
         }
     }
 

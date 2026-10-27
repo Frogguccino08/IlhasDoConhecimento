@@ -865,52 +865,6 @@ public class Enemy : MonoBehaviour
         chance[6] = 0;
         maximo = 0;
 
-        for (int i = 0; i < 6; i++)
-        {
-            chance[i] = 0;
-            if (!podeUsar(i)) continue;
-            chance[i] += 25;
-
-            //Regra 1: Ataques de cura caso abaixo de 25% vida mais chance
-            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth <= (maxHealth / 4))
-            {
-                chance[i] += 25;
-                Debug.Log(nome[i] + " chance aumentada por ser uma cura abaixo de 25% de vida");
-            }
-
-            //Regra 2: ataques com efeito tem mais chance de usar nos primeiros 2 turnos
-            if (control.turno < 5 && temEfeito[i])
-            {
-                chance[i] += 25;
-                Debug.Log(nome[i] + " Chance aumentada por ser um dos dois primeiros turnos e ser um ataque de status");
-            }
-
-            //Regra 3: Ataques de cura são evitados com bastante vida
-            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth >= (maxHealth / 4))
-            {
-                chance[i] -= 25;
-                Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
-            }
-
-            //Regra 4: Ataques de cura são evitados após 40 turnos
-            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && control.turno >= 40)
-            {
-                chance[i] -= 25;
-                Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
-            }
-
-            //regra 5: Evitar usar escudo quando já estiver com bastante
-            if(efeitosAtivos[1] >= 5 && tipoAtaque(Attacks.Tipo.bloqueio, i))
-            {
-                chance[i] -= 25;
-                Debug.Log(nome[i] + " chance diminuida por ser um escudo já com bastante escudo");
-            }
-
-            //Regra Final 1: chance negativa vira zero
-            if (chance[i] < 0) chance[i] = 0;
-
-        }
-
         //regra Principal 1: Ataque com maior dano mais chance
         for (i = 0; i < 6; i++)
         {
@@ -951,6 +905,60 @@ public class Enemy : MonoBehaviour
         {
             chance[maiorCuraTemporario] += 25;
             Debug.Log(nome[maiorCuraTemporario] + " chance aumentada por ser a maior cura");
+        }
+
+        //Regras gerais
+        for (int i = 0; i < 6; i++)
+        {
+            chance[i] = 0;
+            if (!podeUsar(i)) continue;
+            chance[i] += 25;
+
+            //Regra 1: Ataques de cura caso abaixo de 25% vida mais chance
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth <= (maxHealth / 4))
+            {
+                chance[i] += 25;
+                Debug.Log(nome[i] + " chance aumentada por ser uma cura abaixo de 25% de vida");
+            }
+
+            //Regra 2: ataques com efeito tem mais chance de usar nos primeiros 2 turnos
+            if (control.turno < 5 && temEfeito[i])
+            {
+                chance[i] += 25;
+                Debug.Log(nome[i] + " Chance aumentada por ser um dos dois primeiros turnos e ser um ataque de status");
+            }
+
+            //Regra 3: Ataques de cura são evitados com bastante vida
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && currentHealth >= (maxHealth / 4))
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " Chance diminuida por ser cura com bastante vida");
+            }
+
+            //Regra 4: Ataques de cura são evitados após 40 turnos
+            if (!alvo[i] && dano[i] < 0 || tipoAtaque(Attacks.Tipo.cura, i) && control.turno >= 40)
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " chance diminuida por ser uma cura depois de 40 turnos");
+            }
+
+            //Regra 5: Evitar usar escudo quando já estiver com bastante
+            if(efeitosAtivos[1] >= 5 && tipoAtaque(Attacks.Tipo.bloqueio, i))
+            {
+                chance[i] -= 25;
+                Debug.Log(nome[i] + " chance diminuida por ser um escudo já com bastante escudo");
+            }
+
+            //Regra 6: Não usa ataques puramente de cura se não tiver passado do primeiro boss
+            if(dano[i] < 0 && control.inimigoAtual <= 5)
+            {
+                chance[i] = 0;
+                Debug.Log(nome[i] + " Chance zerada por ser puramente cura antes de derrotar o primeiro boss");
+            }
+
+            //Regra Final 1: chance negativa vira zero
+            if (chance[i] < 0) chance[i] = 0;
+
         }
 
         //Regra Pular Turno 1: Caso tenha algum ataque com mais carga do que tem atualmente chance de pular turno
