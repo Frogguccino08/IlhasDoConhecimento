@@ -1597,6 +1597,7 @@ MonoBehaviour:
   text: {fileID: 1276334842}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &110869688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,6 +6714,7 @@ MonoBehaviour:
   text: {fileID: 1890350967}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &618230583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6724,6 +6726,7 @@ GameObject:
   - component: {fileID: 618230585}
   - component: {fileID: 618230584}
   - component: {fileID: 618230586}
+  - component: {fileID: 618230587}
   m_Layer: 0
   m_Name: Controlador
   m_TagString: Untagged
@@ -6787,6 +6790,7 @@ MonoBehaviour:
   escreverEfeito: 0
   esperandoEscolha: 0
   segundoTurno: 0
+  emDialogo: 0
 --- !u!4 &618230585
 Transform:
   m_ObjectHideFlags: 0
@@ -6822,6 +6826,27 @@ MonoBehaviour:
   btFraquezas: {fileID: 1090558596}
   fraqs: {fileID: 1579662629}
   btSair: {fileID: 1143602163}
+--- !u!114 &618230587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618230583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f196957a0fbca49bf0e40dbc111bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 618230584}
+  bts:
+  - {fileID: 1164163721}
+  - {fileID: 107630818}
+  - {fileID: 605306122}
+  - {fileID: 1412681748}
+  - {fileID: 760693853}
+  - {fileID: 2057355454}
+  btSkip: {fileID: 253928323}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8375,6 +8400,7 @@ MonoBehaviour:
   text: {fileID: 1385233828}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &760713101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11190,6 +11216,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2b87f7d53f89314390be95c07e5c6be, type: 2}
   - {fileID: 11400000, guid: a0169862fc746184da9389f2b1087975, type: 2}
   - {fileID: 11400000, guid: 66ae942857703774aa77db090b51f72e, type: 2}
+  barco:
+  - {fileID: 11400000, guid: 8fb37cacf5dffe047bf27200f25324cb, type: 2}
   todos:
   - {fileID: 0}
   - {fileID: 11400000, guid: 0b5f3eb48d1aa574daae855d21b89e7e, type: 2}
@@ -13347,6 +13375,7 @@ MonoBehaviour:
   text: {fileID: 1083857801}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &1177606377
 GameObject:
   m_ObjectHideFlags: 0
@@ -16290,6 +16319,7 @@ MonoBehaviour:
   text: {fileID: 45424042}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &1413089295
 GameObject:
   m_ObjectHideFlags: 0
@@ -21904,6 +21934,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc58af5e38383dc49b3ff43885d5b236, type: 2}
   - {fileID: 11400000, guid: fd87c3d8b716b71418cbc4e50b2e3c3f, type: 2}
   - {fileID: 11400000, guid: b2fec8e2f10fb574f88423c22b6937dd, type: 2}
+  isTutorial: 0
 --- !u!4 &1906887727
 Transform:
   m_ObjectHideFlags: 0
@@ -24016,6 +24047,7 @@ MonoBehaviour:
   text: {fileID: 1403356085}
   control: {fileID: 618230584}
   desc: {fileID: 1984335213}
+  ativoTutorial: 1
 --- !u!1 &2063568121
 GameObject:
   m_ObjectHideFlags: 0

@@ -64,6 +64,11 @@ public class PersoDesc : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                     regiaoTopo.text = "Floresta Orgânica";
                     regis.imgMaterial.GetComponent<Image>().color = new Color32(120, 64, 8, 255);
                     break;
+                case 0:
+                    regis.material.text = "Sem material";
+                    regiaoTopo.text = "Barco";
+                    regis.imgMaterial.GetComponent<Image>().color = new Color32(135, 135, 135, 255);
+                    break;
             }
         }
     }

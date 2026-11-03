@@ -50,7 +50,6 @@ public class Escrever : MonoBehaviour
     void Start()
     {
         //Resumo
-        // 1. gameObject.GetComponent<Canvas>().enabled = true;
         // 2. NovoPersonagens(new int[]{numeros});
         // 3. NovoDialogo(new string[]{textos});
         //IniciarDialogos();
@@ -91,6 +90,7 @@ public class Escrever : MonoBehaviour
                 {
                     dialogo.text = "";
                     emDialogo = false;
+                    if(GameObject.Find("Controlador") != null)GameObject.Find("Controlador").GetComponent<Controle>().emDialogo = false;
                     gameObject.GetComponent<Canvas>().enabled = false;
                 }
                 
@@ -121,6 +121,7 @@ public class Escrever : MonoBehaviour
 
     void IniciarDialogos()
     {
+        gameObject.GetComponent<Canvas>().enabled = true;
         dialogoAtual = 0;
         emDialogo = true;
 
@@ -128,6 +129,9 @@ public class Escrever : MonoBehaviour
         {
             imagem.sprite = imgsUtilizadas[dialogoAtual];
             nomeAtual = nomesUtilizados[dialogoAtual];
+
+            if(imagem.sprite == null) imagem.gameObject.SetActive(false);
+            if(imagem.sprite != null) imagem.gameObject.SetActive(true);
 
             if(nomeAtual != "") dialogo.text = nomeAtual + ":\n" + falas[dialogoAtual];
             if(nomeAtual == "") dialogo.text = falas[dialogoAtual];

@@ -18,6 +18,8 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
 
     public GameObject desc;
 
+    public bool ativoTutorial = true;
+
     //Coloca o nome do ataque no botão, deixa ele desativado ou não caso tiver como, e chama a função de mudar a cor
     public void ColocandoAtaque(int id)
     {
@@ -53,7 +55,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             else if (cor == 1)
             {
                 //Papel
-                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id] || !ativoTutorial)
                 {
                     this.GetComponent<Image>().color = new Color32(51, 58, 99, 255);
                 }
@@ -66,7 +68,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             else if (cor == 2)
             {
                 //Plastico
-                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id] || !ativoTutorial)
                 {
                     this.GetComponent<Image>().color = new Color32(86, 7, 13, 255);
                 }
@@ -78,7 +80,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             else if (cor == 3)
             {
                 //Vidro
-                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id] || !ativoTutorial)
                 {
                     this.GetComponent<Image>().color = new Color32(0, 54, 0, 255);
                 }
@@ -91,7 +93,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             else if (cor == 4)
             {
                 //Metal
-                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id] || !ativoTutorial)
                 {
                     this.GetComponent<Image>().color = new Color32(136, 98, 22, 255);
                 }
@@ -103,7 +105,7 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
             else if (cor == 5)
             {
                 //Organico
-                if (player.isPassive[id] == true || player.currentCharge < player.carga[id])
+                if (player.isPassive[id] == true || player.currentCharge < player.carga[id] || !ativoTutorial)
                 {
                     this.GetComponent<Image>().color = new Color32(90, 78, 53, 255);
                 }
@@ -122,11 +124,13 @@ public class Butao : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
         {
             if (player.isPassive[id] == false && player.currentCharge >= player.carga[id] && player.butaoClicado == false && control.telaSair == false)
             {
-                player.butaoClicado = true;
-                player.idAtaqueUsado = id;
-                control.esperandoEscolha = false;
-                //StartCoroutine(player.UsarAtaque(id));
-                ataqueUtilizado = true;
+                if(!PersonagemSelecionado.instance.isTutorial || ativoTutorial)
+                {
+                    player.butaoClicado = true;
+                    player.idAtaqueUsado = id;
+                    control.esperandoEscolha = false;
+                    ataqueUtilizado = true;
+                }
             }
         }
     }

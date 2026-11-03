@@ -231,6 +231,10 @@ public class Enemy : MonoBehaviour
                     inimigoEscolhido = (EnemiesSO)enemyList.florestaCompostaNL3[UnityEngine.Random.Range(0, enemyList.florestaCompostaNL3.Count)];
                 }
                 break;
+
+            case 5: //barco
+                inimigoEscolhido = (EnemiesSO)enemyList.barco[0];
+                break;
         }
         
 
@@ -322,29 +326,39 @@ public class Enemy : MonoBehaviour
             speed += forcaAtual;
         }
 
-        cont = 0;
-        for (cont = 0; cont < 6; cont++)
+
+        if(!escolha.isTutorial)
         {
-            if (control.inimigoAtual <= 15)
+             cont = 0;
+            for (cont = 0; cont < 6; cont++)
             {
-                attackID[cont] = inimigoEscolhido.listaAtaquesNvl1[cont];
-            }
-            else if (control.inimigoAtual > 15)
-            {
-                attackID[cont] = inimigoEscolhido.listaAtaquesNvl2[cont];
-            }
-
-            Debug.Log(attackID[cont]);
-
-            for (int sla = 0; sla < 6; sla++)
-            {
-                if (cont != sla && attackID[cont] == attackID[sla] && attackID[cont] != 0)
+                if (control.inimigoAtual <= 15)
                 {
-                    attackID[sla] = 0;
-                    break;
+                    attackID[cont] = inimigoEscolhido.listaAtaquesNvl1[cont];
+                }
+                else if (control.inimigoAtual > 15)
+                {
+                    attackID[cont] = inimigoEscolhido.listaAtaquesNvl2[cont];
+                }
+
+                Debug.Log(attackID[cont]);
+
+                for (int sla = 0; sla < 6; sla++)
+                {
+                    if (cont != sla && attackID[cont] == attackID[sla] && attackID[cont] != 0)
+                    {
+                        attackID[sla] = 0;
+                        break;
+                    }
                 }
             }
         }
+        else
+        {
+            attackID[0] = 51;
+            attackID[1] = 32;
+        }
+       
 
         currentHealth = maxHealth;
         currentCharge = 1 + forcaAtual;
@@ -596,6 +610,8 @@ public class Enemy : MonoBehaviour
                             attackDamage = 1;
                         }
 
+                        if(escolha.isTutorial) attackDamage = 5;
+
                         if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
                         {
                             bloqTurno = true;
@@ -808,38 +824,75 @@ public class Enemy : MonoBehaviour
 
 
         //Escolher o ataque e usa-lo
-        for (i = 0; i <= 6; i++)
+        if(!escolha.isTutorial || (escolha.isTutorial && control.turno > 9))
         {
-            maximo += chance[i];
-        }
-
-        ataqueEscolhido = UnityEngine.Random.Range(1, maximo + 1);
-        Debug.Log("Numero escolhido: " + ataqueEscolhido);
-
-        int acumulado = 0;
-
-        for (i = 0; i < 7; i++)
-        {
-            acumulado += chance[i];
-
-            if (ataqueEscolhido <= acumulado)
+            for (i = 0; i <= 6; i++)
             {
-                if (i == 6)
-                {
-                    Debug.Log("Inimigo pulou o proprio turno");
-                    textoAtaque.text = "Inimigo pulou o proprio turno";
-                    if (!control.segundoTurno) textoAtaque.enabled = true;
+                maximo += chance[i];
+            }
 
-                    pulouTurno = true;
-                }
-                else
-                {
-                    idAtaqueUsado = i;
-                }
+            ataqueEscolhido = UnityEngine.Random.Range(1, maximo + 1);
+            Debug.Log("Numero escolhido: " + ataqueEscolhido);
 
-                return;
+            int acumulado = 0;
+
+            for (i = 0; i < 7; i++)
+            {
+                acumulado += chance[i];
+
+                if (ataqueEscolhido <= acumulado)
+                {
+                    if (i == 6)
+                    {
+                        Debug.Log("Inimigo pulou o proprio turno");
+                        textoAtaque.text = "Inimigo pulou o proprio turno";
+                        if (!control.segundoTurno) textoAtaque.enabled = true;
+
+                        pulouTurno = true;
+                    }
+                    else
+                    {
+                        idAtaqueUsado = i;
+                    }
+
+                    return;
+                }
             }
         }
+        else
+        {
+            switch(control.turno)
+            {
+                case 1:
+                    idAtaqueUsado = 0;
+                    break;
+                case 2:
+                    idAtaqueUsado = 0;
+                    break;
+                case 3:
+                    idAtaqueUsado = 0;
+                    break;
+                case 4:
+                    idAtaqueUsado = 0;
+                    break;
+                case 5:
+                    idAtaqueUsado = 0;
+                    break;
+                case 6:
+                    idAtaqueUsado = 1;
+                    break;
+                case 7:
+                    idAtaqueUsado = 1;
+                    break;
+                case 8:
+                    idAtaqueUsado = 0;
+                    break;
+                case 9:
+                    idAtaqueUsado = 0;
+                    break;
+            }
+        }
+        
 
 
     }

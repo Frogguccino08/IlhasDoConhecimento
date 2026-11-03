@@ -11,6 +11,8 @@ public class PersonagemSelecionado : MonoBehaviour
     
     public List<PCsSO> persos = new List<PCsSO>();
 
+    public bool isTutorial = false;
+
     //Função awake que checa se já existe um objeto não destrutivo, destroi ele caso tenha e mantem o novo
     void Awake()
     {

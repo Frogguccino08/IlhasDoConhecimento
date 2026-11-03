@@ -28,6 +28,8 @@ public class EnemyList : MonoBehaviour
     public List<Object> florestaCompostaNL2;
     public List<Object> florestaCompostaNL3;
 
+    public List<Object> barco;
+
     //Lista de inimigos por personagem para o modo história
     public List<EnemiesSO> todos;
 }

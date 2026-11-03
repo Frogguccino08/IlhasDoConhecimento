@@ -7,7 +7,6 @@ using System.Collections;
 public class Controle : MonoBehaviour
 {
     //Variaveis
-    //Test for the Git
     
     public int turno = 0;
     public int inimigoAtual = 1;
@@ -47,6 +46,8 @@ public class Controle : MonoBehaviour
     public bool esperandoEscolha = false;
     public bool segundoTurno = false;
 
+    public bool emDialogo = false;
+
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
@@ -79,6 +80,9 @@ public class Controle : MonoBehaviour
                 break;
             case 4: //floresta
                 textoRegiao.GetComponent<TMP_Text>().text = "Floresta Composta";
+                break;
+            case 5: //barco
+                textoRegiao.GetComponent<TMP_Text>().text = "Barco";
                 break;
         }
 
@@ -140,6 +144,20 @@ public class Controle : MonoBehaviour
             }
         }
 
+        //Ver e esperar dialogo (Inicio de turno)
+        if(escolha.isTutorial && turno == 9)
+        {
+            enemy.materialInimigo = 1;
+            enemy.CorDetalhes();
+        }
+        if(escolha.isTutorial && inimigoAtual == 1) gameObject.GetComponent<DiagTutorial>().InteracaoBt();
+        if(escolha.isTutorial && inimigoAtual == 1) gameObject.GetComponent<DiagTutorial>().ColocarDialogo(true, turno);
+        if(escolha.isTutorial && inimigoAtual == 2) gameObject.GetComponent<DiagTutorial>().DialogoFinal();
+        
+        if(emDialogo) yield return StartCoroutine(EsperarDialogo());
+        if(escolha.isTutorial && inimigoAtual == 2) SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
+        
+
         //Espera o jogador escolher o ataque e faz o inimigo escolher também
         esperandoEscolha = true;
         segundoTurno = false;
@@ -171,7 +189,11 @@ public class Controle : MonoBehaviour
             yield return ChecarMorte();
             if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
             yield return new WaitForSeconds(0.01f);
-            if(pulouTurno) yield return EsperarTeclaEspaco();
+            if(pulouTurno) 
+            {
+                texto.text = "Player pulou turno";
+                yield return EsperarTeclaEspaco();
+            }
 
             segundoTurno = true;
             yield return TurnoInimigo();
@@ -179,7 +201,10 @@ public class Controle : MonoBehaviour
             if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
             yield return new WaitForSeconds(0.01f);
             if(enemy.pulouTurno)
+            {
+                texto.text = "Inimigo pulou o proprio turno";
                 yield return EsperarTeclaEspaco();
+            }
         }
         else if(player.speed + player.modSpeed < enemy.speed + enemy.modSpeed)
         {
@@ -188,20 +213,32 @@ public class Controle : MonoBehaviour
             if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
             yield return new WaitForSeconds(0.01f);
             if(enemy.pulouTurno)
+            {
+                texto.text = "Inimigo pulou o proprio turno";
                 yield return EsperarTeclaEspaco();
+            }
 
             segundoTurno = true;
             if(!pulouTurno) yield return TurnoAliado();
             yield return ChecarMorte();
             if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
             yield return new WaitForSeconds(0.01f);
-            if(pulouTurno) yield return EsperarTeclaEspaco();
+            if(pulouTurno) 
+            {
+                texto.text = "Player pulou turno";
+                yield return EsperarTeclaEspaco();
+            }
         }
 
-        if (pulouTurno == true)
-        {
-            pulouTurno = false;
-        }
+        texto.text = "";
+
+        if (pulouTurno == true) pulouTurno = false;
+
+        if(enemy.pulouTurno) enemy.pulouTurno = false;
+
+        //Ver e esperar diálogo (Fim de rodada)
+        if(escolha.isTutorial && inimigoAtual == 1) gameObject.GetComponent<DiagTutorial>().ColocarDialogo(false, turno);
+        if(emDialogo) yield return StartCoroutine(EsperarDialogo());
 
         EfeitosAcontecendo(true, 6, 12);
         EfeitosAcontecendo(false, 6, 12);
@@ -234,7 +271,7 @@ public class Controle : MonoBehaviour
 
         if(!player.temEfeito[player.idAtaqueUsado] || (player.temEfeito[player.idAtaqueUsado] && player.dano[player.idAtaqueUsado] != 0)) yield return EsperarTeclaEspaco();
 
-        if (pulouTurno == true)
+        if (pulouTurno)
         {
             yield return EsperarTeclaEspaco();
         }
@@ -253,16 +290,10 @@ public class Controle : MonoBehaviour
         {
             yield return enemy.UsarAtaque(enemy.idAtaqueUsado);
         }
-        else
-        {
-            texto.text = "Inimigo pulou o proprio turno";
-            enemy.pulouTurno = false;
-        }
         
         yield return new WaitForSeconds(0.01f);
         if (enemy.errouAtq) enemy.errouAtq = false;
-
-        yield return EsperarTeclaEspaco();
+        if(!enemy.pulouTurno) yield return EsperarTeclaEspaco();
 
         //Escrever o efeito na tela
         if (enemy.errouAtq == false && enemy.temEfeito[enemy.idAtaqueUsado] == true && enemy.maximo != 0 && enemy.pulouTurno == false && escreverEfeito)
@@ -291,7 +322,9 @@ public class Controle : MonoBehaviour
             enemy.cor.enabled = false;
             inimigoAtual++;
 
-            
+            if(escolha.isTutorial) gameObject.GetComponent<DiagTutorial>().DialogoPurificou();
+            if(emDialogo) yield return StartCoroutine(EsperarDialogo()); 
+
             StartCoroutine(enemy.Morto());
 
             AtualizarEstadoBotoes();
@@ -485,5 +518,12 @@ public class Controle : MonoBehaviour
             oEnemy[1].SetActive(false);
             oEnemy[0].GetComponent<SpriteRenderer>().enabled = false;
         }
+    }
+
+    public IEnumerator EsperarDialogo()
+    {
+        while(emDialogo) yield return null;
+
+        Debug.Log("Seguindo");
     }
 }

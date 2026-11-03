@@ -218,6 +218,7 @@ public class PersoGrande : MonoBehaviour
 
     public void Jogando()
     {
+        //pc.regiao = 5; /* Barco */
         pc.regiao = UnityEngine.Random.Range(0, 5);
         SceneManager.LoadScene("Combate", LoadSceneMode.Single);
     }

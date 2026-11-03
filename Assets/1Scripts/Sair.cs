@@ -83,7 +83,14 @@ public class Sair : MonoBehaviour
             InfoPlayer.instance.SalvarInfo();
         }
 
-        SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+        if(PersonagemSelecionado.instance.isTutorial)
+        {
+            SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
+        }
         
     }
 

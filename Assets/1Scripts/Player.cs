@@ -164,10 +164,20 @@ public class Player : MonoBehaviour
         healthbar.MudarBarra(currentHealth);
 
 
-        for (i = 0; i < 4; i++)
+        if(!perso.isTutorial)
         {
-            attackID[i] = pc.listaAtaquesIniciais[i];
+            for (i = 0; i < 4; i++)
+            {
+                attackID[i] = pc.listaAtaquesIniciais[i];
+            }
         }
+        else
+        {
+            attackID[0] = 1;
+            attackID[1] = 96;
+            attackID[2] = 3;
+        }
+        
 
         AtaquesSelecionados();
         controlConheci.SpawnConhecimento(maxCharge + ModCharge, currentCharge);
@@ -354,6 +364,10 @@ public class Player : MonoBehaviour
                         {
                             attackDamage = 1;
                         }
+
+                        if(perso.isTutorial && efeitosAtivos[9] <= 0) attackDamage = 5;
+                        if(perso.isTutorial && efeitosAtivos[9] > 0) attackDamage -= 2;
+                        if(perso.isTutorial && rAgora) attackDamage += 2;
 
                         if (enemy.efeitosAtivos[1] > 0 && ataqueUsado != 77)
                         {
@@ -898,10 +912,5 @@ public class Player : MonoBehaviour
         danoExtra = 0;
 
         confirmModR = false;
-        if (rAgora)
-        {
-            modSpeDamage -= 1;
-            modPhiDamage -= 1;
-        }
     }
 }
