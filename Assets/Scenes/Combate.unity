@@ -3483,6 +3483,7 @@ MonoBehaviour:
   bloqTurno: 0
   errouAtq: 0
   forcaAtual: 0
+  regiaoAtual: 0
   isBoss: 0
   inimigoEscolhido: {fileID: 0}
   escolha: {fileID: 0}
@@ -6727,6 +6728,7 @@ GameObject:
   - component: {fileID: 618230584}
   - component: {fileID: 618230586}
   - component: {fileID: 618230587}
+  - component: {fileID: 618230588}
   m_Layer: 0
   m_Name: Controlador
   m_TagString: Untagged
@@ -6847,6 +6849,19 @@ MonoBehaviour:
   - {fileID: 760693853}
   - {fileID: 2057355454}
   btSkip: {fileID: 253928323}
+--- !u!114 &618230588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618230583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f9fbc42f2f29047be96196cb9035d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ MonoBehaviour:
     empresas que faziam testes em seres vivos e nessa busca por empresas ela descobriu
     a Concha, causando danos no ambiente de uma ilha inteira, por isso quando a oportunidade
     surgiu ela foi para a Ilha de Lixo como Gari."
+  regioesIniciais: 01000000040000000000000002000000
   maxHealth: 50
   maxCharge: 5
   pDamage: 3

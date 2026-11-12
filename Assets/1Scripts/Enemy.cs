@@ -72,6 +72,7 @@ public class Enemy : MonoBehaviour
 
     int cont;
     public int forcaAtual = 0;
+    public int regiaoAtual = 0;
     public bool isBoss = false;
     public EnemiesSO inimigoEscolhido;
     public PersonagemSelecionado escolha;
@@ -153,7 +154,8 @@ public class Enemy : MonoBehaviour
             efeitosAtivos[i] = 0;
         }
 
-        int ciclo = ((control.inimigoAtual - 1) % 15) + 1;
+        int ciclo = ((control.inimigoAtual - 1) % 20) + 1;
+        if(control.inimigoAtual % 20 == 1 && control.inimigoAtual != 1) forcaAtual++;
 
         switch (escolha.regiao)
         {
@@ -387,6 +389,10 @@ public class Enemy : MonoBehaviour
         ResetarModificadores();
         enemy.ResetarModificadores();
         control.EfeitosAcontecendo(true, 0, 0);
+        
+        if(control.turnoEmJogo != null) StopCoroutine(control.turnoEmJogo);
+        control.turnoEmJogo = null;
+        control.turnoEmJogo = StartCoroutine(control.TurnoJogo());
     }
 
 
@@ -409,11 +415,6 @@ public class Enemy : MonoBehaviour
     public IEnumerator Morto()
     {
         control.ColocarPontosInimigoDerrotado();
-
-        if (control.inimigoAtual % 15 == 0)
-        {
-            forcaAtual += 1;
-        }
 
         control.turno = 0;
         control.inimigoTurno.text = "Inimigo: " + control.inimigoAtual + "       Turno: " + control.turno;
@@ -482,11 +483,13 @@ public class Enemy : MonoBehaviour
             yield return control.TelaUpgrade();
         }
 
-        if (control.inimigoAtual == (forcaAtual * 5) + 1 && forcaAtual > 0)
+        if (control.inimigoAtual == ((regiaoAtual + 1) * 5) + 1)
         {
             int pre;
             pre = escolha.regiao;
-            escolha.regiao = UnityEngine.Random.Range(0, 5);
+            regiaoAtual++;
+            if(control.inimigoAtual >= 20) escolha.regiao = UnityEngine.Random.Range(0, 5);
+            if(control.inimigoAtual < 20) escolha.regiao = escolha.perso.regioesIniciais[regiaoAtual];
             if (pre != escolha.regiao)
             {
                 yield return StartCoroutine(control.LigarTela());
@@ -498,7 +501,7 @@ public class Enemy : MonoBehaviour
 
         control.AtivarBotao();
         control.texto.enabled = false;
-        StartCoroutine(control.TurnoJogo());
+        enemy.controlConheci.SpawnConhecimento(enemy.maxCharge + enemy.ModCharge, enemy.currentCharge);
     }
 
     void AtaquesSelecionados()

@@ -33,6 +33,7 @@ MonoBehaviour:
     oportunidade surgiu ele decidiu lutar para acabar o trabalho escravizado da ilha
     que tirou 30 anos da sua vida sem ele nem perceber, usando sua for\xE7a para
     acabar com a opress\xE3o ele entrou para os Garis."
+  regioesIniciais: 03000000010000000200000004000000
   maxHealth: 50
   maxCharge: 5
   pDamage: 4

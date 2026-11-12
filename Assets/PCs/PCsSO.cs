@@ -19,6 +19,9 @@ public class PCsSO : ScriptableObject
     public string idade;
     public string lore;
 
+    //Parte de região
+    public int[] regioesIniciais = new int[4];
+
 
     //Atributos para combate
     public float maxHealth;

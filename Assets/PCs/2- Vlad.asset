@@ -33,6 +33,7 @@ MonoBehaviour:
     menos e menos carne comest\xEDvel para alimentar sua fam\xEDlia, e eles come\xE7aram
     a passar fome.\\n\\nQuando a oportunidade surgiu ele decidiu parar o descarte
     de lixo da Concha para purificar os animais entrando para os Garis."
+  regioesIniciais: 04000000020000000300000000000000
   maxHealth: 50
   maxCharge: 5
   pDamage: 3

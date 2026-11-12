@@ -48,6 +48,9 @@ public class Controle : MonoBehaviour
 
     public bool emDialogo = false;
 
+    //Courotine de turno
+    public Coroutine turnoEmJogo;
+
 
     //Função start que sempre inicia no turno aliado e também mostra o texto da região e inicializa o player e o inimigo
     void Start()
@@ -95,7 +98,7 @@ public class Controle : MonoBehaviour
 
         enemy.InicializarInimigo();
         AtualizarEstadoBotoes();
-        StartCoroutine(TurnoJogo());
+        //StartCoroutine(TurnoJogo());
         Debug.Log("Combate iniciou");
 
         if (inimigoAtual == 1)
@@ -153,12 +156,17 @@ public class Controle : MonoBehaviour
         if(escolha.isTutorial && inimigoAtual == 1) gameObject.GetComponent<DiagTutorial>().InteracaoBt();
         if(escolha.isTutorial && inimigoAtual == 1) gameObject.GetComponent<DiagTutorial>().ColocarDialogo(true, turno);
         if(escolha.isTutorial && inimigoAtual == 2) gameObject.GetComponent<DiagTutorial>().DialogoFinal();
-        
+
+        //Modo história padrão
+        if(!escolha.isTutorial && inimigoAtual == 1 && turno == 1) gameObject.GetComponent<DiagHistoria>().DiagInicial(escolha.perso.id);
+
+
         if(emDialogo) yield return StartCoroutine(EsperarDialogo());
         if(escolha.isTutorial && inimigoAtual == 2) SceneManager.LoadScene("TelaInicial", LoadSceneMode.Single);
         
 
         //Espera o jogador escolher o ataque e faz o inimigo escolher também
+        Debug.Log("Turno acontecendo");
         esperandoEscolha = true;
         segundoTurno = false;
         
@@ -186,6 +194,7 @@ public class Controle : MonoBehaviour
         if(player.speed + player.modSpeed >= enemy.speed + enemy.modSpeed)
         {
             if(!pulouTurno) yield return TurnoAliado();
+            Debug.Log("Chegou aqui man");
             yield return ChecarMorte();
             if(player.currentHealth <= 0 || enemy.currentHealth <= 0) yield break;
             yield return new WaitForSeconds(0.01f);
@@ -260,7 +269,10 @@ public class Controle : MonoBehaviour
         enemy.EfeitoCausado(3, enemy.attackPublic, (int)enemy.danoPublic);
         player.EfeitoCausado(3, player.attackPublic, (int)player.danoPublic);
 
-        StartCoroutine(TurnoJogo());
+        StopCoroutine(turnoEmJogo);
+        turnoEmJogo = null;
+        turnoEmJogo = StartCoroutine(TurnoJogo());
+        yield break;
     }
 
     IEnumerator TurnoAliado()
@@ -317,12 +329,14 @@ public class Controle : MonoBehaviour
             SceneManager.LoadScene("Selecao", LoadSceneMode.Single);
         }else if(enemy.currentHealth <= 0)
         {
+            Debug.Log("Checou que o inimigo morreu e foi");
             enemy.cor.enabled = false;
             enemy.GetComponent<SpriteRenderer>().enabled = false;
             enemy.cor.enabled = false;
             inimigoAtual++;
 
             if(escolha.isTutorial) gameObject.GetComponent<DiagTutorial>().DialogoPurificou();
+            if(!escolha.isTutorial && inimigoAtual == 5) gameObject.GetComponent<DiagHistoria>().DiagSegundo(escolha.perso.id);
             if(emDialogo) yield return StartCoroutine(EsperarDialogo()); 
 
             StartCoroutine(enemy.Morto());

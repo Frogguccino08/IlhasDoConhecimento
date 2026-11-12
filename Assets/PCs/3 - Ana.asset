@@ -35,6 +35,7 @@ MonoBehaviour:
     \xE1rea de criaturas corrompidas do mundo e decidiu explor\xE1-la para ver a
     mudan\xE7a de comportamento das criaturas do ambiente e parar o desenvolvimento
     de mais corrompidas."
+  regioesIniciais: 02000000000000000300000001000000
   maxHealth: 50
   maxCharge: 5
   pDamage: 1

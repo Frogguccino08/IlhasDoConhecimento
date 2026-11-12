@@ -32,6 +32,7 @@ MonoBehaviour:
     dos livros e dos origamis. Ela aprendeu a usar a magia para se proteger e quando
     a oportunidade surgiu dela lutar para acabar com o trabalho for\xE7ado e destrui\xE7\xE3o
     da ilha ela come\xE7ou a usar a magia para ajudar tamb\xE9m."
+  regioesIniciais: 00000000030000000400000001000000
   maxHealth: 50
   maxCharge: 5
   pDamage: 2

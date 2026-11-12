@@ -30,6 +30,8 @@ public class SkipButton : MonoBehaviour
             }
         }
 
+        //control.StartCoroutine(control.TurnoJogo());
+
         //Função quando acaba o turno
         
 
