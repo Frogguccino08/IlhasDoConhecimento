@@ -6518,13 +6518,14 @@ GameObject:
   - component: {fileID: 1271239980}
   - component: {fileID: 1271239984}
   - component: {fileID: 1271239985}
+  - component: {fileID: 1271239986}
   m_Layer: 5
   m_Name: Canvas Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1271239980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6646,6 +6647,24 @@ MonoBehaviour:
   loginScreen: {fileID: 1271239984}
   textoCadastro: {fileID: 1443061943}
   textoLogin: {fileID: 525702964}
+--- !u!114 &1271239986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271239979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cb50697880d084db73145d6eb4dce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs:
+  - {fileID: 519123365}
+  - {fileID: 2072969566}
+  - {fileID: 407723246}
+  - {fileID: 266301487}
+  - {fileID: 420871677}
 --- !u!1 &1293313499
 GameObject:
   m_ObjectHideFlags: 0
@@ -9429,7 +9448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1872124026
 MonoBehaviour:
   m_ObjectHideFlags: 0
