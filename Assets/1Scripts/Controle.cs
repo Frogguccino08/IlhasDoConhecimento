@@ -159,6 +159,7 @@ public class Controle : MonoBehaviour
 
         //Modo história padrão
         if(!escolha.isTutorial && inimigoAtual == 1 && turno == 1) gameObject.GetComponent<DiagHistoria>().DiagInicial(escolha.perso.id);
+        if(!escolha.isTutorial && inimigoAtual == 6 && turno == 1) gameObject.GetComponent<DiagHistoria>().DiagTerceiro(escolha.perso.id);
 
 
         if(emDialogo) yield return StartCoroutine(EsperarDialogo());
@@ -337,6 +338,7 @@ public class Controle : MonoBehaviour
 
             if(escolha.isTutorial) gameObject.GetComponent<DiagTutorial>().DialogoPurificou();
             if(!escolha.isTutorial && inimigoAtual == 5) gameObject.GetComponent<DiagHistoria>().DiagSegundo(escolha.perso.id);
+            if(!escolha.isTutorial && inimigoAtual == 10) gameObject.GetComponent<DiagHistoria>().DiagQuarto(escolha.perso.id);
             if(emDialogo) yield return StartCoroutine(EsperarDialogo()); 
 
             StartCoroutine(enemy.Morto());

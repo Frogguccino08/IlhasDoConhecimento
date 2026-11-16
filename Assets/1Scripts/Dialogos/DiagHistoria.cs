@@ -128,4 +128,127 @@ public class DiagHistoria : MonoBehaviour
                 break;
         }
     }
+
+    public void DiagTerceiro(int id)
+    {
+        switch(id)
+        {
+            case 0: //Amélia - 1
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 1, 0, 1, 1, 0, 1});
+                diagBox.NovoDialogo(new string[]
+                {"* Amélia entra nos Arquivos *",
+                "* Ela procura entre os livros por uma razão para estar acontecendo mais corrupção que o normal *",
+                "Estranho. Nos conhecimentos antigos e nos documentos não parece ter nada em específico fazendo elas serem corrompidas.",
+                "* Ela vê vários documentos da Concha, empresa que domina a ilha *",
+                "Eles... Eles são o motivo.",
+                "Desde que eles entraram aqui tudo começou a piorar, agora está transbordando da panela tudo que estava fervendo.",
+                "* As criaturas em volta dela que vivem nos Arquivos começam a se corromper assim como na Costa de cacos *",
+                "Alguém vai precisar fazer algo, a corrupção vai se espalhar por todo o lugar."});
+                break;
+            case 1: //Vlad - 2
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 2, 2, 2});
+                diagBox.NovoDialogo(new string[]
+                {"* Saindo da Floresta Composta e entrando na Comunidade ele vê que ela parece estar abandonada *",
+                "* Criaturas Corrompidas caminham nas ruas e ele não consegue ver ninguém *",
+                "O que está causando tudo isso? Até na Comunidade, o lugar mais seguro da ilha, as criaturas estão corrompidas.",
+                "Minha família! Preciso ver se eles estão seguros.",
+                "Vou passar por essas criaturas e chegar até eles."});
+                break;
+            case 2: //Kai - 3
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 3, 0, 3});
+                diagBox.NovoDialogo(new string[]
+                {"* Chegando na Costa de cacos ela não está melhor do que a Comunidade *",
+                "* Criaturas Corrompidas caminham e se atacam por todos os lados *",
+                "Otímo, mais problemas. Eu preciso chegar em um lugar mais aberto para poder ver.",
+                "* Ele vê a distância um grande caco de vidro nas areias como um obelisco *",
+                "Subindo nele eu poderei ver facilmente a ilha. Só preciso passar pelas criaturas até chegar lá."});
+                break;
+            case 3: //Renan - 4
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 4, 0, 4, 0, 4});
+                diagBox.NovoDialogo(new string[]
+                {"* Renan chega no Coração da Ilha, seu local de trabalho e de muitos outros *",
+                "* Ele vê trabalhadores perdidos no trabalho, sem sequer registrar o que acontece em volta deles *",
+                "Eu... Tinha esquecido como essa visão era ruim, eu mesmo ficava perdido no meu trabalho... Como eu escapei disso?",
+                "* Ele se lembra do papel com o seu nome que ele tinha rasgado nos Arquivos *",
+                "Aquele... Era meu contrato? Por isso eu não estou mais trabalhando?",
+                "* Seu pensamento é interrompido quando Criaturas Corrompidas atacam os trabalhadores *",
+                "Não! Eles não conseguem se defender."});
+                break;
+            case 4: //Jayden - 5
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 5, 5});
+                diagBox.NovoDialogo(new string[]
+                {"* Chegando na Floresta Composta ela vê muitas Criaturas Corrompidas assim como no Coração da Ilha *",
+                "São muitas, preciso purifica-las antes que elas comecem a escapar para outras regiões.",
+                "Enquanto isso vou coletando dados."});
+                break;
+            case 5: //Ana
+                Debug.Log("id do boneco: " + id);
+                break;
+        }
+    }
+
+    public void DiagQuarto(int id)
+    {
+        switch(id)
+        {
+            case 0: //Amélia
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{1, 1, 1, 0});
+                diagBox.NovoDialogo(new string[]
+                {"São muitas, eu preciso fazer algo.",
+                "Na Floresta Orgânica. Eu li que lá tem um caminho para entrar nos escritórios da Concha.",
+                "Irei mostrar o que está acontecendo, eles vão precisar diminuir as atividades na ilha.",
+                "* Uma criatura fecha seu caminho *"});
+                break;
+            case 1: //Vlad
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 2, 2, 0, 2});
+                diagBox.NovoDialogo(new string[]
+                {"* Ele chega em casa e entra *",
+                "* Primeiro ele não vê ninguém mas após procurar um pouco mais ele encontra sua esposa e filho escondidos *",
+                "Vocês estão bem!",
+                "Eu vou dar um jeito de tirar essas criaturas daqui, talvez nos Arquivos tenha uma forma de lidar com essa corrupção.",
+                "* Saindo para rua seu caminho é bloqueado por uma Criatura corrompida muito maior *",
+                "Vou purificar essa criatura, ela está perto demais da minha casa, depois vou para Os Arquivos."});
+                break;
+            case 2: //Kai
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{0, 0, 0, 3, 3, 3});
+                diagBox.NovoDialogo(new string[]
+                {"* Ele finalmente chega ao caco gigante e sobe nele *",
+                "* Vendo de cima do obelisco ele pode ver a ilha inteira, e percebe o Coração da Ilha *",
+                "* Um vulcão no centro da ilha que usam como base de operação dos trabalhadores, ele está com mais fumaça do que o normal *",
+                "Ali! Parece ter alguma coisa. Pode ser o que está causando esse tumulto.",
+                "Eu vou ir lá ver, só preciso fazer o caminho de volta.",
+                "Pasando por mais criaturas."});
+                break;
+            case 3: //Renan
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{4, 4, 0, 4});
+                diagBox.NovoDialogo(new string[]
+                {"Isso não vai adiantar, mais estão se corrompendo.",
+                "Eu vou buscar ajuda. A Comunidade deve ter gente. Preciso ir para lá.",
+                "* Uma Criatura Corrompida maior que as outras ataca um grupo de trabalhadores *",
+                "Só essa maior, vou lidar com ela e vou para a Comunidade."});
+                break;
+            case 4: //Jayden
+                control.emDialogo = true;
+                diagBox.NovoPersonagens(new int[]{5, 5, 5, 0, 5});
+                diagBox.NovoDialogo(new string[]
+                {"Parece que as criaturas estão indo para uma direção específica.",
+                "Elas atacam tudo em volta mas quando não estão atacando elas vão para aquela direção.",
+                "Preciso de criaturas de outra região para ver se também estão indo para um mesmo ponto e triangular o local.",
+                "* Mais uma criatura maior que as outras a ataca *",
+                "Vou purifica-la e depois vou para a Costa de Cacos, é a região mais próxima daqui e verei o caminho das criaturas."});
+                break;
+            case 5: //Ana
+                Debug.Log("id do boneco: " + id);
+                break;
+        }
+    }
 }

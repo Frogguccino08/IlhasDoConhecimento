@@ -47,24 +47,6 @@ public class Escrever : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        //Resumo
-        // 2. NovoPersonagens(new int[]{numeros});
-        // 3. NovoDialogo(new string[]{textos});
-        //IniciarDialogos();
-        /* Exemplo:
-        gameObject.GetComponent<Canvas>().enabled = true;
-        NovoPersonagens(new int[]{1, 0, 2});
-        NovoDialogo(new string[]
-        {"Esse é um texto de exemplo e \"<color=green>Vidro</color>\" está escrito em verde\nE esse texto vai aparecer na linha de baixo",
-        "Esse é mais um texto de tentativa",
-        "Mds eu não sei o que escrever"});
-
-        IniciarDialogos();
-        */
-    }
-
     void Update()
     {
         if((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0)) && emDialogo)
